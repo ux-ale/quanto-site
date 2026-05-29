@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quanto — Creator Playbook</title>
+<meta name="description" content="Everything you need to create great content about Quanto.">
+<link rel="icon" type="image/png" href="quanto-app-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0C0F11;
+    --sem-8:  rgba(255,255,255,0.08);
+    --sem-15: rgba(255,255,255,0.15);
+    --border: rgba(255,255,255,0.08);
+    --brand:  #0cbba1;
+    --text-1: #ffffff;
+    --text-2: rgba(255,255,255,0.55);
+    --text-3: rgba(255,255,255,0.30);
+  }
+
+  html { scroll-behavior: smooth; background: #0C0F11; }
+
+  body {
+    font-family: 'Sora', sans-serif;
+    background: linear-gradient(180deg, #283339 0%, #0C0F11 100%);
+    background-attachment: fixed;
+    color: var(--text-1);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    padding: 80px 0 64px;
+    text-align: center;
+  }
+
+  .hero-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    overflow: hidden;
+    margin: 0 auto 28px;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+  }
+
+  .hero-icon img { width: 100%; height: 100%; display: block; }
+
+  .hero h1 {
+    font-size: clamp(32px, 6vw, 48px);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin-bottom: 16px;
+  }
+
+  .hero h1 .teal { color: var(--brand); }
+
+  .hero p {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--text-2);
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  /* ─── LAYOUT ─── */
+  .wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+
+  /* ─── DIVIDER ─── */
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 0;
+  }
+
+  /* ─── SECTION ─── */
+  .section {
+    padding: 64px 0;
+  }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--brand);
+    margin-bottom: 32px;
+  }
+
+  /* ─── ABOUT Q&A ─── */
+  .qa {
+    margin-bottom: 48px;
+  }
+
+  .qa:last-child {
+    margin-bottom: 0;
+  }
+
+  .qa h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .qa p {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--text-2);
+    line-height: 1.8;
+  }
+
+  /* ─── VIDEO PLACEHOLDER ─── */
+  .video-placeholder {
+    margin-top: 20px;
+    aspect-ratio: 16 / 9;
+    background: var(--sem-8);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-3);
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+  }
+
+  /* ─── PHONE SCREENS ─── */
+  .screens-row {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+
+  .phone-frame {
+    flex-shrink: 0;
+    width: 180px;
+    aspect-ratio: 375 / 812;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+  }
+
+  .phone-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+  }
+
+
+  /* ─── SIMPLE LIST ─── */
+  .simple-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .simple-list li {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--text-2);
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.7;
+  }
+
+  .simple-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--brand);
+  }
+
+  /* ─── CORE MESSAGES ─── */
+  .messages {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .messages li {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--text-2);
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.7;
+  }
+
+  .messages li::before {
+    content: '~';
+    position: absolute;
+    left: 0;
+    color: var(--brand);
+    font-weight: 600;
+  }
+
+  /* ─── HOOKS ─── */
+  .angle-group {
+    margin-bottom: 40px;
+  }
+
+  .angle-group:last-child {
+    margin-bottom: 0;
+  }
+
+  .angle-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-3);
+    margin-bottom: 16px;
+  }
+
+  .hooks {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hooks li {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--text-2);
+    line-height: 1.7;
+    padding-left: 0;
+  }
+
+  .hooks li span {
+    color: var(--text-1);
+  }
+
+  /* ─── CTA ─── */
+  .cta {
+    padding: 64px 0;
+    text-align: center;
+  }
+
+  .btn-wrap {
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 100px;
+    background: #acb0b3;
+    padding-bottom: 4px;
+    transition: transform 0.2s;
+    cursor: pointer;
+  }
+
+  .btn-wrap:hover { transform: translateY(-1px); }
+  .btn-wrap:active { transform: translateY(1px); }
+
+  .btn-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: linear-gradient(180deg, #eff2f6 0%, #dfdfdf 100%);
+    border: 2px solid transparent;
+    border-image: linear-gradient(180deg, #ffffff 0%, #e4e4e4 100%) 1;
+    border: 2px solid #ffffff;
+    background-clip: padding-box;
+    color: #151a1f;
+    font-family: 'Sora', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+    padding: 14px 16px;
+    border-radius: 100px;
+  }
+
+  .btn-inner svg { width: 24px; height: 24px; flex-shrink: 0; }
+  .btn-inner .chevron { opacity: 0.4; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    padding: 32px 0;
+    text-align: center;
+    font-size: 11px;
+    color: var(--text-3);
+    font-weight: 300;
+    border-top: 1px solid var(--border);
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 600px) {
+    .wrap { padding: 0 20px; }
+    .screens-row { gap: 10px; }
+    .phone-frame { width: 120px; border-radius: 14px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- ─── HERO ─── -->
+  <div class="hero">
+    <div class="hero-icon"><img src="quanto-app-icon.png" alt="Quanto"></div>
+    <h1>Creator<br><span class="teal">Playbook</span></h1>
+    <p>Everything you need to understand Quanto and make great content about it.</p>
+  </div>
+
+  <hr>
+
+  <!-- ─── WHAT IS QUANTO ─── -->
+  <div class="section">
+    <div class="qa">
+      <h3>What is Quanto?</h3>
+      <p>Quanto is a manual expense tracker and budgeting app for iOS and Android. It's beautifully designed and built for people who want real clarity on where their money goes.</p>
+    </div>
+
+    <div class="qa">
+      <h3>How does it work?</h3>
+      <p>Add your transactions manually and Quanto organizes everything — charts, summaries, categories — so you always know where your money is going.</p>
+      <div class="video-placeholder">Video coming soon</div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ─── DELIVERABLES ─── -->
+  <div class="section" id="deliverables">
+    <div class="qa">
+      <h3>Deliverables</h3>
+      <ul class="simple-list">
+        <li>3–5 videos with a different hook for each</li>
+        <li>Usage demo showing the app on screen</li>
+        <li>Link in bio during the campaign</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ─── CORE MESSAGE ─── -->
+  <div class="section" id="messages">
+    <div class="qa">
+      <h3>Core message</h3>
+      <ul class="messages">
+        <li>Track expenses in seconds</li>
+        <li>See your spending by category</li>
+        <li>Create your own budgets</li>
+        <li>Beautiful and simple design</li>
+        <li>No sign up, no ads, free</li>
+        <li>Helps you become more aware of your spending</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ─── CONTENT ANGLES ─── -->
+  <div class="section" id="hooks">
+    <div class="qa">
+      <h3>Good content angles</h3>
+    </div>
+
+    <div class="angle-group">
+      <div class="angle-label">Personal story</div>
+      <ul class="hooks">
+        <li><span>"I realized I had no idea where my money was going…"</span></li>
+        <li><span>"I thought I was pretty good with money until I started tracking my expenses…"</span></li>
+        <li><span>"One day I got tired of feeling broke so I decided to track where my money was going…"</span></li>
+        <li><span>"I didn't realize how much I was spending on pointless sh*t until I tried…"</span></li>
+      </ul>
+    </div>
+
+    <div class="angle-group">
+      <div class="angle-label">Cool apps angle</div>
+      <ul class="hooks">
+        <li><span>"This might be one of the most underrated apps on the App Store."</span></li>
+        <li><span>"If you like finding useful apps, you are going to wanna save this one."</span></li>
+        <li><span>"Part 37 of apps that deserve way more attention."</span></li>
+        <li><span>"If you appreciate well-designed apps, you're going to like this one."</span></li>
+        <li><span>"I had no idea where my money was going, then I found this tiny app on the App Store…"</span></li>
+        <li><span>"This is the kind of app Apple should feature more often."</span></li>
+      </ul>
+    </div>
+
+    <div class="angle-group">
+      <div class="angle-label">Design</div>
+      <ul class="hooks">
+        <li><span>"This is probably the nicest-looking finance app I've used."</span></li>
+        <li><span>"This app makes tracking expenses feel weirdly satisfying."</span></li>
+        <li><span>"I care way too much about how apps feel, and this one feels really good."</span></li>
+        <li><span>"Part 12 of apps that feel way better than they need to"</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ─── SAMPLE DATA ─── -->
+  <div class="section">
+    <div class="qa">
+      <h3>Populate your Quanto</h3>
+      <p>Download this CSV file and import it into Quanto so your app is already filled with realistic data — ready to record videos right away.</p>
+      <a href="Quanto Example.csv" download class="btn-wrap" style="margin-top: 20px;">
+        <div class="btn-inner">
+          <span>Download sample data</span>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ─── APP SCREENSHOTS ─── -->
+  <div class="section">
+    <div class="qa">
+      <h3>App screenshots</h3>
+      <div class="screens-row">
+        <div class="phone-frame"><img src="screens/activity-expenses.png" alt="Activity — Expenses"></div>
+        <div class="phone-frame"><img src="screens/activity-income.png" alt="Activity — Income"></div>
+        <div class="phone-frame"><img src="screens/summary-categories.png" alt="Summary"></div>
+        <div class="phone-frame"><img src="screens/category-detail-housing.png" alt="Category detail"></div>
+        <div class="phone-frame"><img src="screens/budget-grid.png" alt="Budgets"></div>
+        <div class="phone-frame"><img src="screens/recurrent.png" alt="Recurrent expenses"></div>
+        <div class="phone-frame"><img src="screens/settings.png" alt="Settings"></div>
+        <div class="phone-frame"><img src="screens/input.png" alt="Add expense"></div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ─── CTA ─── -->
+  <div class="cta">
+    <a id="cta-download" href="https://apps.apple.com/us/app/quanto-expense-tracker/id6749017099" class="btn-wrap">
+      <div class="btn-inner">
+        <span>Download Quanto</span>
+      </div>
+    </a>
+  </div>
+
+  <footer>
+    Quanto &copy; 2025
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  var ua = navigator.userAgent || '';
+  var isAndroid = /android/i.test(ua);
+  var cta = document.getElementById('cta-download');
+  if (isAndroid) {
+    cta.href = 'https://play.google.com/store/apps/details?id=app.quanto.quanto';
+  }
+})();
+</script>
+
+</body>
+</html>
