@@ -31,13 +31,21 @@
   body {
     margin: 0;
     min-height: 100%;
-    background: linear-gradient(180deg, #283339 0%, #0C0F11 100%);
-    background-attachment: fixed;
+    background: #0C0F11;
     overscroll-behavior: none;
   }
 
   html {
     scroll-behavior: smooth;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(180deg, #283339 0%, #0C0F11 100%);
+    pointer-events: none;
   }
 
   body {
@@ -51,6 +59,7 @@
     align-items: center;
     justify-content: center;
     padding: 40px 20px;
+    background: transparent;
   }
 
   .container {
@@ -59,6 +68,8 @@
     text-align: center;
     position: relative;
     z-index: 1;
+    min-height: 100vh;
+    background: transparent;
   }
 
   .glow,

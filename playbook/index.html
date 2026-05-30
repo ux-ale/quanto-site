@@ -24,16 +24,24 @@
   html, body {
     margin: 0;
     min-height: 100%;
-    background: #101719;
+    background: #0C0F11;
     overscroll-behavior: none;
   }
 
   html { scroll-behavior: smooth; }
 
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(180deg, #283339 0%, #0C0F11 100%);
+    pointer-events: none;
+  }
+
   body {
     font-family: 'Sora', sans-serif;
-    background: linear-gradient(180deg, #283339 0%, #0C0F11 100%);
-    background-attachment: fixed;
+    background: transparent;
     color: var(--text-1);
     -webkit-font-smoothing: antialiased;
     line-height: 1.7;
@@ -80,6 +88,9 @@
     max-width: 640px;
     margin: 0 auto;
     padding: 0 28px;
+    position: relative;
+    min-height: 100vh;
+    background: transparent;
   }
 
 
