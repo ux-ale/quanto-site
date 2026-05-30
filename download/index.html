@@ -357,7 +357,9 @@
 
   function getDevice() {
     var ua = navigator.userAgent || '';
-    if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) return 'ios';
+    var platform = navigator.platform || '';
+    var isTouchMac = platform === 'MacIntel' && navigator.maxTouchPoints > 1;
+    if ((/iPad|iPhone|iPod/.test(ua) || isTouchMac) && !window.MSStream) return 'ios';
     if (/android/i.test(ua)) return 'android';
     return 'desktop';
   }
@@ -392,7 +394,7 @@
     e.preventDefault();
     logClick(platform);
     var url = getStoreUrl(platform);
-    setTimeout(function () { window.location.href = url; }, 120);
+    window.location.replace(url);
   };
 
   // Show ref tag
@@ -411,7 +413,7 @@
     var manualLink = document.getElementById('manual-link');
     manualLink.href = url;
     notice.style.display = 'block';
-    setTimeout(function () { window.location.href = url; }, 800);
+    window.location.replace(url);
   } else {
     // Desktop: show both buttons + QR code
     document.getElementById('btn-ios').href = getStoreUrl('ios');
