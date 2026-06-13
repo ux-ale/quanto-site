@@ -1,11 +1,343 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=/download/">
-  <title>Quanto</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Download Quanto — Expense Tracker</title>
+<meta name="description" content="Download Quanto for iOS or Android. Track expenses, build budgets, take control of your money.">
+<link rel="icon" type="image/png" href="quanto-app-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg-primary:    #151a1f;
+    --bg-secondary:  #1e252b;
+    --bg-tertiary:   #32383e;
+    --sem-5:  rgba(255,255,255,0.05);
+    --sem-8:  rgba(255,255,255,0.08);
+    --sem-15: rgba(255,255,255,0.15);
+    --sem-20: rgba(255,255,255,0.20);
+    --border-primary:   rgba(255,255,255,0.20);
+    --border-secondary: rgba(255,255,255,0.08);
+    --brand-premium:   #0cbba1;
+    --brand-blue:      #008aff;
+    --text-primary:    #ffffff;
+    --text-secondary:  rgba(255,255,255,0.60);
+    --text-tertiary:   rgba(255,255,255,0.35);
+  }
+
+  html,
+  body {
+    margin: 0;
+    min-height: 100%;
+    background: #0C0F11;
+    overscroll-behavior: none;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(180deg, #283339 0%, #0C0F11 100%);
+    pointer-events: none;
+  }
+
+  body {
+    font-family: 'Sora', sans-serif;
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background: transparent;
+  }
+
+  .container {
+    max-width: 480px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    background: transparent;
+  }
+
+  .glow,
+  .glow-2 {
+    display: none;
+  }
+
+  .app-icon {
+    width: 96px;
+    height: 96px;
+    border-radius: 22px;
+    overflow: hidden;
+    margin: 0 auto 28px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.05);
+  }
+
+  .app-icon img {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  h1 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+  }
+
+  h1 .teal { color: var(--brand-premium); }
+
+  .subtitle {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 40px;
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .store-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 40px;
+    max-width: 343px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .store-btn-wrap {
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 100px;
+    padding-bottom: 4px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .store-btn-wrap:hover {
+    transform: translateY(-1px);
+  }
+
+  .store-btn-wrap:active {
+    transform: translateY(1px);
+  }
+
+  .store-btn-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 100px;
+    font-family: 'Sora', sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    white-space: nowrap;
+  }
+
+  .store-btn-inner svg {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+  }
+
+  .store-btn-ios {
+    background: #acb0b3;
+  }
+
+  .store-btn-ios:hover {
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  }
+
+  .store-btn-ios .store-btn-inner {
+    background: linear-gradient(180deg, #eff2f6 0.962%, #dfdfdf 100.96%);
+    border: 2px solid #ffffff;
+    color: #151a1f;
+    font-weight: 600;
+  }
+
+  .store-btn-android {
+    background: rgba(255,255,255,0.05);
+  }
+
+  .store-btn-android:hover {
+    box-shadow: 0 6px 20px rgba(255,255,255,0.06);
+  }
+
+  .store-btn-android .store-btn-inner {
+    background: rgba(255,255,255,0.05);
+    color: #ffffff;
+    font-weight: 400;
+  }
+
+  .ref-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(12,187,161,0.10);
+    color: var(--brand-premium);
+    border-radius: 100px;
+    padding: 6px 14px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    margin-top: 16px;
+  }
+
+  .ref-tag::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--brand-premium);
+  }
+
+  footer {
+    margin-top: 48px;
+    text-align: center;
+    background: transparent;
+  }
+
+  footer p {
+    font-size: 11px;
+    color: var(--text-tertiary);
+    font-weight: 300;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .container > * {
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .container > *:nth-child(1) { animation-delay: 0.05s; }
+  .container > *:nth-child(2) { animation-delay: 0.1s; }
+  .container > *:nth-child(3) { animation-delay: 0.15s; }
+  .container > *:nth-child(4) { animation-delay: 0.2s; }
+  .container > *:nth-child(5) { animation-delay: 0.25s; }
+  .container > *:nth-child(6) { animation-delay: 0.3s; }
+  .container > *:nth-child(7) { animation-delay: 0.35s; }
+
+  @media (max-width: 480px) {
+    h1 { font-size: 26px; }
+    .subtitle { font-size: 14px; }
+    .store-btn { padding: 14px 20px; font-size: 13px; }
+    body { padding: 32px 16px; }
+  }
+</style>
 </head>
 <body>
-  <p>Redirecting to <a href="/download/">Quanto</a>...</p>
+
+<div class="glow"></div>
+<div class="glow-2"></div>
+
+<div class="container">
+  <div class="app-icon">
+    <img src="quanto-app-icon.png" alt="Quanto app icon" width="96" height="96">
+  </div>
+
+  <h1>Get <span class="teal">Quanto</span></h1>
+  <p class="subtitle">Track every expense. Build real budgets. Take control of your money.</p>
+
+  <div class="store-buttons">
+    <a id="btn-ios" href="#" class="store-btn-wrap store-btn-ios" onclick="handleStoreClick('ios', event)">
+      <div class="store-btn-inner">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        <span>Download on the App Store</span>
+      </div>
+    </a>
+    <a id="btn-android" href="#" class="store-btn-wrap store-btn-android" onclick="handleStoreClick('android', event)">
+      <div class="store-btn-inner">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none"><path d="M11.8651 11.64L4.93506 18.885C5.16006 19.65 5.88006 20.235 6.73506 20.235C7.09506 20.235 7.41006 20.145 7.68006 19.965L15.5101 15.51L11.8651 11.64Z" fill="#EA4335"/><path d="M18.885 10.38L15.51 8.44501L11.73 11.775L15.555 15.51L18.93 13.62C19.515 13.305 19.92 12.675 19.92 12C19.875 11.325 19.47 10.695 18.885 10.38Z" fill="#FBBC04"/><path d="M4.93501 5.11499C4.89001 5.24999 4.89001 5.42999 4.89001 5.60999V18.435C4.89001 18.615 4.89001 18.75 4.93501 18.93L12.135 11.865L4.93501 5.11499Z" fill="#4285F4"/><path d="M11.9101 12L15.5101 8.44501L7.72506 4.03501C7.45506 3.85501 7.09506 3.76501 6.73506 3.76501C5.88006 3.76501 5.11506 4.35001 4.93506 5.11501L11.9101 12Z" fill="#34A853"/></svg>
+        <span>Download on the Play Store</span>
+      </div>
+    </a>
+  </div>
+
+  <div id="ref-display"></div>
+
+  <footer>
+    <p>&copy; 2025 Quanto. All rights reserved.</p>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var IOS_URL = 'https://apps.apple.com/us/app/quanto-expense-tracker/id6749017099';
+  var ANDROID_PACKAGE = 'app.quanto.quanto';
+  var PLAY_BASE = 'https://play.google.com/store/apps/details?id=' + ANDROID_PACKAGE;
+
+  var params = new URLSearchParams(window.location.search);
+  var ref = params.get('ref') || 'direct';
+
+  // ── Replace YOUR_ENDPOINT with your deployed Apps Script web app URL ──
+  var LOG_ENDPOINT = 'YOUR_APPS_SCRIPT_WEB_APP_URL';
+
+  function logClick(platform) {
+    var payload = JSON.stringify({
+      ref: ref,
+      device: platform,
+      timestamp: new Date().toISOString(),
+      ua: navigator.userAgent
+    });
+    if (navigator.sendBeacon) {
+      navigator.sendBeacon(LOG_ENDPOINT, new Blob([payload], { type: 'application/json' }));
+    } else {
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', LOG_ENDPOINT, false);
+      xhr.setRequestHeader('Content-Type', 'application/json');
+      xhr.send(payload);
+    }
+  }
+
+  function getStoreUrl(platform) {
+    if (platform === 'ios') return IOS_URL;
+    var playUrl = PLAY_BASE;
+    if (ref !== 'direct') {
+      playUrl += '&referrer=utm_source%3Dquanto_download%26utm_medium%3Dcreator%26utm_campaign%3D' + encodeURIComponent(ref);
+    }
+    return playUrl;
+  }
+
+  window.handleStoreClick = function (platform, e) {
+    e.preventDefault();
+    logClick(platform);
+    var url = getStoreUrl(platform);
+    window.location.replace(url);
+  };
+
+  // Show ref tag
+  if (ref !== 'direct') {
+    document.getElementById('ref-display').innerHTML =
+      '<span class="ref-tag">ref: ' + ref.replace(/[<>"'&]/g, '') + '</span>';
+  }
+
+  // Static page: always show both store buttons with their links set.
+  document.getElementById('btn-ios').href = getStoreUrl('ios');
+  document.getElementById('btn-android').href = getStoreUrl('android');
+})();
+</script>
+
 </body>
 </html>
