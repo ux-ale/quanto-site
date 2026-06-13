@@ -1,0 +1,922 @@
+Date,Amount,Category,Name,Account,Type
+01/07/2025,30.98,Food,,Main account,Expense
+01/07/2025,302.36,Utilities,Dewa,Main account,Expense
+01/07/2025,44.21,Extras,PS Game,Main account,Expense
+02/07/2025,205.94,Utilities,Du,Main account,Expense
+02/07/2025,22.27,Groceries,,Main account,Expense
+02/07/2025,41.70,Food,,Main account,Expense
+02/07/2025,30.21,Extras,Wrapping paper,Main account,Expense
+03/07/2025,352.75,Housing,,Main account,Expense
+04/07/2025,219.21,Shopping,,Main account,Expense
+04/07/2025,189.61,Groceries,,Main account,Expense
+05/07/2025,43.64,Groceries,,Main account,Expense
+05/07/2025,144.80,Extras,Amazon,Main account,Expense
+06/07/2025,22.78,Food,,Main account,Expense
+06/07/2025,352.75,Housing,,Main account,Expense
+06/07/2025,100.79,Transportation,,Main account,Expense
+06/07/2025,46.15,Food,,Main account,Expense
+06/07/2025,100.79,Transportation,,Main account,Expense
+07/07/2025,58.48,Food,,Main account,Expense
+07/07/2025,25.80,Food,,Main account,Expense
+07/07/2025,23.05,Food,,Main account,Expense
+07/07/2025,151.18,Shopping,,Main account,Expense
+08/07/2025,352.75,Housing,,Main account,Expense
+09/07/2025,352.75,Housing,,Main account,Expense
+09/07/2025,27.13,Groceries,,Main account,Expense
+09/07/2025,96.73,Groceries,,Main account,Expense
+10/07/2025,352.75,Housing,,Main account,Expense
+10/07/2025,33.55,Groceries,,Main account,Expense
+11/07/2025,486.11,Food,,Main account,Expense
+12/07/2025,352.75,Housing,,Main account,Expense
+12/07/2025,40.19,Groceries,,Main account,Expense
+13/07/2025,26.20,Food,,Main account,Expense
+13/07/2025,37.44,Extras,PS5,Main account,Expense
+13/07/2025,151.18,Transportation,,Main account,Expense
+13/07/2025,5.49,Extras,,Main account,Expense
+13/07/2025,27.21,Food,,Main account,Expense
+13/07/2025,45.35,Food,,Main account,Expense
+14/07/2025,28.83,Food,,Main account,Expense
+14/07/2025,352.75,Housing,,Main account,Expense
+14/07/2025,19.61,Food,,Main account,Expense
+14/07/2025,37.89,Food,,Main account,Expense
+15/07/2025,55.43,Transportation,,Main account,Expense
+15/07/2025,65.51,Transportation,,Main account,Expense
+15/07/2025,133.70,Extras,Amazon,Main account,Expense
+16/07/2025,41.19,Extras,Haircut,Main account,Expense
+16/07/2025,66.52,Groceries,,Main account,Expense
+16/07/2025,352.75,Housing,,Main account,Expense
+17/07/2025,36.28,Transportation,,Main account,Expense
+17/07/2025,352.75,Housing,,Main account,Expense
+17/07/2025,12.23,Transportation,,Main account,Expense
+18/07/2025,236.17,Going out,,Main account,Expense
+18/07/2025,100.79,Groceries,,Main account,Expense
+18/07/2025,30.98,Food,,Main account,Expense
+19/07/2025,56.76,Groceries,,Main account,Expense
+19/07/2025,157.23,Groceries,,Main account,Expense
+19/07/2025,79.03,Transportation,,Main account,Expense
+20/07/2025,352.75,Housing,,Main account,Expense
+21/07/2025,20.88,Food,,Main account,Expense
+21/07/2025,352.75,Housing,,Main account,Expense
+21/07/2025,18.29,Food,,Main account,Expense
+22/07/2025,45.83,Groceries,,Main account,Expense
+22/07/2025,251.97,Shopping,,Main account,Expense
+22/07/2025,131.02,Groceries,,Main account,Expense
+23/07/2025,25.32,Extras,Robinhood,Main account,Expense
+23/07/2025,453.54,Housing,,Main account,Expense
+24/07/2025,"6,316.34",Extras,FTI Delta,Main account,Income
+24/07/2025,"6,000.00",Salary,,Main account,Income
+24/07/2025,66.58,Groceries,,Main account,Expense
+24/07/2025,251.97,Utilities,Dewa,Main account,Expense
+24/07/2025,38.30,Food,,Main account,Expense
+25/07/2025,31.84,Food,,Main account,Expense
+25/07/2025,55.43,Utilities,Car wash,Main account,Expense
+25/07/2025,191.96,Extras,Washing machine,Main account,Expense
+25/07/2025,102.98,Extras,Laundry duvets,Main account,Expense
+26/07/2025,120.94,Food,,Main account,Expense
+26/07/2025,234.80,Going out,,Main account,Expense
+26/07/2025,219.69,Extras,,Main account,Income
+26/07/2025,171.34,Transportation,,Main account,Expense
+27/07/2025,99.78,Shopping,,Main account,Expense
+27/07/2025,175.76,Going out,,Main account,Expense
+28/07/2025,123.58,Going out,,Main account,Expense
+28/07/2025,85.67,Transportation,,Main account,Expense
+29/07/2025,25.25,Food,,Main account,Expense
+29/07/2025,50.39,Shopping,,Main account,Expense
+01/08/2025,51.98,Extras,PS Game,Main account,Expense
+01/08/2025,36.43,Food,,Main account,Expense
+01/08/2025,355.52,Utilities,Dewa,Main account,Expense
+02/08/2025,35.52,Extras,Wrapping paper,Main account,Expense
+02/08/2025,242.15,Utilities,Du,Main account,Expense
+02/08/2025,26.19,Groceries,,Main account,Expense
+02/08/2025,49.03,Food,,Main account,Expense
+03/08/2025,414.78,Housing,,Main account,Expense
+04/08/2025,222.95,Groceries,,Main account,Expense
+04/08/2025,257.75,Shopping,,Main account,Expense
+05/08/2025,51.31,Groceries,,Main account,Expense
+05/08/2025,170.26,Extras,Amazon,Main account,Expense
+06/08/2025,54.26,Food,,Main account,Expense
+06/08/2025,118.51,Transportation,,Main account,Expense
+06/08/2025,414.78,Housing,,Main account,Expense
+06/08/2025,26.78,Food,,Main account,Expense
+06/08/2025,118.51,Transportation,,Main account,Expense
+07/08/2025,68.76,Food,,Main account,Expense
+07/08/2025,27.10,Food,,Main account,Expense
+07/08/2025,177.76,Shopping,,Main account,Expense
+07/08/2025,30.34,Food,,Main account,Expense
+08/08/2025,414.78,Housing,,Main account,Expense
+09/08/2025,414.78,Housing,,Main account,Expense
+09/08/2025,31.90,Groceries,,Main account,Expense
+09/08/2025,113.73,Groceries,,Main account,Expense
+10/08/2025,39.45,Groceries,,Main account,Expense
+10/08/2025,414.78,Housing,,Main account,Expense
+11/08/2025,571.59,Food,,Main account,Expense
+12/08/2025,47.26,Groceries,,Main account,Expense
+12/08/2025,414.78,Housing,,Main account,Expense
+13/08/2025,177.76,Transportation,,Main account,Expense
+13/08/2025,32.00,Food,,Main account,Expense
+13/08/2025,6.46,Extras,,Main account,Expense
+13/08/2025,30.81,Food,,Main account,Expense
+13/08/2025,44.03,Extras,PS5,Main account,Expense
+13/08/2025,53.33,Food,,Main account,Expense
+14/08/2025,23.06,Food,,Main account,Expense
+14/08/2025,44.55,Food,,Main account,Expense
+14/08/2025,33.89,Food,,Main account,Expense
+14/08/2025,414.78,Housing,,Main account,Expense
+15/08/2025,77.03,Transportation,,Main account,Expense
+15/08/2025,157.21,Extras,Amazon,Main account,Expense
+15/08/2025,65.18,Transportation,,Main account,Expense
+16/08/2025,78.21,Groceries,,Main account,Expense
+16/08/2025,414.78,Housing,,Main account,Expense
+16/08/2025,48.43,Extras,Haircut,Main account,Expense
+17/08/2025,42.66,Transportation,,Main account,Expense
+17/08/2025,414.78,Housing,,Main account,Expense
+17/08/2025,14.37,Transportation,,Main account,Expense
+18/08/2025,36.43,Food,,Main account,Expense
+18/08/2025,118.51,Groceries,,Main account,Expense
+18/08/2025,277.70,Going out,,Main account,Expense
+19/08/2025,184.87,Groceries,,Main account,Expense
+19/08/2025,66.74,Groceries,,Main account,Expense
+19/08/2025,92.92,Transportation,,Main account,Expense
+20/08/2025,414.78,Housing,,Main account,Expense
+21/08/2025,21.51,Food,,Main account,Expense
+21/08/2025,24.55,Food,,Main account,Expense
+21/08/2025,414.78,Housing,,Main account,Expense
+22/08/2025,154.06,Groceries,,Main account,Expense
+22/08/2025,53.89,Groceries,,Main account,Expense
+22/08/2025,296.27,Shopping,,Main account,Expense
+23/08/2025,29.77,Extras,Robinhood,Main account,Expense
+23/08/2025,533.28,Housing,,Main account,Expense
+24/08/2025,296.27,Utilities,Dewa,Main account,Expense
+24/08/2025,45.03,Food,,Main account,Expense
+24/08/2025,"7,426.90",Extras,FTI Delta,Main account,Income
+24/08/2025,78.29,Groceries,,Main account,Expense
+24/08/2025,"6,000.00",Salary,,Main account,Income
+25/08/2025,121.09,Extras,Laundry duvets,Main account,Expense
+25/08/2025,37.44,Food,,Main account,Expense
+25/08/2025,225.71,Extras,Washing machine,Main account,Expense
+25/08/2025,65.18,Utilities,Car wash,Main account,Expense
+26/08/2025,142.21,Food,,Main account,Expense
+26/08/2025,201.46,Transportation,,Main account,Expense
+26/08/2025,258.32,Extras,,Main account,Income
+26/08/2025,276.09,Going out,,Main account,Expense
+27/08/2025,117.32,Shopping,,Main account,Expense
+27/08/2025,206.67,Going out,,Main account,Expense
+28/08/2025,100.73,Transportation,,Main account,Expense
+28/08/2025,145.31,Going out,,Main account,Expense
+29/08/2025,59.25,Shopping,,Main account,Expense
+29/08/2025,29.60,Food,,Main account,Expense
+01/09/2025,28.60,Food,,Main account,Expense
+01/09/2025,40.80,Extras,PS Game,Main account,Expense
+01/09/2025,279.10,Utilities,Dewa,Main account,Expense
+02/09/2025,20.56,Groceries,,Main account,Expense
+02/09/2025,38.49,Food,,Main account,Expense
+02/09/2025,27.88,Extras,Wrapping paper,Main account,Expense
+02/09/2025,190.10,Utilities,Du,Main account,Expense
+03/09/2025,325.62,Housing,,Main account,Expense
+04/09/2025,175.02,Groceries,,Main account,Expense
+04/09/2025,202.35,Shopping,,Main account,Expense
+05/09/2025,133.66,Extras,Amazon,Main account,Expense
+05/09/2025,40.28,Groceries,,Main account,Expense
+06/09/2025,93.03,Transportation,,Main account,Expense
+06/09/2025,21.03,Food,,Main account,Expense
+06/09/2025,325.62,Housing,,Main account,Expense
+06/09/2025,42.60,Food,,Main account,Expense
+06/09/2025,93.03,Transportation,,Main account,Expense
+07/09/2025,139.55,Shopping,,Main account,Expense
+07/09/2025,53.98,Food,,Main account,Expense
+07/09/2025,23.82,Food,,Main account,Expense
+07/09/2025,21.28,Food,,Main account,Expense
+08/09/2025,325.62,Housing,,Main account,Expense
+09/09/2025,325.62,Housing,,Main account,Expense
+09/09/2025,25.04,Groceries,,Main account,Expense
+09/09/2025,89.28,Groceries,,Main account,Expense
+10/09/2025,30.97,Groceries,,Main account,Expense
+10/09/2025,325.62,Housing,,Main account,Expense
+11/09/2025,448.72,Food,,Main account,Expense
+12/09/2025,37.10,Groceries,,Main account,Expense
+12/09/2025,325.62,Housing,,Main account,Expense
+13/09/2025,34.56,Extras,PS5,Main account,Expense
+13/09/2025,5.07,Extras,,Main account,Expense
+13/09/2025,41.87,Food,,Main account,Expense
+13/09/2025,25.12,Food,,Main account,Expense
+13/09/2025,24.19,Food,,Main account,Expense
+13/09/2025,139.55,Transportation,,Main account,Expense
+14/09/2025,18.10,Food,,Main account,Expense
+14/09/2025,34.97,Food,,Main account,Expense
+14/09/2025,325.62,Housing,,Main account,Expense
+14/09/2025,26.61,Food,,Main account,Expense
+15/09/2025,123.42,Extras,Amazon,Main account,Expense
+15/09/2025,51.17,Transportation,,Main account,Expense
+15/09/2025,60.47,Transportation,,Main account,Expense
+16/09/2025,61.40,Groceries,,Main account,Expense
+16/09/2025,38.02,Extras,Haircut,Main account,Expense
+16/09/2025,325.62,Housing,,Main account,Expense
+17/09/2025,325.62,Housing,,Main account,Expense
+17/09/2025,11.29,Transportation,,Main account,Expense
+17/09/2025,33.49,Transportation,,Main account,Expense
+18/09/2025,218.01,Going out,,Main account,Expense
+18/09/2025,93.03,Groceries,,Main account,Expense
+18/09/2025,28.60,Food,,Main account,Expense
+19/09/2025,145.13,Groceries,,Main account,Expense
+19/09/2025,72.95,Transportation,,Main account,Expense
+19/09/2025,52.40,Groceries,,Main account,Expense
+20/09/2025,325.62,Housing,,Main account,Expense
+21/09/2025,19.28,Food,,Main account,Expense
+21/09/2025,325.62,Housing,,Main account,Expense
+21/09/2025,16.89,Food,,Main account,Expense
+22/09/2025,232.58,Shopping,,Main account,Expense
+22/09/2025,42.30,Groceries,,Main account,Expense
+22/09/2025,120.94,Groceries,,Main account,Expense
+23/09/2025,418.65,Housing,,Main account,Expense
+23/09/2025,23.37,Extras,Robinhood,Main account,Expense
+24/09/2025,232.58,Utilities,Dewa,Main account,Expense
+24/09/2025,61.46,Groceries,,Main account,Expense
+24/09/2025,35.35,Food,,Main account,Expense
+24/09/2025,"5,830.46",Extras,FTI Delta,Main account,Income
+24/09/2025,"6,000.00",Salary,,Main account,Income
+25/09/2025,29.39,Food,,Main account,Expense
+25/09/2025,95.06,Extras,Laundry duvets,Main account,Expense
+25/09/2025,51.17,Utilities,Car wash,Main account,Expense
+25/09/2025,177.19,Extras,Washing machine,Main account,Expense
+26/09/2025,111.64,Food,,Main account,Expense
+26/09/2025,158.16,Transportation,,Main account,Expense
+26/09/2025,216.74,Going out,,Main account,Expense
+26/09/2025,202.80,Extras,,Main account,Income
+27/09/2025,162.24,Going out,,Main account,Expense
+27/09/2025,92.10,Shopping,,Main account,Expense
+28/09/2025,79.08,Transportation,,Main account,Expense
+28/09/2025,114.08,Going out,,Main account,Expense
+29/09/2025,46.52,Shopping,,Main account,Expense
+29/09/2025,23.28,Food,,Main account,Expense
+01/10/2025,38.81,Food,,Main account,Expense
+01/10/2025,55.38,Extras,PS Game,Main account,Expense
+01/10/2025,378.78,Utilities,Dewa,Main account,Expense
+02/10/2025,27.90,Groceries,,Main account,Expense
+02/10/2025,257.99,Utilities,Du,Main account,Expense
+02/10/2025,52.23,Food,,Main account,Expense
+02/10/2025,37.84,Extras,Wrapping paper,Main account,Expense
+03/10/2025,441.91,Housing,,Main account,Expense
+04/10/2025,237.53,Groceries,,Main account,Expense
+04/10/2025,274.62,Shopping,,Main account,Expense
+05/10/2025,181.40,Extras,Amazon,Main account,Expense
+05/10/2025,54.67,Groceries,,Main account,Expense
+06/10/2025,441.91,Housing,,Main account,Expense
+06/10/2025,57.81,Food,,Main account,Expense
+06/10/2025,28.53,Food,,Main account,Expense
+06/10/2025,126.26,Transportation,,Main account,Expense
+06/10/2025,126.26,Transportation,,Main account,Expense
+07/10/2025,28.88,Food,,Main account,Expense
+07/10/2025,73.26,Food,,Main account,Expense
+07/10/2025,189.39,Shopping,,Main account,Expense
+07/10/2025,32.32,Food,,Main account,Expense
+08/10/2025,441.91,Housing,,Main account,Expense
+09/10/2025,121.17,Groceries,,Main account,Expense
+09/10/2025,33.99,Groceries,,Main account,Expense
+09/10/2025,441.91,Housing,,Main account,Expense
+10/10/2025,441.91,Housing,,Main account,Expense
+10/10/2025,42.03,Groceries,,Main account,Expense
+11/10/2025,608.98,Food,,Main account,Expense
+12/10/2025,50.35,Groceries,,Main account,Expense
+12/10/2025,441.91,Housing,,Main account,Expense
+13/10/2025,32.83,Food,,Main account,Expense
+13/10/2025,56.82,Food,,Main account,Expense
+13/10/2025,46.91,Extras,PS5,Main account,Expense
+13/10/2025,34.09,Food,,Main account,Expense
+13/10/2025,189.39,Transportation,,Main account,Expense
+13/10/2025,6.88,Extras,,Main account,Expense
+14/10/2025,441.91,Housing,,Main account,Expense
+14/10/2025,47.46,Food,,Main account,Expense
+14/10/2025,36.11,Food,,Main account,Expense
+14/10/2025,24.57,Food,,Main account,Expense
+15/10/2025,69.44,Transportation,,Main account,Expense
+15/10/2025,167.50,Extras,Amazon,Main account,Expense
+15/10/2025,82.07,Transportation,,Main account,Expense
+16/10/2025,51.60,Extras,Haircut,Main account,Expense
+16/10/2025,441.91,Housing,,Main account,Expense
+16/10/2025,83.33,Groceries,,Main account,Expense
+17/10/2025,45.45,Transportation,,Main account,Expense
+17/10/2025,15.32,Transportation,,Main account,Expense
+17/10/2025,441.91,Housing,,Main account,Expense
+18/10/2025,126.26,Groceries,,Main account,Expense
+18/10/2025,295.87,Going out,,Main account,Expense
+18/10/2025,38.81,Food,,Main account,Expense
+19/10/2025,99.00,Transportation,,Main account,Expense
+19/10/2025,71.11,Groceries,,Main account,Expense
+19/10/2025,196.97,Groceries,,Main account,Expense
+20/10/2025,441.91,Housing,,Main account,Expense
+21/10/2025,26.16,Food,,Main account,Expense
+21/10/2025,441.91,Housing,,Main account,Expense
+21/10/2025,22.92,Food,,Main account,Expense
+22/10/2025,57.41,Groceries,,Main account,Expense
+22/10/2025,315.65,Shopping,,Main account,Expense
+22/10/2025,164.14,Groceries,,Main account,Expense
+23/10/2025,568.17,Housing,,Main account,Expense
+23/10/2025,31.72,Extras,Robinhood,Main account,Expense
+24/10/2025,"6,000.00",Salary,,Main account,Income
+24/10/2025,"7,912.77",Extras,FTI Delta,Main account,Income
+24/10/2025,83.41,Groceries,,Main account,Expense
+24/10/2025,47.98,Food,,Main account,Expense
+24/10/2025,315.65,Utilities,Dewa,Main account,Expense
+25/10/2025,69.44,Utilities,Car wash,Main account,Expense
+25/10/2025,129.01,Extras,Laundry duvets,Main account,Expense
+25/10/2025,39.89,Food,,Main account,Expense
+25/10/2025,240.48,Extras,Washing machine,Main account,Expense
+26/10/2025,275.22,Extras,,Main account,Income
+26/10/2025,294.15,Going out,,Main account,Expense
+26/10/2025,214.64,Transportation,,Main account,Expense
+26/10/2025,151.51,Food,,Main account,Expense
+27/10/2025,220.19,Going out,,Main account,Expense
+27/10/2025,125.00,Shopping,,Main account,Expense
+28/10/2025,154.82,Going out,,Main account,Expense
+28/10/2025,107.32,Transportation,,Main account,Expense
+29/10/2025,31.58,Food,,Main account,Expense
+29/10/2025,63.13,Shopping,,Main account,Expense
+01/11/2025,47.12,Extras,PS Game,Main account,Expense
+01/11/2025,33.02,Food,,Main account,Expense
+01/11/2025,322.30,Utilities,Dewa,Main account,Expense
+02/11/2025,32.20,Extras,Wrapping paper,Main account,Expense
+02/11/2025,44.44,Food,,Main account,Expense
+02/11/2025,23.74,Groceries,,Main account,Expense
+02/11/2025,219.52,Utilities,Du,Main account,Expense
+03/11/2025,376.01,Housing,,Main account,Expense
+04/11/2025,202.11,Groceries,,Main account,Expense
+04/11/2025,233.66,Shopping,,Main account,Expense
+05/11/2025,154.35,Extras,Amazon,Main account,Expense
+05/11/2025,46.52,Groceries,,Main account,Expense
+06/11/2025,376.01,Housing,,Main account,Expense
+06/11/2025,107.43,Transportation,,Main account,Expense
+06/11/2025,24.28,Food,,Main account,Expense
+06/11/2025,107.43,Transportation,,Main account,Expense
+06/11/2025,49.19,Food,,Main account,Expense
+07/11/2025,27.50,Food,,Main account,Expense
+07/11/2025,62.33,Food,,Main account,Expense
+07/11/2025,161.15,Shopping,,Main account,Expense
+07/11/2025,24.57,Food,,Main account,Expense
+08/11/2025,376.01,Housing,,Main account,Expense
+09/11/2025,103.10,Groceries,,Main account,Expense
+09/11/2025,28.92,Groceries,,Main account,Expense
+09/11/2025,376.01,Housing,,Main account,Expense
+10/11/2025,376.01,Housing,,Main account,Expense
+10/11/2025,35.76,Groceries,,Main account,Expense
+11/11/2025,518.17,Food,,Main account,Expense
+12/11/2025,42.84,Groceries,,Main account,Expense
+12/11/2025,376.01,Housing,,Main account,Expense
+13/11/2025,29.01,Food,,Main account,Expense
+13/11/2025,39.91,Extras,PS5,Main account,Expense
+13/11/2025,48.34,Food,,Main account,Expense
+13/11/2025,161.15,Transportation,,Main account,Expense
+13/11/2025,5.86,Extras,,Main account,Expense
+13/11/2025,27.93,Food,,Main account,Expense
+14/11/2025,40.38,Food,,Main account,Expense
+14/11/2025,20.91,Food,,Main account,Expense
+14/11/2025,376.01,Housing,,Main account,Expense
+14/11/2025,30.73,Food,,Main account,Expense
+15/11/2025,142.52,Extras,Amazon,Main account,Expense
+15/11/2025,69.83,Transportation,,Main account,Expense
+15/11/2025,59.09,Transportation,,Main account,Expense
+16/11/2025,376.01,Housing,,Main account,Expense
+16/11/2025,70.91,Groceries,,Main account,Expense
+16/11/2025,43.91,Extras,Haircut,Main account,Expense
+17/11/2025,38.68,Transportation,,Main account,Expense
+17/11/2025,13.03,Transportation,,Main account,Expense
+17/11/2025,376.01,Housing,,Main account,Expense
+18/11/2025,33.02,Food,,Main account,Expense
+18/11/2025,107.43,Groceries,,Main account,Expense
+18/11/2025,251.75,Going out,,Main account,Expense
+19/11/2025,60.51,Groceries,,Main account,Expense
+19/11/2025,84.24,Transportation,,Main account,Expense
+19/11/2025,167.59,Groceries,,Main account,Expense
+20/11/2025,376.01,Housing,,Main account,Expense
+21/11/2025,19.50,Food,,Main account,Expense
+21/11/2025,22.26,Food,,Main account,Expense
+21/11/2025,376.01,Housing,,Main account,Expense
+22/11/2025,48.85,Groceries,,Main account,Expense
+22/11/2025,139.66,Groceries,,Main account,Expense
+22/11/2025,268.58,Shopping,,Main account,Expense
+23/11/2025,483.44,Housing,,Main account,Expense
+23/11/2025,26.99,Extras,Robinhood,Main account,Expense
+24/11/2025,268.58,Utilities,Dewa,Main account,Expense
+24/11/2025,70.97,Groceries,,Main account,Expense
+24/11/2025,"6,000.00",Salary,,Main account,Income
+24/11/2025,40.82,Food,,Main account,Expense
+24/11/2025,"6,732.80",Extras,FTI Delta,Main account,Income
+25/11/2025,59.09,Utilities,Car wash,Main account,Expense
+25/11/2025,33.94,Food,,Main account,Expense
+25/11/2025,109.77,Extras,Laundry duvets,Main account,Expense
+25/11/2025,204.62,Extras,Washing machine,Main account,Expense
+26/11/2025,128.92,Food,,Main account,Expense
+26/11/2025,182.63,Transportation,,Main account,Expense
+26/11/2025,250.28,Going out,,Main account,Expense
+26/11/2025,234.18,Extras,,Main account,Income
+27/11/2025,106.36,Shopping,,Main account,Expense
+27/11/2025,187.35,Going out,,Main account,Expense
+28/11/2025,131.73,Going out,,Main account,Expense
+28/11/2025,91.32,Transportation,,Main account,Expense
+29/11/2025,26.88,Food,,Main account,Expense
+29/11/2025,53.72,Shopping,,Main account,Expense
+01/12/2025,40.17,Food,,Main account,Expense
+01/12/2025,57.32,Extras,PS Game,Main account,Expense
+01/12/2025,392.07,Utilities,Dewa,Main account,Expense
+02/12/2025,54.07,Food,,Main account,Expense
+02/12/2025,28.88,Groceries,,Main account,Expense
+02/12/2025,39.17,Extras,Wrapping paper,Main account,Expense
+02/12/2025,267.04,Utilities,Du,Main account,Expense
+03/12/2025,457.42,Housing,,Main account,Expense
+04/12/2025,245.87,Groceries,,Main account,Expense
+04/12/2025,284.25,Shopping,,Main account,Expense
+05/12/2025,56.59,Groceries,,Main account,Expense
+05/12/2025,187.76,Extras,Amazon,Main account,Expense
+06/12/2025,457.42,Housing,,Main account,Expense
+06/12/2025,130.69,Transportation,,Main account,Expense
+06/12/2025,29.54,Food,,Main account,Expense
+06/12/2025,130.69,Transportation,,Main account,Expense
+06/12/2025,59.84,Food,,Main account,Expense
+07/12/2025,196.04,Shopping,,Main account,Expense
+07/12/2025,33.46,Food,,Main account,Expense
+07/12/2025,29.89,Food,,Main account,Expense
+07/12/2025,75.83,Food,,Main account,Expense
+08/12/2025,457.42,Housing,,Main account,Expense
+09/12/2025,457.42,Housing,,Main account,Expense
+09/12/2025,35.18,Groceries,,Main account,Expense
+09/12/2025,125.42,Groceries,,Main account,Expense
+10/12/2025,457.42,Housing,,Main account,Expense
+10/12/2025,43.51,Groceries,,Main account,Expense
+11/12/2025,630.35,Food,,Main account,Expense
+12/12/2025,52.12,Groceries,,Main account,Expense
+12/12/2025,457.42,Housing,,Main account,Expense
+13/12/2025,196.04,Transportation,,Main account,Expense
+13/12/2025,35.29,Food,,Main account,Expense
+13/12/2025,48.55,Extras,PS5,Main account,Expense
+13/12/2025,33.98,Food,,Main account,Expense
+13/12/2025,58.81,Food,,Main account,Expense
+13/12/2025,7.12,Extras,,Main account,Expense
+14/12/2025,25.43,Food,,Main account,Expense
+14/12/2025,37.38,Food,,Main account,Expense
+14/12/2025,49.13,Food,,Main account,Expense
+14/12/2025,457.42,Housing,,Main account,Expense
+15/12/2025,173.37,Extras,Amazon,Main account,Expense
+15/12/2025,71.88,Transportation,,Main account,Expense
+15/12/2025,84.95,Transportation,,Main account,Expense
+16/12/2025,53.41,Extras,Haircut,Main account,Expense
+16/12/2025,457.42,Housing,,Main account,Expense
+16/12/2025,86.26,Groceries,,Main account,Expense
+17/12/2025,457.42,Housing,,Main account,Expense
+17/12/2025,15.85,Transportation,,Main account,Expense
+17/12/2025,47.05,Transportation,,Main account,Expense
+18/12/2025,40.17,Food,,Main account,Expense
+18/12/2025,130.69,Groceries,,Main account,Expense
+18/12/2025,306.25,Going out,,Main account,Expense
+19/12/2025,102.47,Transportation,,Main account,Expense
+19/12/2025,73.60,Groceries,,Main account,Expense
+19/12/2025,203.88,Groceries,,Main account,Expense
+20/12/2025,457.42,Housing,,Main account,Expense
+21/12/2025,27.08,Food,,Main account,Expense
+21/12/2025,23.72,Food,,Main account,Expense
+21/12/2025,457.42,Housing,,Main account,Expense
+22/12/2025,169.90,Groceries,,Main account,Expense
+22/12/2025,326.73,Shopping,,Main account,Expense
+22/12/2025,59.42,Groceries,,Main account,Expense
+23/12/2025,588.11,Housing,,Main account,Expense
+23/12/2025,32.83,Extras,Robinhood,Main account,Expense
+24/12/2025,326.73,Utilities,Dewa,Main account,Expense
+24/12/2025,"8,190.41",Extras,FTI Delta,Main account,Income
+24/12/2025,"6,000.00",Salary,,Main account,Income
+24/12/2025,86.33,Groceries,,Main account,Expense
+24/12/2025,49.66,Food,,Main account,Expense
+25/12/2025,248.91,Extras,Washing machine,Main account,Expense
+25/12/2025,71.88,Utilities,Car wash,Main account,Expense
+25/12/2025,133.54,Extras,Laundry duvets,Main account,Expense
+25/12/2025,41.29,Food,,Main account,Expense
+26/12/2025,284.88,Extras,,Main account,Income
+26/12/2025,304.47,Going out,,Main account,Expense
+26/12/2025,222.17,Transportation,,Main account,Expense
+26/12/2025,156.83,Food,,Main account,Expense
+27/12/2025,227.91,Going out,,Main account,Expense
+27/12/2025,129.38,Shopping,,Main account,Expense
+28/12/2025,160.25,Going out,,Main account,Expense
+28/12/2025,111.09,Transportation,,Main account,Expense
+29/12/2025,32.63,Food,,Main account,Expense
+29/12/2025,65.35,Shopping,,Main account,Expense
+01/01/2026,29.96,Food,,Main account,Expense
+01/01/2026,42.75,Extras,PS Game,Main account,Expense
+01/01/2026,292.39,Utilities,Dewa,Main account,Expense
+02/01/2026,40.32,Food,,Main account,Expense
+02/01/2026,29.21,Extras,Wrapping paper,Main account,Expense
+02/01/2026,199.15,Utilities,Du,Main account,Expense
+02/01/2026,21.54,Groceries,,Main account,Expense
+03/01/2026,341.12,Housing,,Main account,Expense
+04/01/2026,183.36,Groceries,,Main account,Expense
+04/01/2026,211.98,Shopping,,Main account,Expense
+05/01/2026,42.20,Groceries,,Main account,Expense
+05/01/2026,140.03,Extras,Amazon,Main account,Expense
+06/01/2026,22.03,Food,,Main account,Expense
+06/01/2026,44.63,Food,,Main account,Expense
+06/01/2026,97.46,Transportation,,Main account,Expense
+06/01/2026,97.46,Transportation,,Main account,Expense
+06/01/2026,341.12,Housing,,Main account,Expense
+07/01/2026,146.20,Shopping,,Main account,Expense
+07/01/2026,24.95,Food,,Main account,Expense
+07/01/2026,22.29,Food,,Main account,Expense
+07/01/2026,56.55,Food,,Main account,Expense
+08/01/2026,341.12,Housing,,Main account,Expense
+09/01/2026,341.12,Housing,,Main account,Expense
+09/01/2026,93.54,Groceries,,Main account,Expense
+09/01/2026,26.24,Groceries,,Main account,Expense
+10/01/2026,341.12,Housing,,Main account,Expense
+10/01/2026,32.45,Groceries,,Main account,Expense
+11/01/2026,470.09,Food,,Main account,Expense
+12/01/2026,341.12,Housing,,Main account,Expense
+12/01/2026,38.87,Groceries,,Main account,Expense
+13/01/2026,43.86,Food,,Main account,Expense
+13/01/2026,5.31,Extras,,Main account,Expense
+13/01/2026,36.21,Extras,PS5,Main account,Expense
+13/01/2026,26.32,Food,,Main account,Expense
+13/01/2026,25.34,Food,,Main account,Expense
+13/01/2026,146.20,Transportation,,Main account,Expense
+14/01/2026,18.97,Food,,Main account,Expense
+14/01/2026,36.64,Food,,Main account,Expense
+14/01/2026,27.87,Food,,Main account,Expense
+14/01/2026,341.12,Housing,,Main account,Expense
+15/01/2026,63.35,Transportation,,Main account,Expense
+15/01/2026,129.30,Extras,Amazon,Main account,Expense
+15/01/2026,53.61,Transportation,,Main account,Expense
+16/01/2026,341.12,Housing,,Main account,Expense
+16/01/2026,39.83,Extras,Haircut,Main account,Expense
+16/01/2026,64.33,Groceries,,Main account,Expense
+17/01/2026,341.12,Housing,,Main account,Expense
+17/01/2026,35.09,Transportation,,Main account,Expense
+17/01/2026,11.82,Transportation,,Main account,Expense
+18/01/2026,29.96,Food,,Main account,Expense
+18/01/2026,97.46,Groceries,,Main account,Expense
+18/01/2026,228.39,Going out,,Main account,Expense
+19/01/2026,54.89,Groceries,,Main account,Expense
+19/01/2026,76.42,Transportation,,Main account,Expense
+19/01/2026,152.04,Groceries,,Main account,Expense
+20/01/2026,341.12,Housing,,Main account,Expense
+21/01/2026,341.12,Housing,,Main account,Expense
+21/01/2026,20.19,Food,,Main account,Expense
+21/01/2026,17.69,Food,,Main account,Expense
+22/01/2026,243.66,Shopping,,Main account,Expense
+22/01/2026,126.70,Groceries,,Main account,Expense
+22/01/2026,44.32,Groceries,,Main account,Expense
+23/01/2026,438.59,Housing,,Main account,Expense
+23/01/2026,24.48,Extras,Robinhood,Main account,Expense
+24/01/2026,"6,108.10",Extras,FTI Delta,Main account,Income
+24/01/2026,243.66,Utilities,Dewa,Main account,Expense
+24/01/2026,64.38,Groceries,,Main account,Expense
+24/01/2026,"6,000.00",Salary,,Main account,Income
+24/01/2026,37.04,Food,,Main account,Expense
+25/01/2026,30.79,Food,,Main account,Expense
+25/01/2026,99.59,Extras,Laundry duvets,Main account,Expense
+25/01/2026,53.61,Utilities,Car wash,Main account,Expense
+25/01/2026,185.63,Extras,Washing machine,Main account,Expense
+26/01/2026,212.45,Extras,,Main account,Income
+26/01/2026,227.06,Going out,,Main account,Expense
+26/01/2026,116.96,Food,,Main account,Expense
+26/01/2026,165.69,Transportation,,Main account,Expense
+27/01/2026,96.49,Shopping,,Main account,Expense
+27/01/2026,169.97,Going out,,Main account,Expense
+28/01/2026,119.51,Going out,,Main account,Expense
+28/01/2026,82.84,Transportation,,Main account,Expense
+29/01/2026,48.73,Shopping,,Main account,Expense
+29/01/2026,24.40,Food,,Main account,Expense
+01/02/2026,50.03,Extras,PS Game,Main account,Expense
+01/02/2026,35.07,Food,,Main account,Expense
+01/02/2026,342.23,Utilities,Dewa,Main account,Expense
+02/02/2026,34.19,Extras,Wrapping paper,Main account,Expense
+02/02/2026,233.09,Utilities,Du,Main account,Expense
+02/02/2026,25.21,Groceries,,Main account,Expense
+02/02/2026,47.19,Food,,Main account,Expense
+03/02/2026,399.27,Housing,,Main account,Expense
+04/02/2026,214.61,Groceries,,Main account,Expense
+04/02/2026,248.12,Shopping,,Main account,Expense
+05/02/2026,49.40,Groceries,,Main account,Expense
+05/02/2026,163.89,Extras,Amazon,Main account,Expense
+06/02/2026,399.27,Housing,,Main account,Expense
+06/02/2026,52.24,Food,,Main account,Expense
+06/02/2026,114.08,Transportation,,Main account,Expense
+06/02/2026,25.78,Food,,Main account,Expense
+06/02/2026,114.08,Transportation,,Main account,Expense
+07/02/2026,26.09,Food,,Main account,Expense
+07/02/2026,29.20,Food,,Main account,Expense
+07/02/2026,66.19,Food,,Main account,Expense
+07/02/2026,171.12,Shopping,,Main account,Expense
+08/02/2026,399.27,Housing,,Main account,Expense
+09/02/2026,30.71,Groceries,,Main account,Expense
+09/02/2026,399.27,Housing,,Main account,Expense
+09/02/2026,109.48,Groceries,,Main account,Expense
+10/02/2026,37.98,Groceries,,Main account,Expense
+10/02/2026,399.27,Housing,,Main account,Expense
+11/02/2026,550.22,Food,,Main account,Expense
+12/02/2026,45.49,Groceries,,Main account,Expense
+12/02/2026,399.27,Housing,,Main account,Expense
+13/02/2026,171.12,Transportation,,Main account,Expense
+13/02/2026,6.22,Extras,,Main account,Expense
+13/02/2026,42.38,Extras,PS5,Main account,Expense
+13/02/2026,29.66,Food,,Main account,Expense
+13/02/2026,30.80,Food,,Main account,Expense
+13/02/2026,51.33,Food,,Main account,Expense
+14/02/2026,399.27,Housing,,Main account,Expense
+14/02/2026,32.63,Food,,Main account,Expense
+14/02/2026,42.88,Food,,Main account,Expense
+14/02/2026,22.20,Food,,Main account,Expense
+15/02/2026,74.15,Transportation,,Main account,Expense
+15/02/2026,62.74,Transportation,,Main account,Expense
+15/02/2026,151.33,Extras,Amazon,Main account,Expense
+16/02/2026,75.29,Groceries,,Main account,Expense
+16/02/2026,399.27,Housing,,Main account,Expense
+16/02/2026,46.62,Extras,Haircut,Main account,Expense
+17/02/2026,399.27,Housing,,Main account,Expense
+17/02/2026,41.07,Transportation,,Main account,Expense
+17/02/2026,13.84,Transportation,,Main account,Expense
+18/02/2026,114.08,Groceries,,Main account,Expense
+18/02/2026,35.07,Food,,Main account,Expense
+18/02/2026,267.32,Going out,,Main account,Expense
+19/02/2026,89.45,Transportation,,Main account,Expense
+19/02/2026,177.96,Groceries,,Main account,Expense
+19/02/2026,64.25,Groceries,,Main account,Expense
+20/02/2026,399.27,Housing,,Main account,Expense
+21/02/2026,23.64,Food,,Main account,Expense
+21/02/2026,20.71,Food,,Main account,Expense
+21/02/2026,399.27,Housing,,Main account,Expense
+22/02/2026,51.87,Groceries,,Main account,Expense
+22/02/2026,285.19,Shopping,,Main account,Expense
+22/02/2026,148.30,Groceries,,Main account,Expense
+23/02/2026,513.35,Housing,,Main account,Expense
+23/02/2026,28.66,Extras,Robinhood,Main account,Expense
+24/02/2026,75.36,Groceries,,Main account,Expense
+24/02/2026,43.35,Food,,Main account,Expense
+24/02/2026,"7,149.26",Extras,FTI Delta,Main account,Income
+24/02/2026,285.19,Utilities,Dewa,Main account,Expense
+24/02/2026,"6,000.00",Salary,,Main account,Income
+25/02/2026,36.04,Food,,Main account,Expense
+25/02/2026,116.56,Extras,Laundry duvets,Main account,Expense
+25/02/2026,217.27,Extras,Washing machine,Main account,Expense
+25/02/2026,62.74,Utilities,Car wash,Main account,Expense
+26/02/2026,248.67,Extras,,Main account,Income
+26/02/2026,193.93,Transportation,,Main account,Expense
+26/02/2026,265.77,Going out,,Main account,Expense
+26/02/2026,136.89,Food,,Main account,Expense
+27/02/2026,112.94,Shopping,,Main account,Expense
+27/02/2026,198.94,Going out,,Main account,Expense
+28/02/2026,96.97,Transportation,,Main account,Expense
+28/02/2026,57.04,Shopping,,Main account,Expense
+28/02/2026,139.88,Going out,,Main account,Expense
+28/02/2026,28.50,Food,,Main account,Expense
+01/03/2026,44.45,Extras,PS Game,Main account,Expense
+01/03/2026,31.15,Food,,Main account,Expense
+01/03/2026,304.02,Utilities,Dewa,Main account,Expense
+02/03/2026,41.92,Food,,Main account,Expense
+02/03/2026,30.37,Extras,Wrapping paper,Main account,Expense
+02/03/2026,22.40,Groceries,,Main account,Expense
+02/03/2026,207.07,Utilities,Du,Main account,Expense
+03/03/2026,354.69,Housing,,Main account,Expense
+04/03/2026,220.41,Shopping,,Main account,Expense
+04/03/2026,190.65,Groceries,,Main account,Expense
+05/03/2026,43.88,Groceries,,Main account,Expense
+05/03/2026,145.60,Extras,Amazon,Main account,Expense
+06/03/2026,354.69,Housing,,Main account,Expense
+06/03/2026,101.34,Transportation,,Main account,Expense
+06/03/2026,101.34,Transportation,,Main account,Expense
+06/03/2026,46.40,Food,,Main account,Expense
+06/03/2026,22.90,Food,,Main account,Expense
+07/03/2026,23.18,Food,,Main account,Expense
+07/03/2026,58.80,Food,,Main account,Expense
+07/03/2026,25.94,Food,,Main account,Expense
+07/03/2026,152.01,Shopping,,Main account,Expense
+08/03/2026,354.69,Housing,,Main account,Expense
+09/03/2026,97.26,Groceries,,Main account,Expense
+09/03/2026,27.28,Groceries,,Main account,Expense
+09/03/2026,354.69,Housing,,Main account,Expense
+10/03/2026,354.69,Housing,,Main account,Expense
+10/03/2026,33.74,Groceries,,Main account,Expense
+11/03/2026,488.78,Food,,Main account,Expense
+12/03/2026,354.69,Housing,,Main account,Expense
+12/03/2026,40.41,Groceries,,Main account,Expense
+13/03/2026,152.01,Transportation,,Main account,Expense
+13/03/2026,27.36,Food,,Main account,Expense
+13/03/2026,5.52,Extras,,Main account,Expense
+13/03/2026,37.65,Extras,PS5,Main account,Expense
+13/03/2026,45.60,Food,,Main account,Expense
+13/03/2026,26.35,Food,,Main account,Expense
+14/03/2026,354.69,Housing,,Main account,Expense
+14/03/2026,28.98,Food,,Main account,Expense
+14/03/2026,19.72,Food,,Main account,Expense
+14/03/2026,38.09,Food,,Main account,Expense
+15/03/2026,134.44,Extras,Amazon,Main account,Expense
+15/03/2026,65.87,Transportation,,Main account,Expense
+15/03/2026,55.74,Transportation,,Main account,Expense
+16/03/2026,66.88,Groceries,,Main account,Expense
+16/03/2026,41.42,Extras,Haircut,Main account,Expense
+16/03/2026,354.69,Housing,,Main account,Expense
+17/03/2026,354.69,Housing,,Main account,Expense
+17/03/2026,12.29,Transportation,,Main account,Expense
+17/03/2026,36.48,Transportation,,Main account,Expense
+18/03/2026,101.34,Groceries,,Main account,Expense
+18/03/2026,31.15,Food,,Main account,Expense
+18/03/2026,237.47,Going out,,Main account,Expense
+19/03/2026,79.46,Transportation,,Main account,Expense
+19/03/2026,158.09,Groceries,,Main account,Expense
+19/03/2026,57.07,Groceries,,Main account,Expense
+20/03/2026,354.69,Housing,,Main account,Expense
+21/03/2026,21.00,Food,,Main account,Expense
+21/03/2026,18.39,Food,,Main account,Expense
+21/03/2026,354.69,Housing,,Main account,Expense
+22/03/2026,131.74,Groceries,,Main account,Expense
+22/03/2026,253.35,Shopping,,Main account,Expense
+22/03/2026,46.08,Groceries,,Main account,Expense
+23/03/2026,456.03,Housing,,Main account,Expense
+23/03/2026,25.46,Extras,Robinhood,Main account,Expense
+24/03/2026,38.51,Food,,Main account,Expense
+24/03/2026,253.35,Utilities,Dewa,Main account,Expense
+24/03/2026,"6,351.01",Extras,FTI Delta,Main account,Income
+24/03/2026,66.95,Groceries,,Main account,Expense
+24/03/2026,"6,000.00",Salary,,Main account,Income
+25/03/2026,55.74,Utilities,Car wash,Main account,Expense
+25/03/2026,32.01,Food,,Main account,Expense
+25/03/2026,193.01,Extras,Washing machine,Main account,Expense
+25/03/2026,103.55,Extras,Laundry duvets,Main account,Expense
+26/03/2026,121.61,Food,,Main account,Expense
+26/03/2026,220.90,Extras,,Main account,Income
+26/03/2026,172.28,Transportation,,Main account,Expense
+26/03/2026,236.09,Going out,,Main account,Expense
+27/03/2026,100.33,Shopping,,Main account,Expense
+27/03/2026,176.73,Going out,,Main account,Expense
+28/03/2026,86.14,Transportation,,Main account,Expense
+28/03/2026,124.26,Going out,,Main account,Expense
+29/03/2026,50.67,Shopping,,Main account,Expense
+29/03/2026,400.00,Food,,Main account,Expense
+29/03/2026,300.00,Food,,Main account,Expense
+29/03/2026,25.34,Food,,Main account,Expense
+30/03/2026,400.00,Food,,Main account,Expense
+31/03/2026,500.00,Food,,Main account,Expense
+01/04/2026,44.88,Extras,PS Game,Main account,Expense
+01/04/2026,31.45,Food,,Main account,Expense
+01/04/2026,306.96,Utilities,Dewa,Main account,Expense
+02/04/2026,209.07,Utilities,Du,Main account,Expense
+02/04/2026,22.61,Groceries,,Main account,Expense
+02/04/2026,30.67,Extras,Wrapping paper,Main account,Expense
+02/04/2026,42.33,Food,,Main account,Expense
+03/04/2026,358.12,Housing,,Main account,Expense
+04/04/2026,192.49,Groceries,,Main account,Expense
+04/04/2026,222.55,Shopping,,Main account,Expense
+05/04/2026,300.00,Food,,Main account,Expense
+05/04/2026,147.00,Extras,Amazon,Main account,Expense
+05/04/2026,44.30,Groceries,,Main account,Expense
+06/04/2026,23.12,Food,,Main account,Expense
+06/04/2026,46.85,Food,,Main account,Expense
+06/04/2026,358.12,Housing,,Main account,Expense
+06/04/2026,102.32,Transportation,,Main account,Expense
+06/04/2026,102.32,Transportation,,Main account,Expense
+07/04/2026,153.48,Shopping,,Main account,Expense
+07/04/2026,59.37,Food,,Main account,Expense
+07/04/2026,26.19,Food,,Main account,Expense
+07/04/2026,23.40,Food,,Main account,Expense
+08/04/2026,358.12,Housing,,Main account,Expense
+09/04/2026,27.54,Groceries,,Main account,Expense
+09/04/2026,98.20,Groceries,,Main account,Expense
+09/04/2026,358.12,Housing,,Main account,Expense
+10/04/2026,34.06,Groceries,,Main account,Expense
+10/04/2026,358.12,Housing,,Main account,Expense
+11/04/2026,493.51,Food,,Main account,Expense
+12/04/2026,40.81,Groceries,,Main account,Expense
+12/04/2026,358.12,Housing,,Main account,Expense
+13/04/2026,46.04,Food,,Main account,Expense
+13/04/2026,26.60,Food,,Main account,Expense
+13/04/2026,5.58,Extras,,Main account,Expense
+13/04/2026,27.63,Food,,Main account,Expense
+13/04/2026,38.01,Extras,PS5,Main account,Expense
+13/04/2026,153.48,Transportation,,Main account,Expense
+14/04/2026,358.12,Housing,,Main account,Expense
+14/04/2026,29.26,Food,,Main account,Expense
+14/04/2026,19.91,Food,,Main account,Expense
+14/04/2026,38.46,Food,,Main account,Expense
+15/04/2026,135.74,Extras,Amazon,Main account,Expense
+15/04/2026,56.28,Transportation,,Main account,Expense
+15/04/2026,66.51,Transportation,,Main account,Expense
+16/04/2026,67.53,Groceries,,Main account,Expense
+16/04/2026,41.82,Extras,Haircut,Main account,Expense
+16/04/2026,358.12,Housing,,Main account,Expense
+17/04/2026,36.84,Transportation,,Main account,Expense
+17/04/2026,12.41,Transportation,,Main account,Expense
+17/04/2026,358.12,Housing,,Main account,Expense
+18/04/2026,102.32,Groceries,,Main account,Expense
+18/04/2026,239.77,Going out,,Main account,Expense
+18/04/2026,31.45,Food,,Main account,Expense
+19/04/2026,80.23,Transportation,,Main account,Expense
+19/04/2026,57.63,Groceries,,Main account,Expense
+19/04/2026,159.62,Groceries,,Main account,Expense
+20/04/2026,358.12,Housing,,Main account,Expense
+21/04/2026,21.20,Food,,Main account,Expense
+21/04/2026,358.12,Housing,,Main account,Expense
+21/04/2026,18.57,Food,,Main account,Expense
+22/04/2026,46.52,Groceries,,Main account,Expense
+22/04/2026,255.80,Shopping,,Main account,Expense
+22/04/2026,133.02,Groceries,,Main account,Expense
+23/04/2026,460.44,Housing,,Main account,Expense
+23/04/2026,25.70,Extras,Robinhood,Main account,Expense
+24/04/2026,"4,000.00",Salary,FTI Delta,Main account,Income
+24/04/2026,38.88,Food,,Main account,Expense
+24/04/2026,255.80,Utilities,Dewa,Main account,Expense
+24/04/2026,67.59,Groceries,,Main account,Expense
+24/04/2026,"6,000.00",Salary,,Main account,Income
+25/04/2026,300.00,Food,,Main account,Expense
+25/04/2026,56.28,Utilities,Car wash,Main account,Expense
+25/04/2026,104.55,Extras,Laundry duvets,Main account,Expense
+25/04/2026,194.88,Extras,Washing machine,Main account,Expense
+26/04/2026,"4,000.00",Salary,,Main account,Income
+26/04/2026,122.78,Food,,Main account,Expense
+26/04/2026,238.37,Going out,,Main account,Expense
+26/04/2026,173.94,Transportation,,Main account,Expense
+27/04/2026,101.30,Shopping,,Main account,Expense
+27/04/2026,178.44,Going out,,Main account,Expense
+28/04/2026,86.97,Transportation,,Main account,Expense
+28/04/2026,125.46,Going out,,Main account,Expense
+29/04/2026,500.00,Food,,Main account,Expense
+29/04/2026,51.16,Shopping,,Main account,Expense
+29/04/2026,25.58,Food,,Main account,Expense
+30/04/2026,300.00,Food,,Main account,Expense
+01/05/2026,43.86,Extras,PS Game,Main account,Expense
+01/05/2026,30.74,Food,,Main account,Expense
+01/05/2026,300.00,Utilities,Dewa,Main account,Expense
+02/05/2026,204.33,Utilities,Du,Main account,Expense
+02/05/2026,41.37,Food,,Main account,Expense
+02/05/2026,29.97,Extras,Wrapping paper,Main account,Expense
+02/05/2026,22.10,Groceries,,Main account,Expense
+03/05/2026,350.00,Housing,,Main account,Expense
+04/05/2026,188.13,Groceries,,Main account,Expense
+04/05/2026,217.50,Shopping,,Main account,Expense
+05/05/2026,43.30,Groceries,,Main account,Expense
+05/05/2026,143.67,Extras,Amazon,Main account,Expense
+06/05/2026,100.00,Transportation,,Main account,Expense
+06/05/2026,100.00,Transportation,,Main account,Expense
+06/05/2026,22.60,Food,,Main account,Expense
+06/05/2026,45.79,Food,,Main account,Expense
+06/05/2026,350.00,Housing,,Main account,Expense
+07/05/2026,22.87,Food,,Main account,Expense
+07/05/2026,58.02,Food,,Main account,Expense
+07/05/2026,150.00,Shopping,,Main account,Expense
+07/05/2026,25.60,Food,,Main account,Expense
+08/05/2026,350.00,Housing,,Main account,Expense
+09/05/2026,95.97,Groceries,,Main account,Expense
+09/05/2026,350.00,Housing,,Main account,Expense
+09/05/2026,26.92,Groceries,,Main account,Expense
+10/05/2026,350.00,Housing,,Main account,Expense
+10/05/2026,33.29,Groceries,,Main account,Expense
+11/05/2026,482.32,Food,,Main account,Expense
+12/05/2026,39.88,Groceries,,Main account,Expense
+12/05/2026,350.00,Housing,,Main account,Expense
+13/05/2026,45.00,Food,,Main account,Expense
+13/05/2026,5.45,Extras,,Main account,Expense
+13/05/2026,37.15,Extras,PS5,Main account,Expense
+13/05/2026,27.00,Food,,Main account,Expense
+13/05/2026,26.00,Food,,Main account,Expense
+13/05/2026,150.00,Transportation,,Main account,Expense
+14/05/2026,350.00,Housing,,Main account,Expense
+14/05/2026,37.59,Food,,Main account,Expense
+14/05/2026,19.46,Food,,Main account,Expense
+14/05/2026,28.60,Food,,Main account,Expense
+15/05/2026,65.00,Transportation,,Main account,Expense
+15/05/2026,132.66,Extras,Amazon,Main account,Expense
+15/05/2026,55.00,Transportation,,Main account,Expense
+16/05/2026,66.00,Groceries,,Main account,Expense
+16/05/2026,40.87,Extras,Haircut,Main account,Expense
+16/05/2026,350.00,Housing,,Main account,Expense
+17/05/2026,12.13,Transportation,,Main account,Expense
+17/05/2026,36.00,Transportation,,Main account,Expense
+17/05/2026,350.00,Housing,,Main account,Expense
+18/05/2026,100.00,Groceries,,Main account,Expense
+18/05/2026,234.33,Going out,,Main account,Expense
+18/05/2026,30.74,Food,,Main account,Expense
+19/05/2026,156.00,Groceries,,Main account,Expense
+19/05/2026,56.32,Groceries,,Main account,Expense
+19/05/2026,78.41,Transportation,,Main account,Expense
+20/05/2026,350.00,Housing,,Main account,Expense
+21/05/2026,350.00,Housing,,Main account,Expense
+21/05/2026,18.15,Food,,Main account,Expense
+21/05/2026,20.72,Food,,Main account,Expense
+22/05/2026,45.47,Groceries,,Main account,Expense
+22/05/2026,130.00,Groceries,,Main account,Expense
+22/05/2026,250.00,Shopping,,Main account,Expense
+23/05/2026,25.12,Extras,Robinhood,Main account,Expense
+23/05/2026,450.00,Housing,,Main account,Expense
+24/05/2026,38.00,Food,,Main account,Expense
+24/05/2026,250.00,Utilities,Dewa,Main account,Expense
+24/05/2026,66.06,Groceries,,Main account,Expense
+24/05/2026,"6,000.00",Salary,,Main account,Income
+24/05/2026,"10,000.00",Salary,FTI Delta,Main account,Income
+25/05/2026,31.59,Food,,Main account,Expense
+25/05/2026,190.46,Extras,Washing machine,Main account,Expense
+25/05/2026,55.00,Utilities,Car wash,Main account,Expense
+25/05/2026,102.18,Extras,Laundry duvets,Main account,Expense
+26/05/2026,170.00,Transportation,,Main account,Expense
+26/05/2026,120.00,Food,,Main account,Expense
+26/05/2026,232.97,Going out,,Main account,Expense
+26/05/2026,217.98,Extras,,Main account,Income
+27/05/2026,99.00,Shopping,,Main account,Expense
+27/05/2026,174.39,Going out,,Main account,Expense
+28/05/2026,122.62,Going out,,Main account,Expense
+28/05/2026,85.00,Transportation,,Main account,Expense
+29/05/2026,56.00,Clothes,,Main account,Expense
+29/05/2026,50.00,Shopping,,Main account,Expense
+29/05/2026,25.00,Food,,Main account,Expense

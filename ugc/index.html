@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quanto — Creator Guide</title>
+<meta name="description" content="A step-by-step guide for UGC creators making content about Quanto.">
+<link rel="icon" type="image/png" href="../quanto-app-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0C0F11;
+    --sem-8:  rgba(255,255,255,0.08);
+    --sem-15: rgba(255,255,255,0.15);
+    --border: rgba(255,255,255,0.08);
+    --brand:  #0cbba1;
+    --text-1: #ffffff;
+    --text-2: rgba(255,255,255,0.55);
+    --text-3: rgba(255,255,255,0.30);
+  }
+
+  html, body {
+    margin: 0;
+    min-height: 100%;
+    background: #0C0F11;
+    overscroll-behavior: none;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(180deg, #283339 0%, #0C0F11 100%);
+    pointer-events: none;
+  }
+
+  body {
+    font-family: 'Sora', sans-serif;
+    background: transparent;
+    color: var(--text-1);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    padding: 80px 0 64px;
+    text-align: center;
+  }
+
+  .hero-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    overflow: hidden;
+    margin: 0 auto 28px;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+  }
+
+  .hero-icon img { width: 100%; height: 100%; display: block; }
+
+  .hero h1 {
+    font-size: clamp(32px, 6vw, 48px);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin-bottom: 16px;
+  }
+
+  .hero h1 .teal { color: var(--brand); }
+
+  .hero p {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--text-2);
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  /* ─── LAYOUT ─── */
+  .wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 28px;
+    position: relative;
+    min-height: 100vh;
+    background: transparent;
+  }
+
+  /* ─── STEP NAV ─── */
+  /* Mobile-first: sticky horizontal tab bar at the top */
+  .step-nav {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    background: rgba(12,15,17,0.82);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .step-nav ol {
+    list-style: none;
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    padding: 10px 16px;
+    scrollbar-width: none;
+  }
+  .step-nav ol::-webkit-scrollbar { display: none; }
+
+  .step-nav a {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    flex-shrink: 0;
+    white-space: nowrap;
+    text-decoration: none;
+    padding: 7px 13px;
+    border-radius: 100px;
+    background: var(--sem-8);
+    border: 1px solid var(--border);
+    color: var(--text-2);
+    transition: all 0.2s;
+  }
+
+  .step-nav a .num {
+    font-size: 11px;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    flex-shrink: 0;
+    color: var(--text-3);
+  }
+
+  .step-nav a .label {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+
+  .step-nav a.active {
+    background: rgba(12,187,161,0.14);
+    border-color: var(--brand);
+    color: var(--text-1);
+  }
+
+  .step-nav a.active .num { color: var(--brand); }
+
+  /* sub-items (reference sections inside a step) */
+  .step-nav a.sub .label { color: var(--text-3); }
+  .step-nav a.sub.active .label { color: var(--text-1); }
+
+  /* Desktop: fixed vertical sidebar, single-line items */
+  @media (min-width: 1140px) {
+    .step-nav {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      left: calc(50vw - 544px);
+      z-index: 20;
+      background: none;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      border-bottom: none;
+    }
+
+    .step-nav ol {
+      flex-direction: column;
+      gap: 2px;
+      overflow: visible;
+      padding: 0;
+    }
+
+    .step-nav a {
+      gap: 10px;
+      padding: 7px 12px;
+      border-radius: 8px;
+      background: none;
+      border: none;
+      border-left: 2px solid transparent;
+      color: var(--text-3);
+    }
+
+    .step-nav a:hover { color: var(--text-2); }
+
+    .step-nav a .num { width: 18px; }
+
+    .step-nav a .label { font-size: 12.5px; }
+
+    .step-nav a.active {
+      background: var(--sem-8);
+      border-color: transparent;
+      border-left-color: var(--brand);
+      color: var(--text-1);
+    }
+
+    .step-nav a.sub { padding-left: 40px; }
+    .step-nav a.sub .label { font-size: 12px; }
+  }
+
+  /* ─── DIVIDER ─── */
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 0;
+  }
+
+  /* ─── STEP SECTION ─── */
+  .step {
+    padding: 64px 0;
+    scroll-margin-top: 72px;
+  }
+  .section-anchor { scroll-margin-top: 72px; }
+  @media (min-width: 1140px) {
+    .step { scroll-margin-top: 24px; }
+    .section-anchor { scroll-margin-top: 24px; }
+  }
+
+  .step-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--brand);
+    margin-bottom: 12px;
+  }
+
+  .step h2 {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: 28px;
+  }
+
+  /* ─── ORDERED INSTRUCTION LIST ─── */
+  .steps-list {
+    list-style: none;
+    counter-reset: step;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .steps-list > li {
+    counter-increment: step;
+    position: relative;
+    padding-left: 38px;
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--text-2);
+    line-height: 1.7;
+  }
+
+  .steps-list > li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 1px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--sem-8);
+    border: 1px solid var(--border);
+    color: var(--text-1);
+    font-size: 12px;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .steps-list > li strong { color: var(--text-1); font-weight: 600; }
+
+  /* ─── PLATFORM SUB-TITLE ─── */
+  .platform-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text-1);
+    margin: 40px 0 20px;
+  }
+
+  .platform-label::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--brand);
+  }
+
+  /* ─── NOTE ─── */
+  .note {
+    margin-top: 22px;
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--text-3);
+    font-style: italic;
+  }
+
+  /* ─── COPY ELEMENTS ─── */
+  .copy-hint {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--text-3);
+    margin: 14px 0 12px;
+  }
+
+  /* single inline copy block (account name, bio, link) */
+  .copy-block {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+    text-align: left;
+    background: var(--sem-8);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-top: 12px;
+    cursor: pointer;
+    font-family: 'Sora', sans-serif;
+    color: var(--text-1);
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .copy-block:hover { border-color: var(--sem-15); }
+
+  .copy-block .cb-text {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6;
+    white-space: pre-line;
+    word-break: break-word;
+  }
+
+  .copy-ic {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    margin-top: 2px;
+    color: var(--text-3);
+    transition: color 0.2s;
+  }
+
+  .copy-block:hover .copy-ic { color: var(--brand); }
+
+  .copy-block.copied { border-color: var(--brand); background: rgba(12,187,161,0.10); }
+  .copy-block.copied .copy-ic { color: var(--brand); }
+
+  /* chips (handles) */
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .chip {
+    font-family: 'Sora', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text-2);
+    background: var(--sem-8);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 8px 14px;
+    cursor: pointer;
+    transition: all 0.18s;
+    white-space: nowrap;
+  }
+
+  .chip:hover { border-color: var(--sem-15); color: var(--text-1); }
+  .chip.copied {
+    background: rgba(12,187,161,0.14);
+    border-color: var(--brand);
+    color: var(--brand);
+  }
+
+  /* stacked copy rows (hooks, hashtags) */
+  .copy-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .copy-row {
+    text-align: left;
+    width: 100%;
+    background: var(--sem-8);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 14px;
+    cursor: pointer;
+    font-family: 'Sora', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--text-2);
+    line-height: 1.6;
+    transition: all 0.18s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .copy-row:hover { border-color: var(--sem-15); color: var(--text-1); }
+  .copy-row.copied { border-color: var(--brand); color: var(--text-1); background: rgba(12,187,161,0.08); }
+  .copy-row .copy-ic { margin-top: 0; }
+  .copy-row.copied .copy-ic { color: var(--brand); }
+
+  /* hashtag rows use mono-ish tighter look */
+  .copy-row.tag { font-weight: 400; color: var(--brand); }
+  .copy-row.tag:hover { color: var(--brand); }
+
+
+  .group-label {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text-1);
+    margin: 24px 0 4px;
+  }
+
+  /* ─── VIDEO ─── */
+  .video-frame {
+    width: 100%;
+    margin: 0 auto 32px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.45);
+    background: #000;
+    display: block;
+  }
+
+  .video-frame.portrait {
+    max-width: 300px;
+    border-radius: 22px;
+  }
+
+  .video-frame video {
+    width: 100%;
+    display: block;
+    border-radius: inherit;
+  }
+
+  /* ─── CTA BUTTON (matches playbook) ─── */
+  .btn-wrap {
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 100px;
+    background: #acb0b3;
+    padding-bottom: 4px;
+    transition: transform 0.2s;
+    cursor: pointer;
+  }
+
+  .btn-wrap:hover { transform: translateY(-1px); }
+  .btn-wrap:active { transform: translateY(1px); }
+
+  .btn-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: linear-gradient(180deg, #eff2f6 0%, #dfdfdf 100%);
+    border: 2px solid #ffffff;
+    background-clip: padding-box;
+    color: #151a1f;
+    font-family: 'Sora', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+    padding: 14px 16px;
+    border-radius: 100px;
+  }
+
+  .btn-inner svg { width: 20px; height: 20px; flex-shrink: 0; }
+
+  /* ─── AUTOMATION CONFIG BLOCK ─── */
+  .config {
+    margin-top: 16px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--sem-8);
+    padding: 6px 18px 18px;
+  }
+
+  .config-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px 10px;
+    padding: 16px 0 14px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .config-row:last-of-type { border-bottom: none; }
+
+  .config-key {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--text-2);
+  }
+
+  .config-val {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--brand);
+    background: rgba(12,187,161,0.12);
+    border-radius: 6px;
+    padding: 3px 9px;
+  }
+
+  .config-sub {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-3);
+    margin: 16px 0 -2px;
+  }
+
+  .config .copy-rows { margin-top: 10px; }
+  .config .copy-block { margin-top: 10px; }
+
+  /* ─── MANYCHAT CAROUSEL ─── */
+  .carousel {
+    position: relative;
+    margin: 8px 0 4px;
+    overflow: hidden;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: var(--sem-8);
+    touch-action: pan-y;
+  }
+
+  .carousel-track {
+    display: flex;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+  }
+
+  .carousel-slide {
+    flex: 0 0 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    user-select: none;
+  }
+
+  .carousel-slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+  }
+
+  .car-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--sem-15);
+    background: rgba(12,15,17,0.72);
+    backdrop-filter: blur(8px);
+    color: var(--text-1);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.18s;
+    z-index: 3;
+  }
+  .car-btn:hover { background: rgba(12,15,17,0.92); border-color: var(--brand); }
+  .car-btn svg { width: 18px; height: 18px; }
+  .car-btn.prev { left: 10px; }
+  .car-btn.next { right: 10px; }
+  .car-btn[disabled] { opacity: 0; pointer-events: none; }
+
+  .car-dots {
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+    margin-top: 16px;
+  }
+
+  .car-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--sem-15);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .car-dot.active { background: var(--brand); transform: scale(1.25); }
+
+  .car-counter {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--text-3);
+    margin-top: 12px;
+  }
+  .car-counter b { color: var(--text-1); font-weight: 600; }
+
+  /* ─── TOAST ─── */
+  .toast {
+    position: fixed;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: var(--brand);
+    color: #07211d;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 11px 20px;
+    border-radius: 100px;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.45);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.22s, transform 0.22s;
+    z-index: 100;
+  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    padding: 32px 0;
+    text-align: center;
+    font-size: 11px;
+    color: var(--text-3);
+    font-weight: 300;
+    border-top: 1px solid var(--border);
+  }
+
+  .end-note {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--brand);
+    padding: 8px 0 0;
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 600px) {
+    .wrap { padding: 0 20px; }
+    .hero { padding: 64px 0 48px; }
+    .step { padding: 52px 0; }
+    .car-btn { width: 34px; height: 34px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── STEP NAV ─── -->
+<nav class="step-nav" aria-label="Steps">
+  <ol>
+    <li><a href="#step-1" data-nav="step-1"><span class="num">01</span><span class="label">Create a new account</span></a></li>
+    <li><a href="#step-2" data-nav="step-2"><span class="num">02</span><span class="label">Pin the set up video</span></a></li>
+    <li><a href="#step-3" data-nav="step-3"><span class="num">03</span><span class="label">Set up &amp; recording</span></a></li>
+    <li><a href="#step-4" data-nav="step-4"><span class="num">04</span><span class="label">ManyChat automation</span></a></li>
+    <li><a href="#step-5" data-nav="step-5"><span class="num">05</span><span class="label">Film the videos</span></a></li>
+    <li><a href="#step-6" data-nav="step-6"><span class="num">06</span><span class="label">Edit the video</span></a></li>
+    <li><a href="#step-7" data-nav="step-7"><span class="num">07</span><span class="label">Post the video</span></a></li>
+    <li><a href="#hooks-section" data-nav="hooks-section" class="sub"><span class="label">Hooks / Captions</span></a></li>
+    <li><a href="#hashtags-section" data-nav="hashtags-section" class="sub"><span class="label">Hashtags</span></a></li>
+  </ol>
+</nav>
+
+<div class="wrap">
+
+  <!-- ─── HERO ─── -->
+  <div class="hero">
+    <div class="hero-icon"><img src="../quanto-app-icon.png" alt="Quanto"></div>
+    <h1>Creator<br><span class="teal">Guide</span></h1>
+    <p>A step-by-step guide for UGC creators making content about Quanto.</p>
+  </div>
+
+  <hr>
+
+  <!-- ═══ STEP 1 ═══ -->
+  <section class="step" id="step-1">
+    <div class="step-label">Step 1</div>
+    <h2>Create a new account</h2>
+
+    <ol class="steps-list">
+      <li>Create a new <strong>Instagram</strong> account and a new <strong>TikTok</strong> account.</li>
+      <li>Pick from any of these handles or create something similar — tap any handle to copy it:
+        <div class="chips" id="handles"></div>
+      </li>
+      <li>Use this format for the account name — tap to copy:
+        <button class="copy-block" data-copy="(Name) – Budgeting tips💸">
+          <span class="cb-text">(Name) – Budgeting tips💸</span>
+          <svg class="copy-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+        </button>
+        <div class="note">Example: Sofia – Budgeting tips💸</div>
+      </li>
+      <li>Add a profile picture of a person. It can be a real photo of you or a made-up person.</li>
+    </ol>
+
+    <div class="platform-label">Instagram</div>
+    <ol class="steps-list" start="5">
+      <li>Use this bio — tap to copy:
+        <button class="copy-block" data-copy="Set up guide on pinned posts. Download the app 👇🏻">
+          <span class="cb-text">Set up guide on pinned posts. Download the app 👇🏻</span>
+          <svg class="copy-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+        </button>
+      </li>
+      <li>Add this link — tap to copy:
+        <button class="copy-block" data-copy="apps.apple.com/ae/app/quanto-expense-tracker/id6749017099">
+          <span class="cb-text">apps.apple.com/ae/app/quanto-expense-tracker/id6749017099</span>
+          <svg class="copy-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+        </button>
+      </li>
+    </ol>
+
+    <div class="platform-label">TikTok</div>
+    <ol class="steps-list" start="7">
+      <li>Use this bio — tap to copy (both lines together):
+        <button class="copy-block" data-copy="Set up guide on pinned posts. Download the app 👇🏻
+quanto.app/download">
+          <span class="cb-text">Set up guide on pinned posts. Download the app 👇🏻
+quanto.app/download</span>
+          <svg class="copy-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+        </button>
+      </li>
+    </ol>
+  </section>
+
+  <hr>
+
+  <!-- ═══ STEP 2 ═══ -->
+  <section class="step" id="step-2">
+    <div class="step-label">Step 2</div>
+    <h2>Pin the set up video</h2>
+
+    <div class="video-frame portrait">
+      <video src="assets/setup-video.mp4" controls playsinline preload="metadata"></video>
+    </div>
+
+    <ol class="steps-list">
+      <li>Download the Set Up Video.
+        <div style="margin-top:12px;">
+          <a href="assets/setup-video.mp4" download="Quanto Set Up Video.mp4" class="btn-wrap">
+            <div class="btn-inner">
+              <span>Download Set Up video</span>
+            </div>
+          </a>
+        </div>
+      </li>
+      <li>Post the Set Up Video.</li>
+      <li>Add any relevant caption.</li>
+      <li>Pin the video to the top of the profile.</li>
+    </ol>
+  </section>
+
+  <hr>
+
+  <!-- ═══ STEP 3 ═══ -->
+  <section class="step" id="step-3">
+    <div class="step-label">Step 3</div>
+    <h2>Set up and recording guidelines</h2>
+
+    <ol class="steps-list">
+      <li>You will need two phones. One of them needs to be an <strong>iPhone</strong>.</li>
+      <li>On the iPhone, download Quanto.</li>
+      <li>Open Quanto.</li>
+      <li>Go to <strong>Settings</strong>.</li>
+      <li>Tap <strong>Import Data</strong>.</li>
+      <li>Tap <strong>Import Data</strong> again.</li>
+      <li>Upload this CSV file:
+        <div style="margin-top:12px;">
+          <a href="assets/Quanto%20Dummy%20Data.csv" download="Quanto Dummy Data.csv" class="btn-wrap">
+            <div class="btn-inner">
+              <span>Upload this CSV file</span>
+            </div>
+          </a>
+        </div>
+      </li>
+      <li>Follow the Set Up Guide to enable double tap on the back of the phone to add an expense.</li>
+    </ol>
+  </section>
+
+  <hr>
+
+  <!-- ═══ STEP 4 ═══ -->
+  <section class="step" id="step-4">
+    <div class="step-label">Step 4</div>
+    <h2>Set up the ManyChat automation</h2>
+
+    <div class="copy-hint">Follow these screenshots — swipe or use the arrows to move through each step.</div>
+    <div class="carousel" id="manychat-carousel">
+      <div class="carousel-track">
+        <div class="carousel-slide"><img src="assets/manychat_01.png" alt="ManyChat step 1 — My Automations" loading="lazy"></div>
+        <div class="carousel-slide"><img src="assets/manychat_02.png" alt="ManyChat step 2 — Auto-DM links from comments template" loading="lazy"></div>
+        <div class="carousel-slide"><img src="assets/manychat_03.png" alt="ManyChat step 3 — Trigger words and reply setup" loading="lazy"></div>
+        <div class="carousel-slide"><img src="assets/manychat_04.png" alt="ManyChat step 4 — Opening DM, link and Go Live" loading="lazy"></div>
+      </div>
+      <button class="car-btn prev" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m15 18-6-6 6-6"/></svg></button>
+      <button class="car-btn next" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m9 6 6 6-6 6"/></svg></button>
+    </div>
+    <div class="car-counter"><b class="car-cur">1</b> / 4</div>
+    <div class="car-dots" style="margin-bottom:8px;"></div>
+
+    <ol class="steps-list">
+      <li>Go to the <strong>ManyChat</strong> website.</li>
+      <li>Create an account.</li>
+      <li>Connect ManyChat to the new Instagram account.</li>
+      <li>Subscribe to the paid plan.</li>
+      <li>Create an automation as follows — tap any value or message to copy it:</li>
+    </ol>
+
+    <div class="config">
+      <div class="config-row">
+        <span class="config-key">When someone comments on</span>
+        <span class="config-val">Any reel or post</span>
+      </div>
+
+      <div class="config-row">
+        <span class="config-key">And this comment has</span>
+        <span class="config-val">A specific word or words</span>
+      </div>
+      <button class="copy-block" data-copy="Guide, How, Set up">
+        <span class="cb-text">Guide, How, Set up</span>
+        <svg class="copy-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+      </button>
+
+      <div class="config-row">
+        <span class="config-key">Reply to their comments under post</span>
+        <span class="config-val">Enable</span>
+      </div>
+      <div class="config-sub">Replies</div>
+      <div class="copy-rows">
+        <button class="copy-row" data-copy="Check my last post for the setup guide — I've also sent it to your DMs!"><span>Check my last post for the setup guide — I've also sent it to your DMs!</span><svg class="copy-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+        <button class="copy-row" data-copy="The setup guide is in my last post, and I've sent it to your DMs too!"><span>The setup guide is in my last post, and I've sent it to your DMs too!</span><svg class="copy-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+        <button class="copy-row" data-copy="My last post has the setup guide, and I've sent it to your DMs as well!"><span>My last post has the setup guide, and I've sent it to your DMs as well!</span><svg class="copy-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+      </div>
+
+      <div class="config-row">
+        <span class="config-key">They will get</span>
+        <span class="config-val">An opening DM</span>
+      </div>
+      <div class="config-sub">Opening DM message</div>
+      <button class="copy-block" data-copy="Set up guide is in my last post!
+You can also tap below and I'll send it here.">
+        <span class="cb-text">Set up guide is in my last post!
+You can also tap below and I'll send it here.</span>
+        <svg class="copy-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+      </button>
+      <div class="config-sub">Button label</div>
+      <button class="copy-block" data-copy="Send me the guide">
+        <span class="cb-text">Send me the guide</span>
+        <svg class="copy-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+      </button>
+
+      <div class="config-row">
+        <span class="config-key">And then, they will get</span>
+        <span class="config-val">A DM with a link</span>
+      </div>
+      <div class="config-sub">Link message</div>
+      <button class="copy-block" data-copy="Here you go! If the button doesn't work, check my last post.">
+        <span class="cb-text">Here you go! If the button doesn't work, check my last post.</span>
+        <svg class="copy-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+      </button>
+      <div class="config-sub">Button label</div>
+      <button class="copy-block" data-copy="Open Guide">
+        <span class="cb-text">Open Guide</span>
+        <svg class="copy-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+      </button>
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- ═══ STEP 5 ═══ -->
+  <section class="step" id="step-5">
+    <div class="step-label">Step 5</div>
+    <h2>Film the videos</h2>
+
+    <div class="video-frame">
+      <video src="assets/recording.mp4" controls playsinline preload="metadata"></video>
+    </div>
+
+    <ol class="steps-list">
+      <li>Open Quanto on the <strong>Activity</strong> page.</li>
+      <li>Swipe on the main chart until you reach the month that shows all the transactions.</li>
+      <li>While Quanto is open, lock the iPhone.</li>
+      <li>Before filming, unlock the iPhone once off camera so you do not need to unlock it during the video.</li>
+      <li>With the second phone, start recording.</li>
+      <li>Show the object you are about to track for at least 1 second.</li>
+      <li>Bring the iPhone into the frame.</li>
+      <li>Turn the iPhone around to show the back of the phone.</li>
+      <li>Double tap the back of the iPhone.</li>
+      <li>Turn the iPhone to the front to show that the double tap shortcut was activated.</li>
+      <li>Input the amount.</li>
+      <li>Select a category that matches the object shown in the video.</li>
+      <li>Add a description if needed.</li>
+      <li>Tap <strong>Done</strong>.</li>
+      <li>Unlock the phone to show the Quanto Activity page.</li>
+      <li>Tap through a few different pages and filters to show more of the app.</li>
+    </ol>
+    <div class="end-note">That’s it.</div>
+  </section>
+
+  <hr>
+
+  <!-- ═══ STEP 6 ═══ -->
+  <section class="step" id="step-6">
+    <div class="step-label">Step 6</div>
+    <h2>Edit the video</h2>
+
+    <div class="video-frame">
+      <video src="assets/editing.mp4" controls playsinline preload="metadata"></video>
+    </div>
+
+    <ol class="steps-list">
+      <li>Edit the video using either <strong>Edits</strong> or <strong>CapCut</strong>.</li>
+      <li>Add a hook at the beginning of the video. You can use one from the list below.</li>
+      <li>Increase the video speed to 1.3x or 1.4x.</li>
+      <li>If the video includes a description while adding a transaction, speed up that part to 2.5x so viewers do not have to wait while you type.</li>
+      <li>Add a song.</li>
+      <li>For Instagram, add this phrase during the last 2 seconds of the video — tap to copy:
+        <button class="copy-block" data-copy="Comment “guide” for the set up">
+          <span class="cb-text">Comment “guide” for the set up</span>
+          <svg class="copy-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+        </button>
+      </li>
+      <li>Make a copy of the video without the final phrase. This version will be used for TikTok.</li>
+    </ol>
+  </section>
+
+  <hr>
+
+  <!-- ═══ STEP 7 ═══ -->
+  <section class="step" id="step-7">
+    <div class="step-label">Step 7</div>
+    <h2>Post the video</h2>
+
+    <ol class="steps-list">
+      <li>Choose a caption from the list below.</li>
+      <li>Add 4–5 hashtags from the groups below.</li>
+      <li>Tag <strong>@quanto.tracker</strong> in the caption.</li>
+      <li>Post one video per day on both Instagram and TikTok.</li>
+      <li>Post between 4 PM and 8 PM.</li>
+      <li>For TikTok, use the version without the final “Comment guide” phrase.</li>
+    </ol>
+    <div class="note">Videos need to be posted once per day.</div>
+
+    <div class="group-label section-anchor" id="hooks-section" style="margin-top:36px;">Hooks / Captions</div>
+    <div class="copy-hint" style="margin-top:4px;">Avoid repeating the same hook/caption every time. Tap any line to copy it.</div>
+    <div class="copy-rows" id="hooks"></div>
+
+    <div class="group-label section-anchor" id="hashtags-section" style="margin-top:36px;">Hashtags</div>
+    <div class="copy-hint" style="margin-top:4px;">Avoid repeating the same hashtag group every time. Each line is one group — tap to copy it.</div>
+    <div class="copy-rows" id="hashtags"></div>
+  </section>
+
+  <hr>
+
+  <footer>
+    Quanto &copy; 2025
+  </footer>
+
+</div>
+
+<div class="toast" id="toast">Copied to clipboard</div>
+
+<script>
+/* ─── DATA ─── */
+const HANDLES = [
+  "hidden.ios.tips","hidden.iphone.tricks","secret.ios.tips","secret.apple.tips",
+  "hidden.apple.features","iphone.hidden.tips","ios.secret.tips","ios.secret.features",
+  "apple.hidden.gems","apple.secret.tricks","hidden.iphone.gems","secret.iphone.gems",
+  "iphone.secret.gems","ios.hidden.tricks","apple.hidden.tricks","secret.apple.features",
+  "hidden.ios.gems","iphone.gem.tips","ios.gem.tips","apple.gem.tips",
+  "hidden.phone.tips","secret.phone.tricks","iphone.trick.tips","ios.trick.tips",
+  "apple.trick.tips","iphone.hidden.features","ios.hidden.features","apple.hidden.features",
+  "iphone.secret.features","ios.secret.tricks"
+];
+
+const HOOKS = [
+  "How did i not know this EXISTED for iPhone 😭",
+  "iPhone users are SLEEPING on this 🤯",
+  "10 yrs using iPhone and i just found this NOW 😭",
+  "Why is nobody TALKING about this iPhone feature",
+  "Why is no one USING this iPhone shortcut 🤯",
+  "99% of iPhone users don’t know this EXISTS 🤯",
+  "Omg I wish i knew this iPhone trick EARLIER 🤯",
+  "This iPhone trick just saved me so much TIME",
+  "There’s NO WAY iPhone could do this the whole time 😭",
+  "Excuse me?? iPhone user? Why no one told me! 🤯",
+  "🤯 ain’t no way I just discovered this NOW",
+  "This can’t be an ACTUAL iPhone feature 🤯🤯",
+  "bro WHAT did i just unlock on my iPhone",
+  "I genuinely CAN’T believe this works 🤯",
+  "I’m mad nobody told me about this SOONER",
+  "Why does NOBODY talk about this feature??",
+  "4 yrs stressing about money and iPhone could do this??",
+  "4 yrs stressing about money and this existed??",
+  "5 yrs overspending and NOW I discover this??",
+  "3 yrs trying to budget and THIS was possible??"
+];
+
+const HASHTAGS = [
+  "#budgeting #expenses #finance #iphone",
+  "#money #iphone #budgetingtips #spending",
+  "#spendingproblems #expenses #iphone #money",
+  "#moneysaving #budget #iphonehack #expenses",
+  "#savingmoney #moneytips #budgeting #iphone",
+  "#overspending #budget #money #iphone",
+  "#expenses #finance #moneytips #iphone",
+  "#budgeting #spendingmoney #iphonehack #money",
+  "#iphone #budget #expenses #savingmoney",
+  "#spending #budgetingtips #money #iphone",
+  "#finance #overspending #budgeting #iphone",
+  "#moneytips #expenses #iphonehack #budget",
+  "#spendingmoney #money #budgeting #iphone",
+  "#budget #iphone #finance #savingmoney",
+  "#expenses #budgetingtips #moneytips #iphone",
+  "#iphonehack #money #overspending #budget",
+  "#budgeting #spendingproblems #iphone #expenses",
+  "#savingmoney #iphonehack #budgeting #money",
+  "#finance #budget #spending #iphone",
+  "#moneytips #iphone #expenses #overspending",
+  "#budgetingtips #savingmoney #iphone #budget",
+  "#spendingmoney #expenses #money #iphone",
+  "#iphonehack #finance #budgeting #moneytips",
+  "#overspending #spending #iphone #budget",
+  "#budget #money #expenses #iphonehack",
+  "#savingmoney #finance #iphone #budgetingtips",
+  "#money #spendingproblems #budgeting #iphone",
+  "#expenses #budget #iphone #moneytips",
+  "#spending #savingmoney #iphonehack #budgeting",
+  "#finance #money #iphone #expenses"
+];
+
+const COPY_IC = '<svg class="copy-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>';
+
+/* ─── BUILD LISTS ─── */
+const handlesEl = document.getElementById('handles');
+handlesEl.innerHTML = HANDLES.map(h =>
+  `<button class="chip" data-copy="${h}">${h}</button>`).join('');
+
+const hooksEl = document.getElementById('hooks');
+hooksEl.innerHTML = HOOKS.map(h =>
+  `<button class="copy-row" data-copy="${h.replace(/"/g,'&quot;')}"><span>${h}</span>${COPY_IC}</button>`).join('');
+
+const tagsEl = document.getElementById('hashtags');
+tagsEl.innerHTML = HASHTAGS.map(t =>
+  `<button class="copy-row tag" data-copy="${t}"><span>${t}</span>${COPY_IC}</button>`).join('');
+
+/* ─── COPY HANDLER ─── */
+const toast = document.getElementById('toast');
+let toastTimer;
+function showToast(msg) {
+  toast.textContent = msg;
+  toast.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove('show'), 1600);
+}
+
+async function copyText(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+    return true;
+  } catch (e) {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    let ok = false;
+    try { ok = document.execCommand('copy'); } catch (_) {}
+    document.body.removeChild(ta);
+    return ok;
+  }
+}
+
+document.addEventListener('click', async (e) => {
+  const el = e.target.closest('[data-copy]');
+  if (!el) return;
+  const text = el.getAttribute('data-copy');
+  const ok = await copyText(text);
+  if (ok) {
+    el.classList.add('copied');
+    setTimeout(() => el.classList.remove('copied'), 1100);
+    showToast('Copied to clipboard');
+  } else {
+    showToast('Press and hold to copy');
+  }
+});
+
+/* ─── CAROUSEL ─── */
+(function () {
+  const carousel = document.getElementById('manychat-carousel');
+  const track = carousel.querySelector('.carousel-track');
+  const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
+  const prev = carousel.querySelector('.car-btn.prev');
+  const next = carousel.querySelector('.car-btn.next');
+  const dotsWrap = document.querySelector('#step-4 .car-dots');
+  const curEl = document.querySelector('#step-4 .car-cur');
+  const count = slides.length;
+  let index = 0;
+
+  dotsWrap.innerHTML = slides.map((_, i) =>
+    `<button class="car-dot${i === 0 ? ' active' : ''}" data-i="${i}" aria-label="Go to ${i + 1}"></button>`).join('');
+  const dots = Array.from(dotsWrap.children);
+
+  function render() {
+    track.style.transform = `translateX(${-index * 100}%)`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === index));
+    curEl.textContent = index + 1;
+    prev.disabled = index === 0;
+    next.disabled = index === count - 1;
+  }
+
+  function goTo(i) {
+    index = Math.max(0, Math.min(count - 1, i));
+    render();
+  }
+
+  prev.addEventListener('click', () => goTo(index - 1));
+  next.addEventListener('click', () => goTo(index + 1));
+  dots.forEach(d => d.addEventListener('click', () => goTo(+d.dataset.i)));
+
+  /* swipe (pointer + touch) */
+  let startX = 0, dragging = false;
+  function down(x) { startX = x; dragging = true; }
+  function up(x) {
+    if (!dragging) return;
+    dragging = false;
+    const dx = x - startX;
+    if (Math.abs(dx) > 40) goTo(index + (dx < 0 ? 1 : -1));
+  }
+  carousel.addEventListener('pointerdown', e => down(e.clientX));
+  carousel.addEventListener('pointerup', e => up(e.clientX));
+  carousel.addEventListener('touchstart', e => down(e.touches[0].clientX), { passive: true });
+  carousel.addEventListener('touchend', e => up(e.changedTouches[0].clientX), { passive: true });
+  carousel.addEventListener('dragstart', e => e.preventDefault());
+
+  render();
+})();
+
+/* ─── SCROLL SPY ─── */
+(function () {
+  const links = Array.from(document.querySelectorAll('.step-nav a'));
+  const map = {};
+  links.forEach(l => map[l.dataset.nav] = l);
+  // Track every nav target (steps + reference subsections), in document order.
+  const sections = links
+    .map(l => document.getElementById(l.dataset.nav))
+    .filter(Boolean);
+  let current = null;
+
+  function centerTab(link) {
+    // On the mobile horizontal tab bar, keep the active tab in view.
+    if (window.innerWidth >= 1140) return;
+    const ol = link.closest('ol');
+    if (!ol) return;
+    ol.scrollTo({ left: link.offsetLeft - ol.clientWidth / 2 + link.clientWidth / 2, behavior: 'smooth' });
+  }
+
+  function onScroll() {
+    const trigger = 130; // a section becomes active once its top passes this line
+    let activeId = sections.length ? sections[0].id : null;
+    for (const s of sections) {
+      if (s.getBoundingClientRect().top <= trigger) activeId = s.id;
+      else break;
+    }
+    if (activeId === current) return;
+    current = activeId;
+    links.forEach(l => l.classList.toggle('active', l.dataset.nav === activeId));
+    if (map[activeId]) centerTab(map[activeId]);
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  onScroll();
+})();
+</script>
+
+</body>
+</html>
