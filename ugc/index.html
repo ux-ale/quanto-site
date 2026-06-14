@@ -51,7 +51,7 @@
   /* ─── HERO ─── */
   .hero {
     padding: 80px 0 64px;
-    text-align: center;
+    text-align: left;
   }
 
   .hero-icon {
@@ -59,7 +59,7 @@
     height: 64px;
     border-radius: 16px;
     overflow: hidden;
-    margin: 0 auto 28px;
+    margin: 0 0 28px;
     box-shadow: 0 16px 48px rgba(0,0,0,0.4);
   }
 
@@ -79,8 +79,8 @@
     font-size: 15px;
     font-weight: 300;
     color: var(--text-2);
-    max-width: 420px;
-    margin: 0 auto;
+    max-width: 460px;
+    margin: 0;
   }
 
   /* ─── LAYOUT ─── */
@@ -152,7 +152,10 @@
 
   .step-nav a.active .num { color: var(--brand); }
 
-  /* sub-items (reference sections inside a step) */
+  /* phase items (top-level groups) */
+  .step-nav a.phase .label { font-weight: 600; color: var(--text-1); }
+
+  /* sub-items (steps nested under a phase) */
   .step-nav a.sub .label { color: var(--text-3); }
   .step-nav a.sub.active .label { color: var(--text-1); }
 
@@ -160,8 +163,7 @@
   @media (min-width: 1140px) {
     .step-nav {
       position: fixed;
-      top: 50%;
-      transform: translateY(-50%);
+      top: 80px;
       left: calc(50vw - 544px);
       z-index: 20;
       background: none;
@@ -200,7 +202,10 @@
       color: var(--text-1);
     }
 
-    .step-nav a.sub { padding-left: 40px; }
+    .step-nav a.phase { margin-top: 8px; }
+    .step-nav ol > li:first-child .step-nav a.phase,
+    .step-nav a.phase:first-child { margin-top: 0; }
+    .step-nav a.sub { padding-left: 28px; }
     .step-nav a.sub .label { font-size: 12px; }
   }
 
@@ -691,6 +696,107 @@
     padding: 8px 0 0;
   }
 
+  /* ─── INTRO (summary / time / examples) ─── */
+  .intro { padding: 48px 0; }
+
+  .intro .lead {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-1);
+    line-height: 1.7;
+    margin-bottom: 8px;
+  }
+
+  .intro-h {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-1);
+    margin: 36px 0 14px;
+  }
+
+  .examples-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 4px;
+  }
+
+  .examples-grid:empty { display: none; }
+
+  .examples-grid .instagram-media { margin: 0 !important; }
+
+  .examples-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    color: var(--brand);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .examples-link:hover { text-decoration: underline; }
+  .examples-link svg { width: 16px; height: 16px; }
+
+  /* ─── PHASE (collapsible) ─── */
+  .phase { display: block; }
+
+  .phase > summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 26px 0;
+    border-top: 1px solid var(--border);
+    scroll-margin-top: 72px;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .phase > summary::-webkit-details-marker { display: none; }
+  .phase > summary::marker { content: ''; }
+
+  .phase-head { display: flex; flex-direction: column; gap: 3px; }
+  .phase-head .eyebrow {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--brand);
+  }
+  .phase-head .title {
+    font-size: 31px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--text-1);
+    line-height: 1.05;
+  }
+
+  .phase-count {
+    margin-left: auto;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--text-3);
+    white-space: nowrap;
+  }
+
+  .phase-chevron {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    color: var(--text-3);
+    transition: transform 0.25s ease;
+  }
+  .phase[open] > summary .phase-chevron { transform: rotate(180deg); }
+
+  /* first step inside a phase needs less top padding (summary already spaces it) */
+  .phase-body > .step:first-child { padding-top: 32px; }
+
+  @media (min-width: 1140px) {
+    .phase > summary { scroll-margin-top: 24px; }
+  }
+
   /* ─── RESPONSIVE ─── */
   @media (max-width: 600px) {
     .wrap { padding: 0 20px; }
@@ -705,14 +811,17 @@
 <!-- ─── STEP NAV ─── -->
 <nav class="step-nav" aria-label="Steps">
   <ol>
-    <li><a href="#step-1" data-nav="step-1"><span class="num">01</span><span class="label">Create a new account</span></a></li>
-    <li><a href="#step-2" data-nav="step-2"><span class="num">02</span><span class="label">Account warm up</span></a></li>
-    <li><a href="#step-3" data-nav="step-3"><span class="num">03</span><span class="label">Pin the set up video</span></a></li>
-    <li><a href="#step-4" data-nav="step-4"><span class="num">04</span><span class="label">Set up &amp; recording</span></a></li>
-    <li><a href="#step-5" data-nav="step-5"><span class="num">05</span><span class="label">ManyChat automation</span></a></li>
-    <li><a href="#step-6" data-nav="step-6"><span class="num">06</span><span class="label">Film the videos</span></a></li>
-    <li><a href="#step-7" data-nav="step-7"><span class="num">07</span><span class="label">Edit the video</span></a></li>
-    <li><a href="#step-8" data-nav="step-8"><span class="num">08</span><span class="label">Post the video</span></a></li>
+    <li><a href="#phase-1" data-nav="phase-1" class="phase"><span class="label">Setup</span></a></li>
+    <li><a href="#step-1" data-nav="step-1" class="sub"><span class="label">Create a new account</span></a></li>
+    <li><a href="#step-2" data-nav="step-2" class="sub"><span class="label">Account warm up</span></a></li>
+    <li><a href="#step-3" data-nav="step-3" class="sub"><span class="label">Pin the set up video</span></a></li>
+    <li><a href="#step-4" data-nav="step-4" class="sub"><span class="label">Set up &amp; recording</span></a></li>
+    <li><a href="#phase-2" data-nav="phase-2" class="phase"><span class="label">Automation</span></a></li>
+    <li><a href="#step-5" data-nav="step-5" class="sub"><span class="label">ManyChat automation</span></a></li>
+    <li><a href="#phase-3" data-nav="phase-3" class="phase"><span class="label">Content</span></a></li>
+    <li><a href="#step-6" data-nav="step-6" class="sub"><span class="label">Film the videos</span></a></li>
+    <li><a href="#step-7" data-nav="step-7" class="sub"><span class="label">Edit the video</span></a></li>
+    <li><a href="#step-8" data-nav="step-8" class="sub"><span class="label">Post the video</span></a></li>
     <li><a href="#hooks-section" data-nav="hooks-section" class="sub"><span class="label">Hooks / Captions</span></a></li>
     <li><a href="#hashtags-section" data-nav="hashtags-section" class="sub"><span class="label">Hashtags</span></a></li>
   </ol>
@@ -724,10 +833,52 @@
   <div class="hero">
     <div class="hero-icon"><img src="assets/quanto-app-icon.png" alt="Quanto"></div>
     <h1>Creator<br><span class="teal">Guide</span></h1>
-    <p>A step-by-step guide for UGC creators making content about Quanto.</p>
+    <p>30 minutes step-by-step guide for UGC creators to start posting about Quanto.</p>
   </div>
 
   <hr>
+
+  <!-- ─── INTRO ─── -->
+  <div class="intro">
+    <div class="intro-h" style="margin-top:0;">Summary of what you'll do in this guide</div>
+    <ul class="bullets">
+      <li>Create a new Instagram and TikTok account</li>
+      <li>Warm up period of 2 days</li>
+      <li>Set up ManyChat automation to reply comments automatically</li>
+      <li>How to film the videos</li>
+      <li>How to edit them</li>
+      <li>How and when to post</li>
+    </ul>
+
+    <div class="intro-h">Time required</div>
+    <ul class="bullets">
+      <li><strong>Setup:</strong> ~30 minutes</li>
+      <li><strong>Daily posting:</strong> ~5 minutes</li>
+    </ul>
+
+    <div class="examples-grid" id="ig-embeds"></div>
+    <div style="margin-top:16px;">
+      <a href="https://www.instagram.com/hidden.ios.tricks/" target="_blank" rel="noopener" class="btn-wrap">
+        <div class="btn-inner">
+          <span>Instagram account example</span>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ═══════════ PHASE 1 · SETUP ═══════════ -->
+  <details class="phase" id="phase-1">
+    <summary>
+      <div class="phase-head">
+        <span class="eyebrow">Phase 1</span>
+        <span class="title">Setup</span>
+      </div>
+      <span class="phase-count">4 steps</span>
+      <svg class="phase-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+    </summary>
+    <div class="phase-body">
 
   <!-- ═══ STEP 1 ═══ -->
   <section class="step" id="step-1">
@@ -787,7 +938,7 @@ quanto.app/download</span>
 
     <div class="platform-label">Day 1</div>
     <ul class="bullets">
-      <li>Scroll 1h a day in your explore page</li>
+      <li>Spend 20–30 minutes engaging with budgeting, finance and iPhone content before posting your first video.</li>
       <li>Watch videos until the end</li>
       <li>Like content in your exact niche — iPhone tricks, budgeting, money, finance, Apple</li>
       <li>Follow 20 relevant accounts max (not all on day 1, do 5 per day)</li>
@@ -854,11 +1005,24 @@ quanto.app/download</span>
           </div>
         </a>
       </li>
-      <li>Then go to <strong>Settings, Shortcut</strong> and follow the Set Up Guide to enable double tap on the back of the phone to add an expense.</li>
+      <li>Then go to <strong>Settings, Shortcuts</strong> and follow the setup guide to enable double tap on the back of the phone to add an expense.</li>
     </ol>
   </section>
 
-  <hr>
+    </div>
+  </details>
+
+  <!-- ═══════════ PHASE 2 · AUTOMATION ═══════════ -->
+  <details class="phase" id="phase-2">
+    <summary>
+      <div class="phase-head">
+        <span class="eyebrow">Phase 2</span>
+        <span class="title">Automation</span>
+      </div>
+      <span class="phase-count">1 step</span>
+      <svg class="phase-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+    </summary>
+    <div class="phase-body">
 
   <!-- ═══ STEP 5 — ManyChat automation ═══ -->
   <section class="step" id="step-5">
@@ -947,12 +1111,26 @@ You can also tap below and I'll send it here.</span>
     </div>
   </section>
 
-  <hr>
+    </div>
+  </details>
+
+  <!-- ═══════════ PHASE 3 · CONTENT ═══════════ -->
+  <details class="phase" id="phase-3">
+    <summary>
+      <div class="phase-head">
+        <span class="eyebrow">Phase 3</span>
+        <span class="title">Content</span>
+      </div>
+      <span class="phase-count">3 steps</span>
+      <svg class="phase-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+    </summary>
+    <div class="phase-body">
 
   <!-- ═══ STEP 6 — Film the videos ═══ -->
   <section class="step" id="step-6">
     <div class="step-label">Step 6</div>
     <h2>Film the videos</h2>
+    <p class="lead" style="margin: -8px 0 28px;">One video per day for 30 days. Most videos take less than 1 minute to film and edit.</p>
 
     <div class="video-frame">
       <video src="assets/recording.mp4" controls playsinline preload="metadata"></video>
@@ -1031,7 +1209,8 @@ You can also tap below and I'll send it here.</span>
     <div class="copy-rows" id="hashtags"></div>
   </section>
 
-  <hr>
+    </div>
+  </details>
 
   <footer>
     Quanto &copy; 2025
@@ -1219,41 +1398,92 @@ document.addEventListener('click', async (e) => {
   render();
 })();
 
-/* ─── SCROLL SPY ─── */
+/* ─── NAV: phases, steps, scroll spy ─── */
 (function () {
   const links = Array.from(document.querySelectorAll('.step-nav a'));
   const map = {};
   links.forEach(l => map[l.dataset.nav] = l);
-  // Track every nav target (steps + reference subsections), in document order.
-  const sections = links
-    .map(l => document.getElementById(l.dataset.nav))
-    .filter(Boolean);
-  let current = null;
+
+  // map each step/section to its parent phase
+  const phaseOf = {};
+  document.querySelectorAll('details.phase').forEach(det => {
+    det.querySelectorAll('[id]').forEach(el => { phaseOf[el.id] = det.id; });
+  });
+
+  // nav targets in document order
+  const targets = links
+    .map(l => ({ id: l.dataset.nav, el: document.getElementById(l.dataset.nav) }))
+    .filter(t => t.el);
+
+  const isVisible = el => el.getClientRects().length > 0;
 
   function centerTab(link) {
-    // On the mobile horizontal tab bar, keep the active tab in view.
     if (window.innerWidth >= 1140) return;
     const ol = link.closest('ol');
     if (!ol) return;
     ol.scrollTo({ left: link.offsetLeft - ol.clientWidth / 2 + link.clientWidth / 2, behavior: 'smooth' });
   }
 
+  let current = null;
   function onScroll() {
-    const trigger = 130; // a section becomes active once its top passes this line
-    let activeId = sections.length ? sections[0].id : null;
-    for (const s of sections) {
-      if (s.getBoundingClientRect().top <= trigger) activeId = s.id;
-      else break;
+    const trigger = 130;
+    let activeId = null;
+    for (const t of targets) {
+      if (!isVisible(t.el)) continue;          // skip steps inside collapsed phases
+      if (t.el.getBoundingClientRect().top <= trigger) activeId = t.id;
     }
+    if (!activeId && targets.length) activeId = targets[0].id;
     if (activeId === current) return;
     current = activeId;
-    links.forEach(l => l.classList.toggle('active', l.dataset.nav === activeId));
+    const parent = phaseOf[activeId];
+    links.forEach(l => {
+      const n = l.dataset.nav;
+      l.classList.toggle('active', n === activeId || n === parent);
+    });
     if (map[activeId]) centerTab(map[activeId]);
   }
+
+  // clicking a nav link: open the containing phase, then scroll
+  links.forEach(l => {
+    l.addEventListener('click', (e) => {
+      const el = document.getElementById(l.dataset.nav);
+      if (!el) return;
+      e.preventDefault();
+      const det = el.closest('details.phase') || (el.matches('details.phase') ? el : null);
+      if (det && !det.open) det.open = true;
+      requestAnimationFrame(() => {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        setTimeout(onScroll, 60);
+      });
+    });
+  });
+
+  // accordion: opening one phase collapses the others; refresh active state on any toggle
+  const allPhases = Array.from(document.querySelectorAll('details.phase'));
+  allPhases.forEach(d => d.addEventListener('toggle', () => {
+    if (d.open) allPhases.forEach(o => { if (o !== d) o.open = false; });
+    onScroll();
+  }));
 
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onScroll);
   onScroll();
+})();
+
+/* ─── INSTAGRAM EXAMPLES (optional embeds) ─── */
+(function () {
+  // Paste real post / reel URLs from @hidden.ios.tricks below to show live previews.
+  // e.g. "https://www.instagram.com/reel/ABC123/"
+  const IG_POSTS = [];
+  const grid = document.getElementById('ig-embeds');
+  if (!grid || !IG_POSTS.length) return;   // falls back to the link below
+  grid.innerHTML = IG_POSTS.map(u =>
+    `<blockquote class="instagram-media" data-instgrm-permalink="${u}" data-instgrm-version="14" style="width:100%;min-width:240px;max-width:328px;"></blockquote>`
+  ).join('');
+  const s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.instagram.com/embed.js';
+  document.body.appendChild(s);
 })();
 </script>
 
