@@ -797,6 +797,45 @@
     .phase > summary { scroll-margin-top: 24px; }
   }
 
+  /* ─── CONTENT IDEAS (nested collapsibles) ─── */
+  .section-sub {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--text-2);
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+
+  #content-ideas { padding-bottom: 8px; }
+  .idea-group { border-top: 1px solid var(--border); }
+
+  .idea-group > summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-1);
+    -webkit-tap-highlight-color: transparent;
+  }
+  .idea-group > summary::-webkit-details-marker { display: none; }
+  .idea-group > summary::marker { content: ''; }
+
+  .idea-chevron {
+    margin-left: auto;
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    color: var(--text-3);
+    transition: transform 0.25s ease;
+  }
+  .idea-group[open] > summary .idea-chevron { transform: rotate(180deg); }
+
+  .idea-group .bullets { margin-top: 0; padding-bottom: 18px; }
+
   /* ─── RESPONSIVE ─── */
   @media (max-width: 600px) {
     .wrap { padding: 0 20px; }
@@ -819,6 +858,7 @@
     <li><a href="#phase-2" data-nav="phase-2" class="phase"><span class="label">Automation</span></a></li>
     <li><a href="#step-5" data-nav="step-5" class="sub"><span class="label">ManyChat automation</span></a></li>
     <li><a href="#phase-3" data-nav="phase-3" class="phase"><span class="label">Content</span></a></li>
+    <li><a href="#content-ideas" data-nav="content-ideas" class="sub"><span class="label">Ideas</span></a></li>
     <li><a href="#step-6" data-nav="step-6" class="sub"><span class="label">Film the videos</span></a></li>
     <li><a href="#step-7" data-nav="step-7" class="sub"><span class="label">Edit the video</span></a></li>
     <li><a href="#step-8" data-nav="step-8" class="sub"><span class="label">Post the video</span></a></li>
@@ -846,8 +886,8 @@
       <li>Warm up period of 2 days</li>
       <li>Set up ManyChat automation to reply comments automatically</li>
       <li>How to film the videos</li>
-      <li>How to edit them</li>
-      <li>How and when to post</li>
+      <li>Learn how to edit them</li>
+      <li>Learn how and when to post</li>
     </ul>
 
     <div class="intro-h">Time required</div>
@@ -1125,6 +1165,50 @@ You can also tap below and I'll send it here.</span>
       <svg class="phase-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
     </summary>
     <div class="phase-body">
+
+  <!-- ═══ Content ideas ═══ -->
+  <section class="step" id="content-ideas">
+    <div class="step-label">Bonus</div>
+    <h2>Ideas</h2>
+    <p class="section-sub">A shopping mall is one of the best places to create content. You can film multiple videos in a single visit by recording products in different stores and then show adding the expense with the double tap shortcut. Some ideas:</p>
+
+    <details class="idea-group">
+      <summary>Shopping<svg class="idea-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
+      <ul class="bullets">
+        <li>Zara bag (or any international brand)</li>
+        <li>Sport shoes (Nike, Adidas, Underarmor)</li>
+        <li>Sephora</li>
+        <li>Apple Store (iPhone, Watch, Mac, Airpods)</li>
+        <li>Electronics (Bose, Sony, JBL, Samsung, Nintendo Switch, PS5)</li>
+        <li>Headphones (Bose, Sony, JBL, Samsung)</li>
+        <li>Dyson products</li>
+      </ul>
+    </details>
+
+    <details class="idea-group">
+      <summary>Food &amp; Drinks<svg class="idea-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
+      <ul class="bullets">
+        <li>Coffee</li>
+        <li>Bubble tea</li>
+        <li>Fast food</li>
+        <li>Restaurant meals</li>
+        <li>Drinks at a bar</li>
+      </ul>
+    </details>
+
+    <details class="idea-group">
+      <summary>Luxury<svg class="idea-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
+      <ul class="bullets">
+        <li>Rolex display</li>
+        <li>Luxury store bag</li>
+        <li>Sunglasses purchase</li>
+        <li>Perfume purchase</li>
+        <li>Expensive dinner bill</li>
+      </ul>
+    </details>
+  </section>
+
+  <hr>
 
   <!-- ═══ STEP 6 — Film the videos ═══ -->
   <section class="step" id="step-6">
