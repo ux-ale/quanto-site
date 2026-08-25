@@ -440,7 +440,7 @@ function fieldHTML(loc, f) {
 
 const STATUS_BADGE = {
   'final':       { cls: 'final', label: 'Live',            desc: 'live in the App Store' },
-  'data-backed': { cls: 'data',  label: 'Search Ads data', desc: '' },
+  'data-backed': { cls: 'data',  label: 'Keyword data',    desc: '' },
   'draft':       { cls: 'draft', label: 'Draft copy',      desc: '' }
 };
 
