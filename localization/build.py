@@ -24,6 +24,10 @@ LOCALE_META = [
     ("PL",     "\U0001F1F5\U0001F1F1", "Polish"),
 ]
 
+# Locales whose keywords are backed by Apple Search Ads popularity data.
+# Everything else is still first-draft copy waiting on a data pull.
+KEYWORD_DATA = {"EN", "ID"}
+
 # Short ASO note shown beside each field label.
 HINTS = {
     "ios_name":  "Highest-weighted field. Needs a new version to change",
@@ -52,6 +56,7 @@ for l in data['locales']:
     _, flag, label = next(m for m in LOCALE_META if m[0] == l['code'])
     l['flag'] = flag
     l['chip'] = label
+    l['source'] = 'data' if l['code'] in KEYWORD_DATA else 'draft'
 for f in data['fields']:
     f['hint'] = HINTS[f['key']]
 
@@ -191,6 +196,19 @@ HEAD = '''<!DOCTYPE html>
   }
   .status.final { background: rgba(12,187,161,0.12); border: 1px solid rgba(12,187,161,0.35); color: var(--brand); }
   .status.draft { background: rgba(240,146,14,0.12); border: 1px solid rgba(240,146,14,0.35); color: var(--warn); }
+
+  /* where the copy came from - real keyword data, or a first draft */
+  .source {
+    display: inline-flex; align-items: center; gap: 7px;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.04em;
+    padding: 5px 13px; border-radius: 100px; white-space: nowrap;
+    background: var(--sem-5); border: 1px solid var(--border); color: var(--text-2);
+  }
+  .source::before {
+    content: ""; width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0;
+    background: rgba(255,255,255,0.25);
+  }
+  .source.data::before { background: var(--brand); }
 
   .seg {
     display: inline-flex; gap: 2px; padding: 4px; margin-bottom: 22px;
@@ -445,6 +463,9 @@ function renderPanel() {
       (loc.status === 'final'
         ? '<span class="status final">Live</span>'
         : '<span class="status draft">Review</span>') +
+      (loc.source === 'data'
+        ? '<span class="source data">Search Ads data</span>'
+        : '<span class="source">Draft copy</span>') +
     '</div>' +
     list.map(f => fieldHTML(loc, f)).join('');
 }
