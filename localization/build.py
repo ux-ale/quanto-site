@@ -1,4 +1,5 @@
 import json
+import os
 
 SRC = 'quanto-aso-all-locales.json'
 OUT = 'index.html'
@@ -53,6 +54,20 @@ for l in data['locales']:
     l['chip'] = label
 for f in data['fields']:
     f['hint'] = HINTS[f['key']]
+
+# Screenshot counts per store/locale, from the resized set built by
+# build_shots.py. Filenames are 01.jpg .. NN.jpg, so a count is enough.
+SHOT_DIMS = {"ios": [258, 560], "play": [315, 560]}
+shots = {}
+for store in SHOT_DIMS:
+    shots[store] = {}
+    for code, _, _ in LOCALE_META:
+        d = os.path.join('shots', store, code)
+        n = len([f for f in os.listdir(d) if f.endswith('.jpg')]) if os.path.isdir(d) else 0
+        if n:
+            shots[store][code] = n
+data['shots'] = shots
+data['shotDims'] = SHOT_DIMS
 
 payload = json.dumps(data, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c')
 
@@ -142,6 +157,27 @@ HEAD = '''<!DOCTYPE html>
     color: var(--text-1); font-weight: 600;
   }
 
+  /* ─── SCREENSHOT STRIP ─── */
+  .shots {
+    display: flex; gap: 12px; overflow-x: auto;
+    margin-bottom: 34px; padding-bottom: 10px;
+    scroll-snap-type: x proximity;
+    scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.15) transparent;
+    -webkit-overflow-scrolling: touch;
+  }
+  .shots::-webkit-scrollbar { height: 6px; }
+  .shots::-webkit-scrollbar-track { background: transparent; }
+  .shots::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 100px; }
+  .shots:hover::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.20); }
+
+  .shots img {
+    display: block; flex-shrink: 0; height: 340px; width: auto;
+    border-radius: 16px; border: 1px solid var(--border);
+    background: var(--sem-5); scroll-snap-align: start;
+  }
+  .shots.ios  img { aspect-ratio: 258 / 560; }
+  .shots.play img { aspect-ratio: 315 / 560; }
+
   /* ─── LOCALE HEADER ─── */
   .locale-head {
     display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
@@ -162,7 +198,7 @@ HEAD = '''<!DOCTYPE html>
   }
   .seg button {
     position: relative;
-    padding: 9px 22px; border-radius: 16px; cursor: pointer;
+    padding: 9px 22px; border-radius: 100px; cursor: pointer;
     border: 0.5px solid transparent; background: none;
     font-family: 'Sora', sans-serif; font-size: 13.5px; font-weight: 400; color: var(--text-3);
     transition: background 0.15s, color 0.15s;
@@ -287,6 +323,8 @@ HEAD = '''<!DOCTYPE html>
     .count { order: 1; margin-right: auto; }
     .copy-btn { order: 2; }
     .field-body { padding: 14px 15px; }
+    .shots { gap: 10px; margin-bottom: 26px; }
+    .shots img { height: 260px; border-radius: 14px; }
     .locale-head { gap: 12px; }
     .seg { width: 100%; }
     .seg button { flex: 1; padding: 9px 12px; }
@@ -308,6 +346,8 @@ HEAD = '''<!DOCTYPE html>
   </div>
 
   <nav class="chips" id="chips"></nav>
+
+  <div class="shots" id="shots"></div>
 
   <div id="panel"></div>
 
@@ -376,9 +416,28 @@ function fieldHTML(loc, f) {
     '</div>';
 }
 
+function renderShots() {
+  const el = document.getElementById('shots');
+  const loc = LOCALES.find(l => l.code === current);
+  const n = (DATA.shots[store] || {})[current] || 0;
+  const [w, h] = DATA.shotDims[store];
+  const label = store === 'ios' ? 'App Store' : 'Google Play';
+  el.className = 'shots ' + store;
+  let html = '';
+  for (let i = 1; i <= n; i++) {
+    const nn = String(i).padStart(2, '0');
+    html += '<img src="shots/' + store + '/' + current + '/' + nn + '.jpg"' +
+            ' width="' + w + '" height="' + h + '" loading="lazy" decoding="async"' +
+            ' alt="' + esc(loc.language) + ' ' + label + ' screenshot ' + i + '">';
+  }
+  el.innerHTML = html;
+  el.scrollLeft = 0;
+}
+
 function renderPanel() {
   const loc = LOCALES.find(l => l.code === current);
   const list = fieldsFor(loc, store);
+  renderShots();
 
   document.getElementById('panel').innerHTML =
     '<div class="locale-head">' +
