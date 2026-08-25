@@ -4,6 +4,56 @@ SRC = 'quanto-aso-all-locales.json'
 OUT = 'index.html'
 
 data = json.load(open(SRC))
+
+# Display order, flag and chip label per locale (chip labels as specified).
+LOCALE_META = [
+    ("EN",     "\U0001F1EC\U0001F1E7", "English"),
+    ("DE",     "\U0001F1E9\U0001F1EA", "German"),
+    ("FR",     "\U0001F1EB\U0001F1F7", "French"),
+    ("ES-ES",  "\U0001F1EA\U0001F1F8", "Spanish"),
+    ("ES-419", "\U0001F310",           "Latam"),
+    ("IT",     "\U0001F1EE\U0001F1F9", "Italian"),
+    ("PT-BR",  "\U0001F1E7\U0001F1F7", "Portuguese (Brazil)"),
+    ("TR",     "\U0001F1F9\U0001F1F7", "Turkish"),
+    ("ID",     "\U0001F1EE\U0001F1E9", "Indonesian"),
+    ("MS",     "\U0001F1F2\U0001F1FE", "Malay"),
+    ("JA",     "\U0001F1EF\U0001F1F5", "Japanese"),
+    ("KO",     "\U0001F1F0\U0001F1F7", "Korean"),
+    ("NL",     "\U0001F1F3\U0001F1F1", "Dutch"),
+    ("PL",     "\U0001F1F5\U0001F1F1", "Polish"),
+]
+
+# Short ASO note shown beside each field label.
+HINTS = {
+    "ios_name":  "Highest-weighted field. Needs a new version to change",
+    "ios_sub":   "Second-highest. No word repeated from the name",
+    "kw_us":     "Hidden from users. Comma-separated, no spaces, no repeats",
+    "kw_gb":     "Separate keyword index for the U.K. storefront",
+    "promo":     "Not indexed. Can be changed without a new version",
+    "ios_desc":  "Not indexed on the App Store. Written for conversion",
+    "iap_group": "Indexed. Shown on the subscription sheet",
+    "iap_m":     "Indexed. Shown at checkout",
+    "iap_y":     "Indexed. Shown at checkout",
+    "iap_l":     "Indexed. Shown at checkout",
+    "play_title":"Indexed. Highest weight on Google Play",
+    "play_short":"Indexed. Shown under the title",
+    "play_full": "Indexed on Google Play, unlike the App Store",
+}
+
+known = {c for c, _, _ in LOCALE_META}
+missing = [l['code'] for l in data['locales'] if l['code'] not in known]
+assert not missing, f"locale missing from LOCALE_META: {missing}"
+assert set(HINTS) == {f['key'] for f in data['fields']}, "HINTS keys must match fields"
+
+order = {c: i for i, (c, _, _) in enumerate(LOCALE_META)}
+data['locales'].sort(key=lambda l: order[l['code']])
+for l in data['locales']:
+    _, flag, label = next(m for m in LOCALE_META if m[0] == l['code'])
+    l['flag'] = flag
+    l['chip'] = label
+for f in data['fields']:
+    f['hint'] = HINTS[f['key']]
+
 payload = json.dumps(data, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c')
 
 HEAD = '''<!DOCTYPE html>
@@ -31,11 +81,12 @@ HEAD = '''<!DOCTYPE html>
     --sem-15: rgba(255,255,255,0.15);
     --border: rgba(255,255,255,0.08);
     --brand:  #0cbba1;
-    --warn:   #e5a13a;
+    --warn:   #f0920e;
     --danger: #ff6b5e;
     --text-1: #ffffff;
     --text-2: rgba(255,255,255,0.55);
     --text-3: rgba(255,255,255,0.30);
+    --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
   }
 
   html, body { margin: 0; min-height: 100%; background: #0C0F11; overscroll-behavior: none; }
@@ -56,170 +107,147 @@ HEAD = '''<!DOCTYPE html>
     min-height: 100vh;
   }
 
-  .wrap { max-width: 780px; margin: 0 auto; padding: 0 24px 64px; }
+  .wrap { max-width: 940px; margin: 0 auto; padding: 0 28px 72px; }
 
   /* ─── HERO ─── */
-  .hero { padding: 56px 0 28px; }
+  .hero { padding: 56px 0 26px; }
 
   .hero-icon {
-    width: 56px; height: 56px; border-radius: 14px; overflow: hidden;
-    margin: 0 0 22px; box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+    width: 52px; height: 52px; border-radius: 13px; overflow: hidden;
+    margin: 0 0 20px; box-shadow: 0 16px 48px rgba(0,0,0,0.4);
   }
   .hero-icon img { width: 100%; height: 100%; display: block; }
 
   .hero h1 {
     font-size: clamp(30px, 5.5vw, 42px); font-weight: 700;
-    line-height: 1.05; letter-spacing: -0.03em; margin-bottom: 14px;
+    line-height: 1.05; letter-spacing: -0.03em;
   }
   .hero h1 .teal { color: var(--brand); }
 
-  .hero p { font-size: 14.5px; font-weight: 300; color: var(--text-2); max-width: 520px; }
+  /* ─── LOCALE CHIPS ─── */
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 44px; }
 
-  .hero-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
-
-  .pill {
-    display: inline-flex; align-items: center; gap: 6px;
-    font-size: 11px; font-weight: 600; letter-spacing: 0.02em;
-    padding: 5px 11px; border-radius: 100px;
-    background: var(--sem-8); border: 1px solid var(--border); color: var(--text-2);
-  }
-  .pill.teal { background: rgba(12,187,161,0.12); border-color: rgba(12,187,161,0.35); color: var(--brand); }
-  .pill.warn { background: rgba(229,161,58,0.12); border-color: rgba(229,161,58,0.35); color: var(--warn); }
-
-  /* ─── OVERALL PROGRESS ─── */
-  .overall {
-    border: 1px solid var(--border); border-radius: 14px; background: var(--sem-5);
-    padding: 16px 18px; margin-bottom: 26px;
-  }
-  .overall-top {
-    display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 10px;
-  }
-  .overall-label { font-size: 12.5px; font-weight: 600; color: var(--text-1); }
-  .overall-count { font-size: 12px; font-weight: 400; color: var(--text-3); font-variant-numeric: tabular-nums; }
-  .bar { height: 5px; border-radius: 100px; background: rgba(255,255,255,0.07); overflow: hidden; }
-  .bar span { display: block; height: 100%; background: var(--brand); border-radius: 100px; transition: width 0.25s ease; }
-
-  /* ─── LOCALE NAV ─── */
-  .locale-nav {
-    position: sticky; top: 0; z-index: 30;
-    margin: 0 -24px 26px; padding: 0 24px;
-    background: rgba(12,15,17,0.85);
-    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-  }
-  .locale-nav ul { list-style: none; display: flex; gap: 6px; overflow-x: auto; padding: 11px 0; scrollbar-width: none; }
-  .locale-nav ul::-webkit-scrollbar { display: none; }
-
-  .locale-nav button {
-    display: flex; align-items: center; gap: 7px; flex-shrink: 0; white-space: nowrap;
-    padding: 7px 13px; border-radius: 100px; cursor: pointer;
-    background: var(--sem-8); border: 1px solid var(--border);
-    color: var(--text-2); font-family: 'Sora', sans-serif; font-size: 12.5px; font-weight: 400;
+  .chips button {
+    display: inline-flex; align-items: center; gap: 8px; cursor: pointer;
+    padding: 8px 15px; border-radius: 100px;
+    background: var(--sem-5); border: 1px solid var(--border);
+    color: var(--text-2); font-family: 'Sora', sans-serif; font-size: 13px; font-weight: 400;
     transition: background 0.15s, border-color 0.15s, color 0.15s;
     -webkit-tap-highlight-color: transparent;
   }
-  .locale-nav button:hover { color: var(--text-1); border-color: var(--sem-15); }
-  .locale-nav button .code { font-weight: 600; font-size: 12px; letter-spacing: 0.02em; }
-  .locale-nav button .tick { width: 6px; height: 6px; border-radius: 50%; background: var(--text-3); flex-shrink: 0; }
-  .locale-nav button.complete .tick { background: var(--brand); }
-  .locale-nav button.active { background: rgba(12,187,161,0.14); border-color: var(--brand); color: var(--text-1); }
+  .chips button .flag { font-size: 14px; line-height: 1; }
+  .chips button:hover { color: var(--text-1); border-color: var(--sem-15); }
+  .chips button.active {
+    background: rgba(12,187,161,0.14); border-color: var(--brand);
+    color: var(--text-1); font-weight: 600;
+  }
 
   /* ─── LOCALE HEADER ─── */
-  .locale-head { margin-bottom: 26px; }
-  .locale-head h2 { font-size: 26px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; }
-  .asc-line {
-    display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px;
-    font-size: 13px; font-weight: 300; color: var(--text-2); margin-top: 8px;
+  .locale-head {
+    display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap;
+    padding-bottom: 22px; border-bottom: 1px solid var(--border); margin-bottom: 32px;
   }
-  .asc-line b { font-weight: 600; color: var(--brand); }
-  .locale-head .note { font-size: 13px; font-weight: 300; color: var(--text-3); margin-top: 6px; }
-  .locale-head .pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+  .locale-head .who { margin-right: auto; }
+  .locale-head h2 { font-size: 30px; font-weight: 700; letter-spacing: -0.025em; line-height: 1.15; }
+  .locale-head .sub {
+    font-size: 14px; font-weight: 300; color: var(--text-2); margin-top: 6px;
+  }
+  .locale-head .sub b { font-weight: 600; color: var(--text-1); }
+  .locale-head .sub .final { color: var(--brand); font-weight: 600; }
+  .locale-head .sub .draft { color: var(--warn); font-weight: 600; }
 
-  /* ─── SECTIONS ─── */
-  .section { margin-top: 34px; }
-  .section-title {
-    display: flex; align-items: baseline; gap: 10px;
-    font-size: 12px; font-weight: 600; letter-spacing: 0.10em; text-transform: uppercase;
-    color: var(--text-3); padding-bottom: 12px; border-bottom: 1px solid var(--border); margin-bottom: 16px;
+  .seg {
+    display: inline-flex; gap: 3px; padding: 3px; flex-shrink: 0;
+    background: var(--sem-5); border: 1px solid var(--border); border-radius: 11px;
   }
-  .section-title .n { font-size: 11px; font-weight: 400; letter-spacing: 0; text-transform: none; }
+  .seg button {
+    padding: 8px 16px; border-radius: 8px; cursor: pointer; border: none; background: none;
+    font-family: 'Sora', sans-serif; font-size: 13px; font-weight: 600; color: var(--text-3);
+    transition: background 0.15s, color 0.15s; -webkit-tap-highlight-color: transparent;
+  }
+  .seg button:hover { color: var(--text-2); }
+  .seg button.on { background: rgba(255,255,255,0.10); color: var(--text-1); }
+
+  /* ─── SECTION ─── */
+  .section-title {
+    display: flex; align-items: center; gap: 16px; margin-bottom: 14px;
+    font-size: 11.5px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--text-3);
+  }
+  .section-title::after { content: ""; flex: 1; height: 1px; background: var(--border); }
 
   /* ─── FIELD ─── */
   .field {
     border: 1px solid var(--border); border-left: 2px solid transparent;
-    border-radius: 12px; background: var(--sem-5); padding: 14px 16px; margin-bottom: 12px;
-    transition: border-color 0.2s, opacity 0.2s;
+    border-radius: 12px; background: rgba(255,255,255,0.03);
+    margin-bottom: 12px; overflow: hidden;
+    transition: border-color 0.2s;
   }
-  .field.is-done { border-left-color: var(--brand); opacity: 0.62; }
+  .field.is-copied { border-left-color: var(--brand); }
 
-  .field-top { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
-  .field-label { font-size: 13px; font-weight: 600; color: var(--text-1); margin-right: auto; }
+  .field-head { display: flex; align-items: center; gap: 14px; padding: 14px 18px; }
 
-  .badge {
-    font-size: 10px; font-weight: 600; letter-spacing: 0.03em;
-    padding: 3px 8px; border-radius: 100px; white-space: nowrap;
-    background: var(--sem-8); border: 1px solid var(--border); color: var(--text-3);
+  .field-label { font-size: 15px; font-weight: 600; white-space: nowrap; }
+  .field-hint {
+    font-size: 12.5px; font-weight: 300; color: var(--text-3);
+    margin-right: auto; line-height: 1.4;
   }
-  .badge.idx { background: rgba(12,187,161,0.10); border-color: rgba(12,187,161,0.30); color: var(--brand); }
-  .badge.ver { background: rgba(229,161,58,0.10); border-color: rgba(229,161,58,0.30); color: var(--warn); }
+
+  .meter { width: 96px; height: 4px; border-radius: 100px; background: rgba(255,255,255,0.10); flex-shrink: 0; }
+  .meter span { display: block; height: 100%; border-radius: 100px; background: var(--brand); }
+  .meter.near span, .meter.max span { background: var(--warn); }
+  .meter.over span { background: var(--danger); }
 
   .count {
-    font-size: 11.5px; font-weight: 600; font-variant-numeric: tabular-nums;
-    color: var(--text-3); white-space: nowrap;
+    font-size: 13px; font-weight: 600; font-variant-numeric: tabular-nums;
+    color: var(--text-2); white-space: nowrap; flex-shrink: 0;
   }
-  .count.near { color: var(--warn); }
-  .count.max  { color: var(--brand); }
+  .count.near, .count.max { color: var(--warn); }
   .count.over { color: var(--danger); }
 
-  .field-val {
-    width: 100%; text-align: left; display: block; cursor: pointer;
-    font-family: 'Sora', sans-serif; font-size: 13px; font-weight: 300; line-height: 1.65;
+  .copy-btn {
+    flex-shrink: 0; cursor: pointer; padding: 7px 18px; border-radius: 100px;
+    background: var(--sem-5); border: 1px solid var(--sem-15); color: var(--text-1);
+    font-family: 'Sora', sans-serif; font-size: 13px; font-weight: 600;
+    transition: background 0.15s, border-color 0.15s; -webkit-tap-highlight-color: transparent;
+  }
+  .copy-btn:hover { background: var(--sem-8); border-color: rgba(255,255,255,0.28); }
+  .copy-btn:active { background: rgba(255,255,255,0.02); }
+
+  .field-body {
+    border-top: 1px solid var(--border); background: rgba(0,0,0,0.20);
+    padding: 16px 18px;
+    font-family: var(--mono); font-size: 13px; line-height: 1.7;
     color: var(--text-1); white-space: pre-wrap; word-break: break-word;
-    background: rgba(0,0,0,0.22); border: 1px solid var(--border); border-radius: 9px;
-    padding: 12px 14px; transition: border-color 0.15s, background 0.15s;
-    -webkit-tap-highlight-color: transparent;
   }
-  .field-val:hover { border-color: var(--sem-15); }
-  .field-val.kw { color: var(--brand); font-size: 12.5px; line-height: 1.7; }
+  .field-body.kw { color: var(--brand); }
 
-  .field-val.clamped {
-    max-height: 190px; overflow: hidden;
-    -webkit-mask-image: linear-gradient(180deg, #000 120px, transparent 100%);
-            mask-image: linear-gradient(180deg, #000 120px, transparent 100%);
+  .field-body.clamped {
+    max-height: 200px; overflow: hidden;
+    -webkit-mask-image: linear-gradient(180deg, #000 130px, transparent 100%);
+            mask-image: linear-gradient(180deg, #000 130px, transparent 100%);
   }
 
-  .field-foot { display: flex; align-items: center; gap: 10px; margin-top: 10px; }
-
-  .linkbtn {
-    background: none; border: none; padding: 0; cursor: pointer;
-    font-family: 'Sora', sans-serif; font-size: 12px; font-weight: 400; color: var(--text-3);
-    text-decoration: underline; text-underline-offset: 3px;
+  .expand {
+    display: block; width: 100%; text-align: left; cursor: pointer;
+    background: rgba(0,0,0,0.20); border: none; border-top: 1px solid var(--border);
+    padding: 10px 18px; font-family: 'Sora', sans-serif; font-size: 12px;
+    font-weight: 400; color: var(--text-3);
   }
-  .linkbtn:hover { color: var(--text-2); }
-
-  .done-btn {
-    margin-left: auto; display: inline-flex; align-items: center; gap: 7px; cursor: pointer;
-    font-family: 'Sora', sans-serif; font-size: 12px; font-weight: 400; color: var(--text-3);
-    background: var(--sem-5); border: 1px solid var(--border); border-radius: 100px; padding: 5px 12px;
-    transition: all 0.15s; -webkit-tap-highlight-color: transparent;
-  }
-  .done-btn:hover { color: var(--text-2); border-color: var(--sem-15); }
-  .done-btn .box {
-    width: 13px; height: 13px; border-radius: 4px; flex-shrink: 0;
-    border: 1.5px solid var(--sem-15); display: grid; place-items: center;
-  }
-  .done-btn .box svg { width: 9px; height: 9px; opacity: 0; }
-  .field.is-done .done-btn { color: var(--brand); border-color: rgba(12,187,161,0.35); background: rgba(12,187,161,0.10); }
-  .field.is-done .done-btn .box { background: var(--brand); border-color: var(--brand); }
-  .field.is-done .done-btn .box svg { opacity: 1; color: #07211d; }
+  .expand:hover { color: var(--text-2); }
 
   /* ─── FOOTER ─── */
   footer {
-    margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border);
+    margin-top: 44px; padding-top: 22px; border-top: 1px solid var(--border);
     display: flex; flex-wrap: wrap; align-items: center; gap: 14px;
     font-size: 11px; font-weight: 300; color: var(--text-3);
   }
-  footer .spacer { margin-left: auto; }
+  .linkbtn {
+    margin-left: auto; background: none; border: none; padding: 0; cursor: pointer;
+    font-family: 'Sora', sans-serif; font-size: 11px; font-weight: 400; color: var(--text-3);
+    text-decoration: underline; text-underline-offset: 3px;
+  }
+  .linkbtn:hover { color: var(--text-2); }
 
   /* ─── TOAST ─── */
   .toast {
@@ -233,11 +261,20 @@ HEAD = '''<!DOCTYPE html>
   }
   .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
-  @media (max-width: 560px) {
-    .wrap { padding: 0 16px 48px; }
-    .locale-nav { margin: 0 -16px 22px; padding: 0 16px; }
-    .hero { padding: 40px 0 22px; }
-    .field { padding: 13px 14px; }
+  @media (max-width: 720px) {
+    .wrap { padding: 0 18px 56px; }
+    .hero { padding: 40px 0 20px; }
+    .chips { margin-bottom: 32px; }
+    .field-head { flex-wrap: wrap; gap: 10px 12px; padding: 14px 15px; }
+    .field-label { width: 100%; }
+    .field-hint { width: 100%; margin-right: 0; order: 3; }
+    .meter { order: 1; }
+    .count { order: 1; margin-right: auto; }
+    .copy-btn { order: 2; }
+    .field-body { padding: 14px 15px; }
+    .locale-head { gap: 16px; }
+    .seg { width: 100%; }
+    .seg button { flex: 1; }
   }
 </style>
 </head>
@@ -246,28 +283,17 @@ HEAD = '''<!DOCTYPE html>
 <div class="wrap">
 
   <header class="hero">
-    <div class="hero-icon"><img src="quanto-icon-192.png" alt="Quanto" width="56" height="56" decoding="async" fetchpriority="high"></div>
+    <div class="hero-icon"><img src="quanto-icon-192.png" alt="Quanto" width="52" height="52" decoding="async" fetchpriority="high"></div>
     <h1>Store <span class="teal">Localization</span></h1>
-    <p>Every App Store Connect and Google Play field, per locale. Tap any value to copy it, and tick it off as you paste. Character counts are live against each store limit.</p>
-    <div class="hero-meta" id="hero-meta"></div>
   </header>
 
-  <div class="overall">
-    <div class="overall-top">
-      <span class="overall-label">Pasted into the stores</span>
-      <span class="overall-count" id="overall-count"></span>
-    </div>
-    <div class="bar"><span id="overall-bar" style="width:0%"></span></div>
-  </div>
-
-  <nav class="locale-nav"><ul id="locale-nav"></ul></nav>
+  <nav class="chips" id="chips"></nav>
 
   <div id="panel"></div>
 
   <footer>
     <span id="foot-note"></span>
-    <button class="linkbtn spacer" id="reset-locale">Reset this locale</button>
-    <button class="linkbtn" id="reset-all">Reset all</button>
+    <button class="linkbtn" id="reset-all">Reset copied markers</button>
   </footer>
 
 </div>
@@ -281,123 +307,88 @@ TAIL = ''';
 
 const FIELDS = DATA.fields;
 const LOCALES = DATA.locales;
-const STORE_LABEL = { ios: 'App Store Connect', play: 'Google Play Console' };
 const KEY = 'quanto-aso-progress-v1';
 
-/* ─── PROGRESS STATE ─── */
+let current = LOCALES[0].code;
+let store = 'ios';
+
+/* ─── COPIED MARKERS ─── */
 let progress = {};
 try { progress = JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { progress = {}; }
-
-function saveProgress() {
-  try { localStorage.setItem(KEY, JSON.stringify(progress)); } catch (e) {}
-}
-function isDone(code, key) { return !!(progress[code] && progress[code][key]); }
-function setDone(code, key, on) {
+function saveProgress() { try { localStorage.setItem(KEY, JSON.stringify(progress)); } catch (e) {} }
+function isCopied(code, key) { return !!(progress[code] && progress[code][key]); }
+function markCopied(code, key) {
   if (!progress[code]) progress[code] = {};
-  if (on) progress[code][key] = true; else delete progress[code][key];
-  if (!Object.keys(progress[code]).length) delete progress[code];
+  progress[code][key] = true;
   saveProgress();
 }
 
-/* fields that actually exist for a locale (only EN carries kw_gb) */
-function fieldsFor(loc) { return FIELDS.filter(f => loc.values[f.key]); }
-function doneCount(loc) { return fieldsFor(loc).filter(f => isDone(loc.code, f.key)).length; }
+const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+const fieldsFor = (loc, st) => FIELDS.filter(f => f.store === st && loc.values[f.key]);
 
-/* ─── RENDER ─── */
-let current = LOCALES[0].code;
-const esc = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-
-const TICK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>';
-
-function countClass(n, limit) {
+function level(n, limit) {
   if (n > limit) return 'over';
   if (n === limit) return 'max';
   if (n >= limit * 0.9) return 'near';
   return '';
 }
 
-function renderHeroMeta() {
-  const totalFields = LOCALES.reduce((a, l) => a + fieldsFor(l).length, 0);
-  document.getElementById('hero-meta').innerHTML =
-    '<span class="pill teal">' + LOCALES.length + ' locales</span>' +
-    '<span class="pill">' + totalFields + ' fields</span>' +
-    '<span class="pill">Generated ' + esc(DATA.generated) + '</span>';
-  document.getElementById('foot-note').textContent =
-    DATA.app + ' store metadata — generated ' + DATA.generated + '. Progress is saved in this browser only.';
-}
-
-function renderNav() {
-  document.getElementById('locale-nav').innerHTML = LOCALES.map(l => {
-    const total = fieldsFor(l).length, done = doneCount(l);
-    return '<li><button data-locale="' + l.code + '"' +
-      ' class="' + (l.code === current ? 'active ' : '') + (done === total ? 'complete' : '') + '">' +
-      '<span class="tick"></span><span class="code">' + esc(l.code) + '</span>' +
-      '<span>' + done + '/' + total + '</span></button></li>';
-  }).join('');
-}
-
-function renderOverall() {
-  const total = LOCALES.reduce((a, l) => a + fieldsFor(l).length, 0);
-  const done  = LOCALES.reduce((a, l) => a + doneCount(l), 0);
-  document.getElementById('overall-count').textContent = done + ' / ' + total + ' fields';
-  document.getElementById('overall-bar').style.width = (total ? (done / total) * 100 : 0) + '%';
+function renderChips() {
+  document.getElementById('chips').innerHTML = LOCALES.map(l =>
+    '<button data-locale="' + l.code + '" class="' + (l.code === current ? 'active' : '') + '">' +
+      '<span class="flag">' + l.flag + '</span><span>' + esc(l.chip) + '</span>' +
+    '</button>').join('');
 }
 
 function fieldHTML(loc, f) {
   const val = loc.values[f.key];
   const n = val.length;
+  const lv = level(n, f.limit);
+  const pct = Math.min(100, (n / f.limit) * 100);
   const long = n > 400;
   const isKw = f.key.indexOf('kw_') === 0;
   return '' +
-    '<div class="field' + (isDone(loc.code, f.key) ? ' is-done' : '') + '" data-key="' + f.key + '">' +
-      '<div class="field-top">' +
+    '<div class="field' + (isCopied(loc.code, f.key) ? ' is-copied' : '') + '" data-key="' + f.key + '">' +
+      '<div class="field-head">' +
         '<span class="field-label">' + esc(f.label) + '</span>' +
-        (f.indexed ? '<span class="badge idx">indexed</span>' : '') +
-        (f.needsNewVersion ? '<span class="badge ver">needs new version</span>' : '') +
-        '<span class="count ' + countClass(n, f.limit) + '">' + n + ' / ' + f.limit + '</span>' +
+        '<span class="field-hint">' + esc(f.hint) + '</span>' +
+        '<span class="meter ' + lv + '"><span style="width:' + pct + '%"></span></span>' +
+        '<span class="count ' + lv + '">' + n + '/' + f.limit + '</span>' +
+        '<button class="copy-btn" data-copy>Copy</button>' +
       '</div>' +
-      '<button class="field-val' + (isKw ? ' kw' : '') + (long ? ' clamped' : '') + '" data-copy>' + esc(val) + '</button>' +
-      '<div class="field-foot">' +
-        (long ? '<button class="linkbtn" data-expand>Show full text</button>' : '') +
-        '<button class="done-btn" data-done><span class="box">' + TICK + '</span><span>Pasted</span></button>' +
-      '</div>' +
+      '<div class="field-body' + (isKw ? ' kw' : '') + (long ? ' clamped' : '') + '">' + esc(val) + '</div>' +
+      (long ? '<button class="expand" data-expand>Show full text</button>' : '') +
     '</div>';
 }
 
 function renderPanel() {
   const loc = LOCALES.find(l => l.code === current);
-  const fields = fieldsFor(loc);
-  const groups = [
-    { store: 'ios',  title: 'App Store Connect' },
-    { store: 'play', title: 'Google Play Console' }
-  ];
+  const list = fieldsFor(loc, store);
+  const statusHTML = loc.status === 'final'
+    ? '<span class="final">Live</span>'
+    : '<span class="draft">Draft — needs native review</span>';
+  // EN's note is just "Live", which the status already says
+  const note = (loc.note && !/^live$/i.test(loc.note.trim())) ? loc.note : '';
 
-  let html =
+  document.getElementById('panel').innerHTML =
     '<div class="locale-head">' +
-      '<h2>' + esc(loc.language) + '</h2>' +
-      '<div class="asc-line">Select <b>' + esc(loc.appStoreLocale) + '</b> in App Store Connect</div>' +
-      (loc.note ? '<div class="note">' + esc(loc.note) + '</div>' : '') +
-      '<div class="pills">' +
-        (loc.status === 'final'
-          ? '<span class="pill teal">Final</span>'
-          : '<span class="pill warn">Draft — needs native review</span>') +
-        '<span class="pill">' + doneCount(loc) + ' / ' + fields.length + ' pasted</span>' +
+      '<div class="who">' +
+        '<h2>' + l_flag(loc) + esc(loc.language) + '</h2>' +
+        '<div class="sub">App Store locale <b>' + esc(loc.appStoreLocale) + '</b> · ' + statusHTML +
+          (note ? ' · ' + esc(note) : '') + '</div>' +
       '</div>' +
-    '</div>';
-
-  groups.forEach(g => {
-    const list = fields.filter(f => f.store === g.store);
-    if (!list.length) return;
-    html += '<section class="section">' +
-      '<h3 class="section-title">' + g.title + '<span class="n">' + list.length + ' fields</span></h3>' +
-      list.map(f => fieldHTML(loc, f)).join('') +
-      '</section>';
-  });
-
-  document.getElementById('panel').innerHTML = html;
+      '<div class="seg">' +
+        '<button data-store="ios" class="' + (store === 'ios' ? 'on' : '') + '">App Store</button>' +
+        '<button data-store="play" class="' + (store === 'play' ? 'on' : '') + '">Google Play</button>' +
+      '</div>' +
+    '</div>' +
+    '<h3 class="section-title">' + (store === 'ios' ? 'App Store Connect' : 'Google Play Console') + '</h3>' +
+    list.map(f => fieldHTML(loc, f)).join('');
 }
 
-function renderAll() { renderNav(); renderOverall(); renderPanel(); }
+function l_flag(loc) { return '<span style="margin-right:10px">' + loc.flag + '</span>'; }
+
+function renderAll() { renderChips(); renderPanel(); }
 
 /* ─── TOAST ─── */
 const toast = document.getElementById('toast');
@@ -428,68 +419,48 @@ async function copyText(text) {
 }
 
 /* ─── EVENTS ─── */
-document.getElementById('locale-nav').addEventListener('click', e => {
+document.getElementById('chips').addEventListener('click', e => {
   const b = e.target.closest('[data-locale]');
   if (!b) return;
   current = b.getAttribute('data-locale');
   renderAll();
-  window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
 document.getElementById('panel').addEventListener('click', async e => {
+  const seg = e.target.closest('[data-store]');
+  if (seg) { store = seg.getAttribute('data-store'); renderPanel(); return; }
+
   const field = e.target.closest('.field');
   if (!field) return;
   const key = field.getAttribute('data-key');
   const loc = LOCALES.find(l => l.code === current);
 
   if (e.target.closest('[data-expand]')) {
-    const val = field.querySelector('.field-val');
+    const body = field.querySelector('.field-body');
     const btn = e.target.closest('[data-expand]');
-    const clamped = val.classList.toggle('clamped');
-    btn.textContent = clamped ? 'Show full text' : 'Show less';
-    return;
-  }
-
-  if (e.target.closest('[data-done]')) {
-    const on = !isDone(loc.code, key);
-    setDone(loc.code, key, on);
-    field.classList.toggle('is-done', on);
-    renderNav(); renderOverall();
-    const head = document.querySelector('.locale-head .pills .pill:last-child');
-    if (head) head.textContent = doneCount(loc) + ' / ' + fieldsFor(loc).length + ' pasted';
+    btn.textContent = body.classList.toggle('clamped') ? 'Show full text' : 'Show less';
     return;
   }
 
   if (e.target.closest('[data-copy]')) {
     const ok = await copyText(loc.values[key]);
     if (!ok) { showToast('Press and hold to copy'); return; }
-    const label = FIELDS.find(f => f.key === key).label;
-    showToast('Copied ' + label);
-    if (!isDone(loc.code, key)) {
-      setDone(loc.code, key, true);
-      field.classList.add('is-done');
-      renderNav(); renderOverall();
-      const head = document.querySelector('.locale-head .pills .pill:last-child');
-      if (head) head.textContent = doneCount(loc) + ' / ' + fieldsFor(loc).length + ' pasted';
-    }
+    showToast('Copied ' + FIELDS.find(f => f.key === key).label);
+    markCopied(loc.code, key);
+    field.classList.add('is-copied');
   }
-});
-
-document.getElementById('reset-locale').addEventListener('click', () => {
-  delete progress[current];
-  saveProgress();
-  renderAll();
-  showToast('Reset ' + current);
 });
 
 document.getElementById('reset-all').addEventListener('click', () => {
   progress = {};
   saveProgress();
-  renderAll();
-  showToast('Reset all locales');
+  renderPanel();
+  showToast('Cleared copied markers');
 });
 
-renderHeroMeta();
+document.getElementById('foot-note').textContent =
+  DATA.app + ' store metadata — ' + LOCALES.length + ' locales, generated ' + DATA.generated +
+  '. Copied markers are saved in this browser only.';
 renderAll();
 </script>
 
