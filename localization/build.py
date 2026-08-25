@@ -158,19 +158,20 @@ HEAD = '''<!DOCTYPE html>
 
   .seg {
     display: inline-flex; gap: 2px; padding: 4px; margin-bottom: 22px;
-    background: rgba(255,255,255,0.06); border-radius: 100px;
+    border-radius: 64px; background: var(--sem-8);
   }
   .seg button {
-    padding: 9px 22px; border-radius: 100px; cursor: pointer;
-    border: 1px solid transparent; background: none;
+    padding: 9px 22px; border-radius: 16px; cursor: pointer;
+    border: 0.5px solid transparent; background: none;
     font-family: 'Sora', sans-serif; font-size: 13.5px; font-weight: 400; color: var(--text-3);
     transition: background 0.15s, color 0.15s, border-color 0.15s;
     -webkit-tap-highlight-color: transparent;
   }
   .seg button:hover { color: var(--text-2); }
   .seg button.on {
-    background: rgba(255,255,255,0.10);
-    border-color: rgba(255,255,255,0.22);
+    border-radius: 16px;
+    border: 0.5px solid rgba(255, 255, 255, 0.50);
+    background: radial-gradient(100% 100% at 50% 0%, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.08) 100%);
     color: var(--text-1);
   }
 
@@ -194,29 +195,28 @@ HEAD = '''<!DOCTYPE html>
 
   .meter { width: 96px; height: 4px; border-radius: 100px; background: rgba(255,255,255,0.10); flex-shrink: 0; }
   .meter span { display: block; height: 100%; border-radius: 100px; background: var(--brand); }
-  .meter.near span, .meter.max span { background: var(--warn); }
   .meter.over span { background: var(--danger); }
 
   .count {
     font-size: 13px; font-weight: 600; font-variant-numeric: tabular-nums;
     color: var(--text-2); white-space: nowrap; flex-shrink: 0;
   }
-  .count.near, .count.max { color: var(--warn); }
   .count.over { color: var(--danger); }
 
   /* small build of the site's raised pill: face on a ledge that
      collapses on press */
   .copy-btn {
-    flex-shrink: 0; cursor: pointer; padding: 6px 18px; border-radius: 100px;
+    flex-shrink: 0; cursor: pointer; padding: 7px 18px; border-radius: 100px;
     margin-bottom: 3px; /* offsets the ledge so the face sits centred in the row */
-    background: linear-gradient(180deg, #eff2f6 0%, #dfdfdf 100%);
-    border: 2px solid #ffffff; background-clip: padding-box; color: #151a1f;
-    font-family: 'Sora', sans-serif; font-size: 12.5px; font-weight: 600; line-height: 20px;
-    box-shadow: 0 3px 0 #acb0b3;
-    transition: transform 0.1s ease, box-shadow 0.1s ease;
+    background: rgba(255,255,255,0.0975);
+    border: 1px solid var(--border); color: var(--text-1);
+    font-family: 'Sora', sans-serif; font-size: 12.5px; font-weight: 400; line-height: 20px;
+    box-shadow: 0 3px 0 var(--sem-5);
+    transition: transform 0.1s ease, box-shadow 0.1s ease, border-color 0.15s;
     -webkit-tap-highlight-color: transparent;
   }
-  .copy-btn:active { transform: translateY(2px); box-shadow: 0 1px 0 #acb0b3; }
+  .copy-btn:hover { border-color: var(--sem-15); }
+  .copy-btn:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--sem-5); }
 
   .field-body {
     border-top: 1px solid var(--border); background: rgba(0,0,0,0.20);
@@ -335,12 +335,7 @@ function markCopied(code, key) {
 const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const fieldsFor = (loc, st) => FIELDS.filter(f => f.store === st && loc.values[f.key]);
 
-function level(n, limit) {
-  if (n > limit) return 'over';
-  if (n === limit) return 'max';
-  if (n >= limit * 0.9) return 'near';
-  return '';
-}
+function level(n, limit) { return n > limit ? 'over' : ''; }
 
 function renderChips() {
   document.getElementById('chips').innerHTML = LOCALES.map(l =>
