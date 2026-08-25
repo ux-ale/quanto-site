@@ -161,18 +161,29 @@ HEAD = '''<!DOCTYPE html>
     border-radius: 64px; background: var(--sem-8);
   }
   .seg button {
+    position: relative;
     padding: 9px 22px; border-radius: 16px; cursor: pointer;
     border: 0.5px solid transparent; background: none;
     font-family: 'Sora', sans-serif; font-size: 13.5px; font-weight: 400; color: var(--text-3);
-    transition: background 0.15s, color 0.15s, border-color 0.15s;
+    transition: background 0.15s, color 0.15s;
     -webkit-tap-highlight-color: transparent;
   }
   .seg button:hover { color: var(--text-2); }
   .seg button.on {
-    border-radius: 16px;
-    border: 0.5px solid rgba(255, 255, 255, 0.50);
     background: radial-gradient(100% 100% at 50% 0%, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.08) 100%);
     color: var(--text-1);
+  }
+
+  /* 0.5px stroke that fades from white at the top to nothing at the
+     bottom - a masked gradient ring, since a border can't be a gradient */
+  .seg button.on::after {
+    content: ""; position: absolute; inset: -0.5px; border-radius: inherit;
+    padding: 0.5px; pointer-events: none;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0) 100%);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+            mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
   }
 
   /* ─── SECTION ─── */
