@@ -24,10 +24,6 @@ LOCALE_META = [
     ("PL",     "\U0001F1F5\U0001F1F1", "Polish"),
 ]
 
-# Locales whose keywords are backed by Apple Search Ads popularity data.
-# Everything else is still first-draft copy waiting on a data pull.
-KEYWORD_DATA = {"EN", "ID"}
-
 # Short ASO note shown beside each field label.
 HINTS = {
     "ios_name":  "Highest-weighted field. Needs a new version to change",
@@ -50,13 +46,17 @@ missing = [l['code'] for l in data['locales'] if l['code'] not in known]
 assert not missing, f"locale missing from LOCALE_META: {missing}"
 assert set(HINTS) == {f['key'] for f in data['fields']}, "HINTS keys must match fields"
 
+# every status must have a badge in STATUS_BADGE below
+KNOWN_STATUS = {"final", "data-backed", "draft"}
+seen = {l['status'] for l in data['locales']}
+assert seen <= KNOWN_STATUS, f"unknown locale status: {sorted(seen - KNOWN_STATUS)}"
+
 order = {c: i for i, (c, _, _) in enumerate(LOCALE_META)}
 data['locales'].sort(key=lambda l: order[l['code']])
 for l in data['locales']:
     _, flag, label = next(m for m in LOCALE_META if m[0] == l['code'])
     l['flag'] = flag
     l['chip'] = label
-    l['source'] = 'data' if l['code'] in KEYWORD_DATA else 'draft'
 for f in data['fields']:
     f['hint'] = HINTS[f['key']]
 
@@ -194,21 +194,25 @@ HEAD = '''<!DOCTYPE html>
     font-size: 11px; font-weight: 600; letter-spacing: 0.04em;
     padding: 5px 13px; border-radius: 100px; white-space: nowrap;
   }
-  .status.final { background: rgba(12,187,161,0.12); border: 1px solid rgba(12,187,161,0.35); color: var(--brand); }
-  .status.draft { background: rgba(240,146,14,0.12); border: 1px solid rgba(240,146,14,0.35); color: var(--warn); }
+  .status { display: inline-flex; align-items: center; gap: 7px; }
+  .status::before {
+    content: ""; width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0;
+  }
+  .status.final {
+    background: rgba(12,187,161,0.12); border: 1px solid rgba(12,187,161,0.35); color: var(--brand);
+  }
+  .status.final::before { background: var(--brand); }
 
-  /* where the copy came from - real keyword data, or a first draft */
-  .source {
-    display: inline-flex; align-items: center; gap: 7px;
-    font-size: 11px; font-weight: 600; letter-spacing: 0.04em;
-    padding: 5px 13px; border-radius: 100px; white-space: nowrap;
+  /* rebuilt from Search Ads data, but not submitted yet */
+  .status.data {
     background: var(--sem-5); border: 1px solid var(--border); color: var(--text-2);
   }
-  .source::before {
-    content: ""; width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0;
-    background: rgba(255,255,255,0.25);
+  .status.data::before { background: var(--brand); }
+
+  .status.draft {
+    background: rgba(240,146,14,0.12); border: 1px solid rgba(240,146,14,0.35); color: var(--warn);
   }
-  .source.data::before { background: var(--brand); }
+  .status.draft::before { background: var(--warn); }
 
   .seg {
     display: inline-flex; gap: 2px; padding: 4px; margin-bottom: 22px;
@@ -434,6 +438,19 @@ function fieldHTML(loc, f) {
     '</div>';
 }
 
+const STATUS_BADGE = {
+  'final':       { cls: 'final', label: 'Live',            desc: 'live in the App Store' },
+  'data-backed': { cls: 'data',  label: 'Search Ads data', desc: '' },
+  'draft':       { cls: 'draft', label: 'Draft copy',      desc: '' }
+};
+
+function statusBadge(loc) {
+  const b = STATUS_BADGE[loc.status] || { cls: 'draft', label: loc.status, desc: '' };
+  const desc = b.desc || DATA.status[loc.status] || '';
+  return '<span class="status ' + b.cls + '"' +
+         (desc ? ' title="' + esc(desc) + '"' : '') + '>' + esc(b.label) + '</span>';
+}
+
 function renderShots() {
   const el = document.getElementById('shots');
   const loc = LOCALES.find(l => l.code === current);
@@ -460,12 +477,7 @@ function renderPanel() {
   document.getElementById('panel').innerHTML =
     '<div class="locale-head">' +
       '<h2>' + l_flag(loc) + esc(loc.language) + '</h2>' +
-      (loc.status === 'final'
-        ? '<span class="status final">Live</span>'
-        : '<span class="status draft">Review</span>') +
-      (loc.source === 'data'
-        ? '<span class="source data">Search Ads data</span>'
-        : '<span class="source">Draft copy</span>') +
+      statusBadge(loc) +
     '</div>' +
     list.map(f => fieldHTML(loc, f)).join('');
 }
