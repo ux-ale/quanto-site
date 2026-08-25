@@ -136,24 +136,23 @@
   .actions {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
   }
 
   .btn-wrap {
     display: block;
     width: 100%;
+    padding: 0;
     border: none;
-    padding: 0 0 4px;
+    background: none;
     border-radius: 100px;
-    background: #acb0b3;
     font-family: 'Sora', sans-serif;
     cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
   }
 
-  .btn-wrap:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0,0,0,0.25); }
-  .btn-wrap:active { transform: translateY(1px); }
-
+  /* the face sits on a solid ledge; pressing lowers the face and
+     shrinks the ledge, so the bottom edge stays put */
   .btn-inner {
     display: flex;
     align-items: center;
@@ -170,26 +169,30 @@
     font-weight: 600;
     line-height: 24px;
     white-space: nowrap;
+    box-shadow: 0 5px 0 #acb0b3;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
   }
 
-  .btn-wrap.secondary { background: var(--sem-5); }
-  .btn-wrap.secondary:hover { box-shadow: 0 6px 20px rgba(255,255,255,0.06); }
+  .btn-wrap:active .btn-inner {
+    transform: translateY(3px);
+    box-shadow: 0 2px 0 #acb0b3;
+  }
 
+  /* one 5% white layer forms the ledge; the face is a second 5% layer
+     stacked on it, so the face reads lighter and the exposed ledge darker */
   .btn-wrap.secondary .btn-inner {
-    background: var(--sem-5);
+    background: rgba(255,255,255,0.0975);
     border: 1px solid var(--border);
     color: var(--text-1);
     font-weight: 400;
+    box-shadow: 0 5px 0 var(--sem-5);
   }
 
   .btn-wrap.secondary:hover .btn-inner { border-color: var(--sem-15); }
 
-  .btn-wrap.copied { background: rgba(12,187,161,0.35); }
-  .btn-wrap.copied .btn-inner {
-    background: rgba(12,187,161,0.14);
-    border-color: var(--brand);
-    color: var(--brand);
-    font-weight: 600;
+  .btn-wrap.secondary:active .btn-inner {
+    transform: translateY(3px);
+    box-shadow: 0 2px 0 var(--sem-5);
   }
 
   /* ─── TOAST ─── */
@@ -247,7 +250,7 @@
   <div class="actions">
     <button class="btn-wrap" id="btn-copy" type="button">
       <span class="btn-inner">
-        <span id="copy-label">Copy</span>
+        <span>Copy</span>
       </span>
     </button>
 
@@ -302,7 +305,6 @@ const captionEl = document.getElementById('caption');
 const tagsEl    = document.getElementById('tags');
 const cardEl    = document.getElementById('card');
 const copyBtn   = document.getElementById('btn-copy');
-const copyLabel = document.getElementById('copy-label');
 const randomBtn = document.getElementById('btn-random');
 
 let lastCaption = -1;
@@ -325,8 +327,6 @@ function randomize() {
   cardEl.classList.remove('fade');
   void cardEl.offsetWidth;
   cardEl.classList.add('fade');
-
-  resetCopyButton();
 }
 
 function currentText() {
@@ -361,20 +361,9 @@ async function copyText(text) {
   }
 }
 
-let copyTimer;
-function resetCopyButton() {
-  clearTimeout(copyTimer);
-  copyBtn.classList.remove('copied');
-  copyLabel.textContent = 'Copy';
-}
-
 copyBtn.addEventListener('click', async () => {
   const ok = await copyText(currentText());
   if (ok) {
-    copyBtn.classList.add('copied');
-    copyLabel.textContent = 'Copied';
-    clearTimeout(copyTimer);
-    copyTimer = setTimeout(resetCopyButton, 1600);
     showToast('Copied to clipboard');
   } else {
     showToast('Press and hold to copy');
