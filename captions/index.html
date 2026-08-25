@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quanto — Random Captions</title>
+<meta name="description" content="Get a random caption + hashtag combination for your Quanto content, ready to copy.">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" href="quanto-app-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0C0F11;
+    --sem-5:  rgba(255,255,255,0.05);
+    --sem-8:  rgba(255,255,255,0.08);
+    --sem-15: rgba(255,255,255,0.15);
+    --border: rgba(255,255,255,0.08);
+    --brand:  #0cbba1;
+    --text-1: #ffffff;
+    --text-2: rgba(255,255,255,0.55);
+    --text-3: rgba(255,255,255,0.30);
+  }
+
+  html, body {
+    margin: 0;
+    min-height: 100%;
+    background: #0C0F11;
+    overscroll-behavior: none;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(180deg, #283339 0%, #0C0F11 100%);
+    pointer-events: none;
+  }
+
+  body {
+    font-family: 'Sora', sans-serif;
+    background: transparent;
+    color: var(--text-1);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+  }
+
+  .container {
+    max-width: 520px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+
+  /* ─── HERO ─── */
+  .app-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    overflow: hidden;
+    margin: 0 auto 24px;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.05);
+  }
+
+  .app-icon img { width: 100%; height: 100%; display: block; }
+
+  h1 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+  }
+
+  h1 .teal { color: var(--brand); }
+
+  .subtitle {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--text-2);
+    line-height: 1.7;
+    margin: 0 auto 32px;
+    max-width: 380px;
+  }
+
+  /* ─── CAPTION CARD ─── */
+  .card {
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: var(--sem-5);
+    padding: 28px 24px;
+    text-align: left;
+    margin-bottom: 24px;
+    min-height: 176px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 18px;
+  }
+
+  .card.flash { border-color: var(--brand); }
+
+  .caption {
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 1.45;
+    letter-spacing: -0.01em;
+    color: var(--text-1);
+  }
+
+  .tags {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--brand);
+    word-break: break-word;
+  }
+
+  .fade { animation: fadeIn 0.28s ease both; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ─── BUTTONS ─── */
+  .actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn-wrap {
+    display: block;
+    width: 100%;
+    border: none;
+    padding: 0 0 4px;
+    border-radius: 100px;
+    background: #acb0b3;
+    font-family: 'Sora', sans-serif;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .btn-wrap:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0,0,0,0.25); }
+  .btn-wrap:active { transform: translateY(1px); }
+
+  .btn-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 100px;
+    background: linear-gradient(180deg, #eff2f6 0%, #dfdfdf 100%);
+    border: 2px solid #ffffff;
+    background-clip: padding-box;
+    color: #151a1f;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+    white-space: nowrap;
+  }
+
+  .btn-wrap.secondary { background: var(--sem-5); }
+  .btn-wrap.secondary:hover { box-shadow: 0 6px 20px rgba(255,255,255,0.06); }
+
+  .btn-wrap.secondary .btn-inner {
+    background: var(--sem-5);
+    border: 1px solid var(--border);
+    color: var(--text-1);
+    font-weight: 400;
+  }
+
+  .btn-wrap.secondary:hover .btn-inner { border-color: var(--sem-15); }
+
+  .btn-wrap.copied { background: rgba(12,187,161,0.35); }
+  .btn-wrap.copied .btn-inner {
+    background: rgba(12,187,161,0.14);
+    border-color: var(--brand);
+    color: var(--brand);
+    font-weight: 600;
+  }
+
+  /* ─── TOAST ─── */
+  .toast {
+    position: fixed;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: var(--brand);
+    color: #07211d;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 11px 20px;
+    border-radius: 100px;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.45);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.22s, transform 0.22s;
+    z-index: 100;
+  }
+
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  footer {
+    margin-top: 40px;
+    font-size: 11px;
+    font-weight: 300;
+    color: var(--text-3);
+  }
+
+  @media (max-width: 480px) {
+    body { padding: 32px 16px; }
+    h1 { font-size: 26px; }
+    .subtitle { font-size: 14px; }
+    .caption { font-size: 17px; }
+    .card { padding: 22px 18px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="app-icon">
+    <img src="quanto-app-icon.png" alt="Quanto app icon" width="64" height="64">
+  </div>
+
+  <h1>Random <span class="teal">Captions</span></h1>
+  <p class="subtitle">A fresh caption + hashtag combo every time. Hit copy and paste it straight into your post.</p>
+
+  <div class="card" id="card">
+    <div class="caption" id="caption"></div>
+    <div class="tags" id="tags"></div>
+  </div>
+
+  <div class="actions">
+    <button class="btn-wrap" id="btn-copy" type="button">
+      <span class="btn-inner">
+        <span id="copy-label">Copy</span>
+      </span>
+    </button>
+
+    <button class="btn-wrap secondary" id="btn-random" type="button">
+      <span class="btn-inner">
+        <span>Randomize</span>
+      </span>
+    </button>
+  </div>
+
+  <footer>&copy; 2025 Quanto. All rights reserved.</footer>
+</div>
+
+<div class="toast" id="toast">Copied to clipboard</div>
+
+<script>
+const CAPTIONS = [
+  "How did i not know this EXISTED for iPhone 😭",
+  "Why is nobody TALKING about this iPhone feature",
+  "Why is no one USING this iPhone shortcut 🤯",
+  "99% of iPhone users don’t know this EXISTS 🤯",
+  "I wish i knew this iPhone trick EARLIER 🤯",
+  "This iPhone trick just saved me so much TIME",
+  "🤯 ain’t no way I just discovered this NOW",
+  "iPhone user? Why no one told me! 🤯",
+  "I genuinely CAN’T believe this works 🤯",
+  "I’m mad nobody told me about this SOONER",
+  "Why does NOBODY talk about this feature??",
+  "There’s NO WAY iPhone could do this the whole time 😭",
+  "If only I knew this earlier....😭",
+  "The answer to all my problems"
+];
+
+const HASHTAGS = [
+  "#money #iphone #budgetingtips #spending",
+  "#budgeting #expenses #finance #iphone",
+  "#budgeting #spendingmoney #iphonehack #money",
+  "#spending #budgetingtips #money #iphone",
+  "#spendingmoney #money #budgeting #iphone",
+  "#expenses #budgetingtips #moneytips #iphone",
+  "#budgeting #spendingproblems #iphone #expenses",
+  "#finance #budget #spending #iphone",
+  "#budgetingtips #savingmoney #iphone #budget",
+  "#spendingmoney #expenses #money #iphone",
+  "#overspending #spending #iphone #budget",
+  "#budget #money #expenses #iphonehack",
+  "#savingmoney #finance #iphone #budgetingtips",
+  "#money #spendingproblems #budgeting #iphone"
+];
+
+const captionEl = document.getElementById('caption');
+const tagsEl    = document.getElementById('tags');
+const cardEl    = document.getElementById('card');
+const copyBtn   = document.getElementById('btn-copy');
+const copyLabel = document.getElementById('copy-label');
+const randomBtn = document.getElementById('btn-random');
+
+let lastCaption = -1;
+let lastTags = -1;
+
+function pick(list, last) {
+  if (list.length < 2) return 0;
+  let i = last;
+  while (i === last) i = Math.floor(Math.random() * list.length);
+  return i;
+}
+
+function randomize() {
+  lastCaption = pick(CAPTIONS, lastCaption);
+  lastTags = pick(HASHTAGS, lastTags);
+
+  captionEl.textContent = CAPTIONS[lastCaption];
+  tagsEl.textContent = HASHTAGS[lastTags];
+
+  cardEl.classList.remove('fade');
+  void cardEl.offsetWidth;
+  cardEl.classList.add('fade');
+
+  resetCopyButton();
+}
+
+function currentText() {
+  return CAPTIONS[lastCaption] + "\n\n" + HASHTAGS[lastTags];
+}
+
+/* ─── TOAST ─── */
+const toast = document.getElementById('toast');
+let toastTimer;
+function showToast(msg) {
+  toast.textContent = msg;
+  toast.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove('show'), 1600);
+}
+
+async function copyText(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+    return true;
+  } catch (e) {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    let ok = false;
+    try { ok = document.execCommand('copy'); } catch (_) {}
+    document.body.removeChild(ta);
+    return ok;
+  }
+}
+
+let copyTimer;
+function resetCopyButton() {
+  clearTimeout(copyTimer);
+  copyBtn.classList.remove('copied');
+  copyLabel.textContent = 'Copy';
+}
+
+copyBtn.addEventListener('click', async () => {
+  const ok = await copyText(currentText());
+  if (ok) {
+    copyBtn.classList.add('copied');
+    copyLabel.textContent = 'Copied';
+    clearTimeout(copyTimer);
+    copyTimer = setTimeout(resetCopyButton, 1600);
+    showToast('Copied to clipboard');
+  } else {
+    showToast('Press and hold to copy');
+  }
+});
+
+randomBtn.addEventListener('click', randomize);
+
+randomize();
+</script>
+
+</body>
+</html>
