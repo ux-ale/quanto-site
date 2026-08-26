@@ -247,12 +247,11 @@ HEAD = '''<!DOCTYPE html>
   /* ─── SECTION ─── */
   /* ─── FIELD ─── */
   .field {
-    border: 1px solid var(--border); border-left: 2px solid transparent;
+    border: 1px solid var(--border);
     border-radius: 12px; background: rgba(255,255,255,0.03);
     margin-bottom: 12px; overflow: hidden;
     transition: border-color 0.2s;
   }
-  .field.is-copied { border-left-color: var(--brand); }
 
   .field-head { display: flex; align-items: center; gap: 14px; padding: 14px 18px; }
 
@@ -315,13 +314,6 @@ HEAD = '''<!DOCTYPE html>
     display: flex; flex-wrap: wrap; align-items: center; gap: 14px;
     font-size: 11px; font-weight: 300; color: var(--text-3);
   }
-  .linkbtn {
-    margin-left: auto; background: none; border: none; padding: 0; cursor: pointer;
-    font-family: 'Sora', sans-serif; font-size: 11px; font-weight: 400; color: var(--text-3);
-    text-decoration: underline; text-underline-offset: 3px;
-  }
-  .linkbtn:hover { color: var(--text-2); }
-
   /* ─── TOAST ─── */
   .toast {
     position: fixed; bottom: 28px; left: 50%;
@@ -375,7 +367,6 @@ HEAD = '''<!DOCTYPE html>
 
   <footer>
     <span id="foot-note"></span>
-    <button class="linkbtn" id="reset-all">Reset copied markers</button>
   </footer>
 
 </div>
@@ -389,21 +380,8 @@ TAIL = ''';
 
 const FIELDS = DATA.fields;
 const LOCALES = DATA.locales;
-const KEY = 'quanto-aso-progress-v1';
-
 let current = LOCALES[0].code;
 let store = 'ios';
-
-/* ─── COPIED MARKERS ─── */
-let progress = {};
-try { progress = JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { progress = {}; }
-function saveProgress() { try { localStorage.setItem(KEY, JSON.stringify(progress)); } catch (e) {} }
-function isCopied(code, key) { return !!(progress[code] && progress[code][key]); }
-function markCopied(code, key) {
-  if (!progress[code]) progress[code] = {};
-  progress[code][key] = true;
-  saveProgress();
-}
 
 const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const fieldsFor = (loc, st) => FIELDS.filter(f => f.store === st && loc.values[f.key]);
@@ -425,7 +403,7 @@ function fieldHTML(loc, f) {
   const long = n > 400;
   const isKw = f.key.indexOf('kw_') === 0;
   return '' +
-    '<div class="field' + (isCopied(loc.code, f.key) ? ' is-copied' : '') + '" data-key="' + f.key + '">' +
+    '<div class="field" data-key="' + f.key + '">' +
       '<div class="field-head">' +
         '<span class="field-label">' + esc(f.label) + '</span>' +
         '<span class="field-hint">' + esc(f.hint) + '</span>' +
@@ -547,21 +525,12 @@ document.getElementById('panel').addEventListener('click', async e => {
     const ok = await copyText(loc.values[key]);
     if (!ok) { showToast('Press and hold to copy'); return; }
     showToast('Copied ' + FIELDS.find(f => f.key === key).label);
-    markCopied(loc.code, key);
-    field.classList.add('is-copied');
   }
-});
-
-document.getElementById('reset-all').addEventListener('click', () => {
-  progress = {};
-  saveProgress();
-  renderPanel();
-  showToast('Cleared copied markers');
 });
 
 document.getElementById('foot-note').textContent =
   DATA.app + ' store metadata — ' + LOCALES.length + ' locales, generated ' + DATA.generated +
-  '. Copied markers are saved in this browser only.';
+  '.';
 renderAll();
 </script>
 
