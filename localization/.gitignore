@@ -1,5 +1,0 @@
-# Full-resolution store screenshots (~422 MB). Kept locally only:
-# build_shots.py resizes them into shots/, and that is what ships.
-iOS screenshots/
-Android screenshots/
-.DS_Store

@@ -1,0 +1,5 @@
+# Store metadata tool — private, run locally only. Never publish:
+# it contains unreleased ASO keyword strategy.
+localization/
+
+.DS_Store
