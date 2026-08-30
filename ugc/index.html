@@ -93,122 +93,6 @@
     background: transparent;
   }
 
-  /* ─── STEP NAV ─── */
-  /* Mobile-first: sticky horizontal tab bar at the top */
-  .step-nav {
-    position: sticky;
-    top: 0;
-    z-index: 30;
-    background: rgba(12,15,17,0.82);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-  }
-
-  .step-nav ol {
-    list-style: none;
-    display: flex;
-    gap: 6px;
-    overflow-x: auto;
-    padding: 10px 16px;
-    scrollbar-width: none;
-  }
-  .step-nav ol::-webkit-scrollbar { display: none; }
-
-  .step-nav a {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    flex-shrink: 0;
-    white-space: nowrap;
-    text-decoration: none;
-    padding: 7px 13px;
-    border-radius: 100px;
-    background: var(--sem-8);
-    border: 1px solid var(--border);
-    color: var(--text-2);
-    transition: all 0.2s;
-  }
-
-  .step-nav a .num {
-    font-size: 11px;
-    font-weight: 600;
-    font-variant-numeric: tabular-nums;
-    flex-shrink: 0;
-    color: var(--text-3);
-  }
-
-  .step-nav a .label {
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 1.4;
-  }
-
-  .step-nav a.active {
-    background: rgba(12,187,161,0.14);
-    border-color: var(--brand);
-    color: var(--text-1);
-  }
-
-  .step-nav a.active .num { color: var(--brand); }
-
-  /* phase items (top-level groups) */
-  .step-nav a.phase .label { font-weight: 600; color: var(--text-1); }
-
-  /* sub-items (steps nested under a phase) */
-  .step-nav a.sub .label { color: var(--text-3); }
-  .step-nav a.sub.active .label { color: var(--text-1); }
-
-  /* Desktop: fixed vertical sidebar, single-line items */
-  @media (min-width: 1140px) {
-    .step-nav {
-      position: fixed;
-      top: 80px;
-      left: calc(50vw - 544px);
-      z-index: 20;
-      background: none;
-      backdrop-filter: none;
-      -webkit-backdrop-filter: none;
-      border-bottom: none;
-    }
-
-    .step-nav ol {
-      flex-direction: column;
-      gap: 2px;
-      overflow: visible;
-      padding: 0;
-    }
-
-    .step-nav a {
-      gap: 10px;
-      padding: 7px 12px;
-      border-radius: 8px;
-      background: none;
-      border: none;
-      border-left: 2px solid transparent;
-      color: var(--text-3);
-    }
-
-    .step-nav a:hover { color: var(--text-2); }
-
-    .step-nav a .num { width: 18px; }
-
-    .step-nav a .label { font-size: 12.5px; }
-
-    .step-nav a.active {
-      background: var(--sem-8);
-      border-color: transparent;
-      border-left-color: var(--brand);
-      color: var(--text-1);
-    }
-
-    .step-nav a.phase { margin-top: 8px; }
-    .step-nav ol > li:first-child .step-nav a.phase,
-    .step-nav a.phase:first-child { margin-top: 0; }
-    .step-nav a.sub { padding-left: 28px; }
-    .step-nav a.sub .label { font-size: 12px; }
-  }
-
   /* ─── DIVIDER ─── */
   hr {
     border: none;
@@ -864,17 +748,6 @@
 </head>
 <body>
 
-<!-- ─── STEP NAV ─── -->
-<nav class="step-nav" aria-label="Steps">
-  <ol>
-    <li><a href="#step-1" data-nav="step-1"><span class="num">01</span><span class="label">Create a new account</span></a></li>
-    <li><a href="#step-2" data-nav="step-2"><span class="num">02</span><span class="label">Account warm up</span></a></li>
-    <li><a href="#step-3" data-nav="step-3"><span class="num">03</span><span class="label">Pin the set up video</span></a></li>
-    <li><a href="#step-4" data-nav="step-4"><span class="num">04</span><span class="label">Post the video</span></a></li>
-    <li><a href="#step-5" data-nav="step-5"><span class="num">05</span><span class="label">Reply to comments</span></a></li>
-  </ol>
-</nav>
-
 <div class="wrap">
 
   <!-- ─── HERO ─── -->
@@ -1241,76 +1114,12 @@ document.addEventListener('click', async (e) => {
   }
 });
 
-/* ─── NAV: steps + scroll spy ─── */
+/* ─── ACCORDION: opening one step collapses the others ─── */
 (function () {
-  const links = Array.from(document.querySelectorAll('.step-nav a'));
-  const map = {};
-  links.forEach(l => map[l.dataset.nav] = l);
-
-  // map each step/section to its parent phase
-  const phaseOf = {};
-  document.querySelectorAll('details.phase').forEach(det => {
-    det.querySelectorAll('[id]').forEach(el => { phaseOf[el.id] = det.id; });
-  });
-
-  // nav targets in document order
-  const targets = links
-    .map(l => ({ id: l.dataset.nav, el: document.getElementById(l.dataset.nav) }))
-    .filter(t => t.el);
-
-  const isVisible = el => el.getClientRects().length > 0;
-
-  function centerTab(link) {
-    if (window.innerWidth >= 1140) return;
-    const ol = link.closest('ol');
-    if (!ol) return;
-    ol.scrollTo({ left: link.offsetLeft - ol.clientWidth / 2 + link.clientWidth / 2, behavior: 'smooth' });
-  }
-
-  let current = null;
-  function onScroll() {
-    const trigger = 130;
-    let activeId = null;
-    for (const t of targets) {
-      if (!isVisible(t.el)) continue;          // skip steps inside collapsed phases
-      if (t.el.getBoundingClientRect().top <= trigger) activeId = t.id;
-    }
-    if (!activeId && targets.length) activeId = targets[0].id;
-    if (activeId === current) return;
-    current = activeId;
-    const parent = phaseOf[activeId];
-    links.forEach(l => {
-      const n = l.dataset.nav;
-      l.classList.toggle('active', n === activeId || n === parent);
-    });
-    if (map[activeId]) centerTab(map[activeId]);
-  }
-
-  // clicking a nav link: open the containing phase, then scroll
-  links.forEach(l => {
-    l.addEventListener('click', (e) => {
-      const el = document.getElementById(l.dataset.nav);
-      if (!el) return;
-      e.preventDefault();
-      const det = el.closest('details.phase') || (el.matches('details.phase') ? el : null);
-      if (det && !det.open) det.open = true;
-      requestAnimationFrame(() => {
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        setTimeout(onScroll, 60);
-      });
-    });
-  });
-
-  // accordion: opening one phase collapses the others; refresh active state on any toggle
   const allPhases = Array.from(document.querySelectorAll('details.phase'));
   allPhases.forEach(d => d.addEventListener('toggle', () => {
     if (d.open) allPhases.forEach(o => { if (o !== d) o.open = false; });
-    onScroll();
   }));
-
-  window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', onScroll);
-  onScroll();
 })();
 
 /* ─── INSTAGRAM EXAMPLES (optional embeds) ─── */
