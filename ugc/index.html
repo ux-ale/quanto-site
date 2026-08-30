@@ -797,13 +797,30 @@
     .phase > summary { scroll-margin-top: 24px; }
   }
 
-  /* ─── CONTENT IDEAS (nested collapsibles) ─── */
+  /* ─── STEP ACCORDION BODY ─── */
+  .phase-body { padding: 8px 0 44px; }
+
+  .btn-row { display: flex; flex-wrap: wrap; gap: 12px; }
+
   .section-sub {
     font-size: 15px;
     font-weight: 300;
     color: var(--text-2);
     line-height: 1.7;
     margin-bottom: 24px;
+  }
+  .section-sub strong { color: var(--text-1); font-weight: 600; }
+
+  /* text-replacement rows */
+  .rep-item { margin-top: 20px; }
+  .rep-item:first-child { margin-top: 12px; }
+  .rep-shortcut {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text-3);
+    margin-top: 8px;
   }
 
   #content-ideas { padding-bottom: 8px; }
@@ -850,20 +867,11 @@
 <!-- ─── STEP NAV ─── -->
 <nav class="step-nav" aria-label="Steps">
   <ol>
-    <li><a href="#phase-1" data-nav="phase-1" class="phase"><span class="label">Setup</span></a></li>
-    <li><a href="#step-1" data-nav="step-1" class="sub"><span class="label">Create a new account</span></a></li>
-    <li><a href="#step-2" data-nav="step-2" class="sub"><span class="label">Account warm up</span></a></li>
-    <li><a href="#step-3" data-nav="step-3" class="sub"><span class="label">Pin the set up video</span></a></li>
-    <li><a href="#step-4" data-nav="step-4" class="sub"><span class="label">Set up &amp; recording</span></a></li>
-    <li><a href="#phase-2" data-nav="phase-2" class="phase"><span class="label">Automation</span></a></li>
-    <li><a href="#step-5" data-nav="step-5" class="sub"><span class="label">ManyChat automation</span></a></li>
-    <li><a href="#phase-3" data-nav="phase-3" class="phase"><span class="label">Content</span></a></li>
-    <li><a href="#content-ideas" data-nav="content-ideas" class="sub"><span class="label">Ideas</span></a></li>
-    <li><a href="#step-6" data-nav="step-6" class="sub"><span class="label">Film the videos</span></a></li>
-    <li><a href="#step-7" data-nav="step-7" class="sub"><span class="label">Edit the video</span></a></li>
-    <li><a href="#step-8" data-nav="step-8" class="sub"><span class="label">Post the video</span></a></li>
-    <li><a href="#hooks-section" data-nav="hooks-section" class="sub"><span class="label">Hooks / Captions</span></a></li>
-    <li><a href="#hashtags-section" data-nav="hashtags-section" class="sub"><span class="label">Hashtags</span></a></li>
+    <li><a href="#step-1" data-nav="step-1"><span class="num">01</span><span class="label">Create a new account</span></a></li>
+    <li><a href="#step-2" data-nav="step-2"><span class="num">02</span><span class="label">Account warm up</span></a></li>
+    <li><a href="#step-3" data-nav="step-3"><span class="num">03</span><span class="label">Pin the set up video</span></a></li>
+    <li><a href="#step-4" data-nav="step-4"><span class="num">04</span><span class="label">Post the video</span></a></li>
+    <li><a href="#step-5" data-nav="step-5"><span class="num">05</span><span class="label">Reply to comments</span></a></li>
   </ol>
 </nav>
 
@@ -884,16 +892,14 @@
     <ul class="bullets">
       <li>Create a new Instagram and TikTok account</li>
       <li>Warm up period of 2 days</li>
-      <li>Set up ManyChat automation to reply comments automatically</li>
-      <li>How to film the videos</li>
-      <li>Learn how to edit them</li>
-      <li>Learn how and when to post</li>
+      <li>Learn when to post</li>
+      <li>Learn how to reply to comments</li>
     </ul>
 
     <div class="intro-h">Time required</div>
     <ul class="bullets">
       <li><strong>Setup:</strong> ~30 minutes</li>
-      <li><strong>Daily posting:</strong> ~5 minutes</li>
+      <li><strong>Daily posting:</strong> ~30 seconds</li>
     </ul>
 
     <div class="examples-grid" id="ig-embeds"></div>
@@ -908,22 +914,16 @@
 
   <hr>
 
-  <!-- ═══════════ PHASE 1 · SETUP ═══════════ -->
-  <details class="phase" id="phase-1">
+  <!-- ═══ STEP 1 — Create a new account ═══ -->
+  <details class="phase" id="step-1">
     <summary>
       <div class="phase-head">
-        <span class="eyebrow">Phase 1</span>
-        <span class="title">Setup</span>
+        <span class="eyebrow">Step 1</span>
+        <span class="title">Create a new account</span>
       </div>
-      <span class="phase-count">4 steps</span>
       <svg class="phase-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
     </summary>
     <div class="phase-body">
-
-  <!-- ═══ STEP 1 ═══ -->
-  <section class="step" id="step-1">
-    <div class="step-label">Step 1</div>
-    <h2>Create a new account</h2>
 
     <ol class="steps-list">
       <li>Create a new <strong>Instagram</strong> account and a new <strong>TikTok</strong> account.</li>
@@ -967,14 +967,19 @@ quanto.app/download</span>
         </button>
       </li>
     </ol>
-  </section>
-
-  <hr>
+  </div>
+  </details>
 
   <!-- ═══ STEP 2 — Account warm up ═══ -->
-  <section class="step" id="step-2">
-    <div class="step-label">Step 2</div>
-    <h2>Account warm up (🚨 important)</h2>
+  <details class="phase" id="step-2">
+    <summary>
+      <div class="phase-head">
+        <span class="eyebrow">Step 2</span>
+        <span class="title">Account warm up (🚨 important)</span>
+      </div>
+      <svg class="phase-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+    </summary>
+    <div class="phase-body">
 
     <div class="platform-label">Day 1</div>
     <ul class="bullets">
@@ -991,14 +996,19 @@ quanto.app/download</span>
       <li>Comment on some videos</li>
       <li>You want your algorithm to think you’re the user type you’re trying to target.</li>
     </ul>
-  </section>
-
-  <hr>
+  </div>
+  </details>
 
   <!-- ═══ STEP 3 — Pin the set up video ═══ -->
-  <section class="step" id="step-3">
-    <div class="step-label">Step 3</div>
-    <h2>Pin the set up video</h2>
+  <details class="phase" id="step-3">
+    <summary>
+      <div class="phase-head">
+        <span class="eyebrow">Step 3</span>
+        <span class="title">Pin the set up video</span>
+      </div>
+      <svg class="phase-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+    </summary>
+    <div class="phase-body">
 
     <div class="video-frame portrait">
       <video src="assets/setup-video.mp4" controls playsinline preload="metadata"></video>
@@ -1006,293 +1016,102 @@ quanto.app/download</span>
 
     <ol class="steps-list">
       <li class="btn-li">
-        <a href="assets/setup-video.mp4" download="Quanto Set Up Video.mp4" class="btn-wrap">
-          <div class="btn-inner">
-            <span>Download Set Up video</span>
-          </div>
-        </a>
+        <div class="btn-row">
+          <a href="assets/setup-video.mp4" download="Quanto Set Up Video.mp4" class="btn-wrap">
+            <div class="btn-inner">
+              <span>Download Set Up video</span>
+            </div>
+          </a>
+          <a href="assets/Set%20up%20guide%203.PNG" download="Quanto Set Up Thumbnail.png" class="btn-wrap">
+            <div class="btn-inner">
+              <span>Download Set up Thumbnail</span>
+            </div>
+          </a>
+        </div>
       </li>
       <li>Post the Set Up Video.</li>
       <li>Include a relevant caption for the video and tag <strong>@quanto.tracker</strong></li>
       <li>Pin the video to the top of the profile.</li>
     </ol>
-  </section>
-
-  <hr>
-
-  <!-- ═══ STEP 4 — Set up and recording guidelines ═══ -->
-  <section class="step" id="step-4">
-    <div class="step-label">Step 4</div>
-    <h2>Set up and recording guidelines</h2>
-
-    <ol class="steps-list">
-      <li>You will need two phones. One of them needs to be an <strong>iPhone</strong>.</li>
-      <li class="btn-li">
-        <a href="https://apps.apple.com/us/app/quanto-expense-tracker/id6749017099" target="_blank" rel="noopener" class="btn-wrap">
-          <div class="btn-inner">
-            <span>Download Quanto app</span>
-          </div>
-        </a>
-      </li>
-      <li>Open Quanto.</li>
-      <li>Go to <strong>Settings</strong>.</li>
-      <li>Tap <strong>Import Data</strong>.</li>
-      <li>Tap <strong>Import Data</strong> again.</li>
-      <li class="btn-li">
-        <a href="assets/Quanto%20Dummy%20Data.csv" download="Quanto Dummy Data.csv" class="btn-wrap">
-          <div class="btn-inner">
-            <span>Upload this CSV file</span>
-          </div>
-        </a>
-      </li>
-      <li>Then go to <strong>Settings, Shortcuts</strong> and follow the setup guide to enable double tap on the back of the phone to add an expense.</li>
-    </ol>
-  </section>
-
-    </div>
+  </div>
   </details>
 
-  <!-- ═══════════ PHASE 2 · AUTOMATION ═══════════ -->
-  <details class="phase" id="phase-2">
+  <!-- ═══ Content steps ═══ -->
+  <!-- ═══ STEP 4 — Post the video ═══ -->
+  <details class="phase" id="step-4">
     <summary>
       <div class="phase-head">
-        <span class="eyebrow">Phase 2</span>
-        <span class="title">Automation</span>
+        <span class="eyebrow">Step 4</span>
+        <span class="title">Post the video</span>
       </div>
-      <span class="phase-count">1 step</span>
       <svg class="phase-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
     </summary>
     <div class="phase-body">
 
-  <!-- ═══ STEP 5 — ManyChat automation ═══ -->
-  <section class="step" id="step-5">
-    <div class="step-label">Step 5</div>
-    <h2>Set up the ManyChat automation</h2>
-
-    <div class="copy-hint">Follow these screenshots — swipe or use the arrows to move through each step.</div>
-    <div class="carousel" id="manychat-carousel">
-      <div class="carousel-track">
-        <div class="carousel-slide"><img src="assets/manychat_01.png" alt="ManyChat step 1 — My Automations" loading="lazy"></div>
-        <div class="carousel-slide"><img src="assets/manychat_02.png" alt="ManyChat step 2 — Auto-DM links from comments template" loading="lazy"></div>
-        <div class="carousel-slide"><img src="assets/manychat_03.png" alt="ManyChat step 3 — Trigger words and reply setup" loading="lazy"></div>
-        <div class="carousel-slide"><img src="assets/manychat_04.png" alt="ManyChat step 4 — Opening DM, link and Go Live" loading="lazy"></div>
-      </div>
-      <button class="car-btn prev" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m15 18-6-6 6-6"/></svg></button>
-      <button class="car-btn next" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m9 6 6 6-6 6"/></svg></button>
-    </div>
-    <div class="car-counter"><b class="car-cur">1</b> / 4</div>
-    <div class="car-dots" style="margin-bottom:8px;"></div>
-
     <ol class="steps-list">
-      <li>Go to the <strong>ManyChat</strong> website.</li>
-      <li>Create an account.</li>
-      <li>Connect ManyChat to the new Instagram account.</li>
-      <li>Subscribe to the paid plan.</li>
-      <li>Create an automation as follows:</li>
-    </ol>
-
-    <div class="config">
-      <div class="config-row">
-        <span class="config-key">When someone comments on</span>
-        <span class="config-val">Any reel or post</span>
-      </div>
-
-      <div class="config-row">
-        <span class="config-key">And this comment has</span>
-        <span class="config-val">A specific word or words</span>
-      </div>
-      <button class="copy-block" data-copy="Guide, How, Set up">
-        <span class="cb-text">Guide, How, Set up</span>
-        <svg class="copy-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
-      </button>
-
-      <div class="config-row">
-        <span class="config-key">Reply to their comments under post</span>
-        <span class="config-val">Enable</span>
-      </div>
-      <div class="config-sub">Replies</div>
-      <div class="copy-rows">
-        <button class="copy-row" data-copy="Check my last post for the setup guide — I've also sent it to your DMs!"><span>Check my last post for the setup guide — I've also sent it to your DMs!</span><svg class="copy-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
-        <button class="copy-row" data-copy="The setup guide is in my last post, and I've sent it to your DMs too!"><span>The setup guide is in my last post, and I've sent it to your DMs too!</span><svg class="copy-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
-        <button class="copy-row" data-copy="My last post has the setup guide, and I've sent it to your DMs as well!"><span>My last post has the setup guide, and I've sent it to your DMs as well!</span><svg class="copy-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
-      </div>
-
-      <div class="config-row">
-        <span class="config-key">They will get</span>
-        <span class="config-val">An opening DM</span>
-      </div>
-      <div class="config-sub">Opening DM message</div>
-      <button class="copy-block" data-copy="Set up guide is in my last post!
-You can also tap below and I'll send it here.">
-        <span class="cb-text">Set up guide is in my last post!
-You can also tap below and I'll send it here.</span>
-        <svg class="copy-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
-      </button>
-      <div class="config-sub">Button label</div>
-      <button class="copy-block" data-copy="Send me the guide">
-        <span class="cb-text">Send me the guide</span>
-        <svg class="copy-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
-      </button>
-
-      <div class="config-row">
-        <span class="config-key">And then, they will get</span>
-        <span class="config-val">A DM with a link</span>
-      </div>
-      <div class="config-sub">Link message</div>
-      <button class="copy-block" data-copy="Here you go! If the button doesn't work, check my last post.">
-        <span class="cb-text">Here you go! If the button doesn't work, check my last post.</span>
-        <svg class="copy-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
-      </button>
-      <div class="config-sub">Button label</div>
-      <button class="copy-block" data-copy="Open Guide">
-        <span class="cb-text">Open Guide</span>
-        <svg class="copy-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
-      </button>
-    </div>
-  </section>
-
-    </div>
-  </details>
-
-  <!-- ═══════════ PHASE 3 · CONTENT ═══════════ -->
-  <details class="phase" id="phase-3">
-    <summary>
-      <div class="phase-head">
-        <span class="eyebrow">Phase 3</span>
-        <span class="title">Content</span>
-      </div>
-      <span class="phase-count">3 steps</span>
-      <svg class="phase-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
-    </summary>
-    <div class="phase-body">
-
-  <!-- ═══ Content ideas ═══ -->
-  <section class="step" id="content-ideas">
-    <div class="step-label">Bonus</div>
-    <h2>Ideas</h2>
-    <p class="section-sub">A shopping mall is one of the best places to create content. You can film multiple videos in a single visit by recording products in different stores and then show adding the expense with the double tap shortcut. Some ideas:</p>
-
-    <details class="idea-group">
-      <summary>Shopping<svg class="idea-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
-      <ul class="bullets">
-        <li>Zara bag (or any international brand)</li>
-        <li>Sport shoes (Nike, Adidas, Underarmor)</li>
-        <li>Sephora</li>
-        <li>Apple Store (iPhone, Watch, Mac, Airpods)</li>
-        <li>Electronics (Bose, Sony, JBL, Samsung, Nintendo Switch, PS5)</li>
-        <li>Headphones (Bose, Sony, JBL, Samsung)</li>
-        <li>Dyson products</li>
-      </ul>
-    </details>
-
-    <details class="idea-group">
-      <summary>Food &amp; Drinks<svg class="idea-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
-      <ul class="bullets">
-        <li>Coffee</li>
-        <li>Bubble tea</li>
-        <li>Fast food</li>
-        <li>Restaurant meals</li>
-        <li>Drinks at a bar</li>
-      </ul>
-    </details>
-
-    <details class="idea-group">
-      <summary>Luxury<svg class="idea-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
-      <ul class="bullets">
-        <li>Rolex display</li>
-        <li>Luxury store bag</li>
-        <li>Sunglasses purchase</li>
-        <li>Perfume purchase</li>
-        <li>Expensive dinner bill</li>
-      </ul>
-    </details>
-  </section>
-
-  <hr>
-
-  <!-- ═══ STEP 6 — Film the videos ═══ -->
-  <section class="step" id="step-6">
-    <div class="step-label">Step 6</div>
-    <h2>Film the videos</h2>
-    <p class="lead" style="margin: -8px 0 28px;">One video per day for 30 days. Most videos take less than 1 minute to film and edit.</p>
-
-    <div class="video-frame">
-      <video src="assets/recording.mp4" controls playsinline preload="metadata"></video>
-    </div>
-
-    <ol class="steps-list">
-      <li>Open Quanto on the <strong>Activity</strong> page.</li>
-      <li>Swipe on the main chart until you reach the month that shows all the transactions.</li>
-      <li>While Quanto is open, lock the iPhone.</li>
-      <li>Before filming, unlock the iPhone once off camera so you do not need to unlock it during the video.</li>
-      <li>With the second phone, start recording.</li>
-      <li>Show the object you are about to track for at least 1 second.</li>
-      <li>Bring the iPhone into the frame.</li>
-      <li>Turn the iPhone around to show the back of the phone.</li>
-      <li>Double tap the back of the iPhone.</li>
-      <li>Turn the iPhone to the front to show that the double tap shortcut was activated.</li>
-      <li>Input the amount.</li>
-      <li>Select a category that matches the object shown in the video.</li>
-      <li>Add a description if needed.</li>
-      <li>Tap <strong>Done</strong>.</li>
-      <li>Unlock the phone to show the Quanto Activity page.</li>
-      <li>Tap through a few different pages and filters to show more of the app.</li>
-    </ol>
-  </section>
-
-  <hr>
-
-  <!-- ═══ STEP 7 — Edit the video ═══ -->
-  <section class="step" id="step-7">
-    <div class="step-label">Step 7</div>
-    <h2>Edit the video</h2>
-
-    <div class="video-frame">
-      <video src="assets/editing.mp4" controls playsinline preload="metadata"></video>
-    </div>
-
-    <ol class="steps-list">
-      <li>Edit the video using either <strong>Edits</strong> or <strong>CapCut</strong>.</li>
-      <li>Add a hook at the beginning of the video. You can use one from the list below.</li>
-      <li>Increase the video speed to 1.3x or 1.4x.</li>
-      <li>If the video includes a description while adding a transaction, speed up that part to 2.5x so viewers do not have to wait while you type.</li>
-      <li>Add a song.</li>
-      <li>For Instagram, add this phrase during the last 2 seconds of the video:
-        <button class="copy-block" data-copy="Comment “guide” for the set up">
-          <span class="cb-text">Comment “guide” for the set up</span>
-          <svg class="copy-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
-        </button>
+      <li>Copy a caption for your video from <strong>quanto.app/captions</strong>:
+        <div style="margin-top:12px;">
+          <a href="https://quanto.app/captions/" target="_blank" rel="noopener" class="btn-wrap">
+            <div class="btn-inner">
+              <span>Open captions</span>
+            </div>
+          </a>
+        </div>
       </li>
-      <li>Make a copy of the video without the final phrase. This version will be used for TikTok.</li>
-    </ol>
-  </section>
-
-  <hr>
-
-  <!-- ═══ STEP 8 — Post the video ═══ -->
-  <section class="step" id="step-8">
-    <div class="step-label">Step 8</div>
-    <h2>Post the video</h2>
-
-    <ol class="steps-list">
-      <li>Choose a caption from the list below.</li>
-      <li>Add 4–5 hashtags from the groups below.</li>
-      <li>Tag <strong>@quanto.tracker</strong> in the caption.</li>
       <li>Post one video per day on both Instagram and TikTok.</li>
       <li>Post between 4 PM and 8 PM.</li>
-      <li>For TikTok, use the version without the final “Comment guide” phrase.</li>
     </ol>
-    <div class="note">Videos need to be posted once per day.</div>
+  </div>
+  </details>
 
-    <div class="group-label section-anchor" id="hooks-section" style="margin-top:36px;">Hooks / Captions</div>
-    <div class="copy-hint" style="margin-top:4px;">Avoid repeating the same hook/caption every time.</div>
-    <div class="copy-rows" id="hooks"></div>
+  <!-- ═══ STEP 5 — Reply to comments ═══ -->
+  <details class="phase" id="step-5">
+    <summary>
+      <div class="phase-head">
+        <span class="eyebrow">Step 5</span>
+        <span class="title">Reply to comments</span>
+      </div>
+      <svg class="phase-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+    </summary>
+    <div class="phase-body">
+      <p class="section-sub">Set up keyboard text replacements so you can reply to comments in seconds. On your phone, go to <strong>Settings &gt; General &gt; Keyboard &gt; Text Replacement</strong> and add each of these — tap a phrase to copy it:</p>
 
-    <div class="group-label section-anchor" id="hashtags-section" style="margin-top:36px;">Hashtags</div>
-    <div class="copy-hint" style="margin-top:4px;">Avoid repeating the same hashtag group every time. Each line is one group.</div>
-    <div class="copy-rows" id="hashtags"></div>
-  </section>
+      <div class="rep-list">
+        <div class="rep-item">
+          <button class="copy-block" data-copy="Set up guide is on my pinned posts!"><span class="cb-text">Set up guide is on my pinned posts!</span><svg class="copy-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+          <div class="rep-shortcut">Shortcut <button class="chip" data-copy="ssq">ssq</button></div>
+        </div>
+        <div class="rep-item">
+          <button class="copy-block" data-copy="Check my pinned posts, the full setup guide is there!"><span class="cb-text">Check my pinned posts, the full setup guide is there!</span><svg class="copy-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+          <div class="rep-shortcut">Shortcut <button class="chip" data-copy="ssw">ssw</button></div>
+        </div>
+        <div class="rep-item">
+          <button class="copy-block" data-copy="I pinned the setup guide on my profile!"><span class="cb-text">I pinned the setup guide on my profile!</span><svg class="copy-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+          <div class="rep-shortcut">Shortcut <button class="chip" data-copy="sse">sse</button></div>
+        </div>
+        <div class="rep-item">
+          <button class="copy-block" data-copy="I added the full setup guide to my pinned posts!"><span class="cb-text">I added the full setup guide to my pinned posts!</span><svg class="copy-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+          <div class="rep-shortcut">Shortcut <button class="chip" data-copy="ssa">ssa</button></div>
+        </div>
+        <div class="rep-item">
+          <button class="copy-block" data-copy="You can find the guide in my pinned posts!"><span class="cb-text">You can find the guide in my pinned posts!</span><svg class="copy-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+          <div class="rep-shortcut">Shortcut <button class="chip" data-copy="sss">sss</button></div>
+        </div>
+        <div class="rep-item">
+          <button class="copy-block" data-copy="Setup guide is pinned, check my profile!"><span class="cb-text">Setup guide is pinned, check my profile!</span><svg class="copy-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+          <div class="rep-shortcut">Shortcut <button class="chip" data-copy="ssd">ssd</button></div>
+        </div>
+      </div>
 
+      <div class="intro-h" style="margin:34px 0 4px;">When someone asks the app name</div>
+      <div class="rep-list">
+        <div class="rep-item">
+          <button class="copy-block" data-copy="app name is @quanto.tracker , set up guide is on my pinned posts!"><span class="cb-text">app name is @quanto.tracker , set up guide is on my pinned posts!</span><svg class="copy-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+          <div class="rep-shortcut">Shortcut <button class="chip" data-copy="qqq">qqq</button></div>
+        </div>
+      </div>
+
+      <p class="note" style="margin-top:24px;">That way you can answer questions in seconds.</p>
     </div>
   </details>
 
@@ -1380,14 +1199,6 @@ const handlesEl = document.getElementById('handles');
 handlesEl.innerHTML = HANDLES.map(h =>
   `<button class="chip" data-copy="${h}">${h}</button>`).join('');
 
-const hooksEl = document.getElementById('hooks');
-hooksEl.innerHTML = HOOKS.map(h =>
-  `<button class="copy-row" data-copy="${h.replace(/"/g,'&quot;')}"><span>${h}</span>${COPY_IC}</button>`).join('');
-
-const tagsEl = document.getElementById('hashtags');
-tagsEl.innerHTML = HASHTAGS.map(t =>
-  `<button class="copy-row tag" data-copy="${t}"><span>${t}</span>${COPY_IC}</button>`).join('');
-
 /* ─── COPY HANDLER ─── */
 const toast = document.getElementById('toast');
 let toastTimer;
@@ -1430,59 +1241,7 @@ document.addEventListener('click', async (e) => {
   }
 });
 
-/* ─── CAROUSEL ─── */
-(function () {
-  const carousel = document.getElementById('manychat-carousel');
-  const track = carousel.querySelector('.carousel-track');
-  const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
-  const prev = carousel.querySelector('.car-btn.prev');
-  const next = carousel.querySelector('.car-btn.next');
-  const section = carousel.closest('.step');
-  const dotsWrap = section.querySelector('.car-dots');
-  const curEl = section.querySelector('.car-cur');
-  const count = slides.length;
-  let index = 0;
-
-  dotsWrap.innerHTML = slides.map((_, i) =>
-    `<button class="car-dot${i === 0 ? ' active' : ''}" data-i="${i}" aria-label="Go to ${i + 1}"></button>`).join('');
-  const dots = Array.from(dotsWrap.children);
-
-  function render() {
-    track.style.transform = `translateX(${-index * 100}%)`;
-    dots.forEach((d, i) => d.classList.toggle('active', i === index));
-    curEl.textContent = index + 1;
-    prev.disabled = index === 0;
-    next.disabled = index === count - 1;
-  }
-
-  function goTo(i) {
-    index = Math.max(0, Math.min(count - 1, i));
-    render();
-  }
-
-  prev.addEventListener('click', () => goTo(index - 1));
-  next.addEventListener('click', () => goTo(index + 1));
-  dots.forEach(d => d.addEventListener('click', () => goTo(+d.dataset.i)));
-
-  /* swipe (pointer + touch) */
-  let startX = 0, dragging = false;
-  function down(x) { startX = x; dragging = true; }
-  function up(x) {
-    if (!dragging) return;
-    dragging = false;
-    const dx = x - startX;
-    if (Math.abs(dx) > 40) goTo(index + (dx < 0 ? 1 : -1));
-  }
-  carousel.addEventListener('pointerdown', e => down(e.clientX));
-  carousel.addEventListener('pointerup', e => up(e.clientX));
-  carousel.addEventListener('touchstart', e => down(e.touches[0].clientX), { passive: true });
-  carousel.addEventListener('touchend', e => up(e.changedTouches[0].clientX), { passive: true });
-  carousel.addEventListener('dragstart', e => e.preventDefault());
-
-  render();
-})();
-
-/* ─── NAV: phases, steps, scroll spy ─── */
+/* ─── NAV: steps + scroll spy ─── */
 (function () {
   const links = Array.from(document.querySelectorAll('.step-nav a'));
   const map = {};
