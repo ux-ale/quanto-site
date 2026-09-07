@@ -106,6 +106,36 @@
     max-width: 380px;
   }
 
+  /* ─── LANGUAGE TOGGLE ─── */
+  .seg {
+    display: inline-flex; gap: 2px; padding: 4px; margin-bottom: 24px;
+    border-radius: 64px; background: var(--sem-8);
+  }
+  .seg button {
+    position: relative;
+    padding: 9px 22px; border-radius: 100px; cursor: pointer;
+    border: 0.5px solid transparent; background: none;
+    font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 13.5px; font-weight: 400; color: var(--text-3);
+    transition: background 0.15s, color 0.15s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .seg button:hover { color: var(--text-2); }
+  .seg button.on {
+    background: radial-gradient(100% 100% at 50% 0%, rgba(255,255,255,0.20) 0%, rgba(255,255,255,0.08) 100%);
+    color: var(--text-1);
+  }
+  /* stroke fades from white at the top to nothing at the bottom */
+  .seg button.on::after {
+    content: ""; position: absolute; inset: -0.5px; border-radius: inherit;
+    padding: 0.5px; pointer-events: none;
+    background: linear-gradient(180deg, rgba(255,255,255,0.50) 0%, rgba(255,255,255,0) 100%);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+            mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+  }
+
   /* ─── CAPTION CARD ─── */
   .card {
     border: 1px solid var(--border);
@@ -256,6 +286,11 @@
   <h1>Random <span class="teal">Captions</span></h1>
   <p class="subtitle">A fresh caption + hashtag combo every time. Hit copy and paste it straight into your post.</p>
 
+  <div class="seg" id="lang">
+    <button data-lang="en" class="on" type="button">English</button>
+    <button data-lang="es" type="button">Español</button>
+  </div>
+
   <div class="card" id="card">
     <div class="caption" id="caption"></div>
     <div class="tags" id="tags"></div>
@@ -281,39 +316,83 @@
 <div class="toast" id="toast">Copied to clipboard</div>
 
 <script>
-const CAPTIONS = [
-  "How did i not know this EXISTED for iPhone 😭",
-  "Why is nobody TALKING about this iPhone feature",
-  "Why is no one USING this iPhone shortcut 🤯",
-  "99% of iPhone users don’t know this EXISTS 🤯",
-  "I wish i knew this iPhone trick EARLIER 🤯",
-  "This iPhone trick just saved me so much TIME",
-  "🤯 ain’t no way I just discovered this NOW",
-  "iPhone user? Why no one told me! 🤯",
-  "I genuinely CAN’T believe this works 🤯",
-  "I’m mad nobody told me about this SOONER",
-  "Why does NOBODY talk about this feature??",
-  "There’s NO WAY iPhone could do this the whole time 😭",
-  "If only I knew this earlier....😭",
-  "The answer to all my problems"
-];
+const COPY = {
+  en: {
+    captions: [
+      "How did i not know this EXISTED for iPhone 😭",
+      "Why is nobody TALKING about this iPhone feature",
+      "Why is no one USING this iPhone shortcut 🤯",
+      "99% of iPhone users don’t know this EXISTS 🤯",
+      "I wish i knew this iPhone trick EARLIER 🤯",
+      "This iPhone trick just saved me so much TIME",
+      "🤯 ain’t no way I just discovered this NOW",
+      "iPhone user? Why no one told me! 🤯",
+      "I genuinely CAN’T believe this works 🤯",
+      "I’m mad nobody told me about this SOONER",
+      "Why does NOBODY talk about this feature??",
+      "There’s NO WAY iPhone could do this the whole time 😭",
+      "If only I knew this earlier....😭",
+      "The answer to all my problems"
+    ],
+    hashtags: [
+      "#money #iphone #budgetingtips #spending",
+      "#budgeting #expenses #finance #iphone",
+      "#budgeting #spendingmoney #iphonehack #money",
+      "#spending #budgetingtips #money #iphone",
+      "#spendingmoney #money #budgeting #iphone",
+      "#expenses #budgetingtips #moneytips #iphone",
+      "#budgeting #spendingproblems #iphone #expenses",
+      "#finance #budget #spending #iphone",
+      "#budgetingtips #savingmoney #iphone #budget",
+      "#spendingmoney #expenses #money #iphone",
+      "#overspending #spending #iphone #budget",
+      "#budget #money #expenses #iphonehack",
+      "#savingmoney #finance #iphone #budgetingtips",
+      "#money #spendingproblems #budgeting #iphone"
+    ]
+  },
+  es: {
+    captions: [
+      "¿Cómo no sabía que esto EXISTÍA en el iPhone? 😭",
+      "¿Por qué nadie HABLA de esta función del iPhone?",
+      "¿Por qué nadie USA este truco del iPhone? 🤯",
+      "El 99% de los usuarios de iPhone no sabe que esto EXISTE 🤯",
+      "Ojalá hubiera sabido este truco del iPhone ANTES 🤯",
+      "Este truco del iPhone me ahorró muchísimo TIEMPO",
+      "🤯 no puede ser que apenas descubra esto AHORA",
+      "¿Tienes iPhone? ¡¿Por qué nadie me lo dijo?! 🤯",
+      "De verdad NO PUEDO creer que esto funcione 🤯",
+      "Me da rabia que nadie me lo dijera ANTES",
+      "¿¿Por qué NADIE habla de esta función??",
+      "NO PUEDE SER que el iPhone hiciera esto todo este tiempo 😭",
+      "Si tan solo lo hubiera sabido antes....😭",
+      "La solución a todos mis problemas"
+    ],
+    hashtags: [
+      "#dinero #iphone #presupuesto #gastos",
+      "#presupuesto #gastos #finanzas #iphone",
+      "#presupuesto #ahorro #trucosiphone #dinero",
+      "#gastos #consejosfinancieros #dinero #iphone",
+      "#ahorrardinero #dinero #presupuesto #iphone",
+      "#gastos #consejosfinancieros #finanzaspersonales #iphone",
+      "#presupuesto #controldegastos #iphone #gastos",
+      "#finanzas #presupuesto #gastos #iphone",
+      "#consejosfinancieros #ahorrardinero #iphone #presupuesto",
+      "#ahorro #gastos #dinero #iphone",
+      "#controldegastos #gastos #iphone #presupuesto",
+      "#presupuesto #dinero #gastos #trucosiphone",
+      "#ahorrardinero #finanzas #iphone #consejosfinancieros",
+      "#dinero #finanzaspersonales #presupuesto #iphone"
+    ]
+  }
+};
 
-const HASHTAGS = [
-  "#money #iphone #budgetingtips #spending",
-  "#budgeting #expenses #finance #iphone",
-  "#budgeting #spendingmoney #iphonehack #money",
-  "#spending #budgetingtips #money #iphone",
-  "#spendingmoney #money #budgeting #iphone",
-  "#expenses #budgetingtips #moneytips #iphone",
-  "#budgeting #spendingproblems #iphone #expenses",
-  "#finance #budget #spending #iphone",
-  "#budgetingtips #savingmoney #iphone #budget",
-  "#spendingmoney #expenses #money #iphone",
-  "#overspending #spending #iphone #budget",
-  "#budget #money #expenses #iphonehack",
-  "#savingmoney #finance #iphone #budgetingtips",
-  "#money #spendingproblems #budgeting #iphone"
-];
+const LANG_KEY = 'quanto-captions-lang';
+let lang = 'en';
+try { if (COPY[localStorage.getItem(LANG_KEY)]) lang = localStorage.getItem(LANG_KEY); } catch (e) {}
+
+const CAPTIONS = () => COPY[lang].captions;
+const HASHTAGS = () => COPY[lang].hashtags;
 
 const captionEl = document.getElementById('caption');
 const tagsEl    = document.getElementById('tags');
@@ -332,11 +411,11 @@ function pick(list, last) {
 }
 
 function randomize() {
-  lastCaption = pick(CAPTIONS, lastCaption);
-  lastTags = pick(HASHTAGS, lastTags);
+  lastCaption = pick(CAPTIONS(), lastCaption);
+  lastTags = pick(HASHTAGS(), lastTags);
 
-  captionEl.textContent = CAPTIONS[lastCaption];
-  tagsEl.textContent = HASHTAGS[lastTags];
+  captionEl.textContent = CAPTIONS()[lastCaption];
+  tagsEl.textContent = HASHTAGS()[lastTags];
 
   cardEl.classList.remove('fade');
   void cardEl.offsetWidth;
@@ -344,7 +423,7 @@ function randomize() {
 }
 
 function currentText() {
-  return CAPTIONS[lastCaption] + "\n\n" + HASHTAGS[lastTags];
+  return CAPTIONS()[lastCaption] + "\n\n" + HASHTAGS()[lastTags];
 }
 
 /* ─── TOAST ─── */
@@ -385,6 +464,23 @@ copyBtn.addEventListener('click', async () => {
 });
 
 randomBtn.addEventListener('click', randomize);
+
+const langEl = document.getElementById('lang');
+function setLang(next) {
+  if (next === lang) return;
+  lang = next;
+  try { localStorage.setItem(LANG_KEY, lang); } catch (e) {}
+  langEl.querySelectorAll('button').forEach(b => b.classList.toggle('on', b.dataset.lang === lang));
+  document.documentElement.lang = lang;
+  lastCaption = -1; lastTags = -1;   // indices are per-language
+  randomize();
+}
+langEl.addEventListener('click', e => {
+  const b = e.target.closest('[data-lang]');
+  if (b) setLang(b.dataset.lang);
+});
+langEl.querySelectorAll('button').forEach(b => b.classList.toggle('on', b.dataset.lang === lang));
+document.documentElement.lang = lang;
 
 /* cache the shell so later launches from the home screen paint instantly */
 if ('serviceWorker' in navigator) {

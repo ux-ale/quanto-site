@@ -3,7 +3,7 @@
 // makes it paint immediately, online or not.
 //
 // Bump CACHE whenever the shell changes.
-const CACHE = 'quanto-captions-v1';
+const CACHE = 'quanto-captions-v2';
 const SHELL = [
   './',
   './index.html',
