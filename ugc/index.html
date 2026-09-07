@@ -48,36 +48,44 @@
     min-height: 100vh;
   }
 
-  /* ─── LANGUAGE TABS ─── */
-  .lang-tabs {
-    position: fixed;
-    top: 18px;
-    right: 18px;
-    z-index: 40;
-  }
-  .lang-tabs .seg {
+  /* ─── LANGUAGE TABS (segmented control, matches /captions) ─── */
+  .seg {
     display: inline-flex;
-    background: rgba(12,15,17,0.7);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid var(--border);
-    border-radius: 100px;
-    padding: 3px;
+    gap: 2px;
+    padding: 4px;
+    margin: 28px 0 0;
+    border-radius: 64px;
+    background: var(--sem-8);
   }
-  .lang-tabs button {
-    border: none;
-    background: none;
-    color: var(--text-2);
-    font-family: 'Sora', sans-serif;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-    padding: 5px 13px;
+  .seg button {
+    position: relative;
+    padding: 9px 22px;
     border-radius: 100px;
     cursor: pointer;
-    transition: all 0.2s;
+    border: 0.5px solid transparent;
+    background: none;
+    font-family: 'Sora', sans-serif;
+    font-size: 13.5px;
+    font-weight: 400;
+    color: var(--text-3);
+    transition: background 0.15s, color 0.15s;
+    -webkit-tap-highlight-color: transparent;
   }
-  .lang-tabs button.active { background: var(--brand); color: #07211d; }
+  .seg button:hover { color: var(--text-2); }
+  .seg button.on {
+    background: radial-gradient(100% 100% at 50% 0%, rgba(255,255,255,0.20) 0%, rgba(255,255,255,0.08) 100%);
+    color: var(--text-1);
+  }
+  /* stroke fades from white at the top to nothing at the bottom */
+  .seg button.on::after {
+    content: ""; position: absolute; inset: -0.5px; border-radius: inherit;
+    padding: 0.5px; pointer-events: none;
+    background: linear-gradient(180deg, rgba(255,255,255,0.50) 0%, rgba(255,255,255,0) 100%);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+            mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+  }
 
   /* ─── HERO ─── */
   .hero {
@@ -525,13 +533,6 @@
 </head>
 <body>
 
-<div class="lang-tabs">
-  <div class="seg">
-    <button data-lang="en" class="active">EN</button>
-    <button data-lang="es">ES</button>
-  </div>
-</div>
-
 <div class="wrap">
 
   <!-- ─── HERO ─── -->
@@ -539,6 +540,10 @@
     <div class="hero-icon"><img src="assets/quanto-app-icon.png" alt="Quanto"></div>
     <h1 data-es="Guía del<br><span class=&quot;teal&quot;>Creador</span>">Creator<br><span class="teal">Guide</span></h1>
     <p data-es="Guía paso a paso de 30 minutos para creadores UGC que quieren empezar a publicar sobre Quanto.">30 minutes step-by-step guide for UGC creators to start posting about Quanto.</p>
+    <div class="seg" id="lang">
+      <button data-lang="en" class="on" type="button">English</button>
+      <button data-lang="es" type="button">Español</button>
+    </div>
   </div>
 
   <hr>
@@ -861,8 +866,8 @@ function setLang(lang) {
     if (el.getAttribute('src') !== next) { el.setAttribute('src', next); if (el.tagName === 'VIDEO') el.load(); }
   });
 
-  document.querySelectorAll('.lang-tabs button').forEach(b =>
-    b.classList.toggle('active', b.dataset.lang === currentLang));
+  document.querySelectorAll('#lang button').forEach(b =>
+    b.classList.toggle('on', b.dataset.lang === currentLang));
 
   try { localStorage.setItem(LANG_KEY, currentLang); } catch (e) {}
 }
@@ -870,7 +875,7 @@ function setLang(lang) {
 (function () {
   let saved = 'en';
   try { saved = localStorage.getItem(LANG_KEY) || 'en'; } catch (e) {}
-  document.querySelectorAll('.lang-tabs button').forEach(b =>
+  document.querySelectorAll('#lang button').forEach(b =>
     b.addEventListener('click', () => setLang(b.dataset.lang)));
   setLang(saved);
 })();
