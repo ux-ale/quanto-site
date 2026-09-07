@@ -48,6 +48,37 @@
     min-height: 100vh;
   }
 
+  /* ─── LANGUAGE TABS ─── */
+  .lang-tabs {
+    position: fixed;
+    top: 18px;
+    right: 18px;
+    z-index: 40;
+  }
+  .lang-tabs .seg {
+    display: inline-flex;
+    background: rgba(12,15,17,0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 3px;
+  }
+  .lang-tabs button {
+    border: none;
+    background: none;
+    color: var(--text-2);
+    font-family: 'Sora', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    padding: 5px 13px;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .lang-tabs button.active { background: var(--brand); color: #07211d; }
+
   /* ─── HERO ─── */
   .hero {
     padding: 80px 0 64px;
@@ -309,52 +340,6 @@
     color: var(--brand);
   }
 
-  /* stacked copy rows (hooks, hashtags) */
-  .copy-rows {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-top: 12px;
-  }
-
-  .copy-row {
-    text-align: left;
-    width: 100%;
-    background: var(--sem-8);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 12px 14px;
-    cursor: pointer;
-    font-family: 'Sora', sans-serif;
-    font-size: 14px;
-    font-weight: 300;
-    color: var(--text-2);
-    line-height: 1.6;
-    transition: all 0.18s;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-  }
-
-  .copy-row:hover { border-color: var(--sem-15); color: var(--text-1); }
-  .copy-row.copied { border-color: var(--brand); color: var(--text-1); background: rgba(12,187,161,0.08); }
-  .copy-row .copy-ic { margin-top: 0; }
-  .copy-row.copied .copy-ic { color: var(--brand); }
-
-  /* hashtag rows use mono-ish tighter look */
-  .copy-row.tag { font-weight: 400; color: var(--brand); }
-  .copy-row.tag:hover { color: var(--brand); }
-
-
-  .group-label {
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    color: var(--text-1);
-    margin: 24px 0 4px;
-  }
-
   /* ─── VIDEO ─── */
   .video-frame {
     width: 100%;
@@ -410,138 +395,6 @@
 
   .btn-inner svg { width: 20px; height: 20px; flex-shrink: 0; }
 
-  /* ─── AUTOMATION CONFIG BLOCK ─── */
-  .config {
-    margin-top: 16px;
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    background: var(--sem-8);
-    padding: 6px 18px 18px;
-  }
-
-  .config-row {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 6px 10px;
-    padding: 16px 0 14px;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .config-row:last-of-type { border-bottom: none; }
-
-  .config-key {
-    font-size: 13px;
-    font-weight: 300;
-    color: var(--text-2);
-  }
-
-  .config-val {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--brand);
-    background: rgba(12,187,161,0.12);
-    border-radius: 6px;
-    padding: 3px 9px;
-  }
-
-  .config-sub {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--text-3);
-    margin: 16px 0 -2px;
-  }
-
-  .config .copy-rows { margin-top: 10px; }
-  .config .copy-block { margin-top: 10px; }
-
-  /* ─── MANYCHAT CAROUSEL ─── */
-  .carousel {
-    position: relative;
-    margin: 8px 0 4px;
-    overflow: hidden;
-    border-radius: 14px;
-    border: 1px solid var(--border);
-    background: var(--sem-8);
-    touch-action: pan-y;
-  }
-
-  .carousel-track {
-    display: flex;
-    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-    will-change: transform;
-  }
-
-  .carousel-slide {
-    flex: 0 0 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    user-select: none;
-  }
-
-  .carousel-slide img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    display: block;
-  }
-
-  .car-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 1px solid var(--sem-15);
-    background: rgba(12,15,17,0.72);
-    backdrop-filter: blur(8px);
-    color: var(--text-1);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.18s;
-    z-index: 3;
-  }
-  .car-btn:hover { background: rgba(12,15,17,0.92); border-color: var(--brand); }
-  .car-btn svg { width: 18px; height: 18px; }
-  .car-btn.prev { left: 10px; }
-  .car-btn.next { right: 10px; }
-  .car-btn[disabled] { opacity: 0; pointer-events: none; }
-
-  .car-dots {
-    display: flex;
-    justify-content: center;
-    gap: 7px;
-    margin-top: 16px;
-  }
-
-  .car-dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: var(--sem-15);
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-  .car-dot.active { background: var(--brand); transform: scale(1.25); }
-
-  .car-counter {
-    text-align: center;
-    font-size: 12px;
-    font-weight: 400;
-    color: var(--text-3);
-    margin-top: 12px;
-  }
-  .car-counter b { color: var(--text-1); font-weight: 600; }
-
   /* ─── TOAST ─── */
   .toast {
     position: fixed;
@@ -572,24 +425,8 @@
     border-top: 1px solid var(--border);
   }
 
-  .end-note {
-    text-align: center;
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--brand);
-    padding: 8px 0 0;
-  }
-
   /* ─── INTRO (summary / time / examples) ─── */
   .intro { padding: 48px 0; }
-
-  .intro .lead {
-    font-size: 16px;
-    font-weight: 400;
-    color: var(--text-1);
-    line-height: 1.7;
-    margin-bottom: 8px;
-  }
 
   .intro-h {
     font-size: 13px;
@@ -608,21 +445,6 @@
   }
 
   .examples-grid:empty { display: none; }
-
-  .examples-grid .instagram-media { margin: 0 !important; }
-
-  .examples-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 16px;
-    color: var(--brand);
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 600;
-  }
-  .examples-link:hover { text-decoration: underline; }
-  .examples-link svg { width: 16px; height: 16px; }
 
   /* ─── PHASE (collapsible) ─── */
   .phase { display: block; }
@@ -657,29 +479,15 @@
     line-height: 1.05;
   }
 
-  .phase-count {
-    margin-left: auto;
-    font-size: 12px;
-    font-weight: 400;
-    color: var(--text-3);
-    white-space: nowrap;
-  }
-
   .phase-chevron {
     width: 22px;
     height: 22px;
     flex-shrink: 0;
     color: var(--text-3);
     transition: transform 0.25s ease;
+    margin-left: auto;
   }
   .phase[open] > summary .phase-chevron { transform: rotate(180deg); }
-
-  /* first step inside a phase needs less top padding (summary already spaces it) */
-  .phase-body > .step:first-child { padding-top: 32px; }
-
-  @media (min-width: 1140px) {
-    .phase > summary { scroll-margin-top: 24px; }
-  }
 
   /* ─── STEP ACCORDION BODY ─── */
   .phase-body { padding: 8px 0 44px; }
@@ -707,79 +515,55 @@
     margin-top: 8px;
   }
 
-  #content-ideas { padding-bottom: 8px; }
-  .idea-group { border-top: 1px solid var(--border); }
-
-  .idea-group > summary {
-    list-style: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 16px 0;
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--text-1);
-    -webkit-tap-highlight-color: transparent;
-  }
-  .idea-group > summary::-webkit-details-marker { display: none; }
-  .idea-group > summary::marker { content: ''; }
-
-  .idea-chevron {
-    margin-left: auto;
-    width: 18px;
-    height: 18px;
-    flex-shrink: 0;
-    color: var(--text-3);
-    transition: transform 0.25s ease;
-  }
-  .idea-group[open] > summary .idea-chevron { transform: rotate(180deg); }
-
-  .idea-group .bullets { margin-top: 0; padding-bottom: 18px; }
-
   /* ─── RESPONSIVE ─── */
   @media (max-width: 600px) {
     .wrap { padding: 0 20px; }
-    .hero { padding: 64px 0 48px; }
+    .hero { padding: 72px 0 48px; }
     .step { padding: 52px 0; }
-    .car-btn { width: 34px; height: 34px; }
   }
 </style>
 </head>
 <body>
+
+<div class="lang-tabs">
+  <div class="seg">
+    <button data-lang="en" class="active">EN</button>
+    <button data-lang="es">ES</button>
+  </div>
+</div>
 
 <div class="wrap">
 
   <!-- ─── HERO ─── -->
   <div class="hero">
     <div class="hero-icon"><img src="assets/quanto-app-icon.png" alt="Quanto"></div>
-    <h1>Creator<br><span class="teal">Guide</span></h1>
-    <p>30 minutes step-by-step guide for UGC creators to start posting about Quanto.</p>
+    <h1 data-es="Guía del<br><span class=&quot;teal&quot;>Creador</span>">Creator<br><span class="teal">Guide</span></h1>
+    <p data-es="Guía paso a paso de 30 minutos para creadores UGC que quieren empezar a publicar sobre Quanto.">30 minutes step-by-step guide for UGC creators to start posting about Quanto.</p>
   </div>
 
   <hr>
 
   <!-- ─── INTRO ─── -->
   <div class="intro">
-    <div class="intro-h" style="margin-top:0;">Summary of what you'll do in this guide</div>
+    <div class="intro-h" style="margin-top:0;" data-es="Resumen de lo que harás en esta guía">Summary of what you'll do in this guide</div>
     <ul class="bullets">
-      <li>Create a new Instagram and TikTok account</li>
-      <li>Warm up period of 2 days</li>
-      <li>Learn when to post</li>
-      <li>Learn how to reply to comments</li>
+      <li data-es="Crea una cuenta nueva de Instagram y TikTok">Create a new Instagram and TikTok account</li>
+      <li data-es="Periodo de calentamiento de 2 días">Warm up period of 2 days</li>
+      <li data-es="Aprende cuándo publicar">Learn when to post</li>
+      <li data-es="Aprende a responder los comentarios">Learn how to reply to comments</li>
     </ul>
 
-    <div class="intro-h">Time required</div>
+    <div class="intro-h" data-es="Tiempo necesario">Time required</div>
     <ul class="bullets">
-      <li><strong>Setup:</strong> ~30 minutes</li>
-      <li><strong>Daily posting:</strong> ~30 seconds</li>
+      <li data-es="<strong>Configuración:</strong> ~30 minutos"><strong>Setup:</strong> ~30 minutes</li>
+      <li data-es="<strong>Publicación diaria:</strong> ~30 segundos"><strong>Daily posting:</strong> ~30 seconds</li>
     </ul>
 
     <div class="examples-grid" id="ig-embeds"></div>
     <div style="margin-top:16px;">
       <a href="https://www.instagram.com/hidden.ios.tricks/" target="_blank" rel="noopener" class="btn-wrap">
         <div class="btn-inner">
-          <span>Instagram account example</span>
+          <span data-es="Cuenta de Instagram de ejemplo">Instagram account example</span>
         </div>
       </a>
     </div>
@@ -791,37 +575,37 @@
   <details class="phase" id="step-1">
     <summary>
       <div class="phase-head">
-        <span class="eyebrow">Step 1</span>
-        <span class="title">Create a new account</span>
+        <span class="eyebrow" data-es="Paso 1">Step 1</span>
+        <span class="title" data-es="Crea una cuenta nueva">Create a new account</span>
       </div>
       <svg class="phase-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
     </summary>
     <div class="phase-body">
 
     <ol class="steps-list">
-      <li>Create a new <strong>Instagram</strong> account and a new <strong>TikTok</strong> account.</li>
-      <li>Pick from any of these handles below:
+      <li data-es="Crea una cuenta nueva de <strong>Instagram</strong> y una nueva de <strong>TikTok</strong>.">Create a new <strong>Instagram</strong> account and a new <strong>TikTok</strong> account.</li>
+      <li><span data-es="Elige uno de estos nombres de usuario:">Pick from any of these handles below:</span>
         <div class="chips" id="handles"></div>
       </li>
-      <li>Use a real selfie for the profile picture.</li>
-      <li>Use this format for the account name:
-        <button class="copy-block" data-copy="(Name) – Budgeting tips💸">
-          <span class="cb-text">(Name) – Budgeting tips💸</span>
+      <li data-es="Usa una selfie real como foto de perfil.">Use a real selfie for the profile picture.</li>
+      <li><span data-es="Usa este formato para el nombre de la cuenta:">Use this format for the account name:</span>
+        <button class="copy-block" data-copy="(Name) – Budgeting tips💸" data-copy-es="(Nombre) – Budgeting tips💸">
+          <span class="cb-text" data-es="(Nombre) – Budgeting tips💸">(Name) – Budgeting tips💸</span>
           <svg class="copy-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
         </button>
-        <div class="note">Example: Sofia – Budgeting tips💸</div>
+        <div class="note" data-es="Ejemplo: Sofia – Budgeting tips💸">Example: Sofia – Budgeting tips💸</div>
       </li>
     </ol>
 
     <div class="platform-label">Instagram</div>
     <ol class="steps-list" start="5">
-      <li>Use this bio:
-        <button class="copy-block" data-copy="Set up guide on pinned posts. Download the app 👇🏻">
-          <span class="cb-text">Set up guide on pinned posts. Download the app 👇🏻</span>
+      <li><span data-es="Usa esta biografía:">Use this bio:</span>
+        <button class="copy-block" data-copy="Set up guide on pinned posts. Download the app 👇🏻" data-copy-es="Guía de configuración en las publicaciones fijadas. Descarga la app 👇🏻">
+          <span class="cb-text" data-es="Guía de configuración en las publicaciones fijadas. Descarga la app 👇🏻">Set up guide on pinned posts. Download the app 👇🏻</span>
           <svg class="copy-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
         </button>
       </li>
-      <li>Add this link:
+      <li><span data-es="Agrega este enlace:">Add this link:</span>
         <button class="copy-block" data-copy="apps.apple.com/ae/app/quanto-expense-tracker/id6749017099">
           <span class="cb-text">apps.apple.com/ae/app/quanto-expense-tracker/id6749017099</span>
           <svg class="copy-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
@@ -831,10 +615,12 @@
 
     <div class="platform-label">TikTok</div>
     <ol class="steps-list" start="7">
-      <li>Use this bio (both lines together):
+      <li><span data-es="Usa esta biografía (las dos líneas juntas):">Use this bio (both lines together):</span>
         <button class="copy-block" data-copy="Set up guide on pinned posts. Download the app 👇🏻
+quanto.app/download" data-copy-es="Guía de configuración en las publicaciones fijadas. Descarga la app 👇🏻
 quanto.app/download">
-          <span class="cb-text">Set up guide on pinned posts. Download the app 👇🏻
+          <span class="cb-text" data-es="Guía de configuración en las publicaciones fijadas. Descarga la app 👇🏻
+quanto.app/download">Set up guide on pinned posts. Download the app 👇🏻
 quanto.app/download</span>
           <svg class="copy-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
         </button>
@@ -847,27 +633,27 @@ quanto.app/download</span>
   <details class="phase" id="step-2">
     <summary>
       <div class="phase-head">
-        <span class="eyebrow">Step 2</span>
-        <span class="title">Account warm up (🚨 important)</span>
+        <span class="eyebrow" data-es="Paso 2">Step 2</span>
+        <span class="title" data-es="Calentamiento de la cuenta (🚨 importante)">Account warm up (🚨 important)</span>
       </div>
       <svg class="phase-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
     </summary>
     <div class="phase-body">
 
-    <div class="platform-label">Day 1</div>
+    <div class="platform-label" data-es="Día 1">Day 1</div>
     <ul class="bullets">
-      <li>Spend 20–30 minutes engaging with budgeting, finance and iPhone content before posting your first video.</li>
-      <li>Watch videos until the end</li>
-      <li>Like content in your exact niche — iPhone tricks, budgeting, money, finance, Apple</li>
-      <li>Follow 20 relevant accounts max (not all on day 1, do 5 per day)</li>
-      <li>DO NOT post anything on day 1</li>
+      <li data-es="Pasa 20–30 minutos interactuando con contenido de presupuesto, finanzas e iPhone antes de publicar tu primer video.">Spend 20–30 minutes engaging with budgeting, finance and iPhone content before posting your first video.</li>
+      <li data-es="Mira los videos hasta el final">Watch videos until the end</li>
+      <li data-es="Dale like a contenido de tu nicho exacto — trucos de iPhone, presupuesto, dinero, finanzas, Apple">Like content in your exact niche — iPhone tricks, budgeting, money, finance, Apple</li>
+      <li data-es="Sigue máximo 20 cuentas relevantes (no todas el día 1, 5 por día)">Follow 20 relevant accounts max (not all on day 1, do 5 per day)</li>
+      <li data-es="NO publiques nada el día 1">DO NOT post anything on day 1</li>
     </ul>
 
-    <div class="platform-label">Day 2</div>
+    <div class="platform-label" data-es="Día 2">Day 2</div>
     <ul class="bullets">
-      <li>Like some videos</li>
-      <li>Comment on some videos</li>
-      <li>You want your algorithm to think you’re the user type you’re trying to target.</li>
+      <li data-es="Dale like a algunos videos">Like some videos</li>
+      <li data-es="Comenta en algunos videos">Comment on some videos</li>
+      <li data-es="Quieres que tu algoritmo piense que eres el tipo de usuario al que quieres llegar.">You want your algorithm to think you’re the user type you’re trying to target.</li>
     </ul>
   </div>
   </details>
@@ -876,63 +662,62 @@ quanto.app/download</span>
   <details class="phase" id="step-3">
     <summary>
       <div class="phase-head">
-        <span class="eyebrow">Step 3</span>
-        <span class="title">Pin the set up video</span>
+        <span class="eyebrow" data-es="Paso 3">Step 3</span>
+        <span class="title" data-es="Fija el video de configuración">Pin the set up video</span>
       </div>
       <svg class="phase-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
     </summary>
     <div class="phase-body">
 
     <div class="video-frame portrait">
-      <video src="assets/setup-video.mp4" controls playsinline preload="metadata"></video>
+      <video src="assets/setup-video.mp4" data-src-es="assets/setup-video-es.mp4" controls playsinline preload="metadata"></video>
     </div>
 
     <ol class="steps-list">
       <li class="btn-li">
         <div class="btn-row">
-          <a href="assets/setup-video.mp4" download="Quanto Set Up Video.mp4" class="btn-wrap">
+          <a href="assets/setup-video.mp4" data-href-es="assets/setup-video-es.mp4" download="Quanto Set Up Video.mp4" class="btn-wrap">
             <div class="btn-inner">
-              <span>Download Set Up video</span>
+              <span data-es="Descargar video de configuración">Download Set Up video</span>
             </div>
           </a>
-          <a href="assets/Set%20up%20guide%203.PNG" download="Quanto Set Up Thumbnail.png" class="btn-wrap">
+          <a href="assets/Set%20up%20guide%203.PNG" data-href-es="assets/setup-thumbnail-es.png" download="Quanto Set Up Thumbnail.png" class="btn-wrap">
             <div class="btn-inner">
-              <span>Download Set up Thumbnail</span>
+              <span data-es="Descargar miniatura">Download Set up Thumbnail</span>
             </div>
           </a>
         </div>
       </li>
-      <li>Post the Set Up Video.</li>
-      <li>Include a relevant caption for the video and tag <strong>@quanto.tracker</strong></li>
-      <li>Pin the video to the top of the profile.</li>
+      <li data-es="Publica el video de configuración.">Post the Set Up Video.</li>
+      <li data-es="Incluye una descripción relevante para el video y etiqueta a <strong>@quanto.tracker</strong>">Include a relevant caption for the video and tag <strong>@quanto.tracker</strong></li>
+      <li data-es="Fija el video en la parte superior del perfil.">Pin the video to the top of the profile.</li>
     </ol>
   </div>
   </details>
 
-  <!-- ═══ Content steps ═══ -->
   <!-- ═══ STEP 4 — Post the video ═══ -->
   <details class="phase" id="step-4">
     <summary>
       <div class="phase-head">
-        <span class="eyebrow">Step 4</span>
-        <span class="title">Post the video</span>
+        <span class="eyebrow" data-es="Paso 4">Step 4</span>
+        <span class="title" data-es="Publica el video">Post the video</span>
       </div>
       <svg class="phase-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
     </summary>
     <div class="phase-body">
 
     <ol class="steps-list">
-      <li>Copy a caption for your video from <strong>quanto.app/captions</strong>:
+      <li><span data-es="Copia una descripción para tu video desde <strong>quanto.app/captions</strong>:">Copy a caption for your video from <strong>quanto.app/captions</strong>:</span>
         <div style="margin-top:12px;">
           <a href="https://quanto.app/captions/" target="_blank" rel="noopener" class="btn-wrap">
             <div class="btn-inner">
-              <span>Open captions</span>
+              <span data-es="Abrir descripciones">Open captions</span>
             </div>
           </a>
         </div>
       </li>
-      <li>Post one video per day on both Instagram and TikTok.</li>
-      <li>Post between 4 PM and 8 PM.</li>
+      <li data-es="Publica un video al día en Instagram y TikTok.">Post one video per day on both Instagram and TikTok.</li>
+      <li data-es="Publica entre las 4 PM y las 8 PM.">Post between 4 PM and 8 PM.</li>
     </ol>
   </div>
   </details>
@@ -941,54 +726,54 @@ quanto.app/download</span>
   <details class="phase" id="step-5">
     <summary>
       <div class="phase-head">
-        <span class="eyebrow">Step 5</span>
-        <span class="title">Reply to comments</span>
+        <span class="eyebrow" data-es="Paso 5">Step 5</span>
+        <span class="title" data-es="Responde a los comentarios">Reply to comments</span>
       </div>
       <svg class="phase-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
     </summary>
     <div class="phase-body">
-      <p class="section-sub">Set up keyboard text replacements so you can reply to comments in seconds. On your phone, go to <strong>Settings &gt; General &gt; Keyboard &gt; Text Replacement</strong> and add each of these — tap a phrase to copy it:</p>
+      <p class="section-sub" data-es="Configura reemplazos de texto en el teclado para responder los comentarios en segundos. En tu teléfono, ve a <strong>Ajustes &gt; General &gt; Teclado &gt; Reemplazo de texto</strong> y agrega cada uno — toca una frase para copiarla:">Set up keyboard text replacements so you can reply to comments in seconds. On your phone, go to <strong>Settings &gt; General &gt; Keyboard &gt; Text Replacement</strong> and add each of these — tap a phrase to copy it:</p>
 
       <div class="rep-list">
         <div class="rep-item">
-          <button class="copy-block" data-copy="Set up guide is on my pinned posts!"><span class="cb-text">Set up guide is on my pinned posts!</span><svg class="copy-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
-          <div class="rep-shortcut">Shortcut <button class="chip" data-copy="ssq">ssq</button></div>
+          <button class="copy-block" data-copy="Set up guide is on my pinned posts!" data-copy-es="¡La guía de configuración está en mis publicaciones fijadas!"><span class="cb-text" data-es="¡La guía de configuración está en mis publicaciones fijadas!">Set up guide is on my pinned posts!</span><svg class="copy-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+          <div class="rep-shortcut"><span data-es="Atajo">Shortcut</span> <button class="chip" data-copy="ssq">ssq</button></div>
         </div>
         <div class="rep-item">
-          <button class="copy-block" data-copy="Check my pinned posts, the full setup guide is there!"><span class="cb-text">Check my pinned posts, the full setup guide is there!</span><svg class="copy-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
-          <div class="rep-shortcut">Shortcut <button class="chip" data-copy="ssw">ssw</button></div>
+          <button class="copy-block" data-copy="Check my pinned posts, the full setup guide is there!" data-copy-es="¡Revisa mis publicaciones fijadas, ahí está la guía completa!"><span class="cb-text" data-es="¡Revisa mis publicaciones fijadas, ahí está la guía completa!">Check my pinned posts, the full setup guide is there!</span><svg class="copy-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+          <div class="rep-shortcut"><span data-es="Atajo">Shortcut</span> <button class="chip" data-copy="ssw">ssw</button></div>
         </div>
         <div class="rep-item">
-          <button class="copy-block" data-copy="I pinned the setup guide on my profile!"><span class="cb-text">I pinned the setup guide on my profile!</span><svg class="copy-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
-          <div class="rep-shortcut">Shortcut <button class="chip" data-copy="sse">sse</button></div>
+          <button class="copy-block" data-copy="I pinned the setup guide on my profile!" data-copy-es="¡Fijé la guía de configuración en mi perfil!"><span class="cb-text" data-es="¡Fijé la guía de configuración en mi perfil!">I pinned the setup guide on my profile!</span><svg class="copy-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+          <div class="rep-shortcut"><span data-es="Atajo">Shortcut</span> <button class="chip" data-copy="sse">sse</button></div>
         </div>
         <div class="rep-item">
-          <button class="copy-block" data-copy="I added the full setup guide to my pinned posts!"><span class="cb-text">I added the full setup guide to my pinned posts!</span><svg class="copy-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
-          <div class="rep-shortcut">Shortcut <button class="chip" data-copy="ssa">ssa</button></div>
+          <button class="copy-block" data-copy="I added the full setup guide to my pinned posts!" data-copy-es="¡Agregué la guía completa a mis publicaciones fijadas!"><span class="cb-text" data-es="¡Agregué la guía completa a mis publicaciones fijadas!">I added the full setup guide to my pinned posts!</span><svg class="copy-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+          <div class="rep-shortcut"><span data-es="Atajo">Shortcut</span> <button class="chip" data-copy="ssa">ssa</button></div>
         </div>
         <div class="rep-item">
-          <button class="copy-block" data-copy="You can find the guide in my pinned posts!"><span class="cb-text">You can find the guide in my pinned posts!</span><svg class="copy-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
-          <div class="rep-shortcut">Shortcut <button class="chip" data-copy="sss">sss</button></div>
+          <button class="copy-block" data-copy="You can find the guide in my pinned posts!" data-copy-es="¡Puedes encontrar la guía en mis publicaciones fijadas!"><span class="cb-text" data-es="¡Puedes encontrar la guía en mis publicaciones fijadas!">You can find the guide in my pinned posts!</span><svg class="copy-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+          <div class="rep-shortcut"><span data-es="Atajo">Shortcut</span> <button class="chip" data-copy="sss">sss</button></div>
         </div>
         <div class="rep-item">
-          <button class="copy-block" data-copy="Setup guide is pinned, check my profile!"><span class="cb-text">Setup guide is pinned, check my profile!</span><svg class="copy-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
-          <div class="rep-shortcut">Shortcut <button class="chip" data-copy="ssd">ssd</button></div>
+          <button class="copy-block" data-copy="Setup guide is pinned, check my profile!" data-copy-es="¡La guía está fijada, revisa mi perfil!"><span class="cb-text" data-es="¡La guía está fijada, revisa mi perfil!">Setup guide is pinned, check my profile!</span><svg class="copy-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+          <div class="rep-shortcut"><span data-es="Atajo">Shortcut</span> <button class="chip" data-copy="ssd">ssd</button></div>
         </div>
       </div>
 
-      <div class="intro-h" style="margin:34px 0 4px;">When someone asks the app name</div>
+      <div class="intro-h" style="margin:34px 0 4px;" data-es="Cuando alguien pregunta el nombre de la app">When someone asks the app name</div>
       <div class="rep-list">
         <div class="rep-item">
-          <button class="copy-block" data-copy="app name is @quanto.tracker , set up guide is on my pinned posts!"><span class="cb-text">app name is @quanto.tracker , set up guide is on my pinned posts!</span><svg class="copy-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
-          <div class="rep-shortcut">Shortcut <button class="chip" data-copy="qqq">qqq</button></div>
+          <button class="copy-block" data-copy="app name is @quanto.tracker , set up guide is on my pinned posts!" data-copy-es="la app se llama @quanto.tracker , la guía de configuración está en mis publicaciones fijadas!"><span class="cb-text" data-es="la app se llama @quanto.tracker , la guía de configuración está en mis publicaciones fijadas!">app name is @quanto.tracker , set up guide is on my pinned posts!</span><svg class="copy-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+          <div class="rep-shortcut"><span data-es="Atajo">Shortcut</span> <button class="chip" data-copy="qqq">qqq</button></div>
         </div>
       </div>
 
-      <p class="note" style="margin-top:24px;">That way you can answer questions in seconds.</p>
+      <p class="note" style="margin-top:24px;" data-es="Así puedes responder preguntas en segundos.">That way you can answer questions in seconds.</p>
     </div>
   </details>
 
-  <!-- ═══ STEP 6 — Film the videos (ignore) ═══ -->
+  <!-- ═══ STEP 6 — Film the videos (ignore, English only) ═══ -->
   <details class="phase" id="step-6">
     <summary>
       <div class="phase-head">
@@ -1032,7 +817,7 @@ quanto.app/download</span>
 <div class="toast" id="toast">Copied to clipboard</div>
 
 <script>
-/* ─── DATA ─── */
+/* ─── HANDLES (not translated) ─── */
 const HANDLES = [
   "hidden.iphone.tricks","secret.ios.tips","secret.apple.tips",
   "hidden.apple.features","iphone.hidden.tips","ios.secret.tips","ios.secret.features",
@@ -1044,68 +829,51 @@ const HANDLES = [
   "iphone.secret.features","ios.secret.tricks"
 ];
 
-const HOOKS = [
-  "How did i not know this EXISTED for iPhone 😭",
-  "iPhone users are SLEEPING on this 🤯",
-  "10 yrs using iPhone and i just found this NOW 😭",
-  "Why is nobody TALKING about this iPhone feature",
-  "Why is no one USING this iPhone shortcut 🤯",
-  "99% of iPhone users don’t know this EXISTS 🤯",
-  "Omg I wish i knew this iPhone trick EARLIER 🤯",
-  "This iPhone trick just saved me so much TIME",
-  "There’s NO WAY iPhone could do this the whole time 😭",
-  "Excuse me?? iPhone user? Why no one told me! 🤯",
-  "🤯 ain’t no way I just discovered this NOW",
-  "This can’t be an ACTUAL iPhone feature 🤯🤯",
-  "bro WHAT did i just unlock on my iPhone",
-  "I genuinely CAN’T believe this works 🤯",
-  "I’m mad nobody told me about this SOONER",
-  "Why does NOBODY talk about this feature??",
-  "4 yrs stressing about money and iPhone could do this??",
-  "4 yrs stressing about money and this existed??",
-  "5 yrs overspending and NOW I discover this??",
-  "3 yrs trying to budget and THIS was possible??"
-];
-
-const HASHTAGS = [
-  "#budgeting #expenses #finance #iphone",
-  "#money #iphone #budgetingtips #spending",
-  "#spendingproblems #expenses #iphone #money",
-  "#moneysaving #budget #iphonehack #expenses",
-  "#savingmoney #moneytips #budgeting #iphone",
-  "#overspending #budget #money #iphone",
-  "#expenses #finance #moneytips #iphone",
-  "#budgeting #spendingmoney #iphonehack #money",
-  "#iphone #budget #expenses #savingmoney",
-  "#spending #budgetingtips #money #iphone",
-  "#finance #overspending #budgeting #iphone",
-  "#moneytips #expenses #iphonehack #budget",
-  "#spendingmoney #money #budgeting #iphone",
-  "#budget #iphone #finance #savingmoney",
-  "#expenses #budgetingtips #moneytips #iphone",
-  "#iphonehack #money #overspending #budget",
-  "#budgeting #spendingproblems #iphone #expenses",
-  "#savingmoney #iphonehack #budgeting #money",
-  "#finance #budget #spending #iphone",
-  "#moneytips #iphone #expenses #overspending",
-  "#budgetingtips #savingmoney #iphone #budget",
-  "#spendingmoney #expenses #money #iphone",
-  "#iphonehack #finance #budgeting #moneytips",
-  "#overspending #spending #iphone #budget",
-  "#budget #money #expenses #iphonehack",
-  "#savingmoney #finance #iphone #budgetingtips",
-  "#money #spendingproblems #budgeting #iphone",
-  "#expenses #budget #iphone #moneytips",
-  "#spending #savingmoney #iphonehack #budgeting",
-  "#finance #money #iphone #expenses"
-];
-
-const COPY_IC = '<svg class="copy-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>';
-
-/* ─── BUILD LISTS ─── */
-const handlesEl = document.getElementById('handles');
-handlesEl.innerHTML = HANDLES.map(h =>
+document.getElementById('handles').innerHTML = HANDLES.map(h =>
   `<button class="chip" data-copy="${h}">${h}</button>`).join('');
+
+/* ─── LANGUAGE (EN / ES) ─── */
+let currentLang = 'en';
+const LANG_KEY = 'ugc-lang';
+
+function setLang(lang) {
+  currentLang = (lang === 'es') ? 'es' : 'en';
+  document.documentElement.lang = currentLang;
+
+  document.querySelectorAll('[data-es]').forEach(el => {
+    if (el.dataset.en === undefined) el.dataset.en = el.innerHTML;
+    el.innerHTML = (currentLang === 'es') ? el.dataset.es : el.dataset.en;
+  });
+
+  document.querySelectorAll('[data-copy-es]').forEach(el => {
+    if (el.dataset.copyEn === undefined) el.dataset.copyEn = el.getAttribute('data-copy');
+    el.setAttribute('data-copy', (currentLang === 'es') ? el.dataset.copyEs : el.dataset.copyEn);
+  });
+
+  document.querySelectorAll('[data-href-es]').forEach(el => {
+    if (el.dataset.hrefEn === undefined) el.dataset.hrefEn = el.getAttribute('href');
+    el.setAttribute('href', (currentLang === 'es') ? el.dataset.hrefEs : el.dataset.hrefEn);
+  });
+
+  document.querySelectorAll('[data-src-es]').forEach(el => {
+    if (el.dataset.srcEn === undefined) el.dataset.srcEn = el.getAttribute('src');
+    const next = (currentLang === 'es') ? el.dataset.srcEs : el.dataset.srcEn;
+    if (el.getAttribute('src') !== next) { el.setAttribute('src', next); if (el.tagName === 'VIDEO') el.load(); }
+  });
+
+  document.querySelectorAll('.lang-tabs button').forEach(b =>
+    b.classList.toggle('active', b.dataset.lang === currentLang));
+
+  try { localStorage.setItem(LANG_KEY, currentLang); } catch (e) {}
+}
+
+(function () {
+  let saved = 'en';
+  try { saved = localStorage.getItem(LANG_KEY) || 'en'; } catch (e) {}
+  document.querySelectorAll('.lang-tabs button').forEach(b =>
+    b.addEventListener('click', () => setLang(b.dataset.lang)));
+  setLang(saved);
+})();
 
 /* ─── COPY HANDLER ─── */
 const toast = document.getElementById('toast');
@@ -1143,9 +911,9 @@ document.addEventListener('click', async (e) => {
   if (ok) {
     el.classList.add('copied');
     setTimeout(() => el.classList.remove('copied'), 1100);
-    showToast('Copied to clipboard');
+    showToast(currentLang === 'es' ? 'Copiado al portapapeles' : 'Copied to clipboard');
   } else {
-    showToast('Press and hold to copy');
+    showToast(currentLang === 'es' ? 'Mantén pulsado para copiar' : 'Press and hold to copy');
   }
 });
 
@@ -1159,11 +927,9 @@ document.addEventListener('click', async (e) => {
 
 /* ─── INSTAGRAM EXAMPLES (optional embeds) ─── */
 (function () {
-  // Paste real post / reel URLs from @hidden.ios.tricks below to show live previews.
-  // e.g. "https://www.instagram.com/reel/ABC123/"
   const IG_POSTS = [];
   const grid = document.getElementById('ig-embeds');
-  if (!grid || !IG_POSTS.length) return;   // falls back to the link below
+  if (!grid || !IG_POSTS.length) return;
   grid.innerHTML = IG_POSTS.map(u =>
     `<blockquote class="instagram-media" data-instgrm-permalink="${u}" data-instgrm-version="14" style="width:100%;min-width:240px;max-width:328px;"></blockquote>`
   ).join('');
