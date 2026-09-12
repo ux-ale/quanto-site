@@ -1,0 +1,142 @@
+{
+  "htmlLang": "tr",
+  "title": "Gizlilik Politikası",
+  "description": "Quanto'nun bilgilerinizi nasıl topladığı, kullandığı ve koruduğu. Harcama verileriniz cihazınızda kalır.",
+  "updated": "Son güncelleme: 28 Ağustos 2026",
+  "intro": "Bu Gizlilik Politikası, Quanto'nun (“Uygulama”) bilgilerinizi nasıl topladığını, kullandığını ve koruduğunu açıklar.",
+  "sections": [
+    {
+      "heading": "Biz kimiz",
+      "blocks": [
+        {"t": "dl", "items": [
+          ["Uygulama adı", "Quanto"],
+          ["Sahibi", "Alejandro Ausejo"],
+          ["Ülke", "Birleşik Arap Emirlikleri"],
+          ["İletişim e-postası", "[ausejoalejandro@gmail.com](mailto:ausejoalejandro@gmail.com)"]
+        ]}
+      ]
+    },
+    {
+      "heading": "Topladığımız bilgiler",
+      "blocks": [
+        {"t": "h3", "x": "a) Sizin sağladığınız bilgiler"},
+        {"t": "p", "x": "Quanto, kullanıcılarından hesap oluşturmalarını istemez ve aşağıdaki gibi kişisel bilgileri toplamaz:"},
+        {"t": "ul", "items": [
+          "Ad",
+          "E-posta adresi",
+          "Parola",
+          "İşlem ayrıntıları",
+          "Finansal veriler",
+          "Profil bilgileri"
+        ]},
+        {"t": "p", "x": "Girdiğiniz tüm gider ve gelir verileri cihazınızda yerel olarak saklanır."}
+      ]
+    },
+    {
+      "heading": "Otomatik olarak toplanan bilgiler",
+      "blocks": [
+        {"t": "p", "x": "Uygulamanın performansını ve kararlılığını geliştirmeye yardımcı olmak ve reklam etkinliğini ölçmek amacıyla üçüncü taraf hizmetler aracılığıyla sınırlı ve kişisel olmayan bilgiler toplayabiliriz; örneğin:"},
+        {"t": "ul", "items": [
+          "Uygulama kullanım verileri",
+          "Cihaz türü",
+          "İşletim sistemi sürümü",
+          "Çökme raporları",
+          "Anonim analiz olayları",
+          "Analiz ve reklam ilişkilendirmesi için kullanılan cihaz tanımlayıcıları (reklam tanımlayıcıları gibi)"
+        ]},
+        {"t": "p", "x": "Bu bilgiler Firebase Analytics, Firebase Crashlytics ve Meta (Facebook) SDK gibi üçüncü taraf hizmetler aracılığıyla toplanır ve sizi doğrudan tanımlamaz."}
+      ]
+    },
+    {
+      "heading": "Ödemeler ve abonelikler",
+      "blocks": [
+        {"t": "p", "x": "Premium özelliklerin ödemeleri şunlar aracılığıyla güvenli biçimde işlenir:"},
+        {"t": "ul", "items": ["Apple In-App Purchases", "Google Play Billing"]},
+        {"t": "p", "x": "Herhangi bir ödeme veya kredi kartı bilgisini görmüyor, toplamıyor veya saklamıyoruz."}
+      ]
+    },
+    {
+      "heading": "Veri saklama",
+      "blocks": [
+        {"t": "p", "x": "Şu anda:"},
+        {"t": "ul", "items": [
+          "Kullanıcının girdiği tüm veriler yalnızca cihazınızda yerel olarak saklanır",
+          "Verilerinize erişimimiz yoktur"
+        ]},
+        {"t": "p", "x": "İleride isteğe bağlı bulut yedekleme özellikleri sunulabilir. Bu durumda, söz konusu özellikler etkinleştirilmeden önce bu politika buna göre güncellenecektir."},
+        {"t": "p", "x": "9. bölümde açıklanan isteğe bağlı yapay zekâ özellikleri bunun istisnasıdır: bunlardan birini kullanmayı seçtiğinizde, işlenmek üzere sınırlı bilgi cihazınızın dışına gönderilir."}
+      ]
+    },
+    {
+      "heading": "Verilerin silinmesi",
+      "blocks": [
+        {"t": "p", "x": "Tüm verilerinizi istediğiniz zaman doğrudan uygulama içinden silebilirsiniz."},
+        {"t": "p", "x": "[ausejoalejandro@gmail.com](mailto:ausejoalejandro@gmail.com) adresinden bize ulaşırsanız, verilerinizle ilgili her türlü soruda size yardımcı oluruz."}
+      ]
+    },
+    {
+      "heading": "Çocukların gizliliği",
+      "blocks": [
+        {"t": "p", "x": "Quanto 13 yaşın altındaki çocuklara yönelik değildir."},
+        {"t": "p", "x": "Çocuklardan bilerek kişisel bilgi toplamayız. Bir çocuğun kişisel veri sağladığını düşünüyorsanız, verileri silebilmemiz için lütfen bizimle iletişime geçin."}
+      ]
+    },
+    {
+      "heading": "Üçüncü taraf hizmetler",
+      "blocks": [
+        {"t": "p", "x": "Quanto; analiz, tanılama ve reklam ilişkilendirmesi için üçüncü taraf hizmetler kullanır. Bu hizmetler, kendi gizlilik politikaları uyarınca cihaz tanımlayıcıları dahil olmak üzere sınırlı bilgi toplayabilir."},
+        {"t": "p", "x": "Uygulamanın kullandığı üçüncü taraf hizmetler şunlardır:"},
+        {"t": "ul", "items": [
+          "Google Firebase (Analytics ve Crashlytics)",
+          "Google Analytics",
+          "Meta (Facebook) SDK – reklam ilişkilendirmesi ve uygulama yükleme ölçümü için kullanılır",
+          "Google Gemini – 9. bölümde açıklanan isteğe bağlı yapay zekâ özelliklerini sunmak için kullanılır"
+        ]},
+        {"t": "p", "x": "Gerekli olduğu durumlarda, izleme etkinleştirilmeden önce Apple'ın App Tracking Transparency çerçevesi aracılığıyla kullanıcı onayı istenir."}
+      ]
+    },
+    {
+      "heading": "Yapay zekâ özellikleri",
+      "blocks": [
+        {"t": "p", "x": "Quanto'nun yapay zekâ özellikleri isteğe bağlıdır. Bu bölümde açıklananların hiçbiri, siz bunlardan birini kullanmayı seçmedikçe gerçekleşmez."},
+        {"t": "h3", "x": "a) Neler paylaşılır"},
+        {"t": "p", "x": "Bir yapay zekâ özelliğini kullanmayı seçtiğinizde:"},
+        {"t": "ul", "items": [
+          "**Sesli işlemler:** Cihazınız konuşmanızı metne dönüştürür. Quanto ses kaydınızı almaz ve saklamaz. İşlem önerileri oluşturmak için metin, seçtiğiniz para birimi ile kategori ve hesap adlarınız kullanılır.",
+          "**Fiş tarama:** Fiş görüntüsünün küçültülmüş bir kopyası işlenmek üzere gönderilir. Konum ve görüntüdeki diğer gizli bilgiler önceden kaldırılır.",
+          "**PDF tarama:** Orijinal PDF'niz yüklenmez. Quanto, belgeden alınan metni veya gerektiğinde bir sayfanın küçültülmüş bir görüntüsünü gönderir. PDF parolaları cihazınızda kalır; hiçbir zaman gönderilmez veya saklanmaz.",
+          "**Apple Pay otomasyonu:** İsteğe bağlı Apple Kısayollar otomasyonunu kurarsanız, ödeme ayrıntıları cihazınızdaki Quanto'ya kaydedilir. Ödemelerin çoğu cihazınızda kategorilere ayrılır. Quanto bir kategori seçemediğinde, yardım için yalnızca satıcı adı ve gider kategorilerinizin adları gönderilir. Tutar, tarih, kart adı ve hesap gönderilmez."
+        ]},
+        {"t": "p", "x": "Quanto doğrudan Apple Pay'e, bankanıza veya kart sağlayıcınıza bağlanmaz. Apple Pay ayrıntılarını yalnızca sizin oluşturduğunuz otomasyon aracılığıyla alır."},
+        {"t": "h3", "x": "b) Bilgileriniz nasıl işlenir"},
+        {"t": "p", "x": "Google Gemini, bu özellikleri sunmak için gereken bilgileri işler. Quanto'nun ücretli hizmeti aracılığıyla Google Gemini'ye gönderilen bilgiler, Google'ın yapay zekâ modellerini eğitmek için kullanılmaz."},
+        {"t": "p", "x": "Bilgileriniz gönderilirken şifrelenir. Quanto bu bilgileri satmaz ve reklam ya da izleme amacıyla kullanmaz."},
+        {"t": "p", "x": "Quanto; ses kayıtlarını, ses dökümlerini, fiş veya PDF içeriklerini, PDF parolalarını ya da Apple Pay satıcı adlarını sunucularında saklamaz. Hizmeti korumak, sorunları gidermek ve özellik kullanım sınırlarını uygulamak için sınırlı teknik kayıtlar tutulur. Bu kayıtların çoğu 90 gün içinde silinir; kullanım toplamları ise söz konusu sınırların uygulanması için gereken süre boyunca saklanabilir."},
+        {"t": "h3", "x": "c) Yapay zekâ sonuçları ve tercihleriniz"},
+        {"t": "p", "x": "Yapay zekâ hata yapabilir. Ses, fiş ve PDF sonuçları düzenlenebilir taslaklar olarak gösterilir ve yalnızca siz onayladıktan sonra kaydedilir."},
+        {"t": "p", "x": "Apple Pay işlemleri, otomasyonu kurduktan sonra otomatik olarak kaydedilir; ancak bunları istediğiniz zaman düzenleyebilirsiniz. Bir kategoriyi düzeltmeniz, Quanto'nun ileride aynı satıcıyı cihazınızda daha iyi sınıflandırmasına yardımcı olur."},
+        {"t": "p", "x": "Quanto bir gider yönetimi aracıdır; finansal, muhasebe veya vergi danışmanlığı vermez. Önemli bilgileri orijinal fiş veya belgeyle karşılaştırın."},
+        {"t": "p", "x": "Bu özellikleri kullanmayı istediğiniz zaman bırakabilirsiniz. Ayrıca cihaz ayarlarınızdan kamera, fotoğraf, mikrofon veya konuşma tanıma izinlerini kaldırabilirsiniz. Apple Pay otomasyonunu durdurmak için Apple'ın Kısayollar uygulamasındaki Quanto otomasyonunu silin."}
+      ]
+    },
+    {
+      "heading": "Güvenlik",
+      "blocks": [
+        {"t": "p", "x": "Bilgilerinizi korumak için makul önlemler alıyoruz. Ancak hiçbir elektronik saklama veya internet üzerinden aktarım yöntemi %100 güvenli değildir."}
+      ]
+    },
+    {
+      "heading": "Bu Gizlilik Politikasındaki değişiklikler",
+      "blocks": [
+        {"t": "p", "x": "Bu Gizlilik Politikasını zaman zaman güncelleyebiliriz. Tüm değişiklikler güncellenmiş bir tarihle bu sayfada yayımlanacaktır."}
+      ]
+    },
+    {
+      "heading": "Bize ulaşın",
+      "blocks": [
+        {"t": "p", "x": "Bu Gizlilik Politikası hakkında sorularınız varsa şu adresten bize ulaşabilirsiniz:"},
+        {"t": "p", "x": "📧 [ausejoalejandro@gmail.com](mailto:ausejoalejandro@gmail.com)"}
+      ]
+    }
+  ]
+}

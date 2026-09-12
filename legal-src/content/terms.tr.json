@@ -1,0 +1,116 @@
+{
+  "htmlLang": "tr",
+  "title": "Kullanım Koşulları",
+  "description": "Quanto harcama takip uygulamasını indirdiğinizde veya kullandığınızda geçerli olan koşullar.",
+  "updated": "",
+  "intro": "Quanto uygulamasını (“Uygulama”) indirerek veya kullanarak bu Kullanım Koşullarını kabul etmiş olursunuz. Kabul etmiyorsanız lütfen Uygulamayı kullanmayın.",
+  "sections": [
+    {
+      "heading": "Quanto hakkında",
+      "blocks": [
+        {"t": "dl", "items": [
+          ["Uygulama adı", "Quanto"],
+          ["Sahibi", "Alejandro Ausejo"],
+          ["Ülke", "Birleşik Arap Emirlikleri"],
+          ["İletişim e-postası", "[ausejoalejandro@gmail.com](mailto:ausejoalejandro@gmail.com)"]
+        ]},
+        {"t": "p", "x": "Quanto, kullanıcıların finansal bilgilerini kaydetmesine ve düzenlemesine yardımcı olmak için tasarlanmış kişisel bir harcama takip uygulamasıdır."}
+      ]
+    },
+    {
+      "heading": "Uygunluk",
+      "blocks": [
+        {"t": "p", "x": "Uygulama 13 yaşın altındaki çocuklara yönelik değildir. Uygulamayı kullanarak en az 13 yaşında olduğunuzu onaylarsınız."}
+      ]
+    },
+    {
+      "heading": "Uygulamanın kullanımı",
+      "blocks": [
+        {"t": "p", "x": "Uygulamayı yalnızca yasal amaçlarla ve bu Koşullara uygun olarak kullanmayı kabul edersiniz."},
+        {"t": "p", "x": "Şunları yapmamayı kabul edersiniz:"},
+        {"t": "ul", "items": [
+          "Uygulamayı kötüye kullanmak veya Uygulamaya müdahale etmeye çalışmak",
+          "Tersine mühendislik yapmak veya kaynak kodunu çıkarmaya çalışmak",
+          "Uygulamayı geçerli yasaları veya düzenlemeleri ihlal edecek şekilde kullanmak"
+        ]}
+      ]
+    },
+    {
+      "heading": "Hesap gerekmez",
+      "blocks": [
+        {"t": "p", "x": "Quanto'yu hesap oluşturmadan kullanabilirsiniz."},
+        {"t": "p", "x": "Girdiğiniz tüm veriler, ileride isteğe bağlı yedekleme özellikleri sunulmadığı sürece cihazınızda yerel olarak saklanır."}
+      ]
+    },
+    {
+      "heading": "Abonelikler ve ödemeler",
+      "blocks": [
+        {"t": "p", "x": "Bazı özellikler ücretli abonelik gerektirebilir."},
+        {"t": "p", "x": "Ödemeler şunlar aracılığıyla işlenir:"},
+        {"t": "ul", "items": ["Apple In-App Purchases", "Google Play Billing"]},
+        {"t": "p", "x": "Ödeme veya kredi kartı bilgilerini toplamıyor ve saklamıyoruz."},
+        {"t": "p", "x": "Abonelik fiyatlandırması, yenileme koşulları ve iptal kuralları Apple veya Google tarafından yönetilir ve bu şirketlerin kendi politikalarına tabidir."}
+      ]
+    },
+    {
+      "heading": "Finansal danışmanlık değildir",
+      "blocks": [
+        {"t": "p", "x": "Quanto yalnızca bilgilendirme ve düzenleme amacıyla sunulur."},
+        {"t": "p", "x": "Uygulama finansal, yatırım, vergi veya hukuki danışmanlık sağlamaz. Uygulamaya girilen bilgilere dayanarak aldığınız kararlar tamamen sizin sorumluluğunuzdadır."}
+      ]
+    },
+    {
+      "heading": "Veri doğruluğu",
+      "blocks": [
+        {"t": "p", "x": "Uygulamaya girdiğiniz bilgilerin doğruluğundan siz sorumlusunuz."},
+        {"t": "p", "x": "Uygulamanın ürettiği hesaplamaların, özetlerin veya analizlerin hatasız olduğunu ya da finansal karar almaya uygun olduğunu garanti etmiyoruz."}
+      ]
+    },
+    {
+      "heading": "Fikri mülkiyet",
+      "blocks": [
+        {"t": "p", "x": "Uygulamanın tüm içeriği, tasarımı, markası ve işlevleri Alejandro Ausejo'ya aittir ve geçerli fikri mülkiyet yasalarıyla korunmaktadır."},
+        {"t": "p", "x": "Önceden yazılı izin almadan Uygulamayı kopyalayamaz, değiştiremez, dağıtamaz veya Uygulamadan türev çalışmalar oluşturamazsınız."}
+      ]
+    },
+    {
+      "heading": "Üçüncü taraf hizmetler",
+      "blocks": [
+        {"t": "p", "x": "Uygulama, performansı ve güvenilirliği artırmak için üçüncü taraf hizmetler (Firebase veya Google Analytics gibi) kullanabilir."},
+        {"t": "p", "x": "Bu hizmetler kendi koşulları ve gizlilik politikaları kapsamında çalışır."}
+      ]
+    },
+    {
+      "heading": "Sorumluluğun sınırlandırılması",
+      "blocks": [
+        {"t": "p", "x": "Yasaların izin verdiği azami ölçüde, Alejandro Ausejo Uygulamayı kullanmanızdan kaynaklanan dolaylı, arızi veya sonuç niteliğindeki zararlardan sorumlu tutulamaz."},
+        {"t": "p", "x": "Uygulamanın kullanımı tamamen sizin sorumluluğunuzdadır."}
+      ]
+    },
+    {
+      "heading": "Fesih",
+      "blocks": [
+        {"t": "p", "x": "Bu Koşulları ihlal etmeniz veya Uygulamayı kötüye kullanmanız hâlinde Uygulamaya erişiminizi istediğimiz zaman askıya alabilir veya sonlandırabiliriz."}
+      ]
+    },
+    {
+      "heading": "Bu Koşullardaki değişiklikler",
+      "blocks": [
+        {"t": "p", "x": "Bu Koşulları zaman zaman güncelleyebiliriz. Değişiklikler, güncellenmiş bir tarihle yayımlandıkları anda yürürlüğe girer."}
+      ]
+    },
+    {
+      "heading": "Geçerli hukuk",
+      "blocks": [
+        {"t": "p", "x": "Bu Koşullar, kanunlar ihtilafı ilkelerine bakılmaksızın Birleşik Arap Emirlikleri yasalarına tabidir."}
+      ]
+    },
+    {
+      "heading": "İletişim",
+      "blocks": [
+        {"t": "p", "x": "Bu Koşullar hakkında sorularınız varsa şu adresten bize ulaşabilirsiniz:"},
+        {"t": "p", "x": "📧 [ausejoalejandro@gmail.com](mailto:ausejoalejandro@gmail.com)"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "htmlLang": "de",
+  "title": "Nutzungsbedingungen",
+  "description": "Die Bedingungen, die gelten, wenn Sie die Ausgaben-App Quanto herunterladen oder nutzen.",
+  "updated": "",
+  "intro": "Mit dem Herunterladen oder der Nutzung der Quanto-App („die App“) stimmen Sie diesen Nutzungsbedingungen zu. Wenn Sie nicht einverstanden sind, nutzen Sie die App bitte nicht.",
+  "sections": [
+    {
+      "heading": "Über Quanto",
+      "blocks": [
+        {"t": "dl", "items": [
+          ["App-Name", "Quanto"],
+          ["Inhaber", "Alejandro Ausejo"],
+          ["Land", "Vereinigte Arabische Emirate"],
+          ["Kontakt-E-Mail", "[ausejoalejandro@gmail.com](mailto:ausejoalejandro@gmail.com)"]
+        ]},
+        {"t": "p", "x": "Quanto ist eine App zur Erfassung persönlicher Ausgaben, die Nutzerinnen und Nutzern hilft, ihre Finanzdaten zu erfassen und zu organisieren."}
+      ]
+    },
+    {
+      "heading": "Nutzungsvoraussetzungen",
+      "blocks": [
+        {"t": "p", "x": "Die App richtet sich nicht an Kinder unter 13 Jahren. Mit der Nutzung der App bestätigen Sie, dass Sie mindestens 13 Jahre alt sind."}
+      ]
+    },
+    {
+      "heading": "Nutzung der App",
+      "blocks": [
+        {"t": "p", "x": "Sie verpflichten sich, die App ausschließlich für rechtmäßige Zwecke und im Einklang mit diesen Bedingungen zu nutzen."},
+        {"t": "p", "x": "Sie verpflichten sich, Folgendes zu unterlassen:"},
+        {"t": "ul", "items": [
+          "Die App missbräuchlich zu nutzen oder zu versuchen, sie zu stören",
+          "Die App zurückzuentwickeln (Reverse Engineering) oder zu versuchen, den Quellcode zu extrahieren",
+          "Die App in einer Weise zu nutzen, die gegen geltende Gesetze oder Vorschriften verstößt"
+        ]}
+      ]
+    },
+    {
+      "heading": "Kein Konto erforderlich",
+      "blocks": [
+        {"t": "p", "x": "Sie können Quanto ohne Erstellung eines Kontos nutzen."},
+        {"t": "p", "x": "Alle von Ihnen eingegebenen Daten werden lokal auf Ihrem Gerät gespeichert, sofern nicht künftig optionale Backup-Funktionen eingeführt werden."}
+      ]
+    },
+    {
+      "heading": "Abonnements und Zahlungen",
+      "blocks": [
+        {"t": "p", "x": "Für einige Funktionen kann ein kostenpflichtiges Abonnement erforderlich sein."},
+        {"t": "p", "x": "Zahlungen werden abgewickelt über:"},
+        {"t": "ul", "items": ["Apple In-App Purchases", "Google Play Billing"]},
+        {"t": "p", "x": "Wir erheben und speichern keine Zahlungs- oder Kreditkartendaten."},
+        {"t": "p", "x": "Abonnementpreise, Verlängerungsbedingungen und Kündigungsregeln werden von Apple oder Google verwaltet und unterliegen deren jeweiligen Richtlinien."}
+      ]
+    },
+    {
+      "heading": "Keine Finanzberatung",
+      "blocks": [
+        {"t": "p", "x": "Quanto wird ausschließlich zu Informations- und Organisationszwecken bereitgestellt."},
+        {"t": "p", "x": "Die App bietet keine Finanz-, Anlage-, Steuer- oder Rechtsberatung. Entscheidungen, die Sie auf Grundlage der in der App erfassten Informationen treffen, liegen allein in Ihrer Verantwortung."}
+      ]
+    },
+    {
+      "heading": "Richtigkeit der Daten",
+      "blocks": [
+        {"t": "p", "x": "Sie sind für die Richtigkeit der Informationen verantwortlich, die Sie in der App erfassen."},
+        {"t": "p", "x": "Wir übernehmen keine Gewähr dafür, dass Berechnungen, Zusammenfassungen oder Auswertungen der App fehlerfrei oder für finanzielle Entscheidungen geeignet sind."}
+      ]
+    },
+    {
+      "heading": "Geistiges Eigentum",
+      "blocks": [
+        {"t": "p", "x": "Sämtliche Inhalte, das Design, die Marke und die Funktionen der App sind Eigentum von Alejandro Ausejo und durch die geltenden Gesetze zum Schutz geistigen Eigentums geschützt."},
+        {"t": "p", "x": "Sie dürfen die App ohne vorherige schriftliche Genehmigung nicht kopieren, verändern, verbreiten oder davon abgeleitete Werke erstellen."}
+      ]
+    },
+    {
+      "heading": "Drittanbieterdienste",
+      "blocks": [
+        {"t": "p", "x": "Die App kann Drittanbieterdienste (wie Firebase oder Google Analytics) nutzen, um Leistung und Zuverlässigkeit zu verbessern."},
+        {"t": "p", "x": "Diese Dienste unterliegen ihren eigenen Bedingungen und Datenschutzerklärungen."}
+      ]
+    },
+    {
+      "heading": "Haftungsbeschränkung",
+      "blocks": [
+        {"t": "p", "x": "Soweit gesetzlich zulässig, haftet Alejandro Ausejo nicht für mittelbare, beiläufig entstandene oder Folgeschäden, die aus Ihrer Nutzung der App entstehen."},
+        {"t": "p", "x": "Die Nutzung der App erfolgt auf eigenes Risiko."}
+      ]
+    },
+    {
+      "heading": "Beendigung",
+      "blocks": [
+        {"t": "p", "x": "Wir können den Zugang zur App jederzeit aussetzen oder beenden, wenn Sie gegen diese Bedingungen verstoßen oder die App missbräuchlich nutzen."}
+      ]
+    },
+    {
+      "heading": "Änderungen dieser Bedingungen",
+      "blocks": [
+        {"t": "p", "x": "Wir können diese Bedingungen von Zeit zu Zeit aktualisieren. Änderungen werden mit ihrer Veröffentlichung und einem aktualisierten Datum wirksam."}
+      ]
+    },
+    {
+      "heading": "Anwendbares Recht",
+      "blocks": [
+        {"t": "p", "x": "Diese Bedingungen unterliegen dem Recht der Vereinigten Arabischen Emirate, unter Ausschluss seiner Kollisionsnormen."}
+      ]
+    },
+    {
+      "heading": "Kontakt",
+      "blocks": [
+        {"t": "p", "x": "Wenn Sie Fragen zu diesen Bedingungen haben, können Sie uns kontaktieren:"},
+        {"t": "p", "x": "📧 [ausejoalejandro@gmail.com](mailto:ausejoalejandro@gmail.com)"}
+      ]
+    }
+  ]
+}

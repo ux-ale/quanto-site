@@ -1,0 +1,116 @@
+{
+  "htmlLang": "id",
+  "title": "Ketentuan Penggunaan",
+  "description": "Ketentuan yang berlaku saat Anda mengunduh atau menggunakan aplikasi pelacak pengeluaran Quanto.",
+  "updated": "",
+  "intro": "Dengan mengunduh atau menggunakan aplikasi Quanto (“Aplikasi”), Anda menyetujui Ketentuan Penggunaan ini. Jika Anda tidak setuju, mohon jangan gunakan Aplikasi.",
+  "sections": [
+    {
+      "heading": "Tentang Quanto",
+      "blocks": [
+        {"t": "dl", "items": [
+          ["Nama aplikasi", "Quanto"],
+          ["Pemilik", "Alejandro Ausejo"],
+          ["Negara", "Uni Emirat Arab"],
+          ["Email kontak", "[ausejoalejandro@gmail.com](mailto:ausejoalejandro@gmail.com)"]
+        ]},
+        {"t": "p", "x": "Quanto adalah aplikasi pelacak pengeluaran pribadi yang dirancang untuk membantu pengguna mencatat dan menata informasi keuangan mereka."}
+      ]
+    },
+    {
+      "heading": "Kelayakan",
+      "blocks": [
+        {"t": "p", "x": "Aplikasi ini tidak ditujukan untuk anak-anak di bawah usia 13 tahun. Dengan menggunakan Aplikasi, Anda menyatakan bahwa Anda berusia minimal 13 tahun."}
+      ]
+    },
+    {
+      "heading": "Penggunaan Aplikasi",
+      "blocks": [
+        {"t": "p", "x": "Anda setuju untuk menggunakan Aplikasi hanya untuk tujuan yang sah dan sesuai dengan Ketentuan ini."},
+        {"t": "p", "x": "Anda setuju untuk tidak:"},
+        {"t": "ul", "items": [
+          "Menyalahgunakan Aplikasi atau mencoba mengganggu Aplikasi",
+          "Melakukan rekayasa balik atau mencoba mengekstrak kode sumber",
+          "Menggunakan Aplikasi dengan cara yang melanggar hukum atau peraturan yang berlaku"
+        ]}
+      ]
+    },
+    {
+      "heading": "Tidak perlu akun",
+      "blocks": [
+        {"t": "p", "x": "Anda dapat menggunakan Quanto tanpa membuat akun."},
+        {"t": "p", "x": "Semua data yang Anda masukkan disimpan secara lokal di perangkat Anda, kecuali jika fitur pencadangan opsional diperkenalkan di masa mendatang."}
+      ]
+    },
+    {
+      "heading": "Langganan dan pembayaran",
+      "blocks": [
+        {"t": "p", "x": "Beberapa fitur mungkin memerlukan langganan berbayar."},
+        {"t": "p", "x": "Pembayaran diproses melalui:"},
+        {"t": "ul", "items": ["Apple In-App Purchases", "Google Play Billing"]},
+        {"t": "p", "x": "Kami tidak mengumpulkan atau menyimpan informasi pembayaran maupun kartu kredit."},
+        {"t": "p", "x": "Harga langganan, ketentuan perpanjangan, dan aturan pembatalan dikelola oleh Apple atau Google serta tunduk pada kebijakan masing-masing."}
+      ]
+    },
+    {
+      "heading": "Bukan nasihat keuangan",
+      "blocks": [
+        {"t": "p", "x": "Quanto disediakan hanya untuk tujuan informasi dan penataan."},
+        {"t": "p", "x": "Aplikasi tidak memberikan nasihat keuangan, investasi, perpajakan, atau hukum. Segala keputusan yang Anda ambil berdasarkan informasi yang dimasukkan ke dalam Aplikasi sepenuhnya menjadi tanggung jawab Anda."}
+      ]
+    },
+    {
+      "heading": "Keakuratan data",
+      "blocks": [
+        {"t": "p", "x": "Anda bertanggung jawab atas keakuratan informasi yang Anda masukkan ke dalam Aplikasi."},
+        {"t": "p", "x": "Kami tidak menjamin bahwa perhitungan, ringkasan, atau analisis yang dihasilkan Aplikasi bebas dari kesalahan atau sesuai untuk pengambilan keputusan keuangan."}
+      ]
+    },
+    {
+      "heading": "Kekayaan intelektual",
+      "blocks": [
+        {"t": "p", "x": "Seluruh konten, desain, merek, dan fungsionalitas Aplikasi dimiliki oleh Alejandro Ausejo dan dilindungi oleh undang-undang kekayaan intelektual yang berlaku."},
+        {"t": "p", "x": "Anda tidak boleh menyalin, memodifikasi, mendistribusikan, atau membuat karya turunan dari Aplikasi tanpa izin tertulis sebelumnya."}
+      ]
+    },
+    {
+      "heading": "Layanan pihak ketiga",
+      "blocks": [
+        {"t": "p", "x": "Aplikasi dapat menggunakan layanan pihak ketiga (seperti Firebase atau Google Analytics) untuk meningkatkan performa dan keandalan."},
+        {"t": "p", "x": "Layanan tersebut beroperasi berdasarkan ketentuan dan kebijakan privasi mereka sendiri."}
+      ]
+    },
+    {
+      "heading": "Batasan tanggung jawab",
+      "blocks": [
+        {"t": "p", "x": "Sejauh diizinkan oleh hukum, Alejandro Ausejo tidak bertanggung jawab atas kerugian tidak langsung, insidental, atau konsekuensial yang timbul dari penggunaan Aplikasi oleh Anda."},
+        {"t": "p", "x": "Penggunaan Aplikasi sepenuhnya menjadi risiko Anda sendiri."}
+      ]
+    },
+    {
+      "heading": "Pengakhiran",
+      "blocks": [
+        {"t": "p", "x": "Kami dapat menangguhkan atau mengakhiri akses ke Aplikasi kapan saja jika Anda melanggar Ketentuan ini atau menyalahgunakan Aplikasi."}
+      ]
+    },
+    {
+      "heading": "Perubahan pada Ketentuan ini",
+      "blocks": [
+        {"t": "p", "x": "Kami dapat memperbarui Ketentuan ini dari waktu ke waktu. Perubahan berlaku setelah dipublikasikan dengan tanggal yang diperbarui."}
+      ]
+    },
+    {
+      "heading": "Hukum yang berlaku",
+      "blocks": [
+        {"t": "p", "x": "Ketentuan ini diatur oleh hukum Uni Emirat Arab, tanpa memperhatikan prinsip pertentangan hukum."}
+      ]
+    },
+    {
+      "heading": "Kontak",
+      "blocks": [
+        {"t": "p", "x": "Jika Anda memiliki pertanyaan tentang Ketentuan ini, Anda dapat menghubungi:"},
+        {"t": "p", "x": "📧 [ausejoalejandro@gmail.com](mailto:ausejoalejandro@gmail.com)"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "htmlLang": "id",
+  "title": "Kebijakan Privasi",
+  "description": "Bagaimana Quanto mengumpulkan, menggunakan, dan melindungi informasi Anda. Data pengeluaran Anda tetap di perangkat Anda.",
+  "updated": "Terakhir diperbarui: 28 Agustus 2026",
+  "intro": "Kebijakan Privasi ini menjelaskan bagaimana Quanto (“Aplikasi”) mengumpulkan, menggunakan, dan melindungi informasi Anda.",
+  "sections": [
+    {
+      "heading": "Tentang kami",
+      "blocks": [
+        {"t": "dl", "items": [
+          ["Nama aplikasi", "Quanto"],
+          ["Pemilik", "Alejandro Ausejo"],
+          ["Negara", "Uni Emirat Arab"],
+          ["Email kontak", "[ausejoalejandro@gmail.com](mailto:ausejoalejandro@gmail.com)"]
+        ]}
+      ]
+    },
+    {
+      "heading": "Informasi yang kami kumpulkan",
+      "blocks": [
+        {"t": "h3", "x": "a) Informasi yang Anda berikan"},
+        {"t": "p", "x": "Quanto tidak mewajibkan pengguna membuat akun dan tidak mengumpulkan informasi pribadi seperti:"},
+        {"t": "ul", "items": [
+          "Nama",
+          "Alamat email",
+          "Kata sandi",
+          "Rincian transaksi",
+          "Data keuangan",
+          "Informasi profil"
+        ]},
+        {"t": "p", "x": "Semua data pengeluaran dan pemasukan yang Anda masukkan disimpan secara lokal di perangkat Anda."}
+      ]
+    },
+    {
+      "heading": "Informasi yang dikumpulkan secara otomatis",
+      "blocks": [
+        {"t": "p", "x": "Kami dapat mengumpulkan informasi terbatas dan non-pribadi melalui layanan pihak ketiga untuk membantu meningkatkan performa dan stabilitas aplikasi serta mengukur efektivitas iklan, seperti:"},
+        {"t": "ul", "items": [
+          "Data penggunaan aplikasi",
+          "Jenis perangkat",
+          "Versi sistem operasi",
+          "Laporan kerusakan (crash)",
+          "Peristiwa analitik anonim",
+          "Pengenal perangkat (seperti pengenal iklan) yang digunakan untuk analitik dan atribusi iklan"
+        ]},
+        {"t": "p", "x": "Informasi ini dikumpulkan melalui layanan pihak ketiga seperti Firebase Analytics, Firebase Crashlytics, dan SDK Meta (Facebook), serta tidak mengidentifikasi Anda secara langsung."}
+      ]
+    },
+    {
+      "heading": "Pembayaran dan langganan",
+      "blocks": [
+        {"t": "p", "x": "Pembayaran untuk fitur premium diproses secara aman melalui:"},
+        {"t": "ul", "items": ["Apple In-App Purchases", "Google Play Billing"]},
+        {"t": "p", "x": "Kami tidak melihat, mengumpulkan, atau menyimpan informasi pembayaran maupun kartu kredit apa pun."}
+      ]
+    },
+    {
+      "heading": "Penyimpanan data",
+      "blocks": [
+        {"t": "p", "x": "Saat ini:"},
+        {"t": "ul", "items": [
+          "Semua data yang dimasukkan pengguna hanya disimpan secara lokal di perangkat Anda",
+          "Kami tidak memiliki akses ke data Anda"
+        ]},
+        {"t": "p", "x": "Di masa mendatang, fitur pencadangan cloud opsional mungkin diperkenalkan. Jika demikian, kebijakan ini akan diperbarui sebelum fitur tersebut diaktifkan."},
+        {"t": "p", "x": "Fitur AI opsional yang dijelaskan pada bagian 9 adalah pengecualian: ketika Anda memilih menggunakan salah satunya, informasi terbatas dikirim keluar dari perangkat Anda untuk diproses."}
+      ]
+    },
+    {
+      "heading": "Penghapusan data",
+      "blocks": [
+        {"t": "p", "x": "Anda dapat menghapus semua data Anda langsung di dalam aplikasi kapan saja."},
+        {"t": "p", "x": "Jika Anda menghubungi kami di [ausejoalejandro@gmail.com](mailto:ausejoalejandro@gmail.com), kami akan membantu Anda dengan pertanyaan apa pun terkait data."}
+      ]
+    },
+    {
+      "heading": "Privasi anak",
+      "blocks": [
+        {"t": "p", "x": "Quanto tidak ditujukan untuk anak-anak di bawah usia 13 tahun."},
+        {"t": "p", "x": "Kami tidak dengan sengaja mengumpulkan informasi pribadi dari anak-anak. Jika Anda yakin seorang anak telah memberikan data pribadi, silakan hubungi kami agar kami dapat menghapusnya."}
+      ]
+    },
+    {
+      "heading": "Layanan pihak ketiga",
+      "blocks": [
+        {"t": "p", "x": "Quanto menggunakan layanan pihak ketiga untuk mendukung analitik, diagnostik, dan atribusi iklan. Layanan tersebut dapat mengumpulkan informasi terbatas, termasuk pengenal perangkat, sesuai dengan kebijakan privasi masing-masing."},
+        {"t": "p", "x": "Layanan pihak ketiga yang digunakan aplikasi ini meliputi:"},
+        {"t": "ul", "items": [
+          "Google Firebase (Analytics dan Crashlytics)",
+          "Google Analytics",
+          "SDK Meta (Facebook) – digunakan untuk atribusi iklan dan pengukuran pemasangan aplikasi",
+          "Google Gemini – digunakan untuk menyediakan fitur AI opsional yang dijelaskan pada bagian 9"
+        ]},
+        {"t": "p", "x": "Jika diperlukan, persetujuan pengguna diminta melalui kerangka kerja App Tracking Transparency dari Apple sebelum pelacakan diaktifkan."}
+      ]
+    },
+    {
+      "heading": "Fitur AI",
+      "blocks": [
+        {"t": "p", "x": "Fitur AI Quanto bersifat opsional. Tidak ada hal yang dijelaskan pada bagian ini terjadi kecuali Anda memilih untuk menggunakan salah satunya."},
+        {"t": "h3", "x": "a) Apa yang dibagikan"},
+        {"t": "p", "x": "Ketika Anda memilih menggunakan fitur AI:"},
+        {"t": "ul", "items": [
+          "**Transaksi suara:** Perangkat Anda mengubah ucapan Anda menjadi teks. Quanto tidak menerima atau menyimpan rekaman suara Anda. Teks, mata uang yang dipilih, serta nama kategori dan akun Anda digunakan untuk membuat saran transaksi.",
+          "**Pemindaian struk:** Salinan gambar struk yang lebih kecil dikirim untuk diproses. Lokasi dan informasi tersembunyi lainnya pada gambar dihapus terlebih dahulu.",
+          "**Pemindaian PDF:** PDF asli Anda tidak diunggah. Quanto mengirim teks yang diambil dari dokumen atau, bila diperlukan, gambar halaman berukuran lebih kecil. Kata sandi PDF tetap berada di perangkat Anda dan tidak pernah dikirim atau disimpan.",
+          "**Otomatisasi Apple Pay:** Jika Anda menyiapkan otomatisasi opsional di aplikasi Pintasan Apple, rincian pembayaran disimpan ke Quanto di perangkat Anda. Sebagian besar pembayaran dikategorikan di perangkat Anda. Ketika Quanto tidak dapat menentukan kategori, hanya nama merchant dan nama kategori pengeluaran Anda yang dikirim untuk membantu. Jumlah, tanggal, nama kartu, dan akun tidak dikirim."
+        ]},
+        {"t": "p", "x": "Quanto tidak terhubung langsung ke Apple Pay, bank Anda, atau penyedia kartu Anda. Quanto menerima rincian Apple Pay hanya melalui otomatisasi yang Anda buat."},
+        {"t": "h3", "x": "b) Bagaimana informasi Anda diperlakukan"},
+        {"t": "p", "x": "Google Gemini memproses informasi yang diperlukan untuk menyediakan fitur-fitur ini. Informasi yang dikirim ke Google Gemini melalui layanan berbayar Quanto tidak digunakan untuk melatih model AI Google."},
+        {"t": "p", "x": "Informasi Anda dienkripsi saat dikirim. Quanto tidak menjualnya dan tidak menggunakannya untuk iklan atau pelacakan."},
+        {"t": "p", "x": "Quanto tidak menyimpan rekaman suara, transkrip suara, konten struk atau PDF, kata sandi PDF, maupun nama merchant Apple Pay di servernya. Catatan teknis terbatas disimpan untuk melindungi layanan, memperbaiki masalah, dan menerapkan batas penggunaan fitur. Sebagian besar catatan ini dihapus dalam 90 hari, sementara total penggunaan dapat disimpan selama masih diperlukan untuk menerapkan batas tersebut."},
+        {"t": "h3", "x": "c) Hasil AI dan pilihan Anda"},
+        {"t": "p", "x": "AI dapat membuat kesalahan. Hasil dari suara, struk, dan PDF ditampilkan sebagai draf yang dapat diedit dan hanya disimpan setelah Anda mengonfirmasinya."},
+        {"t": "p", "x": "Transaksi Apple Pay disimpan secara otomatis setelah Anda menyiapkan otomatisasi, tetapi Anda dapat mengeditnya kapan saja. Mengoreksi kategori membantu Quanto mengategorikan merchant yang sama dengan lebih baik di perangkat Anda pada masa mendatang."},
+        {"t": "p", "x": "Quanto adalah alat pengelolaan pengeluaran dan tidak memberikan nasihat keuangan, akuntansi, atau perpajakan. Periksa informasi penting terhadap struk atau dokumen aslinya."},
+        {"t": "p", "x": "Anda dapat berhenti menggunakan fitur-fitur ini kapan saja. Anda juga dapat mencabut izin kamera, foto, mikrofon, atau pengenalan ucapan di pengaturan perangkat Anda. Untuk menghentikan Otomatisasi Apple Pay, hapus otomatisasi Quanto dari aplikasi Pintasan Apple."}
+      ]
+    },
+    {
+      "heading": "Keamanan",
+      "blocks": [
+        {"t": "p", "x": "Kami mengambil langkah-langkah yang wajar untuk melindungi informasi Anda. Namun, tidak ada metode penyimpanan elektronik atau pengiriman melalui internet yang 100% aman."}
+      ]
+    },
+    {
+      "heading": "Perubahan pada Kebijakan Privasi ini",
+      "blocks": [
+        {"t": "p", "x": "Kami dapat memperbarui Kebijakan Privasi ini dari waktu ke waktu. Setiap perubahan akan dipublikasikan di halaman ini dengan tanggal yang diperbarui."}
+      ]
+    },
+    {
+      "heading": "Hubungi kami",
+      "blocks": [
+        {"t": "p", "x": "Jika Anda memiliki pertanyaan tentang Kebijakan Privasi ini, Anda dapat menghubungi:"},
+        {"t": "p", "x": "📧 [ausejoalejandro@gmail.com](mailto:ausejoalejandro@gmail.com)"}
+      ]
+    }
+  ]
+}

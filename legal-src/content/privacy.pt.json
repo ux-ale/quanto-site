@@ -1,0 +1,142 @@
+{
+  "htmlLang": "pt-BR",
+  "title": "Política de Privacidade",
+  "description": "Como o Quanto coleta, usa e protege suas informações. Os dados das suas despesas ficam no seu dispositivo.",
+  "updated": "Última atualização: 28 de agosto de 2026",
+  "intro": "Esta Política de Privacidade explica como o Quanto (“o Aplicativo”) coleta, usa e protege suas informações.",
+  "sections": [
+    {
+      "heading": "Quem somos",
+      "blocks": [
+        {"t": "dl", "items": [
+          ["Nome do aplicativo", "Quanto"],
+          ["Proprietário", "Alejandro Ausejo"],
+          ["País", "Emirados Árabes Unidos"],
+          ["E-mail de contato", "[ausejoalejandro@gmail.com](mailto:ausejoalejandro@gmail.com)"]
+        ]}
+      ]
+    },
+    {
+      "heading": "Informações que coletamos",
+      "blocks": [
+        {"t": "h3", "x": "a) Informações que você fornece"},
+        {"t": "p", "x": "O Quanto não exige que os usuários criem uma conta e não coleta informações pessoais como:"},
+        {"t": "ul", "items": [
+          "Nome",
+          "Endereço de e-mail",
+          "Senha",
+          "Detalhes de transações",
+          "Dados financeiros",
+          "Informações de perfil"
+        ]},
+        {"t": "p", "x": "Todos os dados de despesas e receitas que você insere são armazenados localmente no seu dispositivo."}
+      ]
+    },
+    {
+      "heading": "Informações coletadas automaticamente",
+      "blocks": [
+        {"t": "p", "x": "Podemos coletar informações limitadas e não pessoais por meio de serviços de terceiros para ajudar a melhorar o desempenho e a estabilidade do aplicativo e medir a eficácia da publicidade, como:"},
+        {"t": "ul", "items": [
+          "Dados de uso do aplicativo",
+          "Tipo de dispositivo",
+          "Versão do sistema operacional",
+          "Relatórios de falhas",
+          "Eventos analíticos anônimos",
+          "Identificadores de dispositivo (como identificadores de publicidade) usados para análise e atribuição de publicidade"
+        ]},
+        {"t": "p", "x": "Essas informações são coletadas por meio de serviços de terceiros como Firebase Analytics, Firebase Crashlytics e o SDK da Meta (Facebook) e não identificam você diretamente."}
+      ]
+    },
+    {
+      "heading": "Pagamentos e assinaturas",
+      "blocks": [
+        {"t": "p", "x": "Os pagamentos dos recursos premium são processados com segurança por meio de:"},
+        {"t": "ul", "items": ["Apple In-App Purchases", "Google Play Billing"]},
+        {"t": "p", "x": "Não vemos, coletamos nem armazenamos nenhuma informação de pagamento ou de cartão de crédito."}
+      ]
+    },
+    {
+      "heading": "Armazenamento de dados",
+      "blocks": [
+        {"t": "p", "x": "Atualmente:"},
+        {"t": "ul", "items": [
+          "Todos os dados inseridos pelo usuário são armazenados apenas localmente no seu dispositivo",
+          "Não temos acesso aos seus dados"
+        ]},
+        {"t": "p", "x": "No futuro, poderão ser introduzidos recursos opcionais de backup na nuvem. Nesse caso, esta política será atualizada antes que tais recursos sejam ativados."},
+        {"t": "p", "x": "Os recursos de IA opcionais descritos na seção 9 são a exceção: quando você escolhe usar um deles, informações limitadas são enviadas para fora do seu dispositivo para processamento."}
+      ]
+    },
+    {
+      "heading": "Exclusão de dados",
+      "blocks": [
+        {"t": "p", "x": "Você pode excluir todos os seus dados diretamente no aplicativo a qualquer momento."},
+        {"t": "p", "x": "Se você entrar em contato conosco pelo [ausejoalejandro@gmail.com](mailto:ausejoalejandro@gmail.com), ajudaremos com qualquer dúvida relacionada aos seus dados."}
+      ]
+    },
+    {
+      "heading": "Privacidade de crianças",
+      "blocks": [
+        {"t": "p", "x": "O Quanto não é direcionado a crianças menores de 13 anos."},
+        {"t": "p", "x": "Não coletamos intencionalmente informações pessoais de crianças. Se você acredita que uma criança forneceu dados pessoais, entre em contato conosco para que possamos excluí-los."}
+      ]
+    },
+    {
+      "heading": "Serviços de terceiros",
+      "blocks": [
+        {"t": "p", "x": "O Quanto utiliza serviços de terceiros para análise, diagnóstico e atribuição de publicidade. Esses serviços podem coletar informações limitadas, incluindo identificadores de dispositivo, de acordo com suas próprias políticas de privacidade."},
+        {"t": "p", "x": "Os serviços de terceiros usados pelo aplicativo incluem:"},
+        {"t": "ul", "items": [
+          "Google Firebase (Analytics e Crashlytics)",
+          "Google Analytics",
+          "SDK da Meta (Facebook) – usado para atribuição de publicidade e medição de instalações do aplicativo",
+          "Google Gemini – usado para fornecer os recursos de IA opcionais descritos na seção 9"
+        ]},
+        {"t": "p", "x": "Quando exigido, o consentimento do usuário é solicitado por meio da estrutura App Tracking Transparency da Apple antes da ativação do rastreamento."}
+      ]
+    },
+    {
+      "heading": "Recursos de IA",
+      "blocks": [
+        {"t": "p", "x": "Os recursos de IA do Quanto são opcionais. Nada do que está descrito nesta seção acontece a menos que você escolha usar um deles."},
+        {"t": "h3", "x": "a) O que é compartilhado"},
+        {"t": "p", "x": "Quando você escolhe usar um recurso de IA:"},
+        {"t": "ul", "items": [
+          "**Transações por voz:** seu dispositivo transforma sua fala em texto. O Quanto não recebe nem armazena sua gravação de voz. O texto, a moeda selecionada e os nomes das suas categorias e contas são usados para criar sugestões de transações.",
+          "**Digitalização de recibos:** uma cópia reduzida da imagem do recibo é enviada para processamento. A localização e outras informações ocultas da imagem são removidas antes.",
+          "**Digitalização de PDF:** seu PDF original não é enviado. O Quanto envia o texto extraído do documento ou, quando necessário, uma imagem reduzida de uma página. As senhas de PDF permanecem no seu dispositivo e nunca são enviadas nem armazenadas.",
+          "**Automação do Apple Pay:** se você configurar a automação opcional no app Atalhos da Apple, os detalhes do pagamento são salvos no Quanto no seu dispositivo. A maioria dos pagamentos é categorizada no seu dispositivo. Quando o Quanto não consegue escolher uma categoria, apenas o nome do estabelecimento e os nomes das suas categorias de despesa são enviados para ajudar. O valor, a data, o nome do cartão e a conta não são enviados."
+        ]},
+        {"t": "p", "x": "O Quanto não se conecta diretamente ao Apple Pay, ao seu banco ou à sua administradora de cartão. Ele recebe os detalhes do Apple Pay apenas por meio da automação que você cria."},
+        {"t": "h3", "x": "b) Como suas informações são tratadas"},
+        {"t": "p", "x": "O Google Gemini processa as informações necessárias para fornecer esses recursos. As informações enviadas ao Google Gemini por meio do serviço pago do Quanto não são usadas para treinar os modelos de IA do Google."},
+        {"t": "p", "x": "Suas informações são criptografadas durante o envio. O Quanto não as vende nem as utiliza para publicidade ou rastreamento."},
+        {"t": "p", "x": "O Quanto não mantém em seus servidores gravações de voz, transcrições de voz, conteúdo de recibos ou PDFs, senhas de PDF ou nomes de estabelecimentos do Apple Pay. Registros técnicos limitados são mantidos para proteger o serviço, corrigir problemas e aplicar limites de uso dos recursos. A maioria desses registros é excluída em até 90 dias, enquanto os totais de uso podem ser mantidos pelo tempo necessário para aplicar esses limites."},
+        {"t": "h3", "x": "c) Resultados da IA e suas escolhas"},
+        {"t": "p", "x": "A IA pode cometer erros. Os resultados de voz, recibos e PDFs são exibidos como rascunhos editáveis e só são salvos depois que você os confirma."},
+        {"t": "p", "x": "As transações do Apple Pay são salvas automaticamente após você configurar a automação, mas podem ser editadas a qualquer momento. Corrigir uma categoria ajuda o Quanto a categorizar melhor esse mesmo estabelecimento no seu dispositivo no futuro."},
+        {"t": "p", "x": "O Quanto é uma ferramenta de gestão de despesas e não fornece aconselhamento financeiro, contábil ou tributário. Confira as informações importantes no recibo ou documento original."},
+        {"t": "p", "x": "Você pode parar de usar esses recursos a qualquer momento. Também pode remover as permissões de câmera, fotos, microfone ou reconhecimento de fala nos ajustes do seu dispositivo. Para interromper a Automação do Apple Pay, exclua a automação do Quanto no app Atalhos da Apple."}
+      ]
+    },
+    {
+      "heading": "Segurança",
+      "blocks": [
+        {"t": "p", "x": "Adotamos medidas razoáveis para proteger suas informações. No entanto, nenhum método de armazenamento eletrônico ou de transmissão pela internet é 100% seguro."}
+      ]
+    },
+    {
+      "heading": "Alterações nesta Política de Privacidade",
+      "blocks": [
+        {"t": "p", "x": "Podemos atualizar esta Política de Privacidade periodicamente. Quaisquer alterações serão publicadas nesta página com uma data atualizada."}
+      ]
+    },
+    {
+      "heading": "Fale conosco",
+      "blocks": [
+        {"t": "p", "x": "Se você tiver alguma dúvida sobre esta Política de Privacidade, pode entrar em contato:"},
+        {"t": "p", "x": "📧 [ausejoalejandro@gmail.com](mailto:ausejoalejandro@gmail.com)"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "htmlLang": "it",
+  "title": "Termini di utilizzo",
+  "description": "I termini applicabili quando si scarica o si utilizza l'app di gestione delle spese Quanto.",
+  "updated": "",
+  "intro": "Scaricando o utilizzando l'app Quanto («l'App»), l'utente accetta i presenti Termini di utilizzo. In caso di disaccordo, si prega di non utilizzare l'App.",
+  "sections": [
+    {
+      "heading": "Informazioni su Quanto",
+      "blocks": [
+        {"t": "dl", "items": [
+          ["Nome dell'app", "Quanto"],
+          ["Titolare", "Alejandro Ausejo"],
+          ["Paese", "Emirati Arabi Uniti"],
+          ["Email di contatto", "[ausejoalejandro@gmail.com](mailto:ausejoalejandro@gmail.com)"]
+        ]},
+        {"t": "p", "x": "Quanto è un'applicazione per la gestione delle spese personali, pensata per aiutare gli utenti a registrare e organizzare le proprie informazioni finanziarie."}
+      ]
+    },
+    {
+      "heading": "Requisiti di idoneità",
+      "blocks": [
+        {"t": "p", "x": "L'App non è destinata a minori di 13 anni. Utilizzando l'App, l'utente conferma di avere almeno 13 anni."}
+      ]
+    },
+    {
+      "heading": "Utilizzo dell'App",
+      "blocks": [
+        {"t": "p", "x": "L'utente si impegna a utilizzare l'App esclusivamente per scopi leciti e in conformità ai presenti Termini."},
+        {"t": "p", "x": "L'utente si impegna a non:"},
+        {"t": "ul", "items": [
+          "Utilizzare impropriamente l'App o tentare di interferire con essa",
+          "Effettuare attività di reverse engineering o tentare di estrarre il codice sorgente",
+          "Utilizzare l'App in modo da violare leggi o regolamenti applicabili"
+        ]}
+      ]
+    },
+    {
+      "heading": "Nessun account richiesto",
+      "blocks": [
+        {"t": "p", "x": "È possibile utilizzare Quanto senza creare un account."},
+        {"t": "p", "x": "Tutti i dati inseriti sono archiviati localmente sul dispositivo, salvo che in futuro vengano introdotte funzioni facoltative di backup."}
+      ]
+    },
+    {
+      "heading": "Abbonamenti e pagamenti",
+      "blocks": [
+        {"t": "p", "x": "Alcune funzioni possono richiedere un abbonamento a pagamento."},
+        {"t": "p", "x": "I pagamenti sono elaborati tramite:"},
+        {"t": "ul", "items": ["Apple In-App Purchases", "Google Play Billing"]},
+        {"t": "p", "x": "Non raccogliamo né conserviamo informazioni di pagamento o relative alle carte di credito."},
+        {"t": "p", "x": "I prezzi degli abbonamenti, le condizioni di rinnovo e le regole di annullamento sono gestiti da Apple o Google e soggetti alle rispettive politiche."}
+      ]
+    },
+    {
+      "heading": "Nessuna consulenza finanziaria",
+      "blocks": [
+        {"t": "p", "x": "Quanto è fornita esclusivamente a scopo informativo e organizzativo."},
+        {"t": "p", "x": "L'App non fornisce consulenza finanziaria, di investimento, fiscale o legale. Qualsiasi decisione presa sulla base delle informazioni inserite nell'App è di esclusiva responsabilità dell'utente."}
+      ]
+    },
+    {
+      "heading": "Accuratezza dei dati",
+      "blocks": [
+        {"t": "p", "x": "L'utente è responsabile dell'accuratezza delle informazioni inserite nell'App."},
+        {"t": "p", "x": "Non garantiamo che i calcoli, i riepiloghi o le analisi generati dall'App siano privi di errori o adatti alle decisioni finanziarie."}
+      ]
+    },
+    {
+      "heading": "Proprietà intellettuale",
+      "blocks": [
+        {"t": "p", "x": "Tutti i contenuti, il design, il marchio e le funzionalità dell'App sono di proprietà di Alejandro Ausejo e sono protetti dalle leggi applicabili in materia di proprietà intellettuale."},
+        {"t": "p", "x": "Non è consentito copiare, modificare, distribuire o creare opere derivate dall'App senza previa autorizzazione scritta."}
+      ]
+    },
+    {
+      "heading": "Servizi di terze parti",
+      "blocks": [
+        {"t": "p", "x": "L'App può utilizzare servizi di terze parti (come Firebase o Google Analytics) per migliorarne le prestazioni e l'affidabilità."},
+        {"t": "p", "x": "Tali servizi operano secondo i propri termini e le proprie informative sulla privacy."}
+      ]
+    },
+    {
+      "heading": "Limitazione di responsabilità",
+      "blocks": [
+        {"t": "p", "x": "Nella massima misura consentita dalla legge, Alejandro Ausejo non sarà responsabile per danni indiretti, incidentali o consequenziali derivanti dall'utilizzo dell'App."},
+        {"t": "p", "x": "L'utilizzo dell'App avviene a rischio esclusivo dell'utente."}
+      ]
+    },
+    {
+      "heading": "Risoluzione",
+      "blocks": [
+        {"t": "p", "x": "Possiamo sospendere o revocare l'accesso all'App in qualsiasi momento in caso di violazione dei presenti Termini o di uso improprio dell'App."}
+      ]
+    },
+    {
+      "heading": "Modifiche ai presenti Termini",
+      "blocks": [
+        {"t": "p", "x": "Possiamo aggiornare periodicamente i presenti Termini. Le modifiche avranno efficacia dal momento della pubblicazione con una data aggiornata."}
+      ]
+    },
+    {
+      "heading": "Legge applicabile",
+      "blocks": [
+        {"t": "p", "x": "I presenti Termini sono regolati dalle leggi degli Emirati Arabi Uniti, senza riguardo ai principi in materia di conflitto di leggi."}
+      ]
+    },
+    {
+      "heading": "Contatti",
+      "blocks": [
+        {"t": "p", "x": "Per qualsiasi domanda sui presenti Termini è possibile contattare:"},
+        {"t": "p", "x": "📧 [ausejoalejandro@gmail.com](mailto:ausejoalejandro@gmail.com)"}
+      ]
+    }
+  ]
+}
