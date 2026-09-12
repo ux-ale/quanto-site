@@ -8,134 +8,271 @@
     {
       "heading": "Who we are",
       "blocks": [
-        {"t": "dl", "items": [
-          ["App name", "Quanto"],
-          ["Owner", "Alejandro Ausejo"],
-          ["Country", "United Arab Emirates"],
-          ["Contact email", "[ausejoalejandro@gmail.com](mailto:ausejoalejandro@gmail.com)"]
-        ]}
+        {
+          "t": "dl",
+          "items": [
+            [
+              "App name",
+              "Quanto"
+            ],
+            [
+              "Owner",
+              "Alejandro Ausejo"
+            ],
+            [
+              "Country",
+              "United Arab Emirates"
+            ],
+            [
+              "Contact email",
+              "[ausejoalejandro@gmail.com](mailto:ausejoalejandro@gmail.com)"
+            ]
+          ]
+        }
       ]
     },
     {
       "heading": "Information we collect",
       "blocks": [
-        {"t": "h3", "x": "Information you provide"},
-        {"t": "p", "x": "Quanto does not require users to create an account and does not collect personal information such as:"},
-        {"t": "ul", "items": [
-          "Name",
-          "Email address",
-          "Password",
-          "Transaction details",
-          "Financial data",
-          "Profile information"
-        ]},
-        {"t": "p", "x": "All expense and income data you enter is stored locally on your device."}
-      ]
-    },
-    {
-      "heading": "Automatically collected information",
-      "blocks": [
-        {"t": "p", "x": "We may collect limited, non-personal information through third-party services to help improve app performance, stability, and measure advertising effectiveness, such as:"},
-        {"t": "ul", "items": [
-          "App usage data",
-          "Device type",
-          "Operating system version",
-          "Crash reports",
-          "Anonymous analytics events",
-          "Device identifiers (such as advertising identifiers) used for analytics and advertising attribution"
-        ]},
-        {"t": "p", "x": "This information is collected through third-party services such as Firebase Analytics, Firebase Crashlytics, and the Meta (Facebook) SDK and does not directly identify you."}
+        {
+          "t": "h3",
+          "x": "a) We don't collect personal information"
+        },
+        {
+          "t": "p",
+          "x": "Quanto **does not** require users to create an account and **does not** collect personal information such as:"
+        },
+        {
+          "t": "ul",
+          "items": [
+            "Name",
+            "Email address",
+            "Password",
+            "Transaction details",
+            "Financial data",
+            "Profile information"
+          ]
+        },
+        {
+          "t": "p",
+          "x": "All expense and income data you enter is stored locally on your device."
+        },
+        {
+          "t": "h3",
+          "x": "b) Automatically collected information"
+        },
+        {
+          "t": "p",
+          "x": "We may collect limited, non-personal information through third-party services to help improve app performance, stability, and measure advertising effectiveness, such as:"
+        },
+        {
+          "t": "ul",
+          "items": [
+            "App usage data",
+            "Device type",
+            "Operating system version",
+            "Crash reports",
+            "Anonymous analytics events",
+            "Device identifiers (such as advertising identifiers) used for analytics and advertising attribution"
+          ]
+        },
+        {
+          "t": "p",
+          "x": "This information is collected through third-party services such as Firebase Analytics, Firebase Crashlytics, and the Meta (Facebook) SDK and does not directly identify you."
+        }
       ]
     },
     {
       "heading": "Payments and subscriptions",
       "blocks": [
-        {"t": "p", "x": "Payments for premium features are processed securely through:"},
-        {"t": "ul", "items": ["Apple In-App Purchases", "Google Play Billing"]},
-        {"t": "p", "x": "We do not see, collect, or store any payment or credit card information."}
+        {
+          "t": "p",
+          "x": "Payments for premium features are processed securely through:"
+        },
+        {
+          "t": "ul",
+          "items": [
+            "Apple In-App Purchases",
+            "Google Play Billing"
+          ]
+        },
+        {
+          "t": "p",
+          "x": "We do not see, collect, or store any payment or credit card information."
+        }
       ]
     },
     {
       "heading": "Data storage",
       "blocks": [
-        {"t": "p", "x": "Currently:"},
-        {"t": "ul", "items": [
-          "All user-entered data is stored locally on your device only",
-          "We do not have access to your data"
-        ]},
-        {"t": "p", "x": "In the future, optional cloud backup features may be introduced. If so, this policy will be updated accordingly before such features are enabled."},
-        {"t": "p", "x": "The optional AI features described in section 9 are the exception: when you choose to use one, limited information is sent off your device for processing."}
+        {
+          "t": "p",
+          "x": "Currently:"
+        },
+        {
+          "t": "ul",
+          "items": [
+            "All user-entered data is stored locally on your device only",
+            "We do not have access to your data"
+          ]
+        },
+        {
+          "t": "p",
+          "x": "In the future, optional cloud backup features may be introduced. If so, this policy will be updated accordingly before such features are enabled."
+        },
+        {
+          "t": "p",
+          "x": "The optional AI features described in section 8 are the exception: when you choose to use one, limited information is sent off your device for processing."
+        }
       ]
     },
     {
       "heading": "Data deletion",
       "blocks": [
-        {"t": "p", "x": "You can delete all your data directly within the app at any time."},
-        {"t": "p", "x": "If you contact us at [ausejoalejandro@gmail.com](mailto:ausejoalejandro@gmail.com), we will assist with any data-related questions."}
+        {
+          "t": "p",
+          "x": "You can delete all your data directly within the app at any time."
+        },
+        {
+          "t": "p",
+          "x": "If you contact us at [ausejoalejandro@gmail.com](mailto:ausejoalejandro@gmail.com), we will assist with any data-related questions."
+        }
       ]
     },
     {
       "heading": "Children’s privacy",
       "blocks": [
-        {"t": "p", "x": "Quanto is not directed to children under the age of 13."},
-        {"t": "p", "x": "We do not knowingly collect personal information from children. If you believe a child has provided personal data, please contact us so we can delete it."}
+        {
+          "t": "p",
+          "x": "Quanto is not directed to children under the age of 13."
+        },
+        {
+          "t": "p",
+          "x": "We do not knowingly collect personal information from children. If you believe a child has provided personal data, please contact us so we can delete it."
+        }
       ]
     },
     {
       "heading": "Third-party services",
       "blocks": [
-        {"t": "p", "x": "Quanto uses third-party services to support analytics, diagnostics, and advertising attribution. These services may collect limited information, including device identifiers, in accordance with their own privacy policies."},
-        {"t": "p", "x": "Third-party services used by the app include:"},
-        {"t": "ul", "items": [
-          "Google Firebase (Analytics and Crashlytics)",
-          "Google Analytics",
-          "Meta (Facebook) SDK – used for advertising attribution and app install measurement",
-          "Google Gemini – used to provide the optional AI features described in section 9"
-        ]},
-        {"t": "p", "x": "Where required, user consent is requested through Apple’s App Tracking Transparency framework before enabling tracking."}
+        {
+          "t": "p",
+          "x": "Quanto uses third-party services to support analytics, diagnostics, and advertising attribution. These services may collect limited information, including device identifiers, in accordance with their own privacy policies."
+        },
+        {
+          "t": "p",
+          "x": "Third-party services used by the app include:"
+        },
+        {
+          "t": "ul",
+          "items": [
+            "Google Firebase (Analytics and Crashlytics)",
+            "Google Analytics",
+            "Meta (Facebook) SDK – used for advertising attribution and app install measurement",
+            "Google Gemini – used to provide the optional AI features described in section 8"
+          ]
+        },
+        {
+          "t": "p",
+          "x": "Where required, user consent is requested through Apple’s App Tracking Transparency framework before enabling tracking."
+        }
       ]
     },
     {
       "heading": "AI features",
       "blocks": [
-        {"t": "p", "x": "Quanto’s AI features are optional. Nothing described in this section happens unless you choose to use one of them."},
-        {"t": "h3", "x": "a) What is shared"},
-        {"t": "p", "x": "When you choose to use an AI feature:"},
-        {"t": "ul", "items": [
-          "**Voice Transactions:** Your device turns your speech into text. Quanto does not receive or store your voice recording. The text, selected currency, and your category and account names are used to create transaction suggestions.",
-          "**Receipt Scanning:** A smaller copy of the receipt image is sent for processing. Location and other hidden image information are removed first.",
-          "**PDF Scanning:** Your original PDF is not uploaded. Quanto sends text taken from the document or, when needed, a smaller image of a page. PDF passwords stay on your device and are never sent or stored.",
-          "**Apple Pay Automation:** If you set up the optional Apple Shortcuts automation, payment details are saved to Quanto on your device. Most payments are categorized on your device. When Quanto cannot choose a category, only the merchant name and your expense category names are sent for help. The amount, date, card name, and account are not sent."
-        ]},
-        {"t": "p", "x": "Quanto does not connect directly to Apple Pay, your bank, or your card provider. It receives Apple Pay details only through the automation you create."},
-        {"t": "h3", "x": "b) How your information is handled"},
-        {"t": "p", "x": "Google Gemini processes the information needed to provide these features. Information sent to Google Gemini through Quanto’s paid service is not used to train Google’s AI models."},
-        {"t": "p", "x": "Your information is encrypted while being sent. Quanto does not sell it or use it for advertising or tracking."},
-        {"t": "p", "x": "Quanto does not keep voice recordings, voice transcripts, receipt or PDF content, PDF passwords, or Apple Pay merchant names on its servers. Limited technical records are kept to protect the service, fix problems, and apply feature usage limits. Most of these records are deleted within 90 days, while usage totals may be kept for as long as they are needed to apply those limits."},
-        {"t": "h3", "x": "c) AI results and your choices"},
-        {"t": "p", "x": "AI can make mistakes. Voice, receipt, and PDF results are shown as editable drafts and are saved only after you confirm them."},
-        {"t": "p", "x": "Apple Pay transactions are saved automatically after you set up the automation, but you can edit them at any time. Correcting a category helps Quanto categorize the same merchant better on your device in the future."},
-        {"t": "p", "x": "Quanto is an expenses management tool and does not provide financial, accounting, or tax advice. Check important information against the original receipt or document."},
-        {"t": "p", "x": "You can stop using these features at any time. You can also remove camera, photo, microphone, or speech permissions in your device settings. To stop Apple Pay Automation, delete the Quanto automation from Apple’s Shortcuts app."}
+        {
+          "t": "p",
+          "x": "Quanto’s AI features are optional. Nothing described in this section happens unless you choose to use one of them."
+        },
+        {
+          "t": "h3",
+          "x": "a) What is shared"
+        },
+        {
+          "t": "p",
+          "x": "When you choose to use an AI feature:"
+        },
+        {
+          "t": "ul",
+          "items": [
+            "**Voice Transactions:** Your device turns your speech into text. Quanto does not receive or store your voice recording. The text, selected currency, and your category and account names are used to create transaction suggestions.",
+            "**Receipt Scanning:** A smaller copy of the receipt image is sent for processing. Location and other hidden image information are removed first.",
+            "**PDF Scanning:** Your original PDF is not uploaded. Quanto sends text taken from the document or, when needed, a smaller image of a page. PDF passwords stay on your device and are never sent or stored.",
+            "**Apple Pay Automation:** If you set up the optional Apple Shortcuts automation, payment details are saved to Quanto on your device. Most payments are categorized on your device. When Quanto cannot choose a category, only the merchant name and your expense category names are sent for help. The amount, date, card name, and account are not sent."
+          ]
+        },
+        {
+          "t": "p",
+          "x": "Quanto does not connect directly to Apple Pay, your bank, or your card provider. It receives Apple Pay details only through the automation you create."
+        },
+        {
+          "t": "h3",
+          "x": "b) How your information is handled"
+        },
+        {
+          "t": "p",
+          "x": "Google Gemini processes the information needed to provide these features. Information sent to Google Gemini through Quanto’s paid service is not used to train Google’s AI models."
+        },
+        {
+          "t": "p",
+          "x": "Your information is encrypted while being sent. Quanto does not sell it or use it for advertising or tracking."
+        },
+        {
+          "t": "p",
+          "x": "Quanto does not keep voice recordings, voice transcripts, receipt or PDF content, PDF passwords, or Apple Pay merchant names on its servers. Limited technical records are kept to protect the service, fix problems, and apply feature usage limits. Most of these records are deleted within 90 days, while usage totals may be kept for as long as they are needed to apply those limits."
+        },
+        {
+          "t": "h3",
+          "x": "c) AI results and your choices"
+        },
+        {
+          "t": "p",
+          "x": "AI can make mistakes. Voice, receipt, and PDF results are shown as editable drafts and are saved only after you confirm them."
+        },
+        {
+          "t": "p",
+          "x": "Apple Pay transactions are saved automatically after you set up the automation, but you can edit them at any time. Correcting a category helps Quanto categorize the same merchant better on your device in the future."
+        },
+        {
+          "t": "p",
+          "x": "Quanto is an expenses management tool and does not provide financial, accounting, or tax advice. Check important information against the original receipt or document."
+        },
+        {
+          "t": "p",
+          "x": "You can stop using these features at any time. You can also remove camera, photo, microphone, or speech permissions in your device settings. To stop Apple Pay Automation, delete the Quanto automation from Apple’s Shortcuts app."
+        }
       ]
     },
     {
       "heading": "Security",
       "blocks": [
-        {"t": "p", "x": "We take reasonable measures to protect your information. However, no method of electronic storage or transmission over the internet is 100% secure."}
+        {
+          "t": "p",
+          "x": "We take reasonable measures to protect your information. However, no method of electronic storage or transmission over the internet is 100% secure."
+        }
       ]
     },
     {
       "heading": "Changes to this Privacy Policy",
       "blocks": [
-        {"t": "p", "x": "We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated date."}
+        {
+          "t": "p",
+          "x": "We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated date."
+        }
       ]
     },
     {
       "heading": "Contact us",
       "blocks": [
-        {"t": "p", "x": "If you have any questions about this Privacy Policy, you can contact:"},
-        {"t": "p", "x": "📧 [ausejoalejandro@gmail.com](mailto:ausejoalejandro@gmail.com)"}
+        {
+          "t": "p",
+          "x": "If you have any questions about this Privacy Policy, you can contact:"
+        },
+        {
+          "t": "p",
+          "x": "📧 [ausejoalejandro@gmail.com](mailto:ausejoalejandro@gmail.com)"
+        }
       ]
     }
   ]

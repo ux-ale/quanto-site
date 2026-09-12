@@ -8,134 +8,271 @@
     {
       "heading": "Siapa kami",
       "blocks": [
-        {"t": "dl", "items": [
-          ["Nama aplikasi", "Quanto"],
-          ["Pemilik", "Alejandro Ausejo"],
-          ["Negara", "Emiriah Arab Bersatu"],
-          ["E-mel hubungan", "[ausejoalejandro@gmail.com](mailto:ausejoalejandro@gmail.com)"]
-        ]}
+        {
+          "t": "dl",
+          "items": [
+            [
+              "Nama aplikasi",
+              "Quanto"
+            ],
+            [
+              "Pemilik",
+              "Alejandro Ausejo"
+            ],
+            [
+              "Negara",
+              "Emiriah Arab Bersatu"
+            ],
+            [
+              "E-mel hubungan",
+              "[ausejoalejandro@gmail.com](mailto:ausejoalejandro@gmail.com)"
+            ]
+          ]
+        }
       ]
     },
     {
       "heading": "Maklumat yang kami kumpulkan",
       "blocks": [
-        {"t": "h3", "x": "Maklumat yang anda berikan"},
-        {"t": "p", "x": "Quanto tidak memerlukan pengguna mencipta akaun dan tidak mengumpul maklumat peribadi seperti:"},
-        {"t": "ul", "items": [
-          "Nama",
-          "Alamat e-mel",
-          "Kata laluan",
-          "Butiran transaksi",
-          "Data kewangan",
-          "Maklumat profil"
-        ]},
-        {"t": "p", "x": "Semua data perbelanjaan dan pendapatan yang anda masukkan disimpan secara setempat pada peranti anda."}
-      ]
-    },
-    {
-      "heading": "Maklumat yang dikumpul secara automatik",
-      "blocks": [
-        {"t": "p", "x": "Kami mungkin mengumpul maklumat terhad dan bukan peribadi melalui perkhidmatan pihak ketiga untuk membantu menambah baik prestasi dan kestabilan aplikasi serta mengukur keberkesanan pengiklanan, seperti:"},
-        {"t": "ul", "items": [
-          "Data penggunaan aplikasi",
-          "Jenis peranti",
-          "Versi sistem pengendalian",
-          "Laporan ranap",
-          "Peristiwa analitik tanpa nama",
-          "Pengecam peranti (seperti pengecam pengiklanan) yang digunakan untuk analitik dan atribusi pengiklanan"
-        ]},
-        {"t": "p", "x": "Maklumat ini dikumpulkan melalui perkhidmatan pihak ketiga seperti Firebase Analytics, Firebase Crashlytics dan SDK Meta (Facebook), dan tidak mengenal pasti anda secara langsung."}
+        {
+          "t": "h3",
+          "x": "a) Kami tidak mengumpul maklumat peribadi"
+        },
+        {
+          "t": "p",
+          "x": "Quanto **tidak** memerlukan pengguna mencipta akaun dan **tidak** mengumpul maklumat peribadi seperti:"
+        },
+        {
+          "t": "ul",
+          "items": [
+            "Nama",
+            "Alamat e-mel",
+            "Kata laluan",
+            "Butiran transaksi",
+            "Data kewangan",
+            "Maklumat profil"
+          ]
+        },
+        {
+          "t": "p",
+          "x": "Semua data perbelanjaan dan pendapatan yang anda masukkan disimpan secara setempat pada peranti anda."
+        },
+        {
+          "t": "h3",
+          "x": "b) Maklumat yang dikumpul secara automatik"
+        },
+        {
+          "t": "p",
+          "x": "Kami mungkin mengumpul maklumat terhad dan bukan peribadi melalui perkhidmatan pihak ketiga untuk membantu menambah baik prestasi dan kestabilan aplikasi serta mengukur keberkesanan pengiklanan, seperti:"
+        },
+        {
+          "t": "ul",
+          "items": [
+            "Data penggunaan aplikasi",
+            "Jenis peranti",
+            "Versi sistem pengendalian",
+            "Laporan ranap",
+            "Peristiwa analitik tanpa nama",
+            "Pengecam peranti (seperti pengecam pengiklanan) yang digunakan untuk analitik dan atribusi pengiklanan"
+          ]
+        },
+        {
+          "t": "p",
+          "x": "Maklumat ini dikumpulkan melalui perkhidmatan pihak ketiga seperti Firebase Analytics, Firebase Crashlytics dan SDK Meta (Facebook), dan tidak mengenal pasti anda secara langsung."
+        }
       ]
     },
     {
       "heading": "Pembayaran dan langganan",
       "blocks": [
-        {"t": "p", "x": "Pembayaran bagi ciri premium diproses dengan selamat melalui:"},
-        {"t": "ul", "items": ["Apple In-App Purchases", "Google Play Billing"]},
-        {"t": "p", "x": "Kami tidak melihat, mengumpul atau menyimpan sebarang maklumat pembayaran atau kad kredit."}
+        {
+          "t": "p",
+          "x": "Pembayaran bagi ciri premium diproses dengan selamat melalui:"
+        },
+        {
+          "t": "ul",
+          "items": [
+            "Apple In-App Purchases",
+            "Google Play Billing"
+          ]
+        },
+        {
+          "t": "p",
+          "x": "Kami tidak melihat, mengumpul atau menyimpan sebarang maklumat pembayaran atau kad kredit."
+        }
       ]
     },
     {
       "heading": "Penyimpanan data",
       "blocks": [
-        {"t": "p", "x": "Pada masa ini:"},
-        {"t": "ul", "items": [
-          "Semua data yang dimasukkan pengguna disimpan hanya secara setempat pada peranti anda",
-          "Kami tidak mempunyai akses kepada data anda"
-        ]},
-        {"t": "p", "x": "Pada masa hadapan, ciri sandaran awan pilihan mungkin diperkenalkan. Sekiranya berlaku, dasar ini akan dikemas kini sewajarnya sebelum ciri tersebut diaktifkan."},
-        {"t": "p", "x": "Ciri AI pilihan yang diterangkan dalam bahagian 9 merupakan pengecualian: apabila anda memilih untuk menggunakannya, maklumat terhad dihantar keluar daripada peranti anda untuk diproses."}
+        {
+          "t": "p",
+          "x": "Pada masa ini:"
+        },
+        {
+          "t": "ul",
+          "items": [
+            "Semua data yang dimasukkan pengguna disimpan hanya secara setempat pada peranti anda",
+            "Kami tidak mempunyai akses kepada data anda"
+          ]
+        },
+        {
+          "t": "p",
+          "x": "Pada masa hadapan, ciri sandaran awan pilihan mungkin diperkenalkan. Sekiranya berlaku, dasar ini akan dikemas kini sewajarnya sebelum ciri tersebut diaktifkan."
+        },
+        {
+          "t": "p",
+          "x": "Ciri AI pilihan yang diterangkan dalam bahagian 8 merupakan pengecualian: apabila anda memilih untuk menggunakannya, maklumat terhad dihantar keluar daripada peranti anda untuk diproses."
+        }
       ]
     },
     {
       "heading": "Pemadaman data",
       "blocks": [
-        {"t": "p", "x": "Anda boleh memadamkan semua data anda terus di dalam aplikasi pada bila-bila masa."},
-        {"t": "p", "x": "Jika anda menghubungi kami di [ausejoalejandro@gmail.com](mailto:ausejoalejandro@gmail.com), kami akan membantu anda dengan sebarang pertanyaan berkaitan data."}
+        {
+          "t": "p",
+          "x": "Anda boleh memadamkan semua data anda terus di dalam aplikasi pada bila-bila masa."
+        },
+        {
+          "t": "p",
+          "x": "Jika anda menghubungi kami di [ausejoalejandro@gmail.com](mailto:ausejoalejandro@gmail.com), kami akan membantu anda dengan sebarang pertanyaan berkaitan data."
+        }
       ]
     },
     {
       "heading": "Privasi kanak-kanak",
       "blocks": [
-        {"t": "p", "x": "Quanto tidak ditujukan kepada kanak-kanak di bawah umur 13 tahun."},
-        {"t": "p", "x": "Kami tidak mengumpul maklumat peribadi daripada kanak-kanak secara sedar. Jika anda percaya seorang kanak-kanak telah memberikan data peribadi, sila hubungi kami supaya kami boleh memadamkannya."}
+        {
+          "t": "p",
+          "x": "Quanto tidak ditujukan kepada kanak-kanak di bawah umur 13 tahun."
+        },
+        {
+          "t": "p",
+          "x": "Kami tidak mengumpul maklumat peribadi daripada kanak-kanak secara sedar. Jika anda percaya seorang kanak-kanak telah memberikan data peribadi, sila hubungi kami supaya kami boleh memadamkannya."
+        }
       ]
     },
     {
       "heading": "Perkhidmatan pihak ketiga",
       "blocks": [
-        {"t": "p", "x": "Quanto menggunakan perkhidmatan pihak ketiga untuk menyokong analitik, diagnostik dan atribusi pengiklanan. Perkhidmatan ini mungkin mengumpul maklumat terhad, termasuk pengecam peranti, selaras dengan dasar privasi mereka sendiri."},
-        {"t": "p", "x": "Perkhidmatan pihak ketiga yang digunakan oleh aplikasi ini termasuk:"},
-        {"t": "ul", "items": [
-          "Google Firebase (Analytics dan Crashlytics)",
-          "Google Analytics",
-          "SDK Meta (Facebook) – digunakan untuk atribusi pengiklanan dan pengukuran pemasangan aplikasi",
-          "Google Gemini – digunakan untuk menyediakan ciri AI pilihan yang diterangkan dalam bahagian 9"
-        ]},
-        {"t": "p", "x": "Apabila diperlukan, persetujuan pengguna diminta melalui rangka kerja App Tracking Transparency Apple sebelum penjejakan diaktifkan."}
+        {
+          "t": "p",
+          "x": "Quanto menggunakan perkhidmatan pihak ketiga untuk menyokong analitik, diagnostik dan atribusi pengiklanan. Perkhidmatan ini mungkin mengumpul maklumat terhad, termasuk pengecam peranti, selaras dengan dasar privasi mereka sendiri."
+        },
+        {
+          "t": "p",
+          "x": "Perkhidmatan pihak ketiga yang digunakan oleh aplikasi ini termasuk:"
+        },
+        {
+          "t": "ul",
+          "items": [
+            "Google Firebase (Analytics dan Crashlytics)",
+            "Google Analytics",
+            "SDK Meta (Facebook) – digunakan untuk atribusi pengiklanan dan pengukuran pemasangan aplikasi",
+            "Google Gemini – digunakan untuk menyediakan ciri AI pilihan yang diterangkan dalam bahagian 8"
+          ]
+        },
+        {
+          "t": "p",
+          "x": "Apabila diperlukan, persetujuan pengguna diminta melalui rangka kerja App Tracking Transparency Apple sebelum penjejakan diaktifkan."
+        }
       ]
     },
     {
       "heading": "Ciri AI",
       "blocks": [
-        {"t": "p", "x": "Ciri AI Quanto adalah pilihan. Tiada apa-apa yang diterangkan dalam bahagian ini berlaku melainkan anda memilih untuk menggunakan salah satu daripadanya."},
-        {"t": "h3", "x": "a) Apa yang dikongsi"},
-        {"t": "p", "x": "Apabila anda memilih untuk menggunakan ciri AI:"},
-        {"t": "ul", "items": [
-          "**Transaksi suara:** Peranti anda menukarkan pertuturan anda kepada teks. Quanto tidak menerima atau menyimpan rakaman suara anda. Teks, mata wang yang dipilih serta nama kategori dan akaun anda digunakan untuk mencipta cadangan transaksi.",
-          "**Imbasan resit:** Salinan imej resit yang lebih kecil dihantar untuk diproses. Lokasi dan maklumat tersembunyi lain pada imej dibuang terlebih dahulu.",
-          "**Imbasan PDF:** PDF asal anda tidak dimuat naik. Quanto menghantar teks yang diambil daripada dokumen atau, apabila perlu, imej halaman yang lebih kecil. Kata laluan PDF kekal pada peranti anda dan tidak pernah dihantar atau disimpan.",
-          "**Automasi Apple Pay:** Jika anda menyediakan automasi pilihan dalam aplikasi Pintasan Apple, butiran pembayaran disimpan ke dalam Quanto pada peranti anda. Kebanyakan pembayaran dikategorikan pada peranti anda. Apabila Quanto tidak dapat memilih kategori, hanya nama peniaga dan nama kategori perbelanjaan anda dihantar untuk mendapatkan bantuan. Jumlah, tarikh, nama kad dan akaun tidak dihantar."
-        ]},
-        {"t": "p", "x": "Quanto tidak bersambung secara terus dengan Apple Pay, bank anda atau penyedia kad anda. Ia menerima butiran Apple Pay hanya melalui automasi yang anda cipta."},
-        {"t": "h3", "x": "b) Cara maklumat anda dikendalikan"},
-        {"t": "p", "x": "Google Gemini memproses maklumat yang diperlukan untuk menyediakan ciri-ciri ini. Maklumat yang dihantar kepada Google Gemini melalui perkhidmatan berbayar Quanto tidak digunakan untuk melatih model AI Google."},
-        {"t": "p", "x": "Maklumat anda disulitkan semasa dihantar. Quanto tidak menjualnya dan tidak menggunakannya untuk pengiklanan atau penjejakan."},
-        {"t": "p", "x": "Quanto tidak menyimpan rakaman suara, transkrip suara, kandungan resit atau PDF, kata laluan PDF, atau nama peniaga Apple Pay pada pelayannya. Rekod teknikal yang terhad disimpan untuk melindungi perkhidmatan, membaiki masalah dan menguatkuasakan had penggunaan ciri. Kebanyakan rekod ini dipadamkan dalam tempoh 90 hari, manakala jumlah penggunaan mungkin disimpan selagi ia diperlukan untuk menguatkuasakan had tersebut."},
-        {"t": "h3", "x": "c) Keputusan AI dan pilihan anda"},
-        {"t": "p", "x": "AI boleh melakukan kesilapan. Keputusan suara, resit dan PDF dipaparkan sebagai draf yang boleh disunting dan hanya disimpan selepas anda mengesahkannya."},
-        {"t": "p", "x": "Transaksi Apple Pay disimpan secara automatik selepas anda menyediakan automasi, tetapi anda boleh menyuntingnya pada bila-bila masa. Membetulkan kategori membantu Quanto mengkategorikan peniaga yang sama dengan lebih baik pada peranti anda pada masa hadapan."},
-        {"t": "p", "x": "Quanto ialah alat pengurusan perbelanjaan dan tidak memberikan nasihat kewangan, perakaunan atau cukai. Semak maklumat penting dengan resit atau dokumen asal."},
-        {"t": "p", "x": "Anda boleh berhenti menggunakan ciri-ciri ini pada bila-bila masa. Anda juga boleh menarik balik kebenaran kamera, foto, mikrofon atau pengecaman pertuturan dalam tetapan peranti anda. Untuk menghentikan Automasi Apple Pay, padamkan automasi Quanto daripada aplikasi Pintasan Apple."}
+        {
+          "t": "p",
+          "x": "Ciri AI Quanto adalah pilihan. Tiada apa-apa yang diterangkan dalam bahagian ini berlaku melainkan anda memilih untuk menggunakan salah satu daripadanya."
+        },
+        {
+          "t": "h3",
+          "x": "a) Apa yang dikongsi"
+        },
+        {
+          "t": "p",
+          "x": "Apabila anda memilih untuk menggunakan ciri AI:"
+        },
+        {
+          "t": "ul",
+          "items": [
+            "**Transaksi suara:** Peranti anda menukarkan pertuturan anda kepada teks. Quanto tidak menerima atau menyimpan rakaman suara anda. Teks, mata wang yang dipilih serta nama kategori dan akaun anda digunakan untuk mencipta cadangan transaksi.",
+            "**Imbasan resit:** Salinan imej resit yang lebih kecil dihantar untuk diproses. Lokasi dan maklumat tersembunyi lain pada imej dibuang terlebih dahulu.",
+            "**Imbasan PDF:** PDF asal anda tidak dimuat naik. Quanto menghantar teks yang diambil daripada dokumen atau, apabila perlu, imej halaman yang lebih kecil. Kata laluan PDF kekal pada peranti anda dan tidak pernah dihantar atau disimpan.",
+            "**Automasi Apple Pay:** Jika anda menyediakan automasi pilihan dalam aplikasi Pintasan Apple, butiran pembayaran disimpan ke dalam Quanto pada peranti anda. Kebanyakan pembayaran dikategorikan pada peranti anda. Apabila Quanto tidak dapat memilih kategori, hanya nama peniaga dan nama kategori perbelanjaan anda dihantar untuk mendapatkan bantuan. Jumlah, tarikh, nama kad dan akaun tidak dihantar."
+          ]
+        },
+        {
+          "t": "p",
+          "x": "Quanto tidak bersambung secara terus dengan Apple Pay, bank anda atau penyedia kad anda. Ia menerima butiran Apple Pay hanya melalui automasi yang anda cipta."
+        },
+        {
+          "t": "h3",
+          "x": "b) Cara maklumat anda dikendalikan"
+        },
+        {
+          "t": "p",
+          "x": "Google Gemini memproses maklumat yang diperlukan untuk menyediakan ciri-ciri ini. Maklumat yang dihantar kepada Google Gemini melalui perkhidmatan berbayar Quanto tidak digunakan untuk melatih model AI Google."
+        },
+        {
+          "t": "p",
+          "x": "Maklumat anda disulitkan semasa dihantar. Quanto tidak menjualnya dan tidak menggunakannya untuk pengiklanan atau penjejakan."
+        },
+        {
+          "t": "p",
+          "x": "Quanto tidak menyimpan rakaman suara, transkrip suara, kandungan resit atau PDF, kata laluan PDF, atau nama peniaga Apple Pay pada pelayannya. Rekod teknikal yang terhad disimpan untuk melindungi perkhidmatan, membaiki masalah dan menguatkuasakan had penggunaan ciri. Kebanyakan rekod ini dipadamkan dalam tempoh 90 hari, manakala jumlah penggunaan mungkin disimpan selagi ia diperlukan untuk menguatkuasakan had tersebut."
+        },
+        {
+          "t": "h3",
+          "x": "c) Keputusan AI dan pilihan anda"
+        },
+        {
+          "t": "p",
+          "x": "AI boleh melakukan kesilapan. Keputusan suara, resit dan PDF dipaparkan sebagai draf yang boleh disunting dan hanya disimpan selepas anda mengesahkannya."
+        },
+        {
+          "t": "p",
+          "x": "Transaksi Apple Pay disimpan secara automatik selepas anda menyediakan automasi, tetapi anda boleh menyuntingnya pada bila-bila masa. Membetulkan kategori membantu Quanto mengkategorikan peniaga yang sama dengan lebih baik pada peranti anda pada masa hadapan."
+        },
+        {
+          "t": "p",
+          "x": "Quanto ialah alat pengurusan perbelanjaan dan tidak memberikan nasihat kewangan, perakaunan atau cukai. Semak maklumat penting dengan resit atau dokumen asal."
+        },
+        {
+          "t": "p",
+          "x": "Anda boleh berhenti menggunakan ciri-ciri ini pada bila-bila masa. Anda juga boleh menarik balik kebenaran kamera, foto, mikrofon atau pengecaman pertuturan dalam tetapan peranti anda. Untuk menghentikan Automasi Apple Pay, padamkan automasi Quanto daripada aplikasi Pintasan Apple."
+        }
       ]
     },
     {
       "heading": "Keselamatan",
       "blocks": [
-        {"t": "p", "x": "Kami mengambil langkah yang munasabah untuk melindungi maklumat anda. Namun begitu, tiada kaedah penyimpanan elektronik atau penghantaran melalui internet yang 100% selamat."}
+        {
+          "t": "p",
+          "x": "Kami mengambil langkah yang munasabah untuk melindungi maklumat anda. Namun begitu, tiada kaedah penyimpanan elektronik atau penghantaran melalui internet yang 100% selamat."
+        }
       ]
     },
     {
       "heading": "Perubahan pada Dasar Privasi ini",
       "blocks": [
-        {"t": "p", "x": "Kami mungkin mengemas kini Dasar Privasi ini dari semasa ke semasa. Sebarang perubahan akan disiarkan di halaman ini dengan tarikh yang dikemas kini."}
+        {
+          "t": "p",
+          "x": "Kami mungkin mengemas kini Dasar Privasi ini dari semasa ke semasa. Sebarang perubahan akan disiarkan di halaman ini dengan tarikh yang dikemas kini."
+        }
       ]
     },
     {
       "heading": "Hubungi kami",
       "blocks": [
-        {"t": "p", "x": "Jika anda mempunyai sebarang pertanyaan tentang Dasar Privasi ini, anda boleh menghubungi:"},
-        {"t": "p", "x": "📧 [ausejoalejandro@gmail.com](mailto:ausejoalejandro@gmail.com)"}
+        {
+          "t": "p",
+          "x": "Jika anda mempunyai sebarang pertanyaan tentang Dasar Privasi ini, anda boleh menghubungi:"
+        },
+        {
+          "t": "p",
+          "x": "📧 [ausejoalejandro@gmail.com](mailto:ausejoalejandro@gmail.com)"
+        }
       ]
     }
   ]

@@ -8,134 +8,271 @@
     {
       "heading": "Wie wij zijn",
       "blocks": [
-        {"t": "dl", "items": [
-          ["Naam van de app", "Quanto"],
-          ["Eigenaar", "Alejandro Ausejo"],
-          ["Land", "Verenigde Arabische Emiraten"],
-          ["Contact-e-mailadres", "[ausejoalejandro@gmail.com](mailto:ausejoalejandro@gmail.com)"]
-        ]}
+        {
+          "t": "dl",
+          "items": [
+            [
+              "Naam van de app",
+              "Quanto"
+            ],
+            [
+              "Eigenaar",
+              "Alejandro Ausejo"
+            ],
+            [
+              "Land",
+              "Verenigde Arabische Emiraten"
+            ],
+            [
+              "Contact-e-mailadres",
+              "[ausejoalejandro@gmail.com](mailto:ausejoalejandro@gmail.com)"
+            ]
+          ]
+        }
       ]
     },
     {
       "heading": "Gegevens die wij verzamelen",
       "blocks": [
-        {"t": "h3", "x": "Gegevens die u verstrekt"},
-        {"t": "p", "x": "Quanto vereist niet dat gebruikers een account aanmaken en verzamelt geen persoonsgegevens zoals:"},
-        {"t": "ul", "items": [
-          "Naam",
-          "E-mailadres",
-          "Wachtwoord",
-          "Transactiegegevens",
-          "Financiële gegevens",
-          "Profielgegevens"
-        ]},
-        {"t": "p", "x": "Alle uitgaven- en inkomstengegevens die u invoert, worden lokaal op uw apparaat opgeslagen."}
-      ]
-    },
-    {
-      "heading": "Automatisch verzamelde gegevens",
-      "blocks": [
-        {"t": "p", "x": "Wij kunnen via diensten van derden beperkte, niet-persoonlijke gegevens verzamelen om de prestaties en stabiliteit van de app te verbeteren en de effectiviteit van advertenties te meten, zoals:"},
-        {"t": "ul", "items": [
-          "Gebruiksgegevens van de app",
-          "Type apparaat",
-          "Versie van het besturingssysteem",
-          "Crashrapporten",
-          "Anonieme analysegebeurtenissen",
-          "Apparaat-ID's (zoals advertentie-ID's) die worden gebruikt voor analyse en advertentieattributie"
-        ]},
-        {"t": "p", "x": "Deze gegevens worden verzameld via diensten van derden zoals Firebase Analytics, Firebase Crashlytics en de Meta-(Facebook-)SDK en identificeren u niet rechtstreeks."}
+        {
+          "t": "h3",
+          "x": "a) Wij verzamelen geen persoonsgegevens"
+        },
+        {
+          "t": "p",
+          "x": "Quanto vereist **niet** dat gebruikers een account aanmaken en verzamelt **geen** persoonsgegevens zoals:"
+        },
+        {
+          "t": "ul",
+          "items": [
+            "Naam",
+            "E-mailadres",
+            "Wachtwoord",
+            "Transactiegegevens",
+            "Financiële gegevens",
+            "Profielgegevens"
+          ]
+        },
+        {
+          "t": "p",
+          "x": "Alle uitgaven- en inkomstengegevens die u invoert, worden lokaal op uw apparaat opgeslagen."
+        },
+        {
+          "t": "h3",
+          "x": "b) Automatisch verzamelde gegevens"
+        },
+        {
+          "t": "p",
+          "x": "Wij kunnen via diensten van derden beperkte, niet-persoonlijke gegevens verzamelen om de prestaties en stabiliteit van de app te verbeteren en de effectiviteit van advertenties te meten, zoals:"
+        },
+        {
+          "t": "ul",
+          "items": [
+            "Gebruiksgegevens van de app",
+            "Type apparaat",
+            "Versie van het besturingssysteem",
+            "Crashrapporten",
+            "Anonieme analysegebeurtenissen",
+            "Apparaat-ID's (zoals advertentie-ID's) die worden gebruikt voor analyse en advertentieattributie"
+          ]
+        },
+        {
+          "t": "p",
+          "x": "Deze gegevens worden verzameld via diensten van derden zoals Firebase Analytics, Firebase Crashlytics en de Meta-(Facebook-)SDK en identificeren u niet rechtstreeks."
+        }
       ]
     },
     {
       "heading": "Betalingen en abonnementen",
       "blocks": [
-        {"t": "p", "x": "Betalingen voor premiumfuncties worden veilig verwerkt via:"},
-        {"t": "ul", "items": ["Apple In-App Purchases", "Google Play Billing"]},
-        {"t": "p", "x": "Wij zien, verzamelen of bewaren geen enkele betaal- of creditcardgegevens."}
+        {
+          "t": "p",
+          "x": "Betalingen voor premiumfuncties worden veilig verwerkt via:"
+        },
+        {
+          "t": "ul",
+          "items": [
+            "Apple In-App Purchases",
+            "Google Play Billing"
+          ]
+        },
+        {
+          "t": "p",
+          "x": "Wij zien, verzamelen of bewaren geen enkele betaal- of creditcardgegevens."
+        }
       ]
     },
     {
       "heading": "Gegevensopslag",
       "blocks": [
-        {"t": "p", "x": "Op dit moment geldt:"},
-        {"t": "ul", "items": [
-          "Alle door de gebruiker ingevoerde gegevens worden uitsluitend lokaal op uw apparaat opgeslagen",
-          "Wij hebben geen toegang tot uw gegevens"
-        ]},
-        {"t": "p", "x": "In de toekomst kunnen optionele back-upfuncties in de cloud worden geïntroduceerd. In dat geval wordt dit beleid dienovereenkomstig bijgewerkt voordat dergelijke functies worden ingeschakeld."},
-        {"t": "p", "x": "De optionele AI-functies die in artikel 9 worden beschreven, vormen hierop de uitzondering: wanneer u ervoor kiest er een te gebruiken, wordt beperkte informatie voor verwerking buiten uw apparaat verzonden."}
+        {
+          "t": "p",
+          "x": "Op dit moment geldt:"
+        },
+        {
+          "t": "ul",
+          "items": [
+            "Alle door de gebruiker ingevoerde gegevens worden uitsluitend lokaal op uw apparaat opgeslagen",
+            "Wij hebben geen toegang tot uw gegevens"
+          ]
+        },
+        {
+          "t": "p",
+          "x": "In de toekomst kunnen optionele back-upfuncties in de cloud worden geïntroduceerd. In dat geval wordt dit beleid dienovereenkomstig bijgewerkt voordat dergelijke functies worden ingeschakeld."
+        },
+        {
+          "t": "p",
+          "x": "De optionele AI-functies die in artikel 8 worden beschreven, vormen hierop de uitzondering: wanneer u ervoor kiest er een te gebruiken, wordt beperkte informatie voor verwerking buiten uw apparaat verzonden."
+        }
       ]
     },
     {
       "heading": "Gegevens verwijderen",
       "blocks": [
-        {"t": "p", "x": "U kunt al uw gegevens op elk moment rechtstreeks in de app verwijderen."},
-        {"t": "p", "x": "Als u contact met ons opneemt via [ausejoalejandro@gmail.com](mailto:ausejoalejandro@gmail.com), helpen wij u met al uw vragen over gegevens."}
+        {
+          "t": "p",
+          "x": "U kunt al uw gegevens op elk moment rechtstreeks in de app verwijderen."
+        },
+        {
+          "t": "p",
+          "x": "Als u contact met ons opneemt via [ausejoalejandro@gmail.com](mailto:ausejoalejandro@gmail.com), helpen wij u met al uw vragen over gegevens."
+        }
       ]
     },
     {
       "heading": "Privacy van kinderen",
       "blocks": [
-        {"t": "p", "x": "Quanto is niet gericht op kinderen jonger dan 13 jaar."},
-        {"t": "p", "x": "Wij verzamelen niet bewust persoonsgegevens van kinderen. Als u vermoedt dat een kind persoonsgegevens heeft verstrekt, neem dan contact met ons op zodat wij deze kunnen verwijderen."}
+        {
+          "t": "p",
+          "x": "Quanto is niet gericht op kinderen jonger dan 13 jaar."
+        },
+        {
+          "t": "p",
+          "x": "Wij verzamelen niet bewust persoonsgegevens van kinderen. Als u vermoedt dat een kind persoonsgegevens heeft verstrekt, neem dan contact met ons op zodat wij deze kunnen verwijderen."
+        }
       ]
     },
     {
       "heading": "Diensten van derden",
       "blocks": [
-        {"t": "p", "x": "Quanto maakt gebruik van diensten van derden voor analyse, diagnostiek en advertentieattributie. Deze diensten kunnen beperkte gegevens verzamelen, waaronder apparaat-ID's, in overeenstemming met hun eigen privacybeleid."},
-        {"t": "p", "x": "De app maakt onder meer gebruik van de volgende diensten van derden:"},
-        {"t": "ul", "items": [
-          "Google Firebase (Analytics en Crashlytics)",
-          "Google Analytics",
-          "Meta-(Facebook-)SDK – gebruikt voor advertentieattributie en het meten van app-installaties",
-          "Google Gemini – gebruikt om de optionele AI-functies uit artikel 9 te leveren"
-        ]},
-        {"t": "p", "x": "Waar vereist wordt om toestemming van de gebruiker gevraagd via het App Tracking Transparency-framework van Apple voordat tracking wordt ingeschakeld."}
+        {
+          "t": "p",
+          "x": "Quanto maakt gebruik van diensten van derden voor analyse, diagnostiek en advertentieattributie. Deze diensten kunnen beperkte gegevens verzamelen, waaronder apparaat-ID's, in overeenstemming met hun eigen privacybeleid."
+        },
+        {
+          "t": "p",
+          "x": "De app maakt onder meer gebruik van de volgende diensten van derden:"
+        },
+        {
+          "t": "ul",
+          "items": [
+            "Google Firebase (Analytics en Crashlytics)",
+            "Google Analytics",
+            "Meta-(Facebook-)SDK – gebruikt voor advertentieattributie en het meten van app-installaties",
+            "Google Gemini – gebruikt om de optionele AI-functies uit artikel 8 te leveren"
+          ]
+        },
+        {
+          "t": "p",
+          "x": "Waar vereist wordt om toestemming van de gebruiker gevraagd via het App Tracking Transparency-framework van Apple voordat tracking wordt ingeschakeld."
+        }
       ]
     },
     {
       "heading": "AI-functies",
       "blocks": [
-        {"t": "p", "x": "De AI-functies van Quanto zijn optioneel. Niets van wat in dit artikel wordt beschreven gebeurt tenzij u ervoor kiest een van deze functies te gebruiken."},
-        {"t": "h3", "x": "a) Wat wordt gedeeld"},
-        {"t": "p", "x": "Wanneer u ervoor kiest een AI-functie te gebruiken:"},
-        {"t": "ul", "items": [
-          "**Transacties via spraak:** Uw apparaat zet uw spraak om in tekst. Quanto ontvangt of bewaart uw spraakopname niet. De tekst, de gekozen valuta en de namen van uw categorieën en rekeningen worden gebruikt om transactiesuggesties te maken.",
-          "**Bonnetjes scannen:** Een verkleinde kopie van de afbeelding van het bonnetje wordt verzonden voor verwerking. Locatiegegevens en andere verborgen beeldinformatie worden vooraf verwijderd.",
-          "**Pdf's scannen:** Uw originele pdf wordt niet geüpload. Quanto verzendt tekst uit het document of, indien nodig, een verkleinde afbeelding van een pagina. Pdf-wachtwoorden blijven op uw apparaat en worden nooit verzonden of bewaard.",
-          "**Apple Pay-automatisering:** Als u de optionele automatisering in Apple Opdrachten instelt, worden betaalgegevens op uw apparaat in Quanto opgeslagen. De meeste betalingen worden op uw apparaat gecategoriseerd. Wanneer Quanto geen categorie kan kiezen, worden ter ondersteuning alleen de naam van de verkoper en de namen van uw uitgavencategorieën verzonden. Het bedrag, de datum, de kaartnaam en de rekening worden niet verzonden."
-        ]},
-        {"t": "p", "x": "Quanto maakt geen rechtstreekse verbinding met Apple Pay, uw bank of uw kaartaanbieder. De app ontvangt Apple Pay-gegevens uitsluitend via de automatisering die u zelf aanmaakt."},
-        {"t": "h3", "x": "b) Hoe uw gegevens worden verwerkt"},
-        {"t": "p", "x": "Google Gemini verwerkt de gegevens die nodig zijn om deze functies te leveren. Gegevens die via de betaalde dienst van Quanto naar Google Gemini worden verzonden, worden niet gebruikt om de AI-modellen van Google te trainen."},
-        {"t": "p", "x": "Uw gegevens worden tijdens de verzending versleuteld. Quanto verkoopt ze niet en gebruikt ze niet voor advertenties of tracking."},
-        {"t": "p", "x": "Quanto bewaart geen spraakopnamen, spraaktranscripties, inhoud van bonnetjes of pdf's, pdf-wachtwoorden of namen van Apple Pay-verkopers op zijn servers. Er worden beperkte technische logboeken bijgehouden om de dienst te beschermen, problemen op te lossen en gebruikslimieten voor functies toe te passen. De meeste van deze logboeken worden binnen 90 dagen verwijderd, terwijl gebruikstotalen bewaard kunnen blijven zolang dat nodig is om die limieten toe te passen."},
-        {"t": "h3", "x": "c) AI-resultaten en uw keuzes"},
-        {"t": "p", "x": "AI kan fouten maken. Resultaten van spraak, bonnetjes en pdf's worden weergegeven als bewerkbare concepten en worden pas opgeslagen nadat u ze hebt bevestigd."},
-        {"t": "p", "x": "Apple Pay-transacties worden automatisch opgeslagen zodra u de automatisering hebt ingesteld, maar u kunt ze op elk moment bewerken. Door een categorie te corrigeren helpt u Quanto om dezelfde verkoper in de toekomst beter op uw apparaat te categoriseren."},
-        {"t": "p", "x": "Quanto is een hulpmiddel voor uitgavenbeheer en geeft geen financieel, boekhoudkundig of fiscaal advies. Controleer belangrijke informatie aan de hand van het originele bonnetje of document."},
-        {"t": "p", "x": "U kunt op elk moment stoppen met het gebruik van deze functies. U kunt ook de toestemmingen voor camera, foto's, microfoon of spraakherkenning intrekken in de instellingen van uw apparaat. Om Apple Pay-automatisering te stoppen, verwijdert u de Quanto-automatisering in de app Opdrachten van Apple."}
+        {
+          "t": "p",
+          "x": "De AI-functies van Quanto zijn optioneel. Niets van wat in dit artikel wordt beschreven gebeurt tenzij u ervoor kiest een van deze functies te gebruiken."
+        },
+        {
+          "t": "h3",
+          "x": "a) Wat wordt gedeeld"
+        },
+        {
+          "t": "p",
+          "x": "Wanneer u ervoor kiest een AI-functie te gebruiken:"
+        },
+        {
+          "t": "ul",
+          "items": [
+            "**Transacties via spraak:** Uw apparaat zet uw spraak om in tekst. Quanto ontvangt of bewaart uw spraakopname niet. De tekst, de gekozen valuta en de namen van uw categorieën en rekeningen worden gebruikt om transactiesuggesties te maken.",
+            "**Bonnetjes scannen:** Een verkleinde kopie van de afbeelding van het bonnetje wordt verzonden voor verwerking. Locatiegegevens en andere verborgen beeldinformatie worden vooraf verwijderd.",
+            "**Pdf's scannen:** Uw originele pdf wordt niet geüpload. Quanto verzendt tekst uit het document of, indien nodig, een verkleinde afbeelding van een pagina. Pdf-wachtwoorden blijven op uw apparaat en worden nooit verzonden of bewaard.",
+            "**Apple Pay-automatisering:** Als u de optionele automatisering in Apple Opdrachten instelt, worden betaalgegevens op uw apparaat in Quanto opgeslagen. De meeste betalingen worden op uw apparaat gecategoriseerd. Wanneer Quanto geen categorie kan kiezen, worden ter ondersteuning alleen de naam van de verkoper en de namen van uw uitgavencategorieën verzonden. Het bedrag, de datum, de kaartnaam en de rekening worden niet verzonden."
+          ]
+        },
+        {
+          "t": "p",
+          "x": "Quanto maakt geen rechtstreekse verbinding met Apple Pay, uw bank of uw kaartaanbieder. De app ontvangt Apple Pay-gegevens uitsluitend via de automatisering die u zelf aanmaakt."
+        },
+        {
+          "t": "h3",
+          "x": "b) Hoe uw gegevens worden verwerkt"
+        },
+        {
+          "t": "p",
+          "x": "Google Gemini verwerkt de gegevens die nodig zijn om deze functies te leveren. Gegevens die via de betaalde dienst van Quanto naar Google Gemini worden verzonden, worden niet gebruikt om de AI-modellen van Google te trainen."
+        },
+        {
+          "t": "p",
+          "x": "Uw gegevens worden tijdens de verzending versleuteld. Quanto verkoopt ze niet en gebruikt ze niet voor advertenties of tracking."
+        },
+        {
+          "t": "p",
+          "x": "Quanto bewaart geen spraakopnamen, spraaktranscripties, inhoud van bonnetjes of pdf's, pdf-wachtwoorden of namen van Apple Pay-verkopers op zijn servers. Er worden beperkte technische logboeken bijgehouden om de dienst te beschermen, problemen op te lossen en gebruikslimieten voor functies toe te passen. De meeste van deze logboeken worden binnen 90 dagen verwijderd, terwijl gebruikstotalen bewaard kunnen blijven zolang dat nodig is om die limieten toe te passen."
+        },
+        {
+          "t": "h3",
+          "x": "c) AI-resultaten en uw keuzes"
+        },
+        {
+          "t": "p",
+          "x": "AI kan fouten maken. Resultaten van spraak, bonnetjes en pdf's worden weergegeven als bewerkbare concepten en worden pas opgeslagen nadat u ze hebt bevestigd."
+        },
+        {
+          "t": "p",
+          "x": "Apple Pay-transacties worden automatisch opgeslagen zodra u de automatisering hebt ingesteld, maar u kunt ze op elk moment bewerken. Door een categorie te corrigeren helpt u Quanto om dezelfde verkoper in de toekomst beter op uw apparaat te categoriseren."
+        },
+        {
+          "t": "p",
+          "x": "Quanto is een hulpmiddel voor uitgavenbeheer en geeft geen financieel, boekhoudkundig of fiscaal advies. Controleer belangrijke informatie aan de hand van het originele bonnetje of document."
+        },
+        {
+          "t": "p",
+          "x": "U kunt op elk moment stoppen met het gebruik van deze functies. U kunt ook de toestemmingen voor camera, foto's, microfoon of spraakherkenning intrekken in de instellingen van uw apparaat. Om Apple Pay-automatisering te stoppen, verwijdert u de Quanto-automatisering in de app Opdrachten van Apple."
+        }
       ]
     },
     {
       "heading": "Beveiliging",
       "blocks": [
-        {"t": "p", "x": "Wij nemen redelijke maatregelen om uw gegevens te beschermen. Geen enkele methode van elektronische opslag of verzending via internet is echter 100% veilig."}
+        {
+          "t": "p",
+          "x": "Wij nemen redelijke maatregelen om uw gegevens te beschermen. Geen enkele methode van elektronische opslag of verzending via internet is echter 100% veilig."
+        }
       ]
     },
     {
       "heading": "Wijzigingen in dit Privacybeleid",
       "blocks": [
-        {"t": "p", "x": "Wij kunnen dit Privacybeleid van tijd tot tijd bijwerken. Eventuele wijzigingen worden op deze pagina geplaatst met een bijgewerkte datum."}
+        {
+          "t": "p",
+          "x": "Wij kunnen dit Privacybeleid van tijd tot tijd bijwerken. Eventuele wijzigingen worden op deze pagina geplaatst met een bijgewerkte datum."
+        }
       ]
     },
     {
       "heading": "Contact opnemen",
       "blocks": [
-        {"t": "p", "x": "Als u vragen hebt over dit Privacybeleid, kunt u contact opnemen via:"},
-        {"t": "p", "x": "📧 [ausejoalejandro@gmail.com](mailto:ausejoalejandro@gmail.com)"}
+        {
+          "t": "p",
+          "x": "Als u vragen hebt over dit Privacybeleid, kunt u contact opnemen via:"
+        },
+        {
+          "t": "p",
+          "x": "📧 [ausejoalejandro@gmail.com](mailto:ausejoalejandro@gmail.com)"
+        }
       ]
     }
   ]
