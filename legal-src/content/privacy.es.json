@@ -19,7 +19,7 @@
     {
       "heading": "Información que recopilamos",
       "blocks": [
-        {"t": "h3", "x": "a) Información que usted proporciona"},
+        {"t": "h3", "x": "Información que usted proporciona"},
         {"t": "p", "x": "Quanto no requiere que los usuarios creen una cuenta y no recopila información personal como:"},
         {"t": "ul", "items": [
           "Nombre",

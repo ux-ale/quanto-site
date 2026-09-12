@@ -19,7 +19,7 @@
     {
       "heading": "Gegevens die wij verzamelen",
       "blocks": [
-        {"t": "h3", "x": "a) Gegevens die u verstrekt"},
+        {"t": "h3", "x": "Gegevens die u verstrekt"},
         {"t": "p", "x": "Quanto vereist niet dat gebruikers een account aanmaken en verzamelt geen persoonsgegevens zoals:"},
         {"t": "ul", "items": [
           "Naam",
