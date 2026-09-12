@@ -19,7 +19,7 @@
     {
       "heading": "Topladığımız bilgiler",
       "blocks": [
-        {"t": "h3", "x": "a) Sizin sağladığınız bilgiler"},
+        {"t": "h3", "x": "Sizin sağladığınız bilgiler"},
         {"t": "p", "x": "Quanto, kullanıcılarından hesap oluşturmalarını istemez ve aşağıdaki gibi kişisel bilgileri toplamaz:"},
         {"t": "ul", "items": [
           "Ad",

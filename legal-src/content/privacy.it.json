@@ -19,7 +19,7 @@
     {
       "heading": "Informazioni che raccogliamo",
       "blocks": [
-        {"t": "h3", "x": "a) Informazioni fornite dall'utente"},
+        {"t": "h3", "x": "Informazioni fornite dall'utente"},
         {"t": "p", "x": "Quanto non richiede la creazione di un account e non raccoglie informazioni personali quali:"},
         {"t": "ul", "items": [
           "Nome",

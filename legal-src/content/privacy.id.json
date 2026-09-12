@@ -19,7 +19,7 @@
     {
       "heading": "Informasi yang kami kumpulkan",
       "blocks": [
-        {"t": "h3", "x": "a) Informasi yang Anda berikan"},
+        {"t": "h3", "x": "Informasi yang Anda berikan"},
         {"t": "p", "x": "Quanto tidak mewajibkan pengguna membuat akun dan tidak mengumpulkan informasi pribadi seperti:"},
         {"t": "ul", "items": [
           "Nama",

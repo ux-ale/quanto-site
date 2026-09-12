@@ -19,7 +19,7 @@
     {
       "heading": "Informations que nous collectons",
       "blocks": [
-        {"t": "h3", "x": "a) Informations que vous fournissez"},
+        {"t": "h3", "x": "Informations que vous fournissez"},
         {"t": "p", "x": "Quanto n'exige pas la création d'un compte et ne collecte pas d'informations personnelles telles que :"},
         {"t": "ul", "items": [
           "Nom",

@@ -19,7 +19,7 @@
     {
       "heading": "Daten, die wir erheben",
       "blocks": [
-        {"t": "h3", "x": "a) Daten, die Sie angeben"},
+        {"t": "h3", "x": "Daten, die Sie angeben"},
         {"t": "p", "x": "Quanto verlangt von Nutzerinnen und Nutzern keine Kontoerstellung und erhebt keine personenbezogenen Daten wie:"},
         {"t": "ul", "items": [
           "Name",

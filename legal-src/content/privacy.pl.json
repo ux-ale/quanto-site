@@ -19,7 +19,7 @@
     {
       "heading": "Informacje, które zbieramy",
       "blocks": [
-        {"t": "h3", "x": "a) Informacje podawane przez Użytkownika"},
+        {"t": "h3", "x": "Informacje podawane przez Użytkownika"},
         {"t": "p", "x": "Quanto nie wymaga zakładania konta i nie zbiera danych osobowych takich jak:"},
         {"t": "ul", "items": [
           "Imię i nazwisko",

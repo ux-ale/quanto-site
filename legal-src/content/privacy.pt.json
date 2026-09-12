@@ -19,7 +19,7 @@
     {
       "heading": "Informações que coletamos",
       "blocks": [
-        {"t": "h3", "x": "a) Informações que você fornece"},
+        {"t": "h3", "x": "Informações que você fornece"},
         {"t": "p", "x": "O Quanto não exige que os usuários criem uma conta e não coleta informações pessoais como:"},
         {"t": "ul", "items": [
           "Nome",
