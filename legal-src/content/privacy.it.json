@@ -8,134 +8,271 @@
     {
       "heading": "Chi siamo",
       "blocks": [
-        {"t": "dl", "items": [
-          ["Nome dell'app", "Quanto"],
-          ["Titolare", "Alejandro Ausejo"],
-          ["Paese", "Emirati Arabi Uniti"],
-          ["Email di contatto", "[ausejoalejandro@gmail.com](mailto:ausejoalejandro@gmail.com)"]
-        ]}
+        {
+          "t": "dl",
+          "items": [
+            [
+              "Nome dell'app",
+              "Quanto"
+            ],
+            [
+              "Titolare",
+              "Alejandro Ausejo"
+            ],
+            [
+              "Paese",
+              "Emirati Arabi Uniti"
+            ],
+            [
+              "Email di contatto",
+              "[ausejoalejandro@gmail.com](mailto:ausejoalejandro@gmail.com)"
+            ]
+          ]
+        }
       ]
     },
     {
       "heading": "Informazioni che raccogliamo",
       "blocks": [
-        {"t": "h3", "x": "Informazioni fornite dall'utente"},
-        {"t": "p", "x": "Quanto non richiede la creazione di un account e non raccoglie informazioni personali quali:"},
-        {"t": "ul", "items": [
-          "Nome",
-          "Indirizzo email",
-          "Password",
-          "Dettagli delle transazioni",
-          "Dati finanziari",
-          "Informazioni del profilo"
-        ]},
-        {"t": "p", "x": "Tutti i dati di spese ed entrate inseriti dall'utente sono archiviati localmente sul dispositivo."}
-      ]
-    },
-    {
-      "heading": "Informazioni raccolte automaticamente",
-      "blocks": [
-        {"t": "p", "x": "Possiamo raccogliere informazioni limitate e non personali tramite servizi di terze parti per contribuire a migliorare le prestazioni e la stabilità dell'app e per misurare l'efficacia della pubblicità, ad esempio:"},
-        {"t": "ul", "items": [
-          "Dati di utilizzo dell'app",
-          "Tipo di dispositivo",
-          "Versione del sistema operativo",
-          "Segnalazioni di arresto anomalo",
-          "Eventi analitici anonimi",
-          "Identificatori del dispositivo (come gli identificatori pubblicitari) utilizzati per le analisi e l'attribuzione pubblicitaria"
-        ]},
-        {"t": "p", "x": "Queste informazioni sono raccolte tramite servizi di terze parti come Firebase Analytics, Firebase Crashlytics e l'SDK di Meta (Facebook) e non identificano direttamente l'utente."}
+        {
+          "t": "h3",
+          "x": "a) Non raccogliamo informazioni personali"
+        },
+        {
+          "t": "p",
+          "x": "Quanto **non** richiede la creazione di un account e **non** raccoglie informazioni personali quali:"
+        },
+        {
+          "t": "ul",
+          "items": [
+            "Nome",
+            "Indirizzo email",
+            "Password",
+            "Dettagli delle transazioni",
+            "Dati finanziari",
+            "Informazioni del profilo"
+          ]
+        },
+        {
+          "t": "p",
+          "x": "Tutti i dati di spese ed entrate inseriti dall'utente sono archiviati localmente sul dispositivo."
+        },
+        {
+          "t": "h3",
+          "x": "b) Informazioni raccolte automaticamente"
+        },
+        {
+          "t": "p",
+          "x": "Possiamo raccogliere informazioni limitate e non personali tramite servizi di terze parti per contribuire a migliorare le prestazioni e la stabilità dell'app e per misurare l'efficacia della pubblicità, ad esempio:"
+        },
+        {
+          "t": "ul",
+          "items": [
+            "Dati di utilizzo dell'app",
+            "Tipo di dispositivo",
+            "Versione del sistema operativo",
+            "Segnalazioni di arresto anomalo",
+            "Eventi analitici anonimi",
+            "Identificatori del dispositivo (come gli identificatori pubblicitari) utilizzati per le analisi e l'attribuzione pubblicitaria"
+          ]
+        },
+        {
+          "t": "p",
+          "x": "Queste informazioni sono raccolte tramite servizi di terze parti come Firebase Analytics, Firebase Crashlytics e l'SDK di Meta (Facebook) e non identificano direttamente l'utente."
+        }
       ]
     },
     {
       "heading": "Pagamenti e abbonamenti",
       "blocks": [
-        {"t": "p", "x": "I pagamenti delle funzioni premium sono elaborati in modo sicuro tramite:"},
-        {"t": "ul", "items": ["Apple In-App Purchases", "Google Play Billing"]},
-        {"t": "p", "x": "Non visualizziamo, raccogliamo né conserviamo alcuna informazione di pagamento o relativa alle carte di credito."}
+        {
+          "t": "p",
+          "x": "I pagamenti delle funzioni premium sono elaborati in modo sicuro tramite:"
+        },
+        {
+          "t": "ul",
+          "items": [
+            "Apple In-App Purchases",
+            "Google Play Billing"
+          ]
+        },
+        {
+          "t": "p",
+          "x": "Non visualizziamo, raccogliamo né conserviamo alcuna informazione di pagamento o relativa alle carte di credito."
+        }
       ]
     },
     {
       "heading": "Archiviazione dei dati",
       "blocks": [
-        {"t": "p", "x": "Attualmente:"},
-        {"t": "ul", "items": [
-          "Tutti i dati inseriti dall'utente sono archiviati esclusivamente in locale sul dispositivo",
-          "Non abbiamo accesso ai dati dell'utente"
-        ]},
-        {"t": "p", "x": "In futuro potrebbero essere introdotte funzioni facoltative di backup nel cloud. In tal caso, la presente informativa sarà aggiornata di conseguenza prima dell'attivazione di tali funzioni."},
-        {"t": "p", "x": "Le funzioni di IA facoltative descritte nella sezione 9 costituiscono un'eccezione: quando l'utente sceglie di utilizzarne una, informazioni limitate vengono inviate al di fuori del dispositivo per l'elaborazione."}
+        {
+          "t": "p",
+          "x": "Attualmente:"
+        },
+        {
+          "t": "ul",
+          "items": [
+            "Tutti i dati inseriti dall'utente sono archiviati esclusivamente in locale sul dispositivo",
+            "Non abbiamo accesso ai dati dell'utente"
+          ]
+        },
+        {
+          "t": "p",
+          "x": "In futuro potrebbero essere introdotte funzioni facoltative di backup nel cloud. In tal caso, la presente informativa sarà aggiornata di conseguenza prima dell'attivazione di tali funzioni."
+        },
+        {
+          "t": "p",
+          "x": "Le funzioni di IA facoltative descritte nella sezione 8 costituiscono un'eccezione: quando l'utente sceglie di utilizzarne una, informazioni limitate vengono inviate al di fuori del dispositivo per l'elaborazione."
+        }
       ]
     },
     {
       "heading": "Cancellazione dei dati",
       "blocks": [
-        {"t": "p", "x": "L'utente può eliminare tutti i propri dati direttamente nell'app in qualsiasi momento."},
-        {"t": "p", "x": "Scrivendoci all'indirizzo [ausejoalejandro@gmail.com](mailto:ausejoalejandro@gmail.com), forniremo assistenza per qualsiasi domanda relativa ai dati."}
+        {
+          "t": "p",
+          "x": "L'utente può eliminare tutti i propri dati direttamente nell'app in qualsiasi momento."
+        },
+        {
+          "t": "p",
+          "x": "Scrivendoci all'indirizzo [ausejoalejandro@gmail.com](mailto:ausejoalejandro@gmail.com), forniremo assistenza per qualsiasi domanda relativa ai dati."
+        }
       ]
     },
     {
       "heading": "Privacy dei minori",
       "blocks": [
-        {"t": "p", "x": "Quanto non è destinata a minori di 13 anni."},
-        {"t": "p", "x": "Non raccogliamo consapevolmente informazioni personali da minori. Chi ritenga che un minore abbia fornito dati personali è invitato a contattarci affinché possiamo eliminarli."}
+        {
+          "t": "p",
+          "x": "Quanto non è destinata a minori di 13 anni."
+        },
+        {
+          "t": "p",
+          "x": "Non raccogliamo consapevolmente informazioni personali da minori. Chi ritenga che un minore abbia fornito dati personali è invitato a contattarci affinché possiamo eliminarli."
+        }
       ]
     },
     {
       "heading": "Servizi di terze parti",
       "blocks": [
-        {"t": "p", "x": "Quanto utilizza servizi di terze parti per analisi, diagnostica e attribuzione pubblicitaria. Tali servizi possono raccogliere informazioni limitate, inclusi gli identificatori del dispositivo, in conformità alle rispettive informative sulla privacy."},
-        {"t": "p", "x": "I servizi di terze parti utilizzati dall'app includono:"},
-        {"t": "ul", "items": [
-          "Google Firebase (Analytics e Crashlytics)",
-          "Google Analytics",
-          "SDK di Meta (Facebook) – utilizzato per l'attribuzione pubblicitaria e la misurazione delle installazioni dell'app",
-          "Google Gemini – utilizzato per fornire le funzioni di IA facoltative descritte nella sezione 9"
-        ]},
-        {"t": "p", "x": "Ove richiesto, il consenso dell'utente viene richiesto tramite il framework App Tracking Transparency di Apple prima di attivare il tracciamento."}
+        {
+          "t": "p",
+          "x": "Quanto utilizza servizi di terze parti per analisi, diagnostica e attribuzione pubblicitaria. Tali servizi possono raccogliere informazioni limitate, inclusi gli identificatori del dispositivo, in conformità alle rispettive informative sulla privacy."
+        },
+        {
+          "t": "p",
+          "x": "I servizi di terze parti utilizzati dall'app includono:"
+        },
+        {
+          "t": "ul",
+          "items": [
+            "Google Firebase (Analytics e Crashlytics)",
+            "Google Analytics",
+            "SDK di Meta (Facebook) – utilizzato per l'attribuzione pubblicitaria e la misurazione delle installazioni dell'app",
+            "Google Gemini – utilizzato per fornire le funzioni di IA facoltative descritte nella sezione 8"
+          ]
+        },
+        {
+          "t": "p",
+          "x": "Ove richiesto, il consenso dell'utente viene richiesto tramite il framework App Tracking Transparency di Apple prima di attivare il tracciamento."
+        }
       ]
     },
     {
       "heading": "Funzioni di IA",
       "blocks": [
-        {"t": "p", "x": "Le funzioni di IA di Quanto sono facoltative. Nulla di quanto descritto in questa sezione avviene senza che l'utente scelga di utilizzarne una."},
-        {"t": "h3", "x": "a) Che cosa viene condiviso"},
-        {"t": "p", "x": "Quando l'utente sceglie di utilizzare una funzione di IA:"},
-        {"t": "ul", "items": [
-          "**Transazioni vocali:** il dispositivo converte la voce in testo. Quanto non riceve né conserva la registrazione vocale. Il testo, la valuta selezionata e i nomi delle categorie e dei conti dell'utente vengono utilizzati per creare suggerimenti di transazione.",
-          "**Scansione degli scontrini:** viene inviata per l'elaborazione una copia ridotta dell'immagine dello scontrino. La posizione e le altre informazioni nascoste dell'immagine vengono rimosse in precedenza.",
-          "**Scansione dei PDF:** il PDF originale non viene caricato. Quanto invia il testo estratto dal documento oppure, se necessario, un'immagine ridotta di una pagina. Le password dei PDF restano sul dispositivo e non vengono mai inviate né conservate.",
-          "**Automazione Apple Pay:** se l'utente configura l'automazione facoltativa in Comandi rapidi di Apple, i dettagli del pagamento vengono salvati in Quanto sul dispositivo. La maggior parte dei pagamenti viene categorizzata sul dispositivo. Quando Quanto non riesce a scegliere una categoria, per ottenere assistenza vengono inviati soltanto il nome dell'esercente e i nomi delle categorie di spesa dell'utente. L'importo, la data, il nome della carta e il conto non vengono inviati."
-        ]},
-        {"t": "p", "x": "Quanto non si collega direttamente ad Apple Pay, alla banca o all'emittente della carta dell'utente. Riceve i dettagli di Apple Pay esclusivamente tramite l'automazione creata dall'utente."},
-        {"t": "h3", "x": "b) Come vengono trattate le informazioni"},
-        {"t": "p", "x": "Google Gemini elabora le informazioni necessarie per fornire queste funzioni. Le informazioni inviate a Google Gemini tramite il servizio a pagamento di Quanto non vengono utilizzate per addestrare i modelli di IA di Google."},
-        {"t": "p", "x": "Le informazioni sono cifrate durante l'invio. Quanto non le vende e non le utilizza per pubblicità o tracciamento."},
-        {"t": "p", "x": "Quanto non conserva sui propri server registrazioni vocali, trascrizioni vocali, contenuti di scontrini o PDF, password dei PDF o nomi di esercenti Apple Pay. Vengono conservati registri tecnici limitati per proteggere il servizio, risolvere i problemi e applicare i limiti di utilizzo delle funzioni. La maggior parte di questi registri viene eliminata entro 90 giorni, mentre i totali di utilizzo possono essere conservati per il tempo necessario ad applicare tali limiti."},
-        {"t": "h3", "x": "c) Risultati dell'IA e scelte dell'utente"},
-        {"t": "p", "x": "L'IA può commettere errori. I risultati relativi a voce, scontrini e PDF vengono mostrati come bozze modificabili e vengono salvati solo dopo la conferma dell'utente."},
-        {"t": "p", "x": "Le transazioni Apple Pay vengono salvate automaticamente dopo la configurazione dell'automazione, ma possono essere modificate in qualsiasi momento. Correggere una categoria aiuta Quanto a categorizzare meglio lo stesso esercente sul dispositivo in futuro."},
-        {"t": "p", "x": "Quanto è uno strumento di gestione delle spese e non fornisce consulenza finanziaria, contabile o fiscale. Si consiglia di verificare le informazioni importanti sullo scontrino o sul documento originale."},
-        {"t": "p", "x": "L'utente può smettere di utilizzare queste funzioni in qualsiasi momento. Può inoltre revocare le autorizzazioni per fotocamera, foto, microfono o riconoscimento vocale nelle impostazioni del dispositivo. Per interrompere l'Automazione Apple Pay, è sufficiente eliminare l'automazione di Quanto nell'app Comandi rapidi di Apple."}
+        {
+          "t": "p",
+          "x": "Le funzioni di IA di Quanto sono facoltative. Nulla di quanto descritto in questa sezione avviene senza che l'utente scelga di utilizzarne una."
+        },
+        {
+          "t": "h3",
+          "x": "a) Che cosa viene condiviso"
+        },
+        {
+          "t": "p",
+          "x": "Quando l'utente sceglie di utilizzare una funzione di IA:"
+        },
+        {
+          "t": "ul",
+          "items": [
+            "**Transazioni vocali:** il dispositivo converte la voce in testo. Quanto non riceve né conserva la registrazione vocale. Il testo, la valuta selezionata e i nomi delle categorie e dei conti dell'utente vengono utilizzati per creare suggerimenti di transazione.",
+            "**Scansione degli scontrini:** viene inviata per l'elaborazione una copia ridotta dell'immagine dello scontrino. La posizione e le altre informazioni nascoste dell'immagine vengono rimosse in precedenza.",
+            "**Scansione dei PDF:** il PDF originale non viene caricato. Quanto invia il testo estratto dal documento oppure, se necessario, un'immagine ridotta di una pagina. Le password dei PDF restano sul dispositivo e non vengono mai inviate né conservate.",
+            "**Automazione Apple Pay:** se l'utente configura l'automazione facoltativa in Comandi rapidi di Apple, i dettagli del pagamento vengono salvati in Quanto sul dispositivo. La maggior parte dei pagamenti viene categorizzata sul dispositivo. Quando Quanto non riesce a scegliere una categoria, per ottenere assistenza vengono inviati soltanto il nome dell'esercente e i nomi delle categorie di spesa dell'utente. L'importo, la data, il nome della carta e il conto non vengono inviati."
+          ]
+        },
+        {
+          "t": "p",
+          "x": "Quanto non si collega direttamente ad Apple Pay, alla banca o all'emittente della carta dell'utente. Riceve i dettagli di Apple Pay esclusivamente tramite l'automazione creata dall'utente."
+        },
+        {
+          "t": "h3",
+          "x": "b) Come vengono trattate le informazioni"
+        },
+        {
+          "t": "p",
+          "x": "Google Gemini elabora le informazioni necessarie per fornire queste funzioni. Le informazioni inviate a Google Gemini tramite il servizio a pagamento di Quanto non vengono utilizzate per addestrare i modelli di IA di Google."
+        },
+        {
+          "t": "p",
+          "x": "Le informazioni sono cifrate durante l'invio. Quanto non le vende e non le utilizza per pubblicità o tracciamento."
+        },
+        {
+          "t": "p",
+          "x": "Quanto non conserva sui propri server registrazioni vocali, trascrizioni vocali, contenuti di scontrini o PDF, password dei PDF o nomi di esercenti Apple Pay. Vengono conservati registri tecnici limitati per proteggere il servizio, risolvere i problemi e applicare i limiti di utilizzo delle funzioni. La maggior parte di questi registri viene eliminata entro 90 giorni, mentre i totali di utilizzo possono essere conservati per il tempo necessario ad applicare tali limiti."
+        },
+        {
+          "t": "h3",
+          "x": "c) Risultati dell'IA e scelte dell'utente"
+        },
+        {
+          "t": "p",
+          "x": "L'IA può commettere errori. I risultati relativi a voce, scontrini e PDF vengono mostrati come bozze modificabili e vengono salvati solo dopo la conferma dell'utente."
+        },
+        {
+          "t": "p",
+          "x": "Le transazioni Apple Pay vengono salvate automaticamente dopo la configurazione dell'automazione, ma possono essere modificate in qualsiasi momento. Correggere una categoria aiuta Quanto a categorizzare meglio lo stesso esercente sul dispositivo in futuro."
+        },
+        {
+          "t": "p",
+          "x": "Quanto è uno strumento di gestione delle spese e non fornisce consulenza finanziaria, contabile o fiscale. Si consiglia di verificare le informazioni importanti sullo scontrino o sul documento originale."
+        },
+        {
+          "t": "p",
+          "x": "L'utente può smettere di utilizzare queste funzioni in qualsiasi momento. Può inoltre revocare le autorizzazioni per fotocamera, foto, microfono o riconoscimento vocale nelle impostazioni del dispositivo. Per interrompere l'Automazione Apple Pay, è sufficiente eliminare l'automazione di Quanto nell'app Comandi rapidi di Apple."
+        }
       ]
     },
     {
       "heading": "Sicurezza",
       "blocks": [
-        {"t": "p", "x": "Adottiamo misure ragionevoli per proteggere le informazioni dell'utente. Tuttavia, nessun metodo di archiviazione elettronica o di trasmissione su internet è sicuro al 100%."}
+        {
+          "t": "p",
+          "x": "Adottiamo misure ragionevoli per proteggere le informazioni dell'utente. Tuttavia, nessun metodo di archiviazione elettronica o di trasmissione su internet è sicuro al 100%."
+        }
       ]
     },
     {
       "heading": "Modifiche alla presente Informativa sulla privacy",
       "blocks": [
-        {"t": "p", "x": "Possiamo aggiornare periodicamente la presente Informativa sulla privacy. Eventuali modifiche saranno pubblicate su questa pagina con una data aggiornata."}
+        {
+          "t": "p",
+          "x": "Possiamo aggiornare periodicamente la presente Informativa sulla privacy. Eventuali modifiche saranno pubblicate su questa pagina con una data aggiornata."
+        }
       ]
     },
     {
       "heading": "Contatti",
       "blocks": [
-        {"t": "p", "x": "Per qualsiasi domanda sulla presente Informativa sulla privacy è possibile contattare:"},
-        {"t": "p", "x": "📧 [ausejoalejandro@gmail.com](mailto:ausejoalejandro@gmail.com)"}
+        {
+          "t": "p",
+          "x": "Per qualsiasi domanda sulla presente Informativa sulla privacy è possibile contattare:"
+        },
+        {
+          "t": "p",
+          "x": "📧 [ausejoalejandro@gmail.com](mailto:ausejoalejandro@gmail.com)"
+        }
       ]
     }
   ]
