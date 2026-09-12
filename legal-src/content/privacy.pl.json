@@ -1,0 +1,142 @@
+{
+  "htmlLang": "pl",
+  "title": "Polityka prywatności",
+  "description": "Jak Quanto zbiera, wykorzystuje i chroni informacje Użytkownika. Dane o wydatkach pozostają na urządzeniu.",
+  "updated": "Ostatnia aktualizacja: 28 sierpnia 2026",
+  "intro": "Niniejsza Polityka prywatności wyjaśnia, w jaki sposób Quanto („Aplikacja”) zbiera, wykorzystuje i chroni informacje Użytkownika.",
+  "sections": [
+    {
+      "heading": "Kim jesteśmy",
+      "blocks": [
+        {"t": "dl", "items": [
+          ["Nazwa aplikacji", "Quanto"],
+          ["Właściciel", "Alejandro Ausejo"],
+          ["Kraj", "Zjednoczone Emiraty Arabskie"],
+          ["Adres e-mail do kontaktu", "[ausejoalejandro@gmail.com](mailto:ausejoalejandro@gmail.com)"]
+        ]}
+      ]
+    },
+    {
+      "heading": "Informacje, które zbieramy",
+      "blocks": [
+        {"t": "h3", "x": "a) Informacje podawane przez Użytkownika"},
+        {"t": "p", "x": "Quanto nie wymaga zakładania konta i nie zbiera danych osobowych takich jak:"},
+        {"t": "ul", "items": [
+          "Imię i nazwisko",
+          "Adres e-mail",
+          "Hasło",
+          "Szczegóły transakcji",
+          "Dane finansowe",
+          "Informacje profilowe"
+        ]},
+        {"t": "p", "x": "Wszystkie wprowadzone dane o wydatkach i przychodach są przechowywane lokalnie na urządzeniu Użytkownika."}
+      ]
+    },
+    {
+      "heading": "Informacje zbierane automatycznie",
+      "blocks": [
+        {"t": "p", "x": "Za pośrednictwem usług podmiotów zewnętrznych możemy zbierać ograniczone, nieosobowe informacje, aby poprawiać wydajność i stabilność aplikacji oraz mierzyć skuteczność reklam, na przykład:"},
+        {"t": "ul", "items": [
+          "Dane o korzystaniu z aplikacji",
+          "Typ urządzenia",
+          "Wersja systemu operacyjnego",
+          "Raporty o awariach",
+          "Anonimowe zdarzenia analityczne",
+          "Identyfikatory urządzenia (takie jak identyfikatory reklamowe) wykorzystywane do analityki i atrybucji reklam"
+        ]},
+        {"t": "p", "x": "Informacje te są zbierane za pośrednictwem usług podmiotów zewnętrznych, takich jak Firebase Analytics, Firebase Crashlytics i pakiet SDK Meta (Facebook), i nie identyfikują Użytkownika bezpośrednio."}
+      ]
+    },
+    {
+      "heading": "Płatności i subskrypcje",
+      "blocks": [
+        {"t": "p", "x": "Płatności za funkcje premium są bezpiecznie przetwarzane za pośrednictwem:"},
+        {"t": "ul", "items": ["Apple In-App Purchases", "Google Play Billing"]},
+        {"t": "p", "x": "Nie widzimy, nie zbieramy ani nie przechowujemy żadnych informacji o płatnościach ani o kartach kredytowych."}
+      ]
+    },
+    {
+      "heading": "Przechowywanie danych",
+      "blocks": [
+        {"t": "p", "x": "Obecnie:"},
+        {"t": "ul", "items": [
+          "Wszystkie dane wprowadzone przez Użytkownika są przechowywane wyłącznie lokalnie na jego urządzeniu",
+          "Nie mamy dostępu do danych Użytkownika"
+        ]},
+        {"t": "p", "x": "W przyszłości mogą zostać wprowadzone opcjonalne funkcje kopii zapasowej w chmurze. W takim przypadku niniejsza polityka zostanie odpowiednio zaktualizowana przed włączeniem takich funkcji."},
+        {"t": "p", "x": "Wyjątkiem są opcjonalne funkcje AI opisane w punkcie 9: gdy Użytkownik zdecyduje się z nich skorzystać, ograniczone informacje są wysyłane poza urządzenie w celu przetworzenia."}
+      ]
+    },
+    {
+      "heading": "Usuwanie danych",
+      "blocks": [
+        {"t": "p", "x": "Użytkownik może w dowolnym momencie usunąć wszystkie swoje dane bezpośrednio w aplikacji."},
+        {"t": "p", "x": "Po kontakcie z nami pod adresem [ausejoalejandro@gmail.com](mailto:ausejoalejandro@gmail.com) pomożemy we wszelkich kwestiach dotyczących danych."}
+      ]
+    },
+    {
+      "heading": "Prywatność dzieci",
+      "blocks": [
+        {"t": "p", "x": "Quanto nie jest skierowana do dzieci poniżej 13. roku życia."},
+        {"t": "p", "x": "Nie zbieramy świadomie danych osobowych od dzieci. Jeśli istnieje podejrzenie, że dziecko przekazało dane osobowe, prosimy o kontakt, abyśmy mogli je usunąć."}
+      ]
+    },
+    {
+      "heading": "Usługi podmiotów zewnętrznych",
+      "blocks": [
+        {"t": "p", "x": "Quanto korzysta z usług podmiotów zewnętrznych w zakresie analityki, diagnostyki i atrybucji reklam. Usługi te mogą zbierać ograniczone informacje, w tym identyfikatory urządzenia, zgodnie z własnymi politykami prywatności."},
+        {"t": "p", "x": "Aplikacja korzysta między innymi z następujących usług podmiotów zewnętrznych:"},
+        {"t": "ul", "items": [
+          "Google Firebase (Analytics i Crashlytics)",
+          "Google Analytics",
+          "Pakiet SDK Meta (Facebook) – wykorzystywany do atrybucji reklam i pomiaru instalacji aplikacji",
+          "Google Gemini – wykorzystywany do udostępniania opcjonalnych funkcji AI opisanych w punkcie 9"
+        ]},
+        {"t": "p", "x": "Tam, gdzie jest to wymagane, przed włączeniem śledzenia prosimy o zgodę Użytkownika za pośrednictwem mechanizmu App Tracking Transparency firmy Apple."}
+      ]
+    },
+    {
+      "heading": "Funkcje AI",
+      "blocks": [
+        {"t": "p", "x": "Funkcje AI w Quanto są opcjonalne. Nic z tego, co opisano w niniejszym punkcie, nie następuje, dopóki Użytkownik nie zdecyduje się skorzystać z jednej z nich."},
+        {"t": "h3", "x": "a) Co jest udostępniane"},
+        {"t": "p", "x": "Gdy Użytkownik zdecyduje się skorzystać z funkcji AI:"},
+        {"t": "ul", "items": [
+          "**Transakcje głosowe:** Urządzenie zamienia wypowiedź na tekst. Quanto nie otrzymuje ani nie przechowuje nagrania głosu. Tekst, wybrana waluta oraz nazwy kategorii i kont Użytkownika służą do utworzenia propozycji transakcji.",
+          "**Skanowanie paragonów:** Do przetworzenia wysyłana jest pomniejszona kopia zdjęcia paragonu. Lokalizacja i inne ukryte informacje zawarte w obrazie są wcześniej usuwane.",
+          "**Skanowanie plików PDF:** Oryginalny plik PDF nie jest przesyłany. Quanto wysyła tekst pobrany z dokumentu lub, w razie potrzeby, pomniejszony obraz strony. Hasła do plików PDF pozostają na urządzeniu i nigdy nie są wysyłane ani przechowywane.",
+          "**Automatyzacja Apple Pay:** Po skonfigurowaniu opcjonalnej automatyzacji w aplikacji Skróty firmy Apple szczegóły płatności są zapisywane w Quanto na urządzeniu. Większość płatności jest kategoryzowana na urządzeniu. Gdy Quanto nie może wybrać kategorii, w celu uzyskania pomocy wysyłane są wyłącznie nazwa sprzedawcy oraz nazwy kategorii wydatków Użytkownika. Kwota, data, nazwa karty i konto nie są wysyłane."
+        ]},
+        {"t": "p", "x": "Quanto nie łączy się bezpośrednio z Apple Pay, bankiem ani wydawcą karty Użytkownika. Dane Apple Pay otrzymuje wyłącznie za pośrednictwem automatyzacji utworzonej przez Użytkownika."},
+        {"t": "h3", "x": "b) Sposób przetwarzania informacji"},
+        {"t": "p", "x": "Google Gemini przetwarza informacje niezbędne do udostępnienia tych funkcji. Informacje wysłane do Google Gemini za pośrednictwem płatnej usługi Quanto nie są wykorzystywane do trenowania modeli AI firmy Google."},
+        {"t": "p", "x": "Informacje są szyfrowane podczas przesyłania. Quanto ich nie sprzedaje i nie wykorzystuje do celów reklamowych ani do śledzenia."},
+        {"t": "p", "x": "Quanto nie przechowuje na swoich serwerach nagrań głosu, transkrypcji głosu, treści paragonów ani plików PDF, haseł do plików PDF ani nazw sprzedawców z Apple Pay. Przechowywane są ograniczone zapisy techniczne służące ochronie usługi, usuwaniu problemów oraz egzekwowaniu limitów korzystania z funkcji. Większość tych zapisów jest usuwana w ciągu 90 dni, natomiast sumy wykorzystania mogą być przechowywane tak długo, jak jest to potrzebne do egzekwowania tych limitów."},
+        {"t": "h3", "x": "c) Wyniki AI i wybory Użytkownika"},
+        {"t": "p", "x": "AI może popełniać błędy. Wyniki dotyczące głosu, paragonów i plików PDF są wyświetlane jako edytowalne wersje robocze i zapisywane dopiero po ich zatwierdzeniu."},
+        {"t": "p", "x": "Transakcje Apple Pay są zapisywane automatycznie po skonfigurowaniu automatyzacji, ale można je edytować w dowolnym momencie. Poprawienie kategorii pomaga Quanto lepiej kategoryzować tego samego sprzedawcę na urządzeniu w przyszłości."},
+        {"t": "p", "x": "Quanto jest narzędziem do zarządzania wydatkami i nie świadczy doradztwa finansowego, księgowego ani podatkowego. Ważne informacje należy zweryfikować z oryginalnym paragonem lub dokumentem."},
+        {"t": "p", "x": "Z tych funkcji można zrezygnować w dowolnym momencie. Można również cofnąć uprawnienia do aparatu, zdjęć, mikrofonu lub rozpoznawania mowy w ustawieniach urządzenia. Aby zatrzymać Automatyzację Apple Pay, należy usunąć automatyzację Quanto w aplikacji Skróty firmy Apple."}
+      ]
+    },
+    {
+      "heading": "Bezpieczeństwo",
+      "blocks": [
+        {"t": "p", "x": "Podejmujemy uzasadnione środki w celu ochrony informacji Użytkownika. Żadna metoda elektronicznego przechowywania ani przesyłania przez internet nie jest jednak w 100% bezpieczna."}
+      ]
+    },
+    {
+      "heading": "Zmiany w niniejszej Polityce prywatności",
+      "blocks": [
+        {"t": "p", "x": "Możemy okresowo aktualizować niniejszą Politykę prywatności. Wszelkie zmiany będą publikowane na tej stronie wraz ze zaktualizowaną datą."}
+      ]
+    },
+    {
+      "heading": "Kontakt",
+      "blocks": [
+        {"t": "p", "x": "W razie pytań dotyczących niniejszej Polityki prywatności można skontaktować się z nami:"},
+        {"t": "p", "x": "📧 [ausejoalejandro@gmail.com](mailto:ausejoalejandro@gmail.com)"}
+      ]
+    }
+  ]
+}
