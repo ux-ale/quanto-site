@@ -125,59 +125,77 @@
             mask-composite: exclude;
   }
 
-  /* ─── CARD ─── */
-  .card {
-    border: 1px solid var(--border);
-    border-radius: 18px;
-    background: var(--sem-5);
-    padding: 24px;
-    text-align: left;
+  /* ─── DATE FIELD ─── */
+  /* The native date input is stretched invisibly over a custom face, so the
+     OS picker still opens on tap but the field looks like the rest of the page. */
+  .date-field {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    min-height: 72px;
+    padding: 14px 14px 14px 22px;
     margin-bottom: 24px;
+    border-radius: 20px;
+    background: var(--sem-5);
+    border: 1px solid var(--border);
+    text-align: left;
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s;
+    -webkit-tap-highlight-color: transparent;
   }
+  .date-field:hover { border-color: var(--sem-15); }
+  .date-field:active { background: var(--sem-8); }
+  .date-field:focus-within { border-color: var(--brand); }
 
-  .field-label {
+  .date-text { flex: 1; min-width: 0; }
+  .date-label {
     display: block;
     font-size: 12px;
-    font-weight: 400;
+    font-weight: 300;
+    line-height: 1.4;
     color: var(--text-2);
-    margin-bottom: 8px;
+  }
+  .date-value {
+    display: block;
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    color: var(--text-1);
+    font-variant-numeric: tabular-nums;
   }
 
-  input[type="date"] {
-    display: block;
+  .date-icon {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 100px;
+    background: var(--sem-8);
+    color: #ffffff;
+  }
+  .date-icon svg { width: 24px; height: 24px; display: block; }
+
+  .date-field input {
+    position: absolute;
+    inset: 0;
     width: 100%;
-    min-height: 52px;
-    padding: 12px 16px;
-    border-radius: 14px;
-    border: 1px solid var(--border);
-    background: var(--sem-5);
-    color: var(--text-1);
-    font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 17px;
-    font-weight: 600;
-    text-align: left;
+    height: 100%;
+    opacity: 0;
+    border: 0;
+    font-size: 16px; /* stops iOS zooming in on focus */
+    cursor: pointer;
     -webkit-appearance: none;
     appearance: none;
-    transition: border-color 0.15s;
   }
-  input[type="date"]:focus { outline: none; border-color: var(--brand); }
-  input[type="date"]::-webkit-date-and-time-value { text-align: left; }
-  input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(1); opacity: 0.5; cursor: pointer; }
-
-  .summary {
-    margin-top: 20px;
-    padding-top: 18px;
-    border-top: 1px solid var(--border);
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 6px 16px;
-    font-size: 13px;
+  .date-field input::-webkit-calendar-picker-indicator {
+    position: absolute; inset: 0; width: 100%; height: 100%; cursor: pointer;
   }
-  .summary dt { color: var(--text-2); font-weight: 300; }
-  .summary dd { text-align: right; font-weight: 400; word-break: break-word; }
-  .summary dd.teal { color: var(--brand); }
 
-  .error { color: #ff6b6b; font-size: 13px; margin-top: 16px; }
+  .error { color: #ff6b6b; font-size: 13px; margin: -12px 0 24px; }
 
   /* ─── BUTTON ─── */
   .btn-wrap {
@@ -231,7 +249,7 @@
     body { padding: 32px 16px; }
     h1 { font-size: 26px; }
     .subtitle { font-size: 14px; }
-    .card { padding: 20px 18px; }
+    .date-value { font-size: 17px; }
   }
 </style>
 </head>
@@ -250,18 +268,20 @@
     <button data-lang="es" type="button">Español</button>
   </div>
 
-  <div class="card">
-    <label class="field-label" for="end-date">Last transaction date</label>
-    <input type="date" id="end-date" required>
-
-    <dl class="summary" id="summary">
-      <dt>From</dt><dd id="s-from">—</dd>
-      <dt>To</dt><dd id="s-to">—</dd>
-      <dt>Transactions</dt><dd id="s-count">—</dd>
-      <dt>File</dt><dd class="teal" id="s-file">—</dd>
-    </dl>
-    <p class="error" id="error" hidden></p>
-  </div>
+  <label class="date-field">
+    <span class="date-text">
+      <span class="date-label">Last transaction date</span>
+      <span class="date-value" id="date-value">—</span>
+    </span>
+    <span class="date-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3.5" y="5" width="17" height="15.5" rx="3.5"/>
+        <path d="M3.5 10h17M8 3v4M16 3v4"/>
+      </svg>
+    </span>
+    <input type="date" id="end-date" required aria-label="Last transaction date">
+  </label>
+  <p class="error" id="error" hidden></p>
 
   <button class="btn-wrap" id="btn-download" type="button" disabled>
     <span class="btn-inner"><span>Download CSV</span></span>
@@ -441,10 +461,6 @@ const $ = id => document.getElementById(id);
 const dateInput = $('end-date');
 const btn = $('btn-download');
 
-function fmtDate(r) {
-  return `${r.day} ${MONTH_NAMES.en[r.m - 1].slice(0, 3)} ${r.y}`;
-}
-
 function current() {
   if (!template || !dateInput.value) return null;
   const [y, m, d] = dateInput.value.split('-').map(Number);
@@ -456,10 +472,9 @@ function current() {
 function render() {
   const res = current();
   btn.disabled = !res || !res.rows.length;
-  $('s-from').textContent = res?.rows.length ? fmtDate(res.rows[0]) : '—';
-  $('s-to').textContent = res?.rows.length ? fmtDate(res.rows[res.rows.length - 1]) : '—';
-  $('s-count').textContent = res ? res.rows.length.toLocaleString('en') : '—';
-  $('s-file').textContent = res ? res.file : '—';
+
+  const [y, m, d] = dateInput.value.split('-').map(Number);
+  $('date-value').textContent = dateInput.value ? `${d} ${MONTH_NAMES.en[m - 1]} ${y}` : 'Pick a date';
 }
 
 document.querySelectorAll('#lang button').forEach(b => {
@@ -472,6 +487,12 @@ document.querySelectorAll('#lang button').forEach(b => {
 });
 
 dateInput.addEventListener('input', render);
+dateInput.addEventListener('change', render);
+
+// Desktop browsers only open the picker from their own icon; open it from anywhere on the field.
+dateInput.addEventListener('click', () => {
+  try { dateInput.showPicker(); } catch {}
+});
 
 btn.addEventListener('click', () => {
   const res = current();
@@ -489,6 +510,7 @@ btn.addEventListener('click', () => {
 // today, in local time
 const now = new Date();
 dateInput.value = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
+render();
 
 try {
   const saved = localStorage.getItem('dummy-data-lang');
