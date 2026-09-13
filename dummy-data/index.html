@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quanto — Dummy Data</title>
+<meta name="description" content="Generate 12 months of demo transactions ending on any date, ready to import into Quanto.">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" href="../captions/quanto-icon-192.png">
+<meta name="theme-color" content="#0C0F11">
+<link rel="preload" as="font" type="font/woff2" href="../captions/sora-latin.woff2" crossorigin>
+<style>
+  @font-face { font-family: 'Sora'; font-style: normal; font-weight: 300 700; font-display: swap; src: url(../captions/sora-latin.woff2) format('woff2'); }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0C0F11;
+    --sem-5:  rgba(255,255,255,0.05);
+    --sem-8:  rgba(255,255,255,0.08);
+    --sem-15: rgba(255,255,255,0.15);
+    --border: rgba(255,255,255,0.08);
+    --brand:  #0cbba1;
+    --text-1: #ffffff;
+    --text-2: rgba(255,255,255,0.55);
+    --text-3: rgba(255,255,255,0.30);
+    color-scheme: dark;
+  }
+
+  html, body {
+    margin: 0;
+    min-height: 100%;
+    background: #0C0F11;
+    overscroll-behavior: none;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(180deg, #283339 0%, #0C0F11 100%);
+    pointer-events: none;
+  }
+
+  body {
+    font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: transparent;
+    color: var(--text-1);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+  }
+
+  .container {
+    max-width: 520px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+
+  /* ─── HERO ─── */
+  .app-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    overflow: hidden;
+    margin: 0 auto 24px;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.05);
+  }
+
+  .app-icon img { width: 100%; height: 100%; display: block; }
+
+  h1 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+  }
+
+  h1 .teal { color: var(--brand); }
+
+  .subtitle {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--text-2);
+    line-height: 1.7;
+    margin: 0 auto 32px;
+    max-width: 380px;
+  }
+
+  /* ─── LANGUAGE TOGGLE ─── */
+  .seg {
+    display: inline-flex; gap: 2px; padding: 4px; margin-bottom: 24px;
+    border-radius: 64px; background: var(--sem-8);
+  }
+  .seg button {
+    position: relative;
+    padding: 9px 22px; border-radius: 100px; cursor: pointer;
+    border: 0.5px solid transparent; background: none;
+    font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 13.5px; font-weight: 400; color: var(--text-3);
+    transition: background 0.15s, color 0.15s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .seg button:hover { color: var(--text-2); }
+  .seg button.on {
+    background: radial-gradient(100% 100% at 50% 0%, rgba(255,255,255,0.20) 0%, rgba(255,255,255,0.08) 100%);
+    color: var(--text-1);
+  }
+  .seg button.on::after {
+    content: ""; position: absolute; inset: -0.5px; border-radius: inherit;
+    padding: 0.5px; pointer-events: none;
+    background: linear-gradient(180deg, rgba(255,255,255,0.50) 0%, rgba(255,255,255,0) 100%);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+            mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+  }
+
+  /* ─── CARD ─── */
+  .card {
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: var(--sem-5);
+    padding: 24px;
+    text-align: left;
+    margin-bottom: 24px;
+  }
+
+  .field-label {
+    display: block;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--text-2);
+    margin-bottom: 8px;
+  }
+
+  input[type="date"] {
+    display: block;
+    width: 100%;
+    min-height: 52px;
+    padding: 12px 16px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: var(--sem-5);
+    color: var(--text-1);
+    font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    text-align: left;
+    -webkit-appearance: none;
+    appearance: none;
+    transition: border-color 0.15s;
+  }
+  input[type="date"]:focus { outline: none; border-color: var(--brand); }
+  input[type="date"]::-webkit-date-and-time-value { text-align: left; }
+  input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(1); opacity: 0.5; cursor: pointer; }
+
+  .summary {
+    margin-top: 20px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 6px 16px;
+    font-size: 13px;
+  }
+  .summary dt { color: var(--text-2); font-weight: 300; }
+  .summary dd { text-align: right; font-weight: 400; word-break: break-word; }
+  .summary dd.teal { color: var(--brand); }
+
+  .error { color: #ff6b6b; font-size: 13px; margin-top: 16px; }
+
+  /* ─── BUTTON ─── */
+  .btn-wrap {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: none;
+    background: none;
+    border-radius: 100px;
+    font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .btn-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 100px;
+    background: linear-gradient(180deg, #eff2f6 0%, #dfdfdf 100%);
+    border: 2px solid #ffffff;
+    background-clip: padding-box;
+    color: #151a1f;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+    white-space: nowrap;
+    box-shadow: 0 5px 0 #acb0b3;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+  }
+
+  .btn-wrap:active .btn-inner {
+    transform: translateY(3px);
+    box-shadow: 0 2px 0 #acb0b3;
+  }
+
+  .btn-wrap:disabled { cursor: default; opacity: 0.4; }
+  .btn-wrap:disabled .btn-inner { transform: none; box-shadow: 0 5px 0 #acb0b3; }
+
+  footer {
+    margin-top: 40px;
+    font-size: 11px;
+    font-weight: 300;
+    color: var(--text-3);
+  }
+
+  @media (max-width: 480px) {
+    body { padding: 32px 16px; }
+    h1 { font-size: 26px; }
+    .subtitle { font-size: 14px; }
+    .card { padding: 20px 18px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="app-icon">
+    <img src="../captions/quanto-icon-192.png" alt="Quanto app icon" width="64" height="64" decoding="async" fetchpriority="high">
+  </div>
+
+  <h1>Dummy <span class="teal">Data</span></h1>
+  <p class="subtitle">12 months of demo transactions ending on the date you pick. Download the CSV and import it into Quanto.</p>
+
+  <div class="seg" id="lang">
+    <button data-lang="en" class="on" type="button">English</button>
+    <button data-lang="es" type="button">Español</button>
+  </div>
+
+  <div class="card">
+    <label class="field-label" for="end-date">Last transaction date</label>
+    <input type="date" id="end-date" required>
+
+    <dl class="summary" id="summary">
+      <dt>From</dt><dd id="s-from">—</dd>
+      <dt>To</dt><dd id="s-to">—</dd>
+      <dt>Transactions</dt><dd id="s-count">—</dd>
+      <dt>File</dt><dd class="teal" id="s-file">—</dd>
+    </dl>
+    <p class="error" id="error" hidden></p>
+  </div>
+
+  <button class="btn-wrap" id="btn-download" type="button" disabled>
+    <span class="btn-inner"><span>Download CSV</span></span>
+  </button>
+
+  <footer>&copy; 2026 Quanto. All rights reserved.</footer>
+</div>
+
+<script>
+/*
+  The template (template.csv) is a real export that makes the app look good.
+  We keep it as-is and slide it through time: the template's last month lands
+  on the chosen month, every earlier month follows one by one, and anything
+  after the chosen date is dropped. To change the look, replace template.csv
+  with a new export — the logic reads its months from the data.
+*/
+
+const MONTHS_OUT = 12;
+
+// Months borrowed to fill gaps (when the template has fewer than 12 months)
+// get their expenses nudged so two identical bars don't sit side by side in charts.
+const REUSED_MONTH_SCALE = 0.96;
+
+const MONTH_NAMES = {
+  en: ['January','February','March','April','May','June','July','August','September','October','November','December'],
+  es: ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
+};
+
+const ES = {
+  account: { 'Main account': 'Cuenta principal' },
+  category: {
+    'Housing': 'Vivienda',
+    'Food': 'Comida',
+    'Groceries': 'Supermercado',
+    'Utilities': 'Servicios',
+    'Transportation': 'Transporte',
+    'Shopping': 'Compras',
+    'Clothes': 'Ropa',
+    'Going out': 'Salir',
+    'Entertainment': 'Entretenimiento',
+    'Subscription': 'Suscripción',
+    'Extras': 'Extras',
+    'Salary': 'Salario',
+  },
+  name: {
+    'Dewa': 'Luz y agua',
+    'Du': 'Internet',
+    'PS Game': 'Juego de PS5',
+    'Wrapping paper': 'Papel de regalo',
+    'Haircut': 'Peluquería',
+    'Car wash': 'Lavado de coche',
+    'Washing machine': 'Lavadora',
+    'Laundry duvets': 'Lavado de edredones',
+    // Amazon, PS5, Robinhood, FTI Delta are brand names and stay the same
+  },
+};
+
+let lang = 'en';
+let template = null; // { months: [[row, ...], ...] } ordered oldest → newest
+
+// ─── CSV ───
+function parseCsv(text) {
+  text = text.replace(/^﻿/, '');
+  const rows = [];
+  let row = [], field = '', quoted = false;
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i];
+    if (quoted) {
+      if (c === '"' && text[i + 1] === '"') { field += '"'; i++; }
+      else if (c === '"') quoted = false;
+      else field += c;
+    } else if (c === '"') quoted = true;
+    else if (c === ',') { row.push(field); field = ''; }
+    else if (c === '\n' || c === '\r') {
+      if (c === '\r' && text[i + 1] === '\n') i++;
+      row.push(field); rows.push(row); row = []; field = '';
+    } else field += c;
+  }
+  if (field || row.length) { row.push(field); rows.push(row); }
+  return rows.filter(r => r.some(f => f !== ''));
+}
+
+const csvField = v => /[",\r\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v;
+
+// "13,260.66" → 1326066 (cents), and back
+const toCents = s => Math.round(parseFloat(s.replace(/,/g, '')) * 100);
+function fromCents(c) {
+  const [int, dec] = (c / 100).toFixed(2).split('.');
+  return int.replace(/\B(?=(\d{3})+(?!\d))/g, ',') + '.' + dec;
+}
+
+const pad = n => String(n).padStart(2, '0');
+const daysIn = (y, m) => new Date(y, m, 0).getDate(); // m is 1-based
+
+function loadTemplate(text) {
+  const [header, ...lines] = parseCsv(text);
+  const col = name => header.indexOf(name);
+  const idx = { date: col('Date'), amount: col('Amount'), category: col('Category'), name: col('Name'), account: col('Account'), type: col('Type') };
+
+  const byMonth = new Map();
+  for (const f of lines) {
+    const [d, m, y] = f[idx.date].split('/').map(Number);
+    const key = y * 12 + (m - 1);
+    if (!byMonth.has(key)) byMonth.set(key, []);
+    byMonth.get(key).push({
+      day: d,
+      cents: toCents(f[idx.amount]),
+      category: f[idx.category],
+      name: f[idx.name],
+      account: f[idx.account],
+      type: f[idx.type],
+    });
+  }
+  const months = [...byMonth.keys()].sort((a, b) => a - b).map(k => byMonth.get(k));
+  return { header, months };
+}
+
+// ─── GENERATE ───
+function generate(endY, endM, endD) {
+  const { months } = template;
+  const n = months.length;
+  const last = months[n - 1];
+  const lastDay = Math.max(...last.map(r => r.day));
+  const out = [];
+
+  for (let back = 0; back < MONTHS_OUT; back++) {
+    const monthIndex = endY * 12 + (endM - 1) - back;
+    const y = Math.floor(monthIndex / 12), m = monthIndex % 12 + 1;
+
+    let i = n - 1 - back, scale = 1;
+    if (i < 0) { i = (-i - 1) % n; scale = REUSED_MONTH_SCALE; }
+    let rows = months[i];
+
+    // The template's newest month may stop early (e.g. on the 24th). If the
+    // chosen date is later than that, borrow the missing days from the month before.
+    if (back === 0 && endD > lastDay && n > 1) {
+      rows = rows.concat(months[n - 2].filter(r => r.day > lastDay));
+    }
+
+    const dim = daysIn(y, m);
+    for (const r of rows) {
+      const day = Math.min(r.day, dim);
+      if (back === 0 && day > endD) continue;
+      const cents = r.type === 'Expense' ? Math.round(r.cents * scale) : r.cents;
+      out.push({ ...r, y, m, day, cents });
+    }
+  }
+
+  // oldest first; sort is stable, so same-day rows keep the template's order
+  out.sort((a, b) => (a.y - b.y) || (a.m - b.m) || (a.day - b.day));
+  return out;
+}
+
+function toCsv(rows) {
+  const t = s => s;
+  const account = lang === 'es' ? s => ES.account[s] ?? s : t;
+  const category = lang === 'es' ? s => ES.category[s] ?? s : t;
+  const name = lang === 'es' ? s => ES.name[s] ?? s : t;
+
+  const lines = [template.header.join(',')];
+  for (const r of rows) {
+    lines.push([
+      `${pad(r.day)}/${pad(r.m)}/${r.y}`,
+      fromCents(r.cents),
+      category(r.category),
+      name(r.name),
+      account(r.account),
+      r.type,
+    ].map(csvField).join(','));
+  }
+  // same bytes as the app's export: UTF-8 BOM, CRLF, trailing newline
+  return '﻿' + lines.join('\r\n') + '\r\n';
+}
+
+// ─── UI ───
+const $ = id => document.getElementById(id);
+const dateInput = $('end-date');
+const btn = $('btn-download');
+
+function fmtDate(r) {
+  return `${r.day} ${MONTH_NAMES.en[r.m - 1].slice(0, 3)} ${r.y}`;
+}
+
+function current() {
+  if (!template || !dateInput.value) return null;
+  const [y, m, d] = dateInput.value.split('-').map(Number);
+  const rows = generate(y, m, d);
+  const file = `${MONTH_NAMES[lang][m - 1]} ${y}.csv`;
+  return { rows, file };
+}
+
+function render() {
+  const res = current();
+  btn.disabled = !res || !res.rows.length;
+  $('s-from').textContent = res?.rows.length ? fmtDate(res.rows[0]) : '—';
+  $('s-to').textContent = res?.rows.length ? fmtDate(res.rows[res.rows.length - 1]) : '—';
+  $('s-count').textContent = res ? res.rows.length.toLocaleString('en') : '—';
+  $('s-file').textContent = res ? res.file : '—';
+}
+
+document.querySelectorAll('#lang button').forEach(b => {
+  b.addEventListener('click', () => {
+    document.querySelectorAll('#lang button').forEach(x => x.classList.toggle('on', x === b));
+    lang = b.dataset.lang;
+    try { localStorage.setItem('dummy-data-lang', lang); } catch {}
+    render();
+  });
+});
+
+dateInput.addEventListener('input', render);
+
+btn.addEventListener('click', () => {
+  const res = current();
+  if (!res) return;
+  const blob = new Blob([toCsv(res.rows)], { type: 'text/csv;charset=utf-8' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = res.file;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+});
+
+// today, in local time
+const now = new Date();
+dateInput.value = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
+
+try {
+  const saved = localStorage.getItem('dummy-data-lang');
+  if (saved) document.querySelector(`#lang button[data-lang="${saved}"]`)?.click();
+} catch {}
+
+fetch('template.csv', { cache: 'no-cache' })
+  .then(r => { if (!r.ok) throw new Error(r.status); return r.text(); })
+  .then(text => { template = loadTemplate(text); render(); })
+  .catch(() => {
+    const e = $('error');
+    e.textContent = 'Couldn’t load template.csv.';
+    e.hidden = false;
+  });
+</script>
+</body>
+</html>
