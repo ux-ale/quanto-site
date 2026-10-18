@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<meta name="referrer" content="no-referrer">
+<title>Join a space on Quanto</title>
+<meta property="og:title" content="You're invited to a space on Quanto">
+<meta property="og:description" content="Track shared expenses together. Open the link on your phone to join.">
+<meta property="og:image" content="https://quanto.app/download/quanto-app-icon.png">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" href="/download/quanto-app-icon.png">
+<style>
+  body { margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+         background: #0C0F11; color: #fff; font: 16px/1.5 -apple-system, system-ui, sans-serif; }
+  main { max-width: 360px; padding: 32px 24px; text-align: center; }
+  img { width: 72px; height: 72px; border-radius: 18px; margin-bottom: 20px; }
+  h1 { font-size: 22px; margin: 0 0 8px; }
+  p { color: rgba(255,255,255,0.6); margin: 0 0 24px; }
+  a.button { display: block; padding: 14px; border-radius: 14px; margin-top: 12px; color: #fff;
+             text-decoration: none; background: rgba(255,255,255,0.08);
+             border: 1px solid rgba(255,255,255,0.2); }
+  [hidden] { display: none; }
+</style>
+</head>
+<body>
+<main id="join" hidden>
+  <img src="/download/quanto-app-icon.png" alt="">
+  <h1>You're invited to a space</h1>
+  <p>Install Quanto, then open this link again on your phone to join.</p>
+  <a class="button" href="https://apps.apple.com/us/app/quanto-expense-tracker/id6749017099">Get Quanto for iPhone</a>
+  <a class="button" href="https://play.google.com/store/apps/details?id=app.quanto.quanto">Get Quanto for Android</a>
+</main>
+<main id="missing" hidden>
+  <h1>Page not found</h1>
+  <p><a class="button" href="/">Go to quanto.app</a></p>
+</main>
+<script>
+  // GitHub Pages serves this page for every unknown path; only invite paths
+  // get the join content. The token is never sent anywhere from here.
+  var isJoin = /^\/join\/[A-Za-z0-9_-]{16,64}\/?$/.test(location.pathname);
+  document.getElementById(isJoin ? "join" : "missing").hidden = false;
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "6HJ65CY7Z3.app.quanto.quanto",
+          "6HJ65CY7Z3.app.quanto.quanto.beta"
+        ],
+        "components": [
+          {
+            "/": "/join/*",
+            "comment": "Space invites"
+          }
+        ]
+      }
+    ]
+  }
+}

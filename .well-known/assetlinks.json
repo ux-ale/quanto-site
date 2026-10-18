@@ -1,0 +1,15 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "app.quanto.quanto",
+      "sha256_cert_fingerprints": [
+        "6C:B4:28:A3:21:D1:C4:8A:53:70:1B:3D:4C:E1:59:44:A4:12:3C:45:3D:22:3D:AF:74:BA:6B:9E:40:A8:69:BB",
+        "34:03:1A:B7:44:E8:75:29:B9:C3:6E:99:76:22:06:D7:03:D9:EE:B2:B2:47:94:CA:59:E8:D2:B6:E6:19:E9:D7"
+      ]
+    }
+  }
+]
