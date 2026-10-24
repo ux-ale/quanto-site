@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<meta name="referrer" content="no-referrer">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0C0F11">
+<title>Quanto</title>
+<meta name="description" content="Finish a Quanto password reset or email verification.">
+<link rel="icon" type="image/png" href="/quanto-app-icon.png">
+<link rel="canonical" href="https://quanto.app/auth-handler">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<!--
+  Firebase Authentication action handler.
+  In Firebase console → Authentication → Templates, set the action URL to
+  https://quanto.app/auth-handler
+-->
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --brand: #0cbba1;
+    --text: #ffffff;
+    --muted: rgba(255,255,255,0.60);
+    --faint: rgba(255,255,255,0.35);
+    --line: rgba(255,255,255,0.16);
+    --fill: rgba(255,255,255,0.05);
+    --danger: #ffb4ab;
+  }
+
+  html, body {
+    min-height: 100%;
+    background: #0C0F11;
+  }
+
+  body {
+    font-family: 'Sora', system-ui, sans-serif;
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: safe center;
+    padding: 32px 20px 40px;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(180deg, #283339 0%, #0C0F11 100%);
+    pointer-events: none;
+  }
+
+  main {
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    animation: fadeUp 0.45s ease both;
+  }
+
+  .icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 18px;
+    display: block;
+    margin: 0 auto 24px;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.35), 0 0 0 1px rgba(255,255,255,0.06);
+  }
+
+  h1 {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+
+  .message {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.6;
+    margin: 0 auto 28px;
+    max-width: 340px;
+    overflow-wrap: anywhere;
+  }
+
+  .spinner {
+    width: 22px;
+    height: 22px;
+    margin: 0 auto 18px;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.14);
+    border-top-color: var(--brand);
+    animation: spin 0.8s linear infinite;
+  }
+
+  form {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+
+  .control { position: relative; }
+
+  input {
+    width: 100%;
+    height: 52px;
+    padding: 0 16px;
+    border-radius: 14px;
+    border: 1px solid var(--line);
+    background: var(--fill);
+    color: var(--text);
+    font: 400 16px/1.2 'Sora', system-ui, sans-serif;
+    outline: none;
+  }
+
+  input:focus {
+    border-color: var(--brand);
+    box-shadow: 0 0 0 3px rgba(12,187,161,0.22);
+  }
+
+  input[readonly] {
+    color: var(--muted);
+  }
+
+  .control input { padding-right: 76px; }
+
+  .peek {
+    position: absolute;
+    top: 50%;
+    right: 6px;
+    transform: translateY(-50%);
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0 10px;
+    border: 0;
+    background: transparent;
+    color: var(--muted);
+    font: 600 13px/1 'Sora', system-ui, sans-serif;
+    cursor: pointer;
+  }
+
+  .peek:focus-visible,
+  .button:focus-visible,
+  .home:focus-visible {
+    outline: 2px solid var(--brand);
+    outline-offset: 2px;
+  }
+
+  .hint {
+    margin-top: 6px;
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--faint);
+  }
+
+  .error {
+    font-size: 13px;
+    line-height: 1.45;
+    color: var(--danger);
+  }
+
+  .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 52px;
+    margin-top: 4px;
+    padding: 14px 18px;
+    border: 0;
+    border-radius: 100px;
+    background: var(--brand);
+    color: #10221e;
+    font: 600 15px/1 'Sora', system-ui, sans-serif;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .button:hover { filter: brightness(1.06); }
+  .button:active { transform: translateY(1px); }
+  .button:disabled {
+    opacity: 0.5;
+    cursor: default;
+    transform: none;
+    filter: none;
+  }
+
+  .reassure {
+    margin-top: 16px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--faint);
+  }
+
+  .home {
+    display: inline-block;
+    margin-top: 28px;
+    color: var(--faint);
+    font-size: 12px;
+    font-weight: 400;
+    text-decoration: none;
+  }
+
+  .home:hover { color: var(--muted); }
+
+  [hidden] { display: none !important; }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: none; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .spinner { animation: none; }
+    main { animation: none; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <img class="icon" src="/quanto-app-icon.png" width="72" height="72" alt="">
+  <div id="spinner" class="spinner" aria-hidden="true"></div>
+  <h1 id="title">One moment</h1>
+  <p id="message" class="message" aria-live="polite">Checking this link…</p>
+
+  <form id="reset-form" hidden novalidate>
+    <div>
+      <label for="account-email">Account</label>
+      <input id="account-email" name="email" type="email" autocomplete="username" readonly>
+    </div>
+    <div>
+      <label for="password">New password</label>
+      <div class="control">
+        <input id="password" name="password" type="password" autocomplete="new-password" autocapitalize="off" autocorrect="off" spellcheck="false" minlength="6" required>
+        <button type="button" class="peek" id="toggle-password" aria-pressed="false" aria-label="Show password">Show</button>
+      </div>
+      <p class="hint">At least 6 characters.</p>
+    </div>
+    <div>
+      <label for="confirm">Confirm password</label>
+      <input id="confirm" name="confirm" type="password" autocomplete="new-password" autocapitalize="off" autocorrect="off" spellcheck="false" minlength="6" required>
+    </div>
+    <p id="form-error" class="error" role="alert" hidden></p>
+    <button type="submit" class="button" id="submit">Update password</button>
+    <p class="reassure">Set this password only on quanto.app.</p>
+  </form>
+
+  <a id="next" class="button" hidden rel="noopener"></a>
+  <a class="home" href="/">quanto.app</a>
+</main>
+
+<script>
+  window.setTimeout(function () {
+    if (document.documentElement.dataset.authReady === "1") return;
+    var spinner = document.getElementById("spinner");
+    if (spinner) spinner.hidden = true;
+    var title = document.getElementById("title");
+    var message = document.getElementById("message");
+    if (title) title.textContent = "This page didn't load";
+    if (message) message.textContent = "Check your connection, then open the link from your email again.";
+  }, 15000);
+</script>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js";
+import {
+  getAuth,
+  verifyPasswordResetCode,
+  confirmPasswordReset,
+  applyActionCode,
+  checkActionCode,
+  sendPasswordResetEmail,
+} from "https://www.gstatic.com/firebasejs/12.4.0/firebase-auth.js";
+
+document.documentElement.dataset.authReady = "1";
+
+const PROJECT = {
+  apiKey: "AIzaSyArBkBssOKVf-URItPoYsIicIvdWHwirpc",
+  authDomain: "quanto-9ef19.firebaseapp.com",
+  projectId: "quanto-9ef19",
+};
+const DONE_KEY = "quanto-auth-done";
+
+const titleEl = document.getElementById("title");
+const messageEl = document.getElementById("message");
+const spinnerEl = document.getElementById("spinner");
+const formEl = document.getElementById("reset-form");
+const emailEl = document.getElementById("account-email");
+const passwordEl = document.getElementById("password");
+const confirmEl = document.getElementById("confirm");
+const formErrorEl = document.getElementById("form-error");
+const submitEl = document.getElementById("submit");
+const toggleEl = document.getElementById("toggle-password");
+const nextEl = document.getElementById("next");
+
+const action = readAction(window.location.search);
+let auth = null;
+
+toggleEl.addEventListener("click", function () {
+  const show = passwordEl.type === "password";
+  passwordEl.type = show ? "text" : "password";
+  confirmEl.type = show ? "text" : "password";
+  toggleEl.textContent = show ? "Hide" : "Show";
+  toggleEl.setAttribute("aria-pressed", show ? "true" : "false");
+  toggleEl.setAttribute("aria-label", show ? "Hide password" : "Show password");
+});
+
+passwordEl.addEventListener("input", clearFormError);
+confirmEl.addEventListener("input", clearFormError);
+formEl.addEventListener("submit", onResetSubmit);
+
+start();
+
+async function start() {
+  if (!action) {
+    const saved = loadDone();
+    if (saved) {
+      showDone(saved.title, saved.message, saved.next);
+      return;
+    }
+    if (new URLSearchParams(window.location.search).get("done") === "1") {
+      showDone("You're all set", "You can go back to Quanto.");
+      return;
+    }
+    showStatus("Open your email link", "This page finishes a password reset or email verification for Quanto. Open the link in the message we sent you.");
+    return;
+  }
+
+  clearDone();
+  try {
+    auth = createAuth(action.apiKey);
+    if (action.mode === "resetPassword") {
+      const email = await verifyPasswordResetCode(auth, action.oobCode);
+      showResetForm(email || "");
+      return;
+    }
+    if (action.mode === "verifyEmail") {
+      await applyActionCode(auth, action.oobCode);
+      finish("Email verified", "Your email address is confirmed. You can go back to Quanto.");
+      return;
+    }
+    if (action.mode === "verifyAndChangeEmail") {
+      const info = await checkActionCode(auth, action.oobCode);
+      const email = info.data.email || "";
+      await applyActionCode(auth, action.oobCode);
+      finish(
+        "Email updated",
+        email
+          ? "Your Quanto account now uses " + email + "."
+          : "Your Quanto account email is updated."
+      );
+      return;
+    }
+    if (action.mode === "recoverEmail") {
+      const info = await checkActionCode(auth, action.oobCode);
+      const email = info.data.email || "";
+      await applyActionCode(auth, action.oobCode);
+      let resetSent = false;
+      if (email) {
+        try {
+          await sendPasswordResetEmail(auth, email);
+          resetSent = true;
+        } catch (_) {
+          resetSent = false;
+        }
+      }
+      const who = email || "Your previous address";
+      finish(
+        "Email restored",
+        resetSent
+          ? who + " is on your account again. We emailed a password reset there in case someone else made the change."
+          : who + " is on your account again."
+      );
+      return;
+    }
+    if (action.mode === "revertSecondFactorAddition") {
+      await applyActionCode(auth, action.oobCode);
+      finish("Sign-in step removed", "The extra verification step was removed. You can go back to Quanto and sign in.");
+      return;
+    }
+    if (action.mode === "signIn") {
+      showStatus("Open Quanto", "This sign-in link has to be opened in the Quanto app, on the phone where you asked for it.");
+      return;
+    }
+    showStatus("Open Quanto", "This link has to be opened in the Quanto app.");
+  } catch (error) {
+    showStatus("This link didn't work", failureMessage(error));
+  }
+}
+
+async function onResetSubmit(event) {
+  event.preventDefault();
+  if (!action || action.mode !== "resetPassword" || !auth) return;
+  clearFormError();
+
+  const password = passwordEl.value;
+  const confirm = confirmEl.value;
+  if (password.length < 6) {
+    showFormError("Use at least 6 characters.", passwordEl);
+    return;
+  }
+  if (password !== confirm) {
+    showFormError("Those passwords don't match.", confirmEl);
+    return;
+  }
+
+  submitEl.disabled = true;
+  submitEl.textContent = "Updating…";
+  formEl.setAttribute("aria-busy", "true");
+  try {
+    await confirmPasswordReset(auth, action.oobCode, password);
+    passwordEl.value = "";
+    confirmEl.value = "";
+    finish("Password updated", "Open Quanto and sign in with your email and this password.");
+  } catch (error) {
+    if (isUsedUp(error)) {
+      showStatus("This link didn't work", failureMessage(error));
+      return;
+    }
+    showFormError(failureMessage(error), passwordEl);
+    submitEl.disabled = false;
+    submitEl.textContent = "Update password";
+    formEl.removeAttribute("aria-busy");
+  }
+}
+
+function showResetForm(email) {
+  spinnerEl.hidden = true;
+  titleEl.textContent = "Choose a new password";
+  document.title = "Choose a new password — Quanto";
+  messageEl.textContent = "Use it the next time you sign in to Quanto.";
+  emailEl.value = email;
+  formEl.hidden = false;
+  nextEl.hidden = true;
+  passwordEl.focus();
+}
+
+function finish(title, message) {
+  const next = action ? safeContinue(action.continueUrl) : null;
+  try {
+    sessionStorage.setItem(DONE_KEY, JSON.stringify({
+      title: title,
+      message: message,
+      next: next,
+    }));
+  } catch (_) {}
+  const url = new URL(window.location.href);
+  url.search = "?done=1";
+  url.hash = "";
+  history.replaceState(null, "", url.pathname + url.search);
+  showDone(title, message, next);
+}
+
+function showDone(title, message, next) {
+  showStatus(title, message);
+  const href = safeContinue(next);
+  nextEl.href = href || "https://quanto.app/";
+  nextEl.textContent = href ? "Continue" : "Go to quanto.app";
+  nextEl.hidden = false;
+}
+
+function showStatus(title, message) {
+  spinnerEl.hidden = true;
+  formEl.hidden = true;
+  passwordEl.value = "";
+  confirmEl.value = "";
+  passwordEl.type = "password";
+  confirmEl.type = "password";
+  toggleEl.textContent = "Show";
+  toggleEl.setAttribute("aria-pressed", "false");
+  toggleEl.setAttribute("aria-label", "Show password");
+  submitEl.disabled = false;
+  submitEl.textContent = "Update password";
+  formEl.removeAttribute("aria-busy");
+  clearFormError();
+  titleEl.textContent = title;
+  document.title = title + " — Quanto";
+  messageEl.textContent = message;
+}
+
+function showFormError(message, field) {
+  formErrorEl.textContent = message;
+  formErrorEl.hidden = false;
+  passwordEl.setAttribute("aria-invalid", "true");
+  confirmEl.setAttribute("aria-invalid", "true");
+  if (field) field.focus();
+}
+
+function clearFormError() {
+  formErrorEl.hidden = true;
+  formErrorEl.textContent = "";
+  passwordEl.removeAttribute("aria-invalid");
+  confirmEl.removeAttribute("aria-invalid");
+}
+
+function createAuth(apiKey) {
+  const key = isApiKey(apiKey) ? apiKey : PROJECT.apiKey;
+  const app = initializeApp({
+    apiKey: key,
+    authDomain: PROJECT.authDomain,
+    projectId: PROJECT.projectId,
+  });
+  return getAuth(app);
+}
+
+function failureMessage(error) {
+  const code = error && error.code ? String(error.code) : "";
+  switch (code) {
+    case "auth/expired-action-code":
+      return "This link has expired. Request a new one in Quanto.";
+    case "auth/invalid-action-code":
+      return "This link is invalid or has already been used.";
+    case "auth/user-disabled":
+      return "This account is disabled.";
+    case "auth/user-not-found":
+      return "No Quanto account matches this link.";
+    case "auth/weak-password":
+    case "auth/password-does-not-meet-requirements":
+      return "That password doesn't meet the requirements. Try a longer one.";
+    case "auth/network-request-failed":
+      return "Check your connection, then open the link again.";
+    default:
+      if (code.indexOf("api-key") !== -1) {
+        return "Quanto could not reach the sign-in service from this page.";
+      }
+      return "Something went wrong. Request a new link in Quanto and try again.";
+  }
+}
+
+function isUsedUp(error) {
+  const code = error && error.code;
+  return code === "auth/expired-action-code" ||
+    code === "auth/invalid-action-code" ||
+    code === "auth/user-disabled" ||
+    code === "auth/user-not-found";
+}
+
+function readAction(search) {
+  const found = unwrap(new URLSearchParams(search), 0);
+  if (!found || !found.mode || !found.oobCode) return null;
+  return found;
+}
+
+function unwrap(params, depth) {
+  const mode = params.get("mode");
+  const oobCode = params.get("oobCode");
+  if (mode && oobCode) {
+    return {
+      mode: mode,
+      oobCode: oobCode,
+      apiKey: params.get("apiKey"),
+      continueUrl: params.get("continueUrl"),
+    };
+  }
+  if (depth > 2) return null;
+  const keys = ["link", "deep_link_id"];
+  for (let i = 0; i < keys.length; i++) {
+    const inner = params.get(keys[i]);
+    if (!inner) continue;
+    let url;
+    try {
+      url = new URL(inner, window.location.origin);
+    } catch (_) {
+      continue;
+    }
+    const found = unwrap(url.searchParams, depth + 1);
+    if (found) return found;
+  }
+  return null;
+}
+
+function safeContinue(value) {
+  if (!value) return null;
+  let url;
+  try {
+    url = new URL(value, window.location.origin);
+  } catch (_) {
+    return null;
+  }
+  if (url.protocol !== "https:") return null;
+  const host = url.hostname;
+  const allowed = host === "quanto.app" || host === "www.quanto.app" || host === "link.quanto.app";
+  if (!allowed) return null;
+  const path = url.pathname.replace(/\/+$/, "") || "/";
+  if ((host === "quanto.app" || host === "www.quanto.app") && path === "/auth-handler") return null;
+  url.searchParams.delete("oobCode");
+  url.searchParams.delete("apiKey");
+  return url.toString();
+}
+
+function isApiKey(value) {
+  return typeof value === "string" && /^AIza[0-9A-Za-z_-]{20,}$/.test(value);
+}
+
+function loadDone() {
+  if (new URLSearchParams(window.location.search).get("done") !== "1") return null;
+  try {
+    const data = JSON.parse(sessionStorage.getItem(DONE_KEY) || "null");
+    if (!data || typeof data.title !== "string" || typeof data.message !== "string") return null;
+    if (typeof data.next !== "string") data.next = null;
+    return data;
+  } catch (_) {
+    return null;
+  }
+}
+
+function clearDone() {
+  try { sessionStorage.removeItem(DONE_KEY); } catch (_) {}
+}
+</script>
+</body>
+</html>
